@@ -1,0 +1,207 @@
+﻿@using HoteManagement.Service.Model;
+@using HoteManagement;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var editinfo = new HoteManagement.Web.Models.Api.ModelEdit { Name = "editcost_type", Title = "编辑费用", EditButtonId = "cost_typeeditsave" };
+    var deleteinfo = new HoteManagement.Web.Models.Api.ModelDelete { Name = "deletecost_type", Title = "删除费用", DeleteButtonId = "cost_typedeletesave" };
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">费用管理</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 navbar-form navbar-left">
+            <div class="form-group">
+                <input type="text" class="form-control" id="searchname" placeholder="Search">
+            </div>
+            <button class="btn btn-default" id="cost_typesearch">搜索</button>
+            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#createcost_type">
+                创建费用
+            </button>
+            <a class="btn btn-primary" href="/costtype/categoryindex">创建费用类别</a>
+    
+        </div><!-- /.col-lg-6 -->
+
+        <div class="row">
+            <div class="col-lg-12">
+
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>编号</th>
+                            <th>费用名称</th>
+                            <th>费用类别</th>
+                            <th>费用价格（元）</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.cost_typelist as IPagedList<cost_typeDto>)
+                    {
+                        <tr>
+
+                            <td>@item.ct_number</td>
+                            <td>@item.ct_name</td>
+                            <td>@item.cost_typecategory.ct_name</td>
+                            <td>@item.ct_money</td>
+
+                            <td>
+
+                                <button type="button" class="btn btn-warning edit" data-toggle="modal" data-id="@item.Id">编辑</button>
+                                &nbsp;
+                                <button type="button" class="btn btn-danger delete" data-toggle="modal" data-id="@item.Id">删除</button>
+                            </td>
+                        </tr>
+                }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            @Html.Partial("PageList", ViewBag.PageInfo as HoteManagement.Web.Models.Api.PageModel)
+        </div>
+    </div>
+
+@Html.Partial("Createcost_type")
+@Html.Partial("AdminEdit", editinfo)
+@Html.Partial("ConfirmDelete", deleteinfo)
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#cost_typesearch").click(function () {
+                window.location.href = "/costtype/index?name=" + $("#searchname").val();
+            })
+
+
+            $("#createcost_type_save").click(function () {
+                var name = $("#createcost_type_cost_typename").val();
+                var number = $("#createcost_type_number").val();
+                var price = $("#createcost_type_price").val();
+
+         
+                var remark = $("#createcost_type_remark").val();
+
+                var category = $("#createcost_type_category").val();
+
+                var data = { "Price": price, "Remark": remark, "Number": number, "Name": name,  "Category": category };
+                $.ajax({
+                    url: "/costtype/Createcost_type",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.success == 1)
+                            window.location.reload();
+                        else {
+                            $("#errormsg").html("");
+                            $("#errormsg").html("<div class='alert alert-danger' cost_type='alert'>" + data.message + "</div>");
+                        }
+                    }
+                });
+
+            })
+
+            $(".edit").click(function () {
+                var html = "<form><div class='form-group'><label for='recipient-name' class='control-label'>loading....</label> </div ></form >";
+                $("#adminedit div[class='modal-body']").html(html);
+                $('#adminedit').modal('toggle');
+                var id = $(this).attr("data-id");
+                var url = "/costtype/GetEditcost_typeView?id=" + id.toString();
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    success: function (data) {
+                        $("#adminedit div[class='modal-body']").html(data);
+                        Savecost_type();
+                    }
+                });
+            })
+
+            function Savecost_type() {
+
+                $("#@editinfo.EditButtonId").click(function () {
+                    var name = $("#editcost_type_cost_typename").val();
+                    var number = $("#editcost_type_number").val();
+                    var price = $("#editcost_type_price").val();
+                
+                    var remark = $("#editcost_type_remark").val();
+              
+                    var category = $("#editcost_type_category").val();
+
+                    var id = $("#editcost_type_id").val();
+                    var data = { "Id":id,"Price": price, "Remark": remark, "Number": number, "Name": name,  "Category": category };
+
+                    $.ajax({
+                        url: "/costtype/Editcost_type",
+                        type: 'POST',
+                        dataType: 'json',
+                        data: JSON.stringify(data),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#adminedit #errormsg").html("");
+                                $("#adminedit #errormsg").html("<div class='alert alert-danger' cost_type='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+
+            $(".delete").click(function () {
+                var id = $(this).attr("data-id");
+                $('#admindelete').modal('toggle');
+                Deletecost_type(id);
+
+            })
+
+              function Deletecost_type(id) {
+
+                $("#@deleteinfo.DeleteButtonId").click(function () {
+
+                    var url = "/costtype/deletecost_type?id=" + id;
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#admindelete #errormsg").html("");
+                                $("#admindelete #errormsg").html("<div class='alert alert-danger' cost_type='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+        })
+
+    </script>
+
+}
+
+

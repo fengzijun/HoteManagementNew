@@ -1,0 +1,218 @@
+﻿@using HoteManagement.Service.Model;
+@using HoteManagement;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var editinfo = new HoteManagement.Web.Models.Api.ModelEdit { Name = "editgoods", Title = "编辑商品", EditButtonId = "goodseditsave" };
+    var deleteinfo = new HoteManagement.Web.Models.Api.ModelDelete { Name = "deletegoods", Title = "删除商品", DeleteButtonId = "goodsdeletesave" };
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">商品管理</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 navbar-form navbar-left">
+            <div class="form-group">
+                <input type="text" class="form-control" id="searchname" placeholder="Search">
+            </div>
+            <button class="btn btn-default" id="goodssearch">搜索</button>
+            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#creategoods">
+                创建商品
+            </button>
+            <a class="btn btn-primary" href="/goods/categoryindex">创建商品类别</a>
+    
+        </div><!-- /.col-lg-6 -->
+
+        <div class="row">
+            <div class="col-lg-12">
+
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>编号</th>
+                            <th>商品名称</th>
+                            <th>商品类别</th>
+                            <th>单位（元）</th>
+                            <th>商品价格（元）</th>
+                            <th>积分</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.goodslist as IPagedList<GoodsDto>)
+                    {
+                        <tr>
+
+                            <td>@item.Goods_number</td>
+                            <td>@item.Goods_name</td>
+                            <td>@item.GoosCategory.Goods_name</td>
+                            <td>@item.Goods_unit</td>
+                            <td>@item.Goods_price</td>
+                            <td>@item.Goods_jf</td>
+
+
+                            <td>
+
+                                <button type="button" class="btn btn-warning edit" data-toggle="modal" data-id="@item.Id">编辑</button>
+                                &nbsp;
+                                <button type="button" class="btn btn-danger delete" data-toggle="modal" data-id="@item.Id">删除</button>
+                            </td>
+                        </tr>
+                }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            @Html.Partial("PageList", ViewBag.PageInfo as HoteManagement.Web.Models.Api.PageModel)
+        </div>
+    </div>
+
+@Html.Partial("Creategoods")
+@Html.Partial("AdminEdit", editinfo)
+@Html.Partial("ConfirmDelete", deleteinfo)
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#goodssearch").click(function () {
+                window.location.href = "/goods/index?goodsname=" + $("#searchname").val();
+            })
+
+
+            $("#creategoods_save").click(function () {
+                var name = $("#creategoods_goodsname").val();
+                var number = $("#creategoods_number").val();
+                var price = $("#creategoods_price").val();
+                var score = $("#creategoods_jf").val();
+                var unit = $("#creategoods_unit").val();
+                var remark = $("#creategoods_remark").val();
+                var status = 1;
+                var checked = $("#creategoods_status").is(':checked');
+                var category = $("#creategoods_category").val();
+                if (!checked)
+                    status = 0;
+
+                var data = { "Price": price, "Unit": unit, "Remark": remark, "Number": number, "Name": name, "Score": score, "Status": status, "Category": category };
+                $.ajax({
+                    url: "/goods/Creategoods",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.success == 1)
+                            window.location.reload();
+                        else {
+                            $("#errormsg").html("");
+                            $("#errormsg").html("<div class='alert alert-danger' goods='alert'>" + data.message + "</div>");
+                        }
+                    }
+                });
+
+            })
+
+            $(".edit").click(function () {
+                var html = "<form><div class='form-group'><label for='recipient-name' class='control-label'>loading....</label> </div ></form >";
+                $("#adminedit div[class='modal-body']").html(html);
+                $('#adminedit').modal('toggle');
+                var id = $(this).attr("data-id");
+                var url = "/goods/GetEditgoodsView?id=" + id.toString();
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    success: function (data) {
+                        $("#adminedit div[class='modal-body']").html(data);
+                        Savegoods();
+                    }
+                });
+            })
+
+            function Savegoods() {
+
+                $("#@editinfo.EditButtonId").click(function () {
+                    var name = $("#editgoods_goodsname").val();
+                    var number = $("#editgoods_number").val();
+                    var price = $("#editgoods_price").val();
+                    var score = $("#editgoods_jf").val();
+                    var unit = $("#editgoods_unit").val();
+                    var remark = $("#editgoods_remark").val();
+                    var status = 1;
+                    var checked = $("#editgoods_status").is(':checked');
+                    var category = $("#editgoods_category").val();
+                    if (!checked)
+                        status = 0;
+                    var id = $("#editgoods_id").val();
+                    var data = { "Id":id,"Price": price, "Unit": unit, "Remark": remark, "Number": number, "Name": name, "Score": score, "Status": status, "Category": category };
+
+                    $.ajax({
+                        url: "/goods/Editgoods",
+                        type: 'POST',
+                        dataType: 'json',
+                        data: JSON.stringify(data),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#adminedit #errormsg").html("");
+                                $("#adminedit #errormsg").html("<div class='alert alert-danger' goods='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+
+            $(".delete").click(function () {
+                var id = $(this).attr("data-id");
+                $('#admindelete').modal('toggle');
+                Deletegoods(id);
+
+            })
+
+              function Deletegoods(id) {
+
+                $("#@deleteinfo.DeleteButtonId").click(function () {
+
+                    var url = "/goods/deletegoods?id=" + id;
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#admindelete #errormsg").html("");
+                                $("#admindelete #errormsg").html("<div class='alert alert-danger' goods='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+        })
+
+    </script>
+
+}
+
+

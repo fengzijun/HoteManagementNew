@@ -1,0 +1,111 @@
+﻿@using HoteManagement.Service.Model;
+@using HoteManagement;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var editinfo = new HoteManagement.Web.Models.Api.ModelEdit { Name = "editUser", Title = "编辑用户", EditButtonId = "Usereditsave" };
+    var deleteinfo = new HoteManagement.Web.Models.Api.ModelDelete { Name = "deleteUser", Title = "删除用户", DeleteButtonId = "Userdeletesave" };
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">菜單管理</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="input-group">
+                <span class="">
+                    <a class="btn btn-primary" href="/menu/create?parentid=@ViewBag.parentid">创建菜单</a>
+                    &nbsp;
+                    <a class="btn btn-primary" href="/menu/index">返回</a>
+                </span>
+
+                @*<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createUser">
+            创建用戶
+        </button>*@
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>菜单名称</th>
+                        <th>父级菜单</th>
+                        <th>路径</th>
+                        <th>是否启用</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.menulist as IPagedList<MenuDto>)
+                    {
+                    <tr>
+                        @if (item.parent_id == 0)
+                   {
+                    <td><a href="/menu/index?parentid=@item.Id">@item.title</a></td>
+                        }
+                        else
+                        {
+                               <td>@item.title</td>
+                        }
+
+                        <td>
+                            @if (item.parent_id != 0)
+        {
+                    @item.ParentMenu.title
+}
+
+                        </td>
+                        <td>
+                            @item.url
+                        </td>
+                        <td>
+                            @if (item.isable.HasValue && item.isable.Value == true)
+        {
+                    <text>是</text>
+}
+else
+{
+                    <text>否</text>
+}
+
+                        </td>
+
+                        <td>
+
+                            <a href="/menu/Edit?id=@item.Id" class="btn btn-warning">编辑</a>
+                            &nbsp;
+                            <a href="/menu/delete?id=@item.Id&parentid=@item.parent_id" class="btn btn-danger">删除</a>
+                        </td>
+                    </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        @Html.Partial("PageList", ViewBag.PageInfo as HoteManagement.Web.Models.Api.PageModel)
+    </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+﻿@using HoteManagement.Web.Core;
+
+@model HoteManagement.Web.Models.Api.EditMenuRequst
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">创建菜单</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        @using (Html.BeginForm("Edit", "menu", FormMethod.Post, new { @class = "form-horizontal", role = "form" , enctype = "multipart/form-data" }))
+        {
+            @Html.HiddenFor(s=>s.Id)
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">菜单名称</label>
+            <div class="col-sm-10">
+                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                @Html.TextBoxFor(s => s.MenuName, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">图标</label>
+            <div class="col-sm-10">
+                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                @Html.TextBoxFor(x => x.File, new { type = "file" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBoxFor(s => s.Isabled) 是否启用
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        @Html.HiddenFor(s => s.ParentId)
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">路径</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(s => s.Url, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label"></label>
+            <div class="col-sm-10">
+                @Html.Partial("DisplayErrorView")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+
+                <input value="提交" type="submit" class="btn btn-primary" />
+            </div>
+        </div>
+}
+    </div>
+
+</div>
+

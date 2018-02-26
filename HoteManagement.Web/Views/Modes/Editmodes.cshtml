@@ -1,0 +1,14 @@
+﻿@model HoteManagement.Service.Model.modesDto
+
+@if (Model != null)
+{
+    <form>
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">模式名:</label>
+            <input type="text" class="form-control" id="Editmodes_modesname" value="@Model.moshi_name">
+            <input type="hidden" value="@Model.Id"  id="Editmodes_id"/>
+        </div>
+        <div class="form-group" id="errormsg">
+        </div>
+    </form>
+}

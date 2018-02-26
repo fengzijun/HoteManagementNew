@@ -1,0 +1,67 @@
+﻿/**弹出窗口顶部模式样式***/
+.div_win_top
+{
+    border-top:0px;
+    background: #ffff;
+    background: url(../../Images/window/top.png);
+    background-repeat:no-repeat;
+    background-position:15px 0px;
+    padding-top: 17px;
+    position:absolute;
+    z-index:999;
+}
+/**弹出窗口顶部模式iframe样式***/
+.div_win_top iframe
+{
+    border:1px solid #d6d3d6;
+}
+/**弹出窗口左侧模式样式***/
+.div_win_left
+{
+    background: #ffff;
+    background: url(../../Images/window/left.png);
+    background-repeat:no-repeat;
+    background-position:0px 15px;
+    padding-left: 17px;
+    position:absolute;
+
+}
+/**弹出窗口左侧模式iframe样式***/
+.div_win_left iframe
+{
+    border:1px solid #d6d3d6;
+}
+/**弹出窗口右侧模式样式***/
+.div_win_right
+{
+    
+    background: #ffff;
+    background: url(../../Images/window/right.png);
+    background-repeat:no-repeat;
+    background-position:right 15px;
+    padding-right: 17px;
+    position:absolute;
+    z-index:99999;
+}
+/**弹出窗口右侧模式iframe样式***/
+.div_win_right iframe
+{
+    border: 1px solid #d6d3d6;
+}
+.HeadDateDiv span{ margin-top:6px;}
+
+.div_win_center {
+    border-top: 0px;
+    background: #ffff;
+    background: url(../../Images/window/win_topBlueTitle.png);
+    background-repeat: repeat-x;
+    position: absolute;
+    cursor: move;
+}
+/**弹出窗口左侧模式iframe样式***/
+.div_win_center iframe
+{
+    border:1px solid #d6d3d6;
+}
+.update{ cursor:pointer;}
+.delete{ cursor:pointer;}

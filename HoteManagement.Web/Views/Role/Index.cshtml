@@ -1,0 +1,226 @@
+﻿@using HoteManagement.Service.Model;
+@using HoteManagement;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var editinfo = new HoteManagement.Web.Models.Api.ModelEdit { Name = "editrole", Title = "编辑角色", EditButtonId = "roleeditsave" };
+    var deleteinfo = new HoteManagement.Web.Models.Api.ModelDelete { Name = "deleterole", Title = "删除角色", DeleteButtonId = "roledeletesave" };
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">角色管理</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="input-group">
+                @*<span class="input-group-btn">
+                        <a class="btn btn-primary" href="/role/createrole">创建角色</a>
+                    </span>*@
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createrole">
+                    创建角色
+                </button>
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    @if (UserInfo.hotelid.HasValue)
+    {
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>角色</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.rolelist as IPagedList<Accounts_RolesDto>)
+                        {
+                            <tr>
+
+                                <td>@item.title</td>
+                                <td>
+
+                                    <button type="button" class="btn btn-warning edit" data-toggle="modal" data-id="@item.Id">编辑</button>
+                                    &nbsp;
+                                    <button type="button" class="btn btn-danger delete" data-toggle="modal" data-id="@item.Id">删除</button>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>角色</th>
+                            <th>酒店</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.rolelist as IPagedList<Accounts_RolesDto>)
+                        {
+                            if (item.UserHotel != null)
+                            {
+                                <tr>
+
+                                    <td>@item.title</td>
+                                    <td>@item.UserHotel.HotelName</td>
+                                    <td>
+
+                                        <button type="button" class="btn btn-warning edit" data-toggle="modal" data-id="@item.Id">编辑</button>
+                                        &nbsp;
+                                        <button type="button" class="btn btn-danger delete" data-toggle="modal" data-id="@item.Id">删除</button>
+                                    </td>
+                                </tr>
+                            }
+
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+
+
+
+    <div class="row">
+        @Html.Partial("PageList", ViewBag.PageInfo as HoteManagement.Web.Models.Api.PageModel)
+    </div>
+</div>
+
+@Html.Partial("Createrole")
+@Html.Partial("AdminEdit", editinfo)
+@Html.Partial("ConfirmDelete", deleteinfo)
+
+@section scripts{
+    <script>
+        $(function () {
+
+            $("#createrole_save").click(function () {
+
+                var hotelid = 0;
+
+                if ($("#createrole_hotelid").val() != "undefined" && $("#createrole_hotelid").val() != "" && $("#createrole_hotelid").val() != null) {
+                    hotelid = $("#createrole_hotelid").val();
+                }
+
+                var data = { "name": $("#createrole_rolename").val(), "hotelid": hotelid };
+                $.ajax({
+                    url: "/role/Createrole",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.success == 1)
+                            window.location.reload();
+                        else {
+                            $("#errormsg").html("");
+                            $("#errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                        }
+                    }
+                });
+
+            })
+
+            $(".edit").click(function () {
+                var html = "<form>< div class='form-group'><label for='recipient-name' class='control-label'>loading....</label> </div ></form >";
+                $("#adminedit div[class='modal-body']").html(html);
+                $('#adminedit').modal('toggle');
+                var id = $(this).attr("data-id");
+                var url = "/role/GetEditroleView?id=" + id.toString();
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    success: function (data) {
+                        $("#adminedit div[class='modal-body']").html(data);
+                        Saverole();
+                    }
+                });
+            })
+
+            function Saverole() {
+
+                $("#@editinfo.EditButtonId").click(function () {
+                    var data = { "name": $("#editrole_rolename").val(), "id": $("#editrole_id").val()};
+                    $.ajax({
+                        url: "/role/Editrole",
+                        type: 'POST',
+                        dataType: 'json',
+                        data: JSON.stringify(data),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#adminedit #errormsg").html("");
+                                $("#adminedit #errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+
+            $(".delete").click(function () {
+                var id = $(this).attr("data-id");
+                $('#admindelete').modal('toggle');
+                Deleterole(id);
+
+            })
+
+              function Deleterole(id) {
+
+                $("#@deleteinfo.DeleteButtonId").click(function () {
+
+                    var url = "/role/deleterole?id=" + id;
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#admindelete #errormsg").html("");
+                                $("#admindelete #errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+        })
+
+    </script>
+
+}
+
+

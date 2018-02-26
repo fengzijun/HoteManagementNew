@@ -1,0 +1,4 @@
+D:\HoteManagement\HoteManagement\HoteManagement.Console\obj\Debug\HoteManagement.Console.csprojResolveAssemblyReference.cache
+D:\HoteManagement\HoteManagement\HoteManagement.Console\obj\Debug\HoteManagement.Console.csproj.CoreCompileInputs.cache
+G:\HoteManagement\HoteManagement\HoteManagement.Console\obj\Debug\HoteManagement.Console.csprojResolveAssemblyReference.cache
+G:\HoteManagement\HoteManagement\HoteManagement.Console\obj\Debug\HoteManagement.Console.csproj.CoreCompileInputs.cache

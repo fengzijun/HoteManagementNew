@@ -1,0 +1,232 @@
+﻿@using HoteManagement.Service.Model;
+@using HoteManagement;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var editinfo = new HoteManagement.Web.Models.Api.ModelEdit { Name = "editroomtype", Title = "编辑房型", EditButtonId = "roomtypeeditsave" };
+    var deleteinfo = new HoteManagement.Web.Models.Api.ModelDelete { Name = "deleteroomtype", Title = "删除房型", DeleteButtonId = "roomtypedeletesave" };
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">房型管理</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="input-group">
+                @*<span class="input-group-btn">
+                        <a class="btn btn-primary" href="/roomtype/createroomtype">创建楼栋</a>
+                    </span>*@
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createroomtype">
+                    创建房型
+                </button>
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>房型名称</th>
+                        <th>房价</th>
+                        <th>周末挂牌价</th>
+                        <th>是否允许钟点房</th>
+                        <th>凌晨价</th>
+                        <th>超预定(%)</th>
+                        <th>备注</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.roomtypelist as IPagedList<room_typeDto>)
+                    {
+                    <tr>
+                        <td>@item.room_name</td>
+                        <td>
+                            @if (!item.room_listedmoney.HasValue)
+    {<text>0</text>}
+else
+{<text>@item.room_listedmoney.Value</text>}
+                        </td>
+                        <td>
+                            @if (!item.room_zmmoney.HasValue)
+    {<text>0</text>}
+else
+{<text>@item.room_zmmoney.Value</text>}
+                        </td>
+                        <td>@item.room_hour </td>
+                        <td>
+                            @if (!item.room_ealry_price.HasValue)
+    {<text>0</text>}
+else
+{<text>@item.room_ealry_price.Value</text>}
+                        </td>
+                        <td>@item.room_Bfb</td>
+                        <td>@item.room_reamker</td>
+                        <td>
+
+                            <button type="button" class="btn btn-warning edit" data-toggle="modal" data-id="@item.Id">编辑</button>
+                            &nbsp;
+                            <button type="button" class="btn btn-danger delete" data-toggle="modal" data-id="@item.Id">删除</button>
+                        </td>
+                    </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        @Html.Partial("PageList", ViewBag.PageInfo as HoteManagement.Web.Models.Api.PageModel)
+    </div>
+</div>
+
+@Html.Partial("Createroomtype")
+@Html.Partial("AdminEdit", editinfo)
+@Html.Partial("ConfirmDelete", deleteinfo)
+
+@section scripts{
+    <script>
+        $(function () {
+
+            $("#createroomtype_save").click(function () {
+                var roomtypename = $("#createroomtype_name").val();
+                var roomtypeprice = $("#createroomtype_price").val();
+                var zmmoney = $("#createroomtype_zmmoney").val();
+                var roomhour = "不允许";
+        
+                if ($("#createroomtype_room_hour").is(':checked')) {
+                    roomhour = "允许"
+                }
+                else {
+                    roomhour = "不允许";
+                }
+
+                var ealryprice = $("#createroomtype_ealryprice").val();
+                var bfb = $("#createroomtype_bfb").val();
+                var remark = $("#createroomtype_remark").val();
+
+                var data = { "roomtypename": roomtypename, "roomtypeprice": roomtypeprice, "zmmoney": zmmoney, "roomhour": roomhour, "ealryprice": ealryprice, "bfb": bfb, "remark": remark};
+                $.ajax({
+                    url: "/room/Createroomtype",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.success == 1)
+                            window.location.reload();
+                        else {
+                            $("#errormsg").html("");
+                            $("#errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                        }
+                    }
+                });
+
+            })
+
+            $(".edit").click(function () {
+                var html = "<form><div class='form-group'><label for='recipient-name' class='control-label'>loading....</label></div></form>";
+                $("#adminedit div[class='modal-body']").html(html);
+                $('#adminedit').modal('toggle');
+                var id = $(this).attr("data-id");
+                var url = "/room/GetEditroomtypeView?id=" + id.toString();
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    success: function (data) {
+                        $("#adminedit div[class='modal-body']").html(data);
+                        Saveroomtype();
+                    }
+                });
+            })
+
+            function Saveroomtype() {
+
+                $("#@editinfo.EditButtonId").click(function () {
+                    var roomtypename = $("#editroomtype_name").val();
+                    var roomtypeprice = $("#editroomtype_price").val();
+                    var zmmoney = $("#editroomtype_zmmoney").val();
+                    var roomhour = "不允许";
+
+                    if ($("#editroomtype_room_hour").is(':checked')) {
+                        roomhour = "允许"
+                    }
+                    else {
+                        roomhour = "不允许";
+                    }
+
+                    var ealryprice = $("#editroomtype_ealryprice").val();
+                    var bfb = $("#editroomtype_bfb").val();
+                    var remark = $("#editroomtype_remark").val();
+                    var id = $("#editroomtype_id").val();
+                    var data = { Id:id,"roomtypename": roomtypename, "roomtypeprice": roomtypeprice, "zmmoney": zmmoney, "roomhour": roomhour, "ealryprice": ealryprice, "bfb": bfb, "remark": remark };
+                    $.ajax({
+                        url: "/room/Editroomtype",
+                        type: 'POST',
+                        dataType: 'json',
+                        data: JSON.stringify(data),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#adminedit #errormsg").html("");
+                                $("#adminedit #errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+
+            $(".delete").click(function () {
+                var id = $(this).attr("data-id");
+                $('#admindelete').modal('toggle');
+                Deleteroomtype(id);
+
+            })
+
+              function Deleteroomtype(id) {
+
+                $("#@deleteinfo.DeleteButtonId").click(function () {
+
+                    var url = "/room/deleteroomtype?id=" + id;
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#admindelete #errormsg").html("");
+                                $("#admindelete #errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+        })
+
+    </script>
+
+}
+
+
+
+

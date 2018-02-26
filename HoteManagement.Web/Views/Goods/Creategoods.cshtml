@@ -1,0 +1,69 @@
+﻿<!-- Modal -->
+@using HoteManagement.Service.Model;
+<div class="modal fade" id="creategoods" tabindex="-1" goods="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" goods="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">创建商品</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">商品名称:</label>
+                        <input type="text" class="form-control" id="creategoods_goodsname">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">编号:</label>
+                        <input type="text" class="form-control" id="creategoods_number">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">单价:</label>
+                        <input type="text" class="form-control" id="creategoods_price">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">积分:</label>
+                        <input type="text" class="form-control" id="creategoods_jf">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">单位:</label>
+                        <input type="text" class="form-control" id="creategoods_unit">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">状态:</label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="creategoods_status"> 启用
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">类别:</label>
+                        <select id="creategoods_category" class="form-control">
+                            @foreach (var item in ViewBag.Categorys as List<GoodsDto>)
+            {
+                <option value="@item.Id">@item.Goods_name</option>
+}
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">备注:</label>
+                        <input type="text" class="form-control" id="creategoods_remark">
+                    </div>
+
+                    <div class="form-group" id="errormsg">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="creategoods_save">保存</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿body{background:#fff;}
+.topSheet{ width:95%;margin:0 auto;height:56px; line-height:56px;}
+.topSheet span{float: left;padding-right: 5px;  font-size: 12px;color: #333;  font-family: "Hiragino Sans GB","Microsoft YaHei",黑体,宋体,sans-serif; font-weight:bold;}
+.topSheet input{border: #ddd 1px solid;padding-left: 5px;margin-right: 25px;padding-right: 0px;font-size: 14px;font-family: "Hiragino Sans GB","Microsoft YaHei",黑体,宋体,sans-serif;color: #000;float: left; margin-top:15px;}
+.topSheet #btnQuery{  font-weight: bold;color: #FFF !important;cursor: pointer;width: 60px !important;height: 25px !important;float: left;border: 0px !important;border-radius: 2px;margin-right: 0px !important;  background: #0788BD;}
+.topSheet #btnPrint{width:84px;height:25px;border:none; margin-left:20px;cursor: pointer;background-image: url("/Admin/Images/btnout_bg_center.gif");}
+#contextbody{ width:95%; margin:0 auto;}
+.report_h2{width: 95%;margin:0 auto;}
+.report_h2 b {display:block;width:100%;font-size: 20px;color: #000;text-align: center;line-height: 45px;}
+.report_h2 p{padding-right: 10px;font-size: 12px;text-align:right;white-space: normal;color:#333;}
+.report_table{font-size: 12px;text-align: center;  margin: 0px 0px 40px 0px !important;color: #333; width:100%; border:none;}
+
+
+ #advance{ width:300px; margin:0 auto;font-size:12px; font-family:宋体; color:#000;}
+      #advance h3{ text-align:center; font-size:18px; color:#000;}
+      #advance p{ margin:3px 0; width:100%;}
+      #advance .sblock{ display:block; float:left; margin-right:10px;}
+      #advance p{ float:left;}
+      #advance p .sorder{ border-bottom:1px solid #000; display:block; width:60%; float:left; padding-left:10px;}
+      #advance table{ width:100%; border:none;border:0; cellspacing:0; cellpadding:0;border-collapse: collapse; }
+      #advance table td,tr,th{ border:0;}
+      #advance th{border-bottom:1px solid #000;}
+      #advance .hj{border-top:1px solid #000;}
+      #advance .imgclose{ position:fixed; right:0; top:0;}
+      
+      
+      
+      #checkOut{width: 280px;margin: 0 auto;font-size: 13px;}
+        #checkOut h3{text-align: center;}
+        #checkOut table{border-collapse: collapse;clear: both;}
+        #checkOut table td{padding: 5px 3px;text-align: center;}
+        #checkOut table th{border-bottom: 1px solid #000;}
+        #checkOut .w80{width: 120px;display: block;float: left;}
+        
+        #handlr{ width:580px; margin:0 auto;}
+       #handlr table{ width:100%; font-size:12px;border-collapse:collapse;}
+       #handlr table td{ border:1px solid #333; padding:5px;}
+       #handlr .shj{ font-size:14px; font-weight:bold;}
+       
+       
+       h3{ text-align:center;}
+      #div1{ width:300px; margin:0 auto;}
+      #checkOut table{border-collapse: collapse; clear:both;}
+      #checkOut table td{ padding:5px 3px; text-align:center;}
+      #checkOut table th{border-bottom:1px solid #000;}
+      .w80{ width:120px; display:block; float:left;}
+      
+      
+      #updateRoom{ width:300px; margin:0 auto;font-size:12px;}
+      #updateRoom h3{ text-align:center; font-size:18px;}
+      #updateRoom table{ border:1px solid #ececec; margin:0 auto; width:100%;border-collapse: collapse;}
+      #updateRoom td{border:1px solid #ececec; padding:5px;}

@@ -1,0 +1,17 @@
+﻿@model HoteManagement.Service.Model.Accounts_RolesDto
+
+@if (Model != null)
+{
+   
+<form>
+    <input type="hidden" value="@Model.Id" id="editrole_id" />
+    <div class="form-group">
+        <label for="recipient-name" class="control-label">角色:</label>
+        <input type="text" class="form-control" id="editrole_rolename" value="@Model.title">
+    </div>
+    
+    <div class="form-group" id="errormsg">
+    </div>
+</form>
+}
+

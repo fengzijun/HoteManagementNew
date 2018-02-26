@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">权限管理</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+
+        <div class="form-group col-lg-4">
+            <label for="recipient-name" class="control-label">角色:</label>
+            <select id="userrolelist" class="form-control">
+                @foreach (var item in ViewBag.Rolelist as List<SelectListItem>)
+                {
+                    <option value="@item.Value.Split(new char[] { '_'})[0]" hotelid="@item.Value.Split(new char[] { '_'})[1]">@item.Text</option>
+                }
+
+            </select>
+        </div>
+    </div>
+    <div class="row" id="menulist">
+        @Html.Partial("RoleMenu")
+    </div>
+    <div class="row">
+        <div class="form-group text-center">
+            <button type="button" class="btn btn-primary" id="rolemenu_select">全选</button>
+            <button type="button" class="btn btn-primary" id="rolemenu_save">保存</button>
+        </div>
+
+    </div>
+
+</div>
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#userrolelist").change(function () {
+                var roleid = $("#userrolelist").val();
+                var hotelid = $("#userrolelist").find("option:selected").attr("hotelid");
+
+                var html = "<form><div class='form-group'><label for='recipient-name' class='control-label'>loading....</label></div></form >";
+                $("#menulist").html(html);
+
+                var url = "/Permission/GetRolePermission?roleid=" + roleid.toString() + "&hotelid=" + hotelid.toString();
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    success: function (data) {
+                        $("#menulist").html(data);
+                        //SaveUser();
+                    }
+                });
+            })
+
+            $("#rolemenu_select").click(function () {
+                $('input[type=checkbox]').each(function () {
+                    $(this).attr("checked","checked");
+                });
+            })
+
+            $("#rolemenu_save").click(function () {
+
+                var arr = [];
+
+                $('input[type=checkbox]:checkbox:checked').each(function () {
+                    arr.push($(this).attr("id"));
+                    hotelid = $(this).attr("hotelid")
+                });
+
+                var ids = arr.join(",");
+                var roleid = $("#userrolelist").val();
+                var hotelid = $("#userrolelist").find("option:selected").attr("hotelid");
+                var data = { "RoleId": roleid, "Ids": ids, "HotelId": hotelid };
+
+                var url = "/Permission/EditRolePermission";
+                $('#loadview').modal('show');
+
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    dataType: 'json',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    success: function (data) {
+                        if (data.success == 1) {
+                            $('#loadviewbodyreuslt').html('提交成功');
+                        }
+                        else {
+                            $('#loadviewbodyreuslt').html('系统繁忙，请稍后再试');
+                        }
+
+                        $('#loadview').modal('hide');
+                        $('#loadviewreuslt').modal('show');
+                        //SaveUser();
+                    }
+                });
+
+
+            })
+        })
+
+    </script>
+
+}
+
+
+

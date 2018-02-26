@@ -1,0 +1,55 @@
+2018-01-07 21:50:37
+sql: SELECT TOP (50) 
+    [Project1].[Id] AS [Id], 
+    [Project1].[hotelid] AS [hotelid], 
+    [Project1].[room_number] AS [room_number], 
+    [Project1].[room_name] AS [room_name], 
+    [Project1].[room_hour] AS [room_hour], 
+    [Project1].[room_listedmoney] AS [room_listedmoney], 
+    [Project1].[room_zmmoney] AS [room_zmmoney], 
+    [Project1].[room_hourmation] AS [room_hourmation], 
+    [Project1].[room_reamker] AS [room_reamker], 
+    [Project1].[room_image] AS [room_image], 
+    [Project1].[room_ealry_price] AS [room_ealry_price], 
+    [Project1].[room_Moth_price] AS [room_Moth_price], 
+    [Project1].[room_Bfb] AS [room_Bfb]
+    FROM ( SELECT [Project1].[Id] AS [Id], [Project1].[hotelid] AS [hotelid], [Project1].[room_number] AS [room_number], [Project1].[room_name] AS [room_name], [Project1].[room_hour] AS [room_hour], [Project1].[room_listedmoney] AS [room_listedmoney], [Project1].[room_zmmoney] AS [room_zmmoney], [Project1].[room_hourmation] AS [room_hourmation], [Project1].[room_reamker] AS [room_reamker], [Project1].[room_image] AS [room_image], [Project1].[room_ealry_price] AS [room_ealry_price], [Project1].[room_Moth_price] AS [room_Moth_price], [Project1].[room_Bfb] AS [room_Bfb], row_number() OVER (ORDER BY [Project1].[Id] DESC) AS [row_number]
+        FROM ( SELECT 
+            [Extent1].[Id] AS [Id], 
+            [Extent1].[hotelid] AS [hotelid], 
+            [Extent1].[room_number] AS [room_number], 
+            [Extent1].[room_name] AS [room_name], 
+            [Extent1].[room_hour] AS [room_hour], 
+            [Extent1].[room_listedmoney] AS [room_listedmoney], 
+            [Extent1].[room_zmmoney] AS [room_zmmoney], 
+            [Extent1].[room_hourmation] AS [room_hourmation], 
+            [Extent1].[room_reamker] AS [room_reamker], 
+            [Extent1].[room_image] AS [room_image], 
+            [Extent1].[room_ealry_price] AS [room_ealry_price], 
+            [Extent1].[room_Moth_price] AS [room_Moth_price], 
+            [Extent1].[room_Bfb] AS [room_Bfb]
+            FROM [dbo].[room_type] AS [Extent1] WITH (NOLOCK)
+            WHERE [Extent1].[hotelid] = @p__linq__0
+        )  AS [Project1]
+    )  AS [Project1]
+    WHERE [Project1].[row_number] > 0
+    ORDER BY [Project1].[Id] DESC, 发生异常
+列名 'hotelid' 无效。
+列名 'hotelid' 无效。
+.Net SqlClient Data Provider
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])

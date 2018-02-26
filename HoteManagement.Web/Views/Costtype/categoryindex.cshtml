@@ -1,0 +1,183 @@
+﻿@using HoteManagement.Service.Model;
+@using HoteManagement;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var editinfo = new HoteManagement.Web.Models.Api.ModelEdit { Name = "editcost_type", Title = "编辑费用类别", EditButtonId = "cost_typeeditsave" };
+    var deleteinfo = new HoteManagement.Web.Models.Api.ModelDelete { Name = "deletecost_type", Title = "删除费用类别", DeleteButtonId = "cost_typedeletesave" };
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">费用类别管理</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 navbar-form navbar-left">
+            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#createcost_type">
+                创建费用类别
+            </button>
+            <a class="btn btn-primary" href="/costtype/index">返回</a>
+        </div><!-- /.col-lg-6 -->
+
+        <div class="row">
+            <div class="col-lg-12">
+
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                         
+                            <th>费用类别名称</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.cost_typelist as IPagedList<cost_typeDto>)
+                        {
+                            <tr>
+
+                               
+                                <td>@item.ct_name</td>
+                           
+
+
+                                <td>
+
+                                    <button type="button" class="btn btn-warning edit" data-toggle="modal" data-id="@item.Id">编辑</button>
+                                    &nbsp;
+                                    <button type="button" class="btn btn-danger delete" data-toggle="modal" data-id="@item.Id">删除</button>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            @Html.Partial("PageList", ViewBag.PageInfo as HoteManagement.Web.Models.Api.PageModel)
+        </div>
+    </div>
+
+    @Html.Partial("Createcost_typecategory")
+    @Html.Partial("AdminEdit", editinfo)
+    @Html.Partial("ConfirmDelete", deleteinfo)
+
+    @section scripts{
+        <script>
+        $(function () {
+         
+
+            $("#createcost_type_save").click(function () {
+                var name = $("#createcost_type_cost_typename").val();
+
+                var data = { "Name": name };
+                $.ajax({
+                    url: "/costtype/Createcost_typeCategory",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.success == 1)
+                            window.location.reload();
+                        else {
+                            $("#errormsg").html("");
+                            $("#errormsg").html("<div class='alert alert-danger' cost_type='alert'>" + data.message + "</div>");
+                        }
+                    }
+                });
+
+            })
+
+            $(".edit").click(function () {
+                var html = "<form><div class='form-group'><label for='recipient-name' class='control-label'>loading....</label> </div ></form>";
+                $("#adminedit div[class='modal-body']").html(html);
+                $('#adminedit').modal('toggle');
+                var id = $(this).attr("data-id");
+                var url = "/costtype/GetEditcost_typecategoryView?id=" + id.toString();
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    success: function (data) {
+                        $("#adminedit div[class='modal-body']").html(data);
+                        Savecost_type();
+                    }
+                });
+            })
+
+            function Savecost_type() {
+
+                $("#@editinfo.EditButtonId").click(function () {
+                    var name = $("#editcost_type_cost_typename").val();
+                    var id = $("#editcost_type_id").val();
+                    var data = { "Id":id, "Name": name,  };
+
+                    $.ajax({
+                        url: "/costtype/Editcost_typecategory",
+                        type: 'POST',
+                        dataType: 'json',
+                        data: JSON.stringify(data),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#adminedit #errormsg").html("");
+                                $("#adminedit #errormsg").html("<div class='alert alert-danger' cost_type='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+
+            $(".delete").click(function () {
+                var id = $(this).attr("data-id");
+                $('#admindelete').modal('toggle');
+                Deletecost_type(id);
+
+            })
+
+              function Deletecost_type(id) {
+
+                $("#@deleteinfo.DeleteButtonId").click(function () {
+
+                    var url = "/costtype/deletecost_type?id=" + id;
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#admindelete #errormsg").html("");
+                                $("#admindelete #errormsg").html("<div class='alert alert-danger' cost_type='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+        })
+
+        </script>
+
+    }
+
+

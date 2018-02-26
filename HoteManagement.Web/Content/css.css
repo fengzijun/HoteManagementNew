@@ -1,0 +1,1300 @@
+/*======== 全局 ========*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+margin: 0;
+padding: 0;
+-moz-user-select:none;/*火狐*/
+-webkit-user-select:none;/*webkit浏览器*/
+-ms-user-select:none;/*IE10*/
+-khtml-user-select:none;/*早期浏览器*/
+user-select:none;
+}
+body {
+font-size: 12px;
+color: #666;
+font-family: Verdana, Microsoft YaHei, Simsun;
+	
+line-height: 24px;
+}
+fieldset, img {
+border: 0;
+}
+ol, ul {
+list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+font-size: 100%;
+}
+em {
+font-style: normal;
+}
+table
+{
+    
+}
+table td
+{
+empty-cells : show
+}
+input, button, select, textarea {
+outline: none;
+}
+textarea { 
+resize: none;
+}
+
+/*禁用了文本的拖拉，尤其在谷歌下 */
+p {
+text-align: justify;
+text-justify: distribute;
+}
+
+/*//为了使文本段落左右两边对齐 ======== Link ========*/
+a {
+color: #666;
+text-decoration: none;
+}
+a:hover {
+color: #f60;
+text-decoration: none;
+}
+
+/*header*/
+.top {	height: 80px;
+background: #4486b7;
+overflow: hidden;
+
+width:100%;min-width:1000px;
+}
+.bgTop{background:url(../images/topbg2.png) no-repeat right top}
+.logo {
+width: 304px;
+margin: 20px 10px;
+float: left
+}
+.logo img {
+	
+width: 280px;
+}
+.top ul {
+float:left;
+overflow: hidden;
+margin-left:5%;
+}
+.top ul li {
+width: 75px;
+float: left;
+padding: 5px 10px 0 0;
+text-align: center;
+}
+.top ul li img {
+width: 75px;
+height: 75px;
+line-height: 95px;
+cursor:pointer;
+}
+/*房态首页*/
+
+/*中间背景条*/
+.f_l_left {width:99%;clear:botn;
+padding:0 0.5%;overflow: hidden;	background: url(../images/bg01.png) repeat-x left top rgb(238,238,238);}
+.lcfxft{width:100%;float:left; padding-top:7px;}
+   
+.lffSelect{float:left;}
+.cxKBtn{float:left;}
+.lffSelect select{margin:0 2px 0 2px;height:24px; width:51px;}
+
+.zhuangtai {width:54%;float:right;overflow: hidden;}
+.zhuangtais {width:48%;float: right;overflow: hidden;margin-top:7px;}
+
+.zhuangtai li,.zhuangtais li {
+float:right;
+margin: 0 20px 0 0;
+line-height: 22px;
+}
+
+
+#sstext {line-height:15px;height:24px;
+float: left;
+width:60px;
+}
+#czbutton {
+/*这是首页的蓝色小查找按纽*/
+background: #4486b7;
+border: 1px solid #245b85;
+padding: 0 8px;
+height: 24px;
+color: #fff;
+border-radius: 3px;/*这个是圆角矩形的圆度平滑度*/
+border: 0;
+cursor: pointer;
+margin: 0 10px;
+}
+
+.ztspan01 {
+width: 38px;
+display: block;
+float: left;
+text-align: center;
+color: #fff;
+margin-right: 0px;
+cursor: pointer;
+}
+
+.ztspan02 {
+color: #FF3300
+}
+/*首页主体*/	/*房态首页主体*/
+
+.content {width:100%;
+padding-top:5px;
+margin: 0 auto;
+height: initial;
+clear: both;
+}
+
+.yinying
+{
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";  /* For IE 8 */
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');  /* For IE 5.5 - 7 */
+-moz-box-shadow: 5px 5px 13px #666;/* for firefox */
+-webkit-box-shadow: 5px 5px 13px #666;/* for safari or chrome */
+box-shadow:5px 5px 13px #666;/* for opera or ie9 */
+}
+.ycan{ width:100%; height:830px; overflow:auto;}
+
+.main {
+margin:0 5px;	
+overflow: hidden;
+	
+}
+
+.main li {
+float: left;
+width: 108px;
+margin: 2px;
+overflow: hidden;height:82px;
+padding: 5px;
+}
+.main li p{ margin-top:-3px;}
+.main li a {
+color: #fff;
+}
+
+.main li a:hover {
+border: solid 1px thin;
+}
+
+
+
+/*主体部分的文字显示*/
+.span01 {
+font-size: 19px;
+}
+.span02 {
+font-size: 28px;
+}
+.zuofu {
+float: left;
+}
+.youfu {
+float: right;
+position:absolute; right:5px;
+bottom:0px;
+}
+.bgblue {
+background: #4486b7
+}
+
+/*#4b74b3*/
+.bggreen {
+background: #93bd3c
+}
+.bgorange {
+background: #eca629
+}
+.bggray_q {
+background: #a6a6a6
+}
+.bggray_s {
+background: #808080
+}
+.fontblue {
+color: #4486b7
+}
+.fontblue a {
+color: #4486b7
+}
+.fontblue a:hover {
+color: #FF6600;
+}
+
+.zzf{ background:#336699}
+
+.zyf{ background:#9932ff}
+.quxiao{ background:#000;}
+/*这部分始终显示在浏览器最下方*//*以下是最底部的内容，始终显示在最下方*/
+.footer	{width:100%;min-width:1000px;position:fixed;_position:absolute;bottom:0px;_bottom:0px;text-align:left;}
+.ulleft {width:100%;min-width:1000px;
+overflow: hidden;
+background: #333;
+color: #fff;
+line-height:30px;
+}
+.ulright {text-align:right;	width:100%;min-width:700px;
+line-height: 25px;
+overflow: hidden;
+height:25px;
+background:#fff;
+position:fixed;
+bottom:0;
+padding:2px 0;
+}
+.ulleft li {
+width:auto;margin:0 20px;
+float: left;
+}
+.titles{  font-size: 16px;
+color: #0788BD;
+font-weight: 700;}
+.btnOk{  width: 50px;
+height: 20px;
+background: #0788BD;
+border: 0;
+color: #fff;
+-moz-border-radius: 5px;      /* Gecko browsers */
+-webkit-border-radius: 5px;   /* Webkit browsers */
+border-radius:5px;            /* W3C syntax */
+cursor:pointer;
+}
+.hidli li:hover
+{
+border-color: #66AFE9 !important;
+outline: 0px none;
+box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 1);
+}
+input:hover{
+border-color: #66AFE9 !important;
+outline: 0px none;
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);border-style: solid none solid solid;border-width: -1px 1px 1px 1px;border-image: none;
+}
+.mytexta:hover{
+border-color: #66AFE9 !important;
+outline: 0px none;
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(102, 175, 233, 0.6);
+}
+.ulright li {
+width:auto;
+float: right;text-align:left;
+padding:0 0 0 20px;
+margin-right:10px;
+line-height:25px;
+	
+}
+.ulright  li a {
+color: #000
+}
+.libgicon01 {
+background: url(../images/sicon01.png) no-repeat left 5px;
+}
+.libgicon03 {
+background: url(../images/sicon03.png) no-repeat left 5px;
+}
+.libgicon04 {
+background: url(../images/sicon04.png) no-repeat left 5px;
+}
+.libgicon05 {
+background: url(/admin/images/7.png) no-repeat left 5px;
+background-size: 19px;
+}
+.libgicon06 {
+background: url(../images/sicon06.png) no-repeat left 4px;
+}
+.libgicon07 {
+background: url(../images/sicon07.png) no-repeat left 4px;
+}
+
+/*蓝色表格*/
+.tableBlue {width:99%;margin:0 auto;
+border: solid 1px #4486b7;
+margin: 0 auto;background:#fff;
+text-align: center; line-height: 22px;
+font-size:12px;
+}
+.tableBlue tr {
+line-height: 26px;
+border-top: thin solid #cdcdcd
+}
+.tableBlue .trtop {
+border-top: thin solid #cdcdcd;
+}
+.tableBlue thead tr {
+background: #4486B7;
+line-height: 30px;
+font-size: 14px;
+font-weight: bold;
+color: #FFF;
+}
+
+/*g表头深色背景 备选颜色#3b5998*/
+.tableBlue thead td {text-align:center;
+border-right: 1px solid #fff;
+}
+.tableBlue thead td.last {
+border-right: none;
+}
+.tableBlue tbody td {text-align:center;
+border-right: 1px solid #cdcdcd;
+border-top: 1px solid #cdcdcd;
+}
+.tableBlue tbody td a{color:blue; }
+.tr1 {	background: #fff;}
+.tr2 {	background: #f2f5fa;}
+.tdbordernone{border-right:none;}
+
+.xxSKxx{text-align:right;color:blue;margin-bottom:3px;}
+
+/*预订首页yuding*/
+.ydgray{background: #f2f2f2;overflow:hidden;padding:10px 0 0 10px;margin-bottom:10px}
+
+
+.ydindex{text-align:left;  width:1200px;margin:5px auto;}
+.ydTable,.ydAllBtn{text-align:center;width:98%;   margin:5px 1%;}
+.ydAllBtn{text-align:center}
+.ydindex input{width: 90px;height: 20px;line-height:20px;	margin:0 5px;padding:0 8px;}
+.ydindex select{height:24px;padding-left:0}
+/*表格点后的颜色*/
+
+
+/*表格样式*/
+.fff {
+color: #fff
+}
+table {
+	
+margin: 0 auto;
+line-height: 22px;
+	
+}
+tr {
+line-height: 26px;
+border-top: thin solid #cdcdcd
+}
+.trtop {
+border-top: thin solid #cdcdcd;
+}
+table thead tr {
+background: #4486B7;
+line-height: 30px;
+font-size: 14px;
+font-weight: bold;
+color: #FFFFFF;
+}
+
+/*g表头深色背景 备选颜色#3b5998*/
+table thead td {
+border-right: 1px solid #fff;
+}
+table thead td.last {
+border-right: none;
+}
+table tbody td {
+border-right: 1px solid #cdcdcd;
+border-top: 1px solid #cdcdcd;
+	
+}
+#DivGV table td
+{
+text-align:center;
+}
+table tbody td a{color:blue; }
+.tr1 {
+background: #fff;
+}
+.tdbordernone{ border-right:none;}
+
+/*白色背景*/
+.tr2 {
+background: #f2f5fa;
+}
+
+
+/*新增*/
+.w30{width:30px;}
+.w50{width:50px;}
+.w70{width:70px;}
+.addyd table{border: thin solid #cdcdcd; padding:10px 0;}
+.addyd table td{border:none;}
+.addyd table td span{ padding:0; width:60px;}
+.addyd table tr{margin:5px 0;}
+.addyd .txtprice{ width:60px;}
+.txtprice002{width:250px;height:20px;}
+.fjsljj{overflow:hidden;float:left;}
+.fjsljj p{float:left;}
+.jians{text-align: center; width: 28px; float: left; background: #b3b3b3; color: #FFF;font-size: 20px;}
+.jia{text-align: center; width : 28px; float: left; background: #b3b3b3; color: #FFF;font-size: 20px;}
+.addyd .number{width: 52px; margin: 0 1px}
+.addBook,.delBook,.yfBook{cursor:pointer;height:24px;text-align: center; width: 44px; float: left; background: #8fbf00; color: #FFF;font-size: 14px;  margin: 0 4px; border-radius: 3px; border: solid 1px #86b300}
+.delBook{background:#c8c8c8;color:#000;margin:0;border:solid 1px #999}
+.yfBook{margin:0 5px 0 0;width:55px;float:left;display:block;cursor:pointer}
+/*隔行有色背景*/
+
+/*房间信息  */
+.fj_lc {
+overflow: hidden;
+color: #fff;
+line-height: 30px;
+color: #fff;
+padding-left: 15px;
+font-size: 14px;
+line-height: 30px;
+margin: 10px 0px 0px;
+}
+
+
+
+.lcfx_ul_1 {
+width: auto;
+float: left;
+overflow: hidden;
+}
+.lcfx_ul_1 li.likuan01 {
+margin:0 10px 10px 0 ;	
+overflow:hidden;
+width: 130px;
+float: left;
+height: 30px;
+}
+.lcfx_ul_1 li.likuan02 {
+margin:0 10px 10px 0;overflow:hidden;
+padding:0 5px 0 10px;
+width: 115px;
+float: left;	
+overflow: hidden;
+height: 30px;
+	
+}
+
+.lcfx_ul_1 li.likuan03 {
+margin:0 0 10px 0;
+width: 40px;
+float: left;
+height: 30px;
+}
+
+/*楼层*/
+.likuan01 span.lc_span {display:block;
+float: left;
+color: #000;
+width: 46px;
+}
+
+/*全部*/
+.likuan01 p.qb_span {
+float: left;display:block;
+width: 80px;
+background:#4486b7;
+text-align:center;
+margin-right: 10px;
+	
+}
+
+
+.fj_ul_3 {
+width: auto;
+float: left;
+overflow: hidden;
+}
+.fj_ul_3 li {
+margin-right: 4px;
+width: 112px;
+float: left;
+padding: 10px 8px 10px 4px;
+margin-bottom: 4px;
+}
+.fj_lc ul li img {
+width: 15px;
+height: 18px;
+margin: 5px 0 0 10px
+}
+.span_jj {
+text-indent: 30px;
+}
+
+.jiahao1 {
+height: 30px;
+text-align: center;
+width: 40px;
+font-size: 24px;
+font-weight: bold;
+}
+
+/*小加号*/
+.jiahao {
+height: 60px;
+text-align: center
+}
+
+/*大加号*/
+.font01 {
+font-size: 64px;
+}
+.color000 {
+color: #000
+}
+.leftfloat {
+display: block;
+float: left;
+}
+.rightfloat {
+display: block;
+float: right;
+}
+.topbj {
+margin-top: 3px;
+}
+#button01 {
+background: url(../Content/images/button01.png) no-repeat left top;
+text-align: center;
+height: 26px;
+cursor: pointer;/*鼠标划上显示手型*/
+width: 53px;
+color: #fff;
+border: none;
+vertical-align: top
+}
+.button01{	background: url(../Content/images/button01.png) no-repeat left top;
+text-align: center;
+height: 26px;
+cursor: pointer;/*鼠标划上显示手型*/
+width: 53px;
+color: #fff;
+border: none;
+vertical-align: top}
+/*#button02 {
+background: #4486b7;
+border: 1px solid #245b85;
+padding: 0 5px;
+height: 26px;
+color: #fff;
+border-radius: 3px;这个是圆角矩形的圆度平滑度
+border: 0;
+cursor: pointer;
+margin: 0 10px;
+}*/
+/*客人*/
+.input001,.input001b,.input001c,.input001d{height:23px;padding:0 2px}
+.input001b{width:70px;margin-right:10px;}
+.input001c{width:120px;margin-right:10px}
+.input001d{width:100px}
+.select26{height:26px;}
+
+.fintBtn{	background: #4486b7;
+border: 1px solid #245b85;
+padding: 0 5px;
+height: 26px;
+color: #fff;
+border-radius: 3px;
+border: 0;
+cursor: pointer;
+margin: 0 10px;}
+/*#button03 {
+background: #4486b7;
+border: 1px solid #245b85;
+padding: 0 5px;
+color: #fff;
+border-radius: 3px;
+border: 0;
+cursor: pointer;
+margin: 0 10px;
+width: 100px;
+height: 30px
+}*/
+table td
+{
+empty-cells : show
+}
+.button03 {
+background: #4486b7;
+border: 1px solid #245b85;
+padding: 0 5px;
+height: 30px;
+color: #fff;
+border-radius: 3px;/*这个是圆角矩形的圆度平滑度*/
+border: 0;
+cursor: pointer;
+margin-left: 10px;
+margin-right: 10px
+}
+
+/*蓝色橙色大按纽*/
+.button_blue, .button_orange, .button_green,.button_gray {
+padding: 0;
+height: 30px;
+color: #fff;
+border-radius: 3px;/*这个是圆角矩形的圆度平滑度*/
+cursor: pointer;
+margin: 0 10px;
+line-height: 30px
+}
+.bigBtn{width:120px;}
+.midBtn{width:100px;}
+.smBtn{width:80px;height:26px;line-height:26px}
+
+.kBtn02{width:100px;height:26px;line-height:26px}
+
+
+.button_blue {	background: #4486b7;	border: 1px solid #3a739e;}
+.button_orange {	background: #ff7f00;	border: 1px solid #e57300;}
+.button_gray {	background: #ccc;color:#000;	border: 1px solid #999;}
+.button_green {	background: #8fbf00;	border: solid 1px #86b300}
+
+.lvbtn,.lanbtn{float:left;background: #8fbf00;	border: solid 1px #86b300;
+height: 24px;
+color: #fff;
+	
+cursor: pointer;margin-left:0;
+	
+line-height: 22px;}
+.lanbtn{background:#4486b7;border: 1px solid #245b85;padding:0 8px}
+.bjbottom {
+margin-bottom: 10px;
+}
+.clearboth {
+clear: both;
+}
+/*表格标题*/
+.tctitle01 {
+display: block;
+color: #FFFFFF;
+font-size: 20px;
+text-align: center;
+background: #4486B7;
+letter-spacing: 5px;
+line-height: 36px;width:100%;
+}
+/*新增预订信息*/
+#TabAdd td{border:none;}
+#TabAdd {padding:10px 0 10px 10px;}
+.bookaddbz {overflow:hidden;padding:10px 0 0 10px}
+.bookaddbz span{display:block;float:left;}
+
+/*入帐开房*/
+.addyd 
+{
+min-width:920px;
+width:99%;
+overflow: hidden;	
+margin:0 auto;
+padding-left:1%;
+}/*弹出框最外部的ul*/
+.addyd li {
+width: 30%;
+min-width:210px;
+float: left;
+padding:5px 0.5% 10px 0;
+text-align: left;
+overflow: hidden;
+	
+}
+.addyd input {height:22px;
+margin: 0;
+padding-left:2px
+}
+/*文本框*/
+.addyd select {
+	
+height: 26px;
+padding-left: 2px;
+}
+.addyd .selectW01{width:155px;}
+.addyd li.kfrzts{overflow:hidden;text-align:left;float:left;}
+.addyd li.kfrzts p,.addyd li.kfrzts input,.addyd li.kfrzts span{display:block;float:left;}
+.addyd li.kfrzts span{width:60px;padding-left:0}
+.addyd li.kfrzts p{text-align: center; width: 26px; height:26px;background: #b3b3b3; color: #FFF;
+        font-size: 18px;cursor:pointer}
+.addyd li.kfrzts  input{width: 50px;border:solid 1px  #b3b3b3;height:24px;}
+        .bggrayKF{background:#f2f2f2;padding:5px 0;margin:5px 0}
+        .kfMoreBtn{padding-left:8%}
+
+
+.fjslInp{float:left;height:22px;width:30px;}
+/*开房入住*/
+.addydkf {	
+overflow: hidden;	
+margin:10px auto;
+}/*弹出框最外部的ul*/
+.addydkf li {
+width:25%;
+float: left;
+margin: 10px 0 0 10px;
+text-align: left;
+overflow: hidden;
+padding:0;
+}
+
+
+/*.addyd  input{width:150px;}
+.addyd  select{width:164px;}*/
+
+.ydxxfjsl{overflow:hidden}
+.ydxxfjsl input{float:left;width:50px;}
+
+
+/*灰色背景*/
+.addyd li.bgColor {
+width: 940px;
+background: #f2f2f2
+}
+.addyd li.customer {
+width: 940px;
+}
+.customer td{padding-left:10px;}
+.addyd li.customer span {
+display: block;
+text-align: right;
+width: 95%;
+}
+.addyd li span {
+width: 65px;
+padding-left: 15px;
+display: block;
+float: left;
+}
+
+.addyd li.tips{
+clear: both;
+width: 840px;
+}
+.btnWrap{
+
+text-align:center;
+}
+.addyd li.btnWrap input{
+padding-left:0;
+height: 34px;
+margin:0 5px
+}
+
+/*补交订金*/
+
+
+#real_price{ width:60px;}
+
+/*下拉列表*/
+.addyd input.s01 {
+width: 54px;
+float: left;
+margin: 0 2px;
+}
+.addyd select.s02 {
+width: 379px;
+}
+.addyd a.dayBtn {
+text-align: center;
+width: 36px;
+float: left;
+background: #b3b3b3;
+color: #FFF;
+font-size: 18px;
+}
+
+/*入住信息表格*/
+
+/*添加房间*/
+.addfj {
+width: 500px;
+background: #FFF;
+display: block;
+border: 1px solid #4486b7;
+padding-bottom: 15px;
+}
+.addfj a{
+background:#93bd3c;
+color:#fff;
+padding: 0px 5px;
+font-size: 18px;
+font-weight: bold;margin-top:5px;line-height:26px;
+}
+.addfj .fhinput{width:172px;height:20px;line-height:20px;}
+.addfj select{width:192px;height:24px;line-height:24px;margin:5px 0}
+.addfj p input{margin:0 2px 0 0;line-height:24px;}
+.fxbj{margin-right:4px;}
+
+
+
+ 
+ 
+.main4,.main3,.main2{margin:0 auto;padding:10px;background: #FFF;}
+.main4{width:800px;}
+.main3{width:600px;}
+.main2{width:500px;}
+/*菜单标签切换*/
+
+/*取消订单*/
+/*预订分房灰色部分*/
+.ydff_gray{background:#f2f2f2;width:750px;overflow:hidden;}
+.ydff_gray li{width:200px;float:left;overflow:hidden;background:red;}
+.ydff_gray li span{width:40px;float:left}
+.ydff_gray li select,.ydff_gray li input{width:150px;float:left}
+
+/*商品入帐灰色部分*/
+.sprz_gray{background:#f2f2f2;width:100%;margin-top:10px;line-height:42px;text-align:right;}
+.nonegray{width:100%;margin-top:10px;line-height:42px;text-align:right;}
+/*费用入帐*/
+.fyrz_gray{background:#f2f2f2;padding:10px 15px;}
+.xzbtn{background:none;padding:5px 15px;}
+
+
+.sprz_grays{background:#f2f2f2;margin-top:10px;line-height:40px;padding-left:23px;}
+.sprz_grays02{margin:5px 0;overflow:hidden;}
+.rzbtn{float:right;width:300px;}
+.kuanBtnRight{float:right;}
+
+
+.jd_position{
+position:absolute;
+left:604px;
+top: 332px;
+}/*商品入帐 续住 补交订金*/
+.sprzul,.sprzul02,.sprzul03{overflow:hidden;display:block;}
+.sprzul02{width:750px}
+.sprzul03{margin-bottom:10px}
+.bhsl_left002{padding:5px 0;background:#f2f2f2;margin-bottom:10px;}/*有背景灰*/
+.bhsl_left002 div.bzdiv{padding-left:10px;}
+.sprzul li,.sprzul02 li{list-style:none;width:230px;height:24px;float:left;padding:5px 0 5px 10px;}
+.sprzul03 li{list-style:none;width:200px; height:24px;float:left;padding:5px 0 5px 10px;}
+.bhsl_left{padding:5px 15px;clear:both;}/*无背景灰*/
+
+.xztsyj{width:80px;}/*续住天数押金*/
+.xztsyj2{width:60px;}/*续住天数押金*/
+.ydxddate{width:130px;padding:0 5px;}
+
+.yddate{margin-right:13px;}
+.xzdate{margin-right:102px;}
+
+
+.addyd li.spspan{	width: 230px;
+overflow: hidden;	
+}
+.spspan span{	display:block;
+float:left;
+width: 80px;}
+.spspan p{display:block;
+float:left;
+width: 147px;
+	
+}
+
+.red{
+color: #FF0000;
+}
+.paddingdi{padding-bottom:8px;}
+.paddingzuo{padding-left:80px;}
+.bg_gray{background:#f2f2f2}
+.orange{color:#FF6600}
+.trspanred td span{color:#FF0000}
+
+.bg_gray_ul{width:750px;overflow:hidden;}
+.bg_gray_ul li{width:300px;float:left;overflow:hidden;background:red;}
+.bg_gray_ul li span{width:40px;float:left}
+.bg_gray_ul li select,.ydff_gray li input{width:150px;float:left}
+
+.sjian,.sjia{text-align:center;width:26px;background:#b3b3b3;color:#FFF;font-size:18px;}
+.pjiajian{text-align:center;width:30px;height:24px;background:#8fbf00;color:#FFF;font-size:24px;margin:0 4px;border-radius:3px;border:solid 1px #86b300}
+
+/*开房联房左右表格中间按纽  商品入住下的左右表格*/
+.ksxf_list{
+width:98%;margin:0 auto;
+overflow:hidden;
+
+}
+.ksxf_list table{width:40%;float:left;}
+.ksxf_list .m_box1{
+width:6%;margin:0 2%;
+float:left;text-align:center;
+}
+.ksxf_list .m_box1 input{margin:4px;}
+
+
+.ksxf_list table{border:1px solid #4486b7}
+.ksxf_list table thead tr {
+background: #4486B7;
+line-height: 30px;
+font-size: 14px;
+font-weight: bold;
+color: #FFFFFF;border;
+}
+/*表头深色背景 备选颜色#3b5998*/
+.ksxf_list table thead td {text-align:center;
+border-right: 1px solid #fff;
+}
+
+
+
+.ksxf_list table tbody tr {
+line-height: 26px;
+border-top: thin solid #cdcdcd
+}
+
+
+.ksxf_list table tbody td {text-align:center;
+border-right: 1px solid #cdcdcd;
+	
+}
+
+.ksxf_list tbody tr:hover{ }
+
+
+*/
+/*表格树*/
+.conTree{
+width:100%;
+margin:0 auto;
+ovefflow:hidden;
+min-width:1100px;
+}
+.conTree .leftTree{
+width:16%;
+float:left;
+overflow:hidden;
+}
+.conTree .rightTable{
+width:100%;
+float:right;
+overflow: hidden;
+text-align:center;
+}
+.Tabcox{
+border-left:1px solid #cdcdcd;
+border-bottom:1px solid #cdcdcd;}
+.conTree .rightTable td{ text-align:center;}
+.Divright{  float: right;}
+
+.bgTree{background:#4486b7;color:#fff;line-height:30px;text-indent:40px}
+.leftTree ul{padding-left:20px;}
+
+.rightTable .rTable01{width:95%;text-align:center;background:#fff}
+.rightTable span.rightFu{float:right;}
+.nameTable{width:100%;margin:0 auto;line-height:30px;}
+
+.bglogin{ background: url(../Content/images/loginbg.png) no-repeat fixed right bottom; width: 100%; text-align: center; height: 885px; }
+
+.bglogin2{ width:500px; margin:150px auto 0; background: url(../Content/images/loginbg3.png) no-repeat left top; padding-left: 250px; color: #FFFFFF; padding-top: 110px; height: 300px; }
+
+.bglogin2 li.inputK input{
+width:133px;
+margin: 5px 0;
+line-height: 26px;
+height: 26px;padding-left:5px;
+border: 1px solid #0068b8;
+}
+.bglogin2 li.BtnK input{
+width:53px;
+margin:0 5px;line-height: 26px;
+height: 26px;
+	
+}
+/*收银收款查询*/
+.sybox{
+width:1100px;
+overflow:hidden;
+	
+}
+.sybox .tableFu{
+width:500px;
+float:left;
+	
+height: 300px;
+margin:0 10px;
+}
+
+.nameTable input{width:115px;margin:0 1px;padding:0 1px;}
+.rightDQ{text-align:right;padding-right:20px;	}
+.rightTable h2{font-size:20px;text-align:center}
+.yyrKG{WIDTH:100PX;HEIGHT:24PX;LINE-HEIGHT:24PX;BORDER:SOLID 1PX #4486B7}
+.rightTable H3{TEXT-INDENT:10PX;LINE-HEIGHT:30PX}
+.fontRed td {
+color: #FF0000;
+}
+.fontRed{color:#ff0000}
+.titleDB{border-bottom:solid 1px #4486b7;margin:10px}/*补交订金*/
+.partGray{ padding:10px; background:#D7D7D7; margin-bottom: 10px; }
+.spCenter{text-align:center}
+
+/*收款凭证*/
+.skpz{ width:300px; margin:0 auto; text-align:left; padding:10px 0; border: 1px solid #999999; }
+
+.skpz li{lind-height:24px;font-size:14px;margin:0 20px;}
+.skpz li.skT01{ font-size:20px; font-weight: 300; color: #666666; padding-left: 30px; text-align: center; }
+.skpz li.skT02{ font-size:14px; border-bottom: 1px solid #999; text-align: right; font-weight: 50; }
+.skpz li.skT03{ font-size:16px; font-weight: 100; color: #666666; padding-top: 10px; }
+.skpz li.skT04{text-align:right;}
+   
+.tck480{width:480px;margin:0 auto;}
+   
+   
+/*费用管理*/
+.fyszbt{overflow:hidden;padding:10px 0 10px 10px}
+.fyszbt p{display:block;float:left;width:400px;}
+.fyList{	width:15%;margin-left:1%;
+float:left;background:#fff;
+overflow:hidden;
+border:solid 1px #4486b7;padding-bottom:10px;color:#000;margin-left:10px;}
+.fyList .wbkCXbtn{overflow:hidden;width:80%;margin:10px auto 0 auto;text-align:center;}
+.fyIpt{float:left;width:80%;height:24px;margin-left:0%; margin-left:10% \9; border-right:1px solid #ececec;}
+.addfy{padding-top: 10px;clear:both;text-align:right;padding-right:2%}
+
+.fyIpt1{ width:20%;}
+
+
+.fyList li{border-bottom:solid 1px #f2f2f2;position:relative;overflow:hidden; margin:0; padding:0 5%;}
+
+/*.fyList li .fyspan1{float:left;}
+.fyList li .fyspan2{float:right;width:60px;}*/
+
+.qxList a,.fyList li a{float:right;}
+.fyList li  img{}
+
+
+
+/*权限管理*/
+.qxTitle{
+font-size:20px;
+color:#4486b7;
+font-weight: normal;
+margin-bottom:20px;
+}
+
+.qxgl{width:100%;overflow:hidden;margin-top:10px;}
+.qxList{float:left;width:150px;
+border-top:1px solid #4486b7;
+border-bottom:1px solid #4486b7;
+border-left:1px solid #4486b7;padding-bottom:10px;
+border-right:1px solid #4486b7;margin-left:15px;background:#fff;color:#000; margin-right:50px;}
+
+.bottom_line{width:180px;height:1px;margin:0 auto;}
+
+
+.qxList li{
+width:150px;
+height:30px;
+	
+overflow:hidden;
+border-bottom:1px dashed #a1c8e5;
+}
+
+.h1s{  padding-left: 15px;
+margin-top: 20px;
+margin-bottom: 10px;
+font-size: 20px;
+color: #4486b7;
+font-weight: 100;}
+
+
+.qxList li:hover ,.fyList li:hover{background:#66a0cc;color:#fff;cursor:hand}
+
+.qxList a img{padding:8px 10px 0 0;}
+.qxList a input{padding:8px 10px 0 0;}
+.qxShow{background:#fff;
+width:600px;
+height:400px;
+float:left;
+border:1px solid #4486b7;
+	
+}
+/*GridView表头*/
+.cart-data {
+background: #4486B7;
+line-height: 30px;
+font-size: 14px;
+font-weight: bold;
+color: #FFFFFF;
+}
+
+
+/*******权限管理*********/
+.qxul
+{
+width:100%;
+padding: 5px;
+}
+.qxul li{
+overflow:hidden;
+margin-bottom: 10px;
+}
+
+.qxul li span{
+width:80px;line-height:auto;
+text-align:center;vertical-align:middle; 
+color: #FFFFFF;float:left;
+background: #4486b7;display:block;
+margin-bottom:-3000px;padding-bottom:3000px
+}
+.qxul li p{
+padding-left:5px;
+width:500px;
+float:left;
+text-align:left;
+display:block;
+/*同步撑开背景色高度*/margin-bottom:-3000px;
+padding-bottom:3000px; 
+background: #f2f2f2;
+vertical-align:middle;
+padding-right: 0px;
+}/*此处放图*/
+.qxul  input{ margin:0 0 5px 5px;vertical-align:middle}
+/*颜色*/
+.chover{background:rgb(204,242,255);}
+.cbok{ background:rgb(251,232,137);}
+.ksxf_list table tbody tr.cbok{ background:rgb(251,232,137);}
+/*结帐*/
+
+.jztop{overflow:hidden}
+.jztop .jzp001{display:block;float:left;color:#999}
+.jztop .jzp002{display:block;float:right}
+.jz{overflow:hidden;width:980px;padding:10px; color:#333;}
+.jz li.jzspan{float:left;margin-right:10px;width:100px;}
+.jz li.jzp{float:right;margin-left:10px;width:200px;text-align:right;}
+
+.jzp03{text-align:left;width:200px}
+
+.textRed{color:#FF0000}
+
+/*修改后正在使用的按纽通用样式*/.blueBtn,.greenBtn,.orangeBtn,.grayBtn,.orangeBtn02 {	
+padding:0 10px;line-height:24px;
+color: #fff;
+border-radius: 3px;/*这个是圆角矩形的圆度平滑度*/
+cursor: pointer;
+margin: 2px 5px;font-size:14px;
+	
+
+	
+}
+/*铵纽颜色区分*/
+.blueBtn{background: #4486b7;border: 1px solid #245b85;}
+.greenBtn{background: #8fbf00;border: solid 1px #86b300;}
+.orangeBtn{background: #ff7f00;border: 1px solid #e57300;}
+.orangeBtn02{padding:0 10px;width:120px;background: #ff7f00;border: 1px solid #e57300;}
+.grayBtn{background: #ccc;border: 1px solid #999;color:#333}
+/*铵纽大小区分*/
+
+.120Btn{width:120px;}
+.100btn{width:100px;}
+.90btn{width:90px;}
+.80btn{width:80px;}
+.80btn02{width:80px;height:20px;}
+.60btn{width:60px;}
+.bigBtn{width:100px;}
+.midBtn{width:80px;}
+
+
+
+
+/*添加楼层*/
+
+.addFloorCon{width:240px;margin:0 auto;padding-top:10px;text-align:left;vertical-align:top}
+.AFCinput{margin-top:10px;height:26px;width:100px;}
+.AFCselect{width:100px;height:26px}
+/*添加房间*/
+.addRoomCon{margin:0 auto;width:260px;font-size:14px;padding-top:10px;}
+.addRoomCon li{list-style:0;margin-bottom:10px;}
+.ARCbtn{width:100px;margin:0 auto;text-align:center;}
+.addRoomCon input.fh001,.fh001，.fh002{padding-left:2px;width:148px;height:20px;}
+.fh002{width:320px}
+.addRoomCon .fxSel001{width:154px;height:24px;}
+/*添加房型*/
+.addRoomFX{padding:10px 0 0 10px;}
+.addRoomFX li{margin-bottom:10px;}
+.addRoomFX input{height:20px;}
+.ARCbtn02{text-align:center;}
+.addRoomFX li.Vmiddle{overflow:hidden}
+.addRoomFX li.Vmiddle p{float:left;display:block;}
+/*客人*/
+.krtop{margin-left:0.5%;padding:10px 0;}
+
+
+/*交班*/
+.tablepageBtn{width:90%;margin:0 auto;text-align:right;}
+.pageupdown{width:90%;margin:0 auto;text-align:center;padding:10px 0;clear:both;}
+.jbtop{width:90%;margin:10px auto;min-width:760px}
+.jbtop ul{width:100%;overflow:hidden;padding:10px 0;}
+.jbtop ul .jbleft{float:left;width:20%;}
+.jbtop ul .jbright{float:right;width:79%;}
+
+.jbsel{height:29px;width:120px;}
+
+/*结帐循环表格*/
+#Tabcs tr td{border:none;}
+
+
+/*权限管理*/
+.item{width:280px;margin:0 auto;border:none;}
+.btn {text-align:center;width:360px;margin:0 auto;} 
+.item li{width:100%;height:40px;}
+.item li input{height:20px;width:200px;}
+       
+       
+        
+.rad{width:200px;}
+.rad span input{width:40px;}
+
+.libgicon08{background: url(/admin/images/iconqf.png) no-repeat left 1px;}
+
+.libgicon09{background: url(/admin/images/iconrili.png) no-repeat left 1px;}
+.libgicon10{background: url(/admin/images/iconsuofang.png) no-repeat left 1px;}
+.libgicon11{background: url(/admin/images/iconxz.png) no-repeat left 1px;}
+
+.libgicon12{background: url(/admin/images/iconcuizhang.png) no-repeat left 1px; background-size:22px;}
+
+.libgicon13{background: url(/admin/images/iconfree.png) no-repeat left 1px;}
+
+input{ border: 1px solid rgb(211, 211, 211);
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+border-radius: 5px 5px 5px 5px; border: 1px solid #D3D3D3; display:inline-block;white-space: nowrap;  font-size: 12px;}
+
+/*重写easuyui样式*/
+.textbox_hrj {
+position: relative;
+border: 1px solid #D3D3D3;
+background-color: #fff;
+vertical-align: middle;
+display: inline-block;
+overflow: hidden;
+white-space: nowrap;
+margin: 0;
+padding: 0;border: 1px solid rgb(211, 211, 211);
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+border-radius: 5px 5px 5px 5px;
+}
+
+.textbox-text_hrj
+{
+font-size: 12px;
+margin: 0;
+padding: 3px;
+white-space: normal;
+vertical-align: top;
+outline-style: none;
+resize: none;
+-moz-border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px 5px 5px 5px;
+border-radius: 5px 5px 5px 5px;
+}
+    
+    
+/*下拉框*/
+.easyui-combobox_hrj
+{
+        
+height:24px;
+}
+
+/*添加预定和修改预定*/
+ #bookadd .diog{width: 300px;height: 400px;position: absolute;left: 50%;top: 50%;margin-left: -150px;margin-top: -200px;border: 1px solid #ececec;background-color: #fff;display: none;z-index: 999;}
+#bookadd .diogTop{height: 30px;line-height: 30px;border-bottom: 1px solid #ececec;background-color: rgb(68,134,183);color: #fff;}
+#bookadd .diog table{width: 100%;}
+#bookadd .mo{width: 100%;height: 100%;background-color: #ececec;z-index: 100;position: absolute;top: 0;opacity: 0.3;display: none;}
+#bookadd .number{width: 30px;text-align: center;}
+/*添加预定和修改预定*/

@@ -1,0 +1,372 @@
+﻿@using HoteManagement.Service.Model;
+@using HoteManagement;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var editinfo = new HoteManagement.Web.Models.Api.ModelEdit { Name = "editroomnumber", Title = "编辑房号", EditButtonId = "roomnumbereditsave" };
+    var deleteinfo = new HoteManagement.Web.Models.Api.ModelDelete { Name = "deleteroomnumber", Title = "删除房号", DeleteButtonId = "roomnumberdeletesave", BatchDeleteButtonId = "roomnumberbatchdeletesave" };
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">房号管理</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="input-group">
+                @*<span class="input-group-btn">
+            <a class="btn btn-primary" href="/roomnumber/createroomnumber">创建楼栋</a>
+        </span>*@
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createroomnumber">
+                    创建房号
+                </button>
+                &nbsp;
+                <button type="button" class="btn btn-primary btn-lg" id="batchdeleteeroomnumber">
+                    删除
+                </button>
+                &nbsp;
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#batchcreateroomnumber" >
+                   批量添加
+                </button>
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+
+                            <input type="checkbox" id="selectall" />
+                        </th>
+                        <th>楼栋</th>
+                        <th>楼层</th>
+                        <th>房号</th>
+                        <th>房型</th>
+                        <th>房间价格</th>
+                        <th>备注</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.roomnumberlist as IPagedList<room_numberDto>)
+                    {
+                        <tr>
+                            <td>   <input type="checkbox" id="@item.Id" class="roomnumbercheckbox" /></td>
+                            <td>@item.Rn_flloeld</td>
+                            <td>
+                                @item.Rn_floor
+                            </td>
+                            <td>
+                                @item.Rn_roomNum
+                            </td>
+                            <td>
+                                @if (item.RoomType != null)
+                                {
+                                    <text>@item.RoomType.room_name</text>
+                                }
+                            </td>
+                            <td>
+                                @item.Rn_price
+                            </td>
+                            <td>@item.Rn_remaker</td>
+
+                            <td>
+
+                                <button type="button" class="btn btn-warning edit" data-toggle="modal" data-id="@item.Id">编辑</button>
+                                &nbsp;
+                                <button type="button" class="btn btn-danger delete" data-toggle="modal" data-id="@item.Id">删除</button>
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        @Html.Partial("PageList", ViewBag.PageInfo as HoteManagement.Web.Models.Api.PageModel)
+    </div>
+</div>
+@Html.Partial("batchCreateroomnumber")
+@Html.Partial("Createroomnumber")
+@Html.Partial("AdminEdit", editinfo)
+@Html.Partial("ConfirmDelete", deleteinfo)
+@Html.Partial("ConfirmDelete2", deleteinfo)
+@section scripts{
+    <script>
+        $(function () {
+            $("#createroomnumber_floorid").change(function () {
+                var floornumber = $("#createroomnumber_floorid").find("option:selected").text();
+                $("#createroomnumber_floormanage").find("option").remove();
+                var url = "/floor/GetFloorManageByFloorId?floorname=" + floornumber;
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    success: function (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            $("#createroomnumber_floormanage").append("<option value='" + data[i].id + "'>" + data[i].floor_name + "</option>");
+                        }
+
+                    }
+                });
+            })
+
+            $("#batchcreateroomnumber_floorid").change(function () {
+                var floornumber = $("#batchcreateroomnumber_floorid").find("option:selected").text();
+                $("#batchcreateroomnumber_floormanage").find("option").remove();
+                var url = "/floor/GetFloorManageByFloorId?floorname=" + floornumber;
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    success: function (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            $("#batchcreateroomnumber_floormanage").append("<option value='" + data[i].id + "'>" + data[i].floor_name + "</option>");
+                        }
+
+                    }
+                });
+            })
+
+
+            $("#createroomnumber_save").click(function () {
+                var floorid = $("#createroomnumber_floorid").find("option:selected").text();
+                var floormanage = $("#createroomnumber_floormanage").find("option:selected").text();
+                var roomtype = $("#createroomnumber_roomtype").val();
+                var remark = $("#createroomnumber_remark").val();
+                var name = $("#createroomnumber_name").val();
+                var price = $("#createroomnumber_price").val();
+
+
+                var data = { "floorId": floorid, "floorManage": floormanage, "RoomNumber": name, "RoomType": roomtype, "Remark": remark, "RoomPrice": price};
+                $.ajax({
+                    url: "/room/CreateroomNumber",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.success == 1)
+                            window.location.reload();
+                        else {
+                            $("#errormsg").html("");
+                            $("#errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                        }
+                    }
+                });
+
+            })
+
+            $("#batchcreateroomnumber_save").click(function () {
+                var floorid = $("#batchcreateroomnumber_floorid").find("option:selected").text();
+                var floormanage = $("#batchcreateroomnumber_floormanage").find("option:selected").text();
+                var roomtype = $("#batchcreateroomnumber_roomtype").val();
+                var remark = $("#batchcreateroomnumber_remark").val();
+
+                var price = $("#batchcreateroomnumber_price").val();
+                var prename = $("#batchcreateroomnumber_prename").val();
+                var startnumber = $("#batchcreateroomnumber_startroomnumber").val();
+                var endnumber = $("#batchcreateroomnumber_endroomnumber").val();
+
+                var data = { "floorId": floorid, "floorManage": floormanage, "RoomType": roomtype, "Remark": remark, "RoomPrice": price, "PreRoomNumber": prename, "StartRoomNumber": startnumber, "EndRoomNumber": endnumber };
+                $.ajax({
+                    url: "/room/BatchCreateroomNumber",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.success == 1)
+                            window.location.reload();
+                        else {
+                            $("#errormsg").html("");
+                            $("#errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                        }
+                    }
+                });
+
+            })
+
+            $(".edit").click(function () {
+                var html = "<form><div class='form-group><label for='recipient-name' class='control-label'>loading....</label></div></form>";
+                $("#adminedit div[class='modal-body']").html(html);
+                $('#adminedit').modal('toggle');
+                var id = $(this).attr("data-id");
+                var url = "/room/GetEditroomNumberView?id=" + id.toString();
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    success: function (data) {
+                        $("#adminedit div[class='modal-body']").html(data);
+
+                        Saveroomnumber();
+                        SetEvent();
+                    }
+                });
+            })
+
+
+            function SetEvent() {
+                $("#editroomnumber_floorid").change(function () {
+                    var floornumber = $("#editroomnumber_floorid").find("option:selected").text();
+                    $("#editroomnumber_floormanage").find("option").remove();
+                    var url = "/floor/GetFloorManageByFloorId?floorname=" + floornumber;
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+                        success: function (data) {
+                            for (var i = 0; i < data.length; i++) {
+                                $("#editroomnumber_floormanage").append("<option value='" + data[i].id + "'>" + data[i].floor_name + "</option>");
+                            }
+
+                        }
+                    });
+                })
+            }
+
+            function Saveroomnumber() {
+
+                $("#@editinfo.EditButtonId").click(function () {
+                    var floorid = $("#editroomnumber_floorid").find("option:selected").text();
+                    var floormanage = $("#editroomnumber_floormanage").find("option:selected").text();
+                    var roomtype = $("#editroomnumber_roomtype").val();
+                    var remark = $("#editroomnumber_remark").val();
+                    var name = $("#editroomnumber_name").val();
+                    var price = $("#editroomnumber_price").val();
+                    var id  = $("#editroomnumber_id").val();
+
+                    var data = { "floorId": floorid, "floorManage": floormanage, "RoomNumber": name, "RoomType": roomtype, "Remark": remark, "RoomPrice": price, "Id": id};
+                    $.ajax({
+                        url: "/room/Editroomnumber",
+                        type: 'POST',
+                        dataType: 'json',
+                        data: JSON.stringify(data),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#adminedit #errormsg").html("");
+                                $("#adminedit #errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+
+            $(".delete").click(function () {
+                var id = $(this).attr("data-id");
+                $('#admindelete').modal('toggle');
+                Deleteroomnumber(id);
+
+            })
+
+            function Deleteroomnumber(id) {
+
+                $("#@deleteinfo.DeleteButtonId").click(function () {
+
+                    var url = "/room/deleteroomnumber?id=" + id;
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#admindelete #errormsg").html("");
+                                $("#admindelete #errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+
+           function BatchDeleteroomnumber() {
+               var arr = [];
+               $("input[type=checkbox]").each(function () {
+                   var checked = $(this).is(':checked');
+                   if (checked && $(this).attr("id") != undefined && $(this).attr("id") != "selectall") {
+                       arr.push($(this).attr("id"));
+                   }
+               })
+
+               var ids = arr.join(",");
+                $("#@deleteinfo.BatchDeleteButtonId").click(function () {
+
+                    var url = "/room/batchdeleteroomnumber?id=" + ids;
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#admindeleteall #errormsg").html("");
+                                $("#admindeleteall #errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+
+            $('#selectall').click(function () {
+                var chk = $("#selectall");
+                var checked = chk.is(':checked');
+                if (checked) {
+                    $("input[type=checkbox]").prop("checked", true);
+                } else {
+                    $("input[type=checkbox]").prop("checked", false);
+                }
+
+            });
+
+            $("#batchdeleteeroomnumber").click(function () {
+                $('#admindeleteall').modal('toggle');
+
+                BatchDeleteroomnumber();
+
+
+                //var url = "/room/deleteroomnumber?id=" + id;
+                //$.ajax({
+                //    url: url,
+                //    type: 'get',
+
+                //    success: function (data) {
+                //        if (data.success == 1)
+                //            window.location.reload();
+                //        else {
+                //            $("#admindelete #errormsg").html("");
+                //            $("#admindelete #errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                //        }
+                //    }
+                //});
+            })
+
+
+        })
+
+    </script>
+
+}
+
+
+
+

@@ -1,0 +1,81 @@
+﻿@using HoteManagement.Web.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "登录";
+    Layout = null;
+}
+
+<title>欢迎登陆酒店系统</title>
+<link href="~/Content/css.css" rel="stylesheet" type="text/css" />
+@Scripts.Render("~/bundles/jquery")
+
+
+            @using (Html.BeginForm("Login", "Admin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+
+                <div class="bglogin">
+                    <ul class="bglogin2">
+                        <li><img src="~/Content/Images/loginText.png" /></li>
+                        <li class="inputK">
+                            用户名：@Html.TextBoxFor(m => m.UserName)
+                            <font color="red">
+                         
+                            </font>
+                        </li>
+                        <li class="inputK">
+                            密　码：@Html.TextBoxFor(m => m.Password)
+                            <font color="red">
+                     
+                            </font>
+
+                        </li>
+                        <li class="inputK1" style="position:relative;">
+                            验证码：
+                         @Html.TextBoxFor(m => m.Code)
+                            <font color="red">
+                            
+                            </font>
+                            <img id="validatacode" src="/admin/ValidateCode" width="65px" height="26px"
+                                 alt="验证码" onclick="javascript:document.getElementById('validatacode').src='/admin/ValidateCode?id='+Math.random(10);"
+                                 style="cursor: hand;position:absolute;top:6px;" />
+                        </li>
+                        <li class="BtnK">
+                            
+
+                            <input type="submit" value="登录" class="button01" />
+                            <input type="reset" value="清空" class="button01" />
+                        </li>
+                        <font color="red">
+                            @Html.ValidationSummary()
+                        </font>
+                            <li class="BtnK" style="margin-top:5px;color:#f00;"></li>
+</ul>
+
+                </div>
+            }
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $('.bglogin').height($(document).height() - 155);
+    })
+</script>
+<style type="text/css">
+    body {
+        background: #4486b7
+    }
+
+    .bglogin2 li.inputK1 input {
+        width: 138px;
+        margin: 5px 0;
+        line-height: 26px;
+        height: 26px;
+        border: 1px solid #0068b8;
+    }
+
+    .bglogin2 li.inputK1 img {
+        margin-left: -5px;
+    }
+</style>

@@ -1,0 +1,13 @@
+﻿
+.Class_GV { font-size:12px;}
+.divBottom{ text-align:right; padding:10 10 0 0}
+.btn{ background: #8fbf00;
+         border : solid 1px #86b300;
+           width:60px; 
+           height:30px;
+           cursor:pointer;
+          border-radius: 3px;}
+   .DivGV{ overflow:auto;padding-left:10px;}
+   .chover{ background: #8fbf00;}
+   #form1 #DivGV .cart-data{background: #4486B7}
+   #form1 table{}

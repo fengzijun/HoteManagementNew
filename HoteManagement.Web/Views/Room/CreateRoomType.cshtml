@@ -1,0 +1,59 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="createroomtype" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">创建房型</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">房型名称:</label>
+                        <input type="text" class="form-control" id="createroomtype_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">房价:</label>
+                        <input type="text" class="form-control" id="createroomtype_price">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">周末挂牌价:</label>
+                        <input type="text" class="form-control" id="createroomtype_zmmoney">
+                    </div>
+
+                    <div class="form-group createroomtype">
+                        <label for="recipient-name" class="control-label">是否允许钟点房:</label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="createroomtype_room_hour"  value="允许"> 允许
+                            </label>
+                         
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">凌晨价:</label>
+                        <input type="text" class="form-control" id="createroomtype_ealryprice">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">超预定:</label>
+                        <input type="text" class="form-control" id="createroomtype_bfb">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">备注:</label>
+                        <input type="text" class="form-control" id="createroomtype_remark">
+                    </div>
+
+
+                    <div class="form-group" id="errormsg">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="createroomtype_save">保存</button>
+            </div>
+        </div>
+    </div>
+</div>

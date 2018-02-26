@@ -1,0 +1,75 @@
+﻿@model HoteManagement.Service.Model.GoodsDto
+@using HoteManagement.Service.Model;
+@if (Model != null)
+{
+
+    <form>
+        <input type="hidden" class="form-control" id="editgoods_id" value="@Model.Id">
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">商品名称:</label>
+            <input type="text" class="form-control" id="editgoods_goodsname" value="@Model.Goods_name">
+        </div>
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">编号:</label>
+            <input type="text" class="form-control" id="editgoods_number" value="@Model.Goods_number">
+        </div>
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">单价:</label>
+            <input type="text" class="form-control" id="editgoods_price" value="@Model.Goods_price">
+        </div>
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">积分:</label>
+            <input type="text" class="form-control" id="editgoods_jf" value="@Model.Goods_jf">
+        </div>
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">单位:</label>
+            <input type="text" class="form-control" id="editgoods_unit" value="@Model.Goods_unit">
+        </div>
+
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">状态:</label>
+            <div class="checkbox">
+                <label>
+                    @if (Model.Goods_state == "1")
+                    {
+                        <input type="checkbox" id="editgoods_status" checked="checked"><text>启用</text>
+                    }
+                    else
+                    {
+                        <input type="checkbox" id="editgoods_status"><text>启用</text>
+                    }
+
+                </label>
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">类别:</label>
+            <select id="editgoods_category" class="form-control">
+                @foreach (var item in ViewBag.Categorys as List<GoodsDto>)
+    {
+        if (Model.Goods_categories == item.Id)
+        {
+            <option value="@item.Id" selected="selected">@item.Goods_name</option>
+}
+else
+{
+            <option value="@item.Id">@item.Goods_name</option>
+}
+
+}
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">备注:</label>
+            <input type="text" class="form-control" id="editgoods_remark" value="@Model.Goods_Remaker">
+        </div>
+
+        <div class="form-group" id="errormsg">
+        </div>
+    </form>
+}
+

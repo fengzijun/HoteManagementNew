@@ -1,0 +1,1460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EM.TestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Accounts_Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Accounts_UserRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Accounts_Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrueName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sex" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="DepartmentID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Activity" Type="Boolean" />
+    <Property Name="UserType" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Style" Type="Int32" />
+  </EntityType>
+  <EntityType Name="AddPrice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotel" Type="Int32" />
+    <Property Name="AddPice" Type="Int32" />
+    <Property Name="ZsPice" Type="Int32" />
+    <Property Name="ZsJf" Type="Int32" />
+    <Property Name="IsOk" Type="Boolean" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="apartment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="occ_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="order_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="occ_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="occ_with" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="real_type_id" Type="Int32" />
+    <Property Name="room_number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="real_scheme_id" Type="Int32" />
+    <Property Name="source_id" Type="Int32" />
+    <Property Name="mem_cardno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="real_mode_id" Type="Int32" />
+    <Property Name="real_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="occ_time" Type="DateTime" Precision="3" />
+    <Property Name="pre_live_day" Type="Int32" />
+    <Property Name="stay_day" Type="Int32" />
+    <Property Name="stay_deposit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="depar_time" Type="DateTime" Precision="3" />
+    <Property Name="pha_sched" Type="DateTime" Precision="3" />
+    <Property Name="card_id" Type="Int32" />
+    <Property Name="card_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="brithday" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="family_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="meth_pay_id" Type="Int32" />
+    <Property Name="state_id" Type="Int32" />
+    <Property Name="deposit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="pay_money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="amount_money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="amount_rece" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="return_money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="sale_id" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lordRoomid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="continuelive" Type="Int32" />
+    <Property Name="phonenum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tuifaId" Type="Int32" />
+    <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="header_img" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="banner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="banner_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="imgurl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="sortId" Type="Int32" />
+    <Property Name="pubdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Book_Rdetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="Book_no" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Real_type_Id" Type="Int32" Nullable="false" />
+    <Property Name="Room_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Real_num" Type="Int32" />
+    <Property Name="Book_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Real_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Real_Scheme_Id" Type="Int32" />
+    <Property Name="Ok_num" Type="Int32" />
+    <Property Name="Room_typeid" Type="Int32" />
+    <NavigationProperty Name="book_room" Relationship="Self.FK_Book_Rdetail_book_room" FromRole="Book_Rdetail" ToRole="book_room" />
+  </EntityType>
+  <EntityType Name="book_room">
+    <Key>
+      <PropertyRef Name="book_no" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="book_no" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="book_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tele_no" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="onli_no" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="guar_way" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="mem_cardno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="time_to" Type="DateTime" Precision="3" />
+    <Property Name="time_from" Type="DateTime" Precision="3" />
+    <Property Name="real_time" Type="DateTime" Precision="3" />
+    <Property Name="source_id" Type="Int32" />
+    <Property Name="meth_pay_id" Type="Int32" />
+    <Property Name="deposit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="real_type_id" Type="Int32" />
+    <Property Name="real_scheme_id" Type="Int32" />
+    <Property Name="real_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="state_id" Type="Int32" />
+    <Property Name="real_num" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="room_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="back_deposit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Accounts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CpID" Type="Int32" />
+    <NavigationProperty Name="Book_Rdetail" Relationship="Self.FK_Book_Rdetail_book_room" FromRole="book_room" ToRole="Book_Rdetail" />
+  </EntityType>
+  <EntityType Name="BookState">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="statName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reamrk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="breakfirstcoupon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="time" Type="DateTime" Precision="3" />
+    <Property Name="roomnum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsEnabled" Type="Int32" />
+    <Property Name="IsStandard" Type="Int32" />
+    <Property Name="IsUsed" Type="Int32" />
+    <Property Name="createor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="card_type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotel" Type="Int32" />
+    <Property Name="ct_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="cCall">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotel" Type="Int32" />
+    <Property Name="callName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="cDepartment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="cDName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reamrk" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="cIndustry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="csName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reamrk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="comm_unit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotel" Type="Int32" />
+    <Property Name="unit_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Commission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="Accounts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CommDesp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CommDate" Type="DateTime" Precision="0" />
+    <Property Name="CommSum" Type="Int32" />
+    <Property Name="IsBack" Type="Boolean" />
+    <Property Name="GoodNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsEveryDay" Type="Boolean" />
+    <Property Name="DayComm" Type="Int32" />
+    <Property Name="CommRemark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Contacts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="Accounts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="Boolean" />
+    <Property Name="Bearthday" Type="DateTime" Precision="3" />
+    <Property Name="editUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="addDatetime" Type="DateTime" Precision="3" />
+    <Property Name="Appellation" Type="Int32" />
+    <Property Name="department" Type="Int32" />
+    <Property Name="officPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="zipcode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="familyPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Likes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Post" Type="Int32" />
+  </EntityType>
+  <EntityType Name="cost_type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="ct_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ct_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ct_iftype" Type="Int32" />
+    <Property Name="ct_remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ct_money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ct_categories" Type="Int32" />
+  </EntityType>
+  <EntityType Name="cPost">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="cpName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reamrk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="cprotocol">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="Accounts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ptheme" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pType" Type="Int32" />
+    <Property Name="PNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ishire" Type="Boolean" />
+    <Property Name="term" Type="DateTime" Precision="3" />
+    <Property Name="period" Type="DateTime" Precision="3" />
+    <Property Name="breakfast" Type="Int32" />
+    <Property Name="Commission" Type="Int32" />
+    <Property Name="Dayhire" Type="Boolean" />
+    <Property Name="prohire" Type="Boolean" />
+    <Property Name="signatory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="companysignatory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="roomNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Isdiscount" Type="Boolean" />
+    <Property Name="discount" Type="Double" />
+    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="isVerify" Type="Boolean" />
+    <Property Name="editUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="verifyUser" Type="Int32" />
+    <Property Name="Details" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="cprotocolPrice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="Accounts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RoomType" Type="Int32" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="protoPrice" Type="Int32" />
+    <Property Name="mothPrice" Type="Int32" />
+    <Property Name="zdPrice" Type="Double" />
+    <Property Name="lcPrice" Type="Int32" />
+    <Property Name="Breakfast" Type="Int32" />
+    <Property Name="commission" Type="Int32" />
+    <Property Name="cpID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="cpType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="ptName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reamrk" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="credit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="customerid" Type="Int32" />
+    <Property Name="roomnum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="creditno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="expiredtime" Type="DateTime" Precision="3" />
+    <Property Name="remark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="expire" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="creditmoney" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="authorizationcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="documentno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+    <Property Name="creator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="csysType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="stName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reamrk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="accounts" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="accounts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sysType" Type="Int32" />
+    <Property Name="cusType" Type="Int32" />
+    <Property Name="cusDesy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cusNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="contacts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cstate" Type="Int32" />
+    <Property Name="sales" Type="Int32" />
+    <Property Name="prosceniumIss" Type="Boolean" />
+    <Property Name="Ishire" Type="Boolean" />
+    <Property Name="area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Contsrr" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Shiji" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ybNum" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="companyPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="homepage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Csource" Type="Int32" />
+    <Property Name="cindustry" Type="Int32" />
+    <Property Name="Ischalk" Type="Boolean" />
+    <Property Name="limit" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="editUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="verifyUser" Type="Int32" />
+    <Property Name="isVerify" Type="Boolean" />
+    <Property Name="Hotel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="occNum" Type="Int32" />
+    <Property Name="NoShow" Type="Int32" />
+    <Property Name="xqBook" Type="Int32" />
+    <Property Name="Pming" Type="Int32" />
+    <Property Name="isXz" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="customerState">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="csName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reamrk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="customerType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="ctName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reamrk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Entry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="entry_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="entry_num" Type="Int32" />
+    <Property Name="entry_time" Type="DateTime" Precision="3" />
+    <Property Name="entry_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="entry_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="entry_room" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ExceedScheme">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="TypeRoom" Type="Int32" Nullable="false" />
+    <Property Name="GraceTime" Type="Int32" />
+    <Property Name="Earlyapart" Type="Int32" />
+    <Property Name="EarlyapartAddP" Type="Decimal" Precision="3" Scale="0" />
+    <Property Name="EarlyInsufficient" Type="Int32" />
+    <Property Name="EarlyInExceed" Type="Int32" />
+    <Property Name="EarlyInAddPri" Type="Decimal" Precision="3" Scale="0" />
+  </EntityType>
+  <EntityType Name="floor_ld">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="ld_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="floor_manage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="floor_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="floor_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="floor_sorting" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="floor_remaker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="floor_shoping" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FtSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="Lwidth" Type="Int32" Nullable="false" />
+    <Property Name="Lhieght" Type="Int32" Nullable="false" />
+    <Property Name="Lfontf" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fontsize" Type="Int32" Nullable="false" />
+    <Property Name="Lmargin" Type="Int32" />
+    <Property Name="Backcolor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bordercolor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="showType" Type="Boolean" />
+    <Property Name="showPrice" Type="Boolean" />
+    <Property Name="orderLC" Type="Boolean" />
+    <Property Name="ftNum" Type="Int32" Nullable="false" />
+    <Property Name="zzShowType" Type="Boolean" />
+    <Property Name="zzShowPrice" Type="Boolean" />
+    <Property Name="showFormTime" Type="Boolean" />
+    <Property Name="showLFico" Type="Boolean" />
+    <Property Name="showBmico" Type="Boolean" />
+    <Property Name="showyjb" Type="Boolean" />
+    <Property Name="showday" Type="Boolean" />
+    <Property Name="daynum" Type="Int32" />
+    <Property Name="showyue" Type="Boolean" />
+    <Property Name="moneyNum" Type="Int32" />
+    <Property Name="showcf" Type="Boolean" />
+    <Property Name="showThem" Type="Boolean" />
+    <Property Name="Themtext" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="showMember" Type="Boolean" />
+    <Property Name="memberText" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="showXy" Type="Boolean" />
+    <Property Name="showYuli" Type="Boolean" />
+    <Property Name="yuliDay" Type="Boolean" />
+    <Property Name="showDayTime" Type="Boolean" />
+    <Property Name="dayNumYl" Type="Int32" />
+    <Property Name="showxz" Type="Boolean" />
+    <Property Name="showSf" Type="Boolean" />
+    <Property Name="showYuee" Type="Boolean" />
+    <Property Name="Showzdftime" Type="Boolean" />
+    <Property Name="Showbooktime" Type="Boolean" />
+    <Property Name="Showzf" Type="Boolean" />
+    <Property Name="Showlc" Type="Boolean" />
+    <Property Name="showPeoNum" Type="Boolean" />
+    <Property Name="showRk" Type="Boolean" />
+    <Property Name="showWupi" Type="Boolean" />
+    <Property Name="Showyz" Type="Boolean" />
+    <Property Name="Showmf" Type="Boolean" />
+    <Property Name="Showzdf" Type="Boolean" />
+    <Property Name="Beiy" Type="Boolean" />
+    <Property Name="Beiy2" Type="Boolean" />
+    <Property Name="numSize" Type="Int32" />
+    <Property Name="numColor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="fxSize" Type="Int32" />
+    <Property Name="fxColor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="yueSize" Type="Int32" />
+    <Property Name="yueColor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="nameSize" Type="Int32" />
+    <Property Name="nameColor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="priceSize" Type="Int32" />
+    <Property Name="priceColor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TotimeSize" Type="Int32" />
+    <Property Name="TotimeColor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="zdSize" Type="Int32" />
+    <Property Name="zdColor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="icoColor" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="Goods_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goods_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goods_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Goods_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goods_state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goods_spell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Goods_ifType" Type="Int32" />
+    <Property Name="Goods_categories" Type="Int32" />
+    <Property Name="Goods_Remaker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Goods_jf" Type="Int32" />
+  </EntityType>
+  <EntityType Name="goods_account">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="ga_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_roomNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_num" Type="Int32" />
+    <Property Name="ga_price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ga_zffs_id" Type="Int32" />
+    <Property Name="ga_date" Type="DateTime" Precision="3" />
+    <Property Name="ga_people" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_Type" Type="Int32" />
+    <Property Name="ga_sum_price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ga_remker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ga_occuid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_sfacount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_isjz" Type="Int32" />
+    <Property Name="ga_goodNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_isys" Type="Int32" />
+    <Property Name="ga_Account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_jsfs" Type="Int32" />
+  </EntityType>
+  <EntityType Name="guest_source">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="gs_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HotelName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="IsChain" Type="Int32" Nullable="false" />
+    <Property Name="IsTop" Type="Int32" Nullable="false" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="IsDeleted" Type="Int32" />
+    <Property Name="Expiretime" Type="DateTime" Precision="3" />
+    <Property Name="Registertime" Type="DateTime" Precision="3" />
+    <Property Name="CreateorId" Type="Int32" Nullable="false" />
+    <Property Name="CreateorIp" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Createtime" Type="DateTime" Precision="3" />
+    <Property Name="Updatetime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="hour_room">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="hs_room_id" Type="Int32" />
+    <Property Name="hs_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hs_start_long" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="hs_start_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="hs_add_time" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="hs_add_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="hs_min_time" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="hs_min_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="hs_max_time" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="hs_type_id" Type="Int32" />
+    <Property Name="hs_jgtype_id" Type="Int32" />
+    <Property Name="hs_source_id" Type="Int32" />
+    <Property Name="lostTime" Type="Time" Precision="3" />
+    <Property Name="MtID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="hourse_scheme">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="hs_room" Type="Int32" />
+    <Property Name="hs_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hs_psmoney" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="hs_Discount" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="hs_type" Type="Int32" />
+    <Property Name="hs_jgtype" Type="Int32" />
+    <Property Name="hs_source_id" Type="Int32" />
+    <Property Name="Hs_isAll" Type="Boolean" />
+    <Property Name="Hs_Strat" Type="DateTime" Precision="3" />
+    <Property Name="Hs_End" Type="DateTime" Precision="3" />
+    <Property Name="Hs_zdr" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Hs_Reamrk" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="info">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="creator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="member">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="Mid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sex" Type="Boolean" />
+    <Property Name="Zjtype" Type="Int32" />
+    <Property Name="ZjNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mtype" Type="Int32" />
+    <Property Name="sales" Type="Int32" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Baithday" Type="DateTime" Precision="3" />
+    <Property Name="Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Likes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Ramrek" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Integration" Type="Int32" />
+    <Property Name="IntegraDh" Type="Int32" />
+    <Property Name="IntegraDj" Type="Int32" />
+    <Property Name="Stored" Type="Int32" />
+    <Property Name="Statid" Type="Int32" />
+    <Property Name="AddDate" Type="DateTime" Precision="3" />
+    <Property Name="addUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="XqTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="memberState">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="memberType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="typePrice" Type="Int32" />
+    <Property Name="Limit" Type="Boolean" />
+    <Property Name="LimitValue" Type="Int32" />
+    <Property Name="IntegraIs" Type="Boolean" />
+    <Property Name="IsConsump" Type="Boolean" />
+    <Property Name="IsFz" Type="Boolean" />
+    <Property Name="IsXf" Type="Boolean" />
+    <Property Name="XfPrice" Type="Int32" />
+    <Property Name="XfConsump" Type="Int32" />
+    <Property Name="IsLive" Type="Boolean" />
+    <Property Name="LiveNum" Type="Int32" />
+    <Property Name="LiveConsump" Type="Int32" />
+    <Property Name="IsTx" Type="Boolean" />
+    <Property Name="IsDeaflut" Type="Boolean" />
+    <Property Name="IsUpgrade" Type="Boolean" />
+    <Property Name="ConsumpSum" Type="Int32" />
+    <Property Name="UpLive" Type="Int32" />
+    <Property Name="IsDeduction" Type="Boolean" />
+    <Property Name="Isout" Type="Boolean" />
+    <Property Name="OutHour" Type="Int32" />
+    <Property Name="OutZD" Type="Int32" />
+    <Property Name="FirstPrice" Type="Int32" />
+    <Property Name="StaPrice" Type="Int32" />
+    <Property Name="XqTime" Type="DateTime" Precision="3" />
+    <Property Name="machJf" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="imgurl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="sortId" Type="Int32" />
+    <Property Name="isable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="meth_pay">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="meth_pay_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="meth_is_ya" Type="Boolean" />
+    <Property Name="meth_is_jie" Type="Boolean" />
+    <Property Name="meth_sort" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="modes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="moshi_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reanker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort" Type="Int32" />
+  </EntityType>
+  <EntityType Name="mRecords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="mmid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mtPrice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="MTID" Type="Int32" />
+    <Property Name="RoomType" Type="Int32" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Dayprice" Type="Int32" />
+    <Property Name="zdPrice" Type="Double" />
+    <Property Name="lcPrice" Type="Int32" />
+    <Property Name="mothPrice" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="occu_infor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="occ_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="order_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="occ_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="occ_with" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="real_type_id" Type="Int32" />
+    <Property Name="room_number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="real_scheme_id" Type="Int32" />
+    <Property Name="source_id" Type="Int32" />
+    <Property Name="mem_cardno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="real_mode_id" Type="Int32" />
+    <Property Name="real_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="occ_time" Type="DateTime" Precision="3" />
+    <Property Name="pre_live_day" Type="Int32" />
+    <Property Name="stay_day" Type="Int32" />
+    <Property Name="stay_deposit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="depar_time" Type="DateTime" Precision="3" />
+    <Property Name="pha_sched" Type="DateTime" Precision="3" />
+    <Property Name="card_id" Type="Int32" />
+    <Property Name="card_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="brithday" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="family_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="meth_pay_id" Type="Int32" />
+    <Property Name="state_id" Type="Int32" />
+    <Property Name="deposit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="pay_money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="amount_money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="amount_rece" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="return_money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="sale_id" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lordRoomid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="continuelive" Type="Int32" />
+    <Property Name="phonenum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tuifaId" Type="Int32" />
+    <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="occ_StyDate" Type="Int32" />
+    <Property Name="occ_headerImg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="occ_TfTime" Type="DateTime" Precision="3" />
+    <Property Name="gzRoom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="accounts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cpID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="occu_informx">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="occ_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="order_id" Type="Int32" />
+    <Property Name="occ_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="occ_with" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="real_type_id" Type="Int32" />
+    <Property Name="room_number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="real_scheme_id" Type="Int32" />
+    <Property Name="source_id" Type="Int32" />
+    <Property Name="mem_cardno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="real_mode_id" Type="Int32" />
+    <Property Name="real_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="occ_time" Type="DateTime" Precision="3" />
+    <Property Name="stay_day" Type="Int32" />
+    <Property Name="stay_deposit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="depar_time" Type="DateTime" Precision="3" />
+    <Property Name="pha_sched" Type="DateTime" Precision="3" />
+    <Property Name="card_id" Type="Int32" />
+    <Property Name="card_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="brithday" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="sex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="family_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="state_id" Type="Int32" />
+    <Property Name="deposit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="amount_money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="sort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lordRoomid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="continuelive" Type="Int32" />
+    <Property Name="phonenum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="order_infor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="order_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="room_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="occ_id" Type="Int32" />
+    <Property Name="order_money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="return_money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="order_state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="order_time" Type="DateTime" Precision="3" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="paymentMoney">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="orderno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pm_Money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="pm_MethPayid" Type="Int32" />
+    <Property Name="pm_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pm_roomNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pm_Date" Type="DateTime" Precision="3" />
+    <Property Name="pm_Remaker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="price_type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="pt_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="print">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="pritName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="priContent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="real_mode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="real_mode_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="real_state">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="tr_number" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tr_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tr_remaker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="back1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="back2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="receipt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="isquota" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="creator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Remaker">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="remaker1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Repair">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="repair_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="repair_time" Type="DateTime" Precision="3" />
+    <Property Name="repair_man" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="repair_num" Type="Int32" />
+    <Property Name="repair_remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RoleMenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="Menu_id" Type="Int32" />
+    <Property Name="Menu_pid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="room_feature">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="room_feature_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="room_number">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="Rn_flloeld" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rn_floor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Rn_roomNum" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Rn_state" Type="Int32" />
+    <Property Name="Rn_room" Type="Int32" />
+    <Property Name="Rn_Type" Type="Int32" />
+    <Property Name="Rn_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Rn_remaker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Room_suod" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Room_sort" Type="Int32" />
+    <Property Name="Rn_Tobe" Type="Int32" />
+    <Property Name="Rn_suo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="room_state">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="room_state_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Room_suod" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Room_color" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="room_type_image">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="imgid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="typeid" Type="Int32" />
+    <Property Name="imgurl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="sortId" Type="Int32" />
+    <Property Name="pubdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="roomcoupon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bookid" Type="Int32" />
+    <Property Name="roomnum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="creator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="roomman">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="hotelid" Type="Int32" Nullable="false" />
+    <Property Name="bookid" Type="Int32" />
+    <Property Name="roomnum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="roomprice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="checkintype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="breakfirstnum" Type="Int32" Nullable="false" />
+    <Property Name="personnum" Type="Int32" Nullable="false" />
+    <Property Name="remark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cardnum" Type="Int32" />
+    <Property Name="memberid" Type="Int32" />
+    <Property Name="creator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="roomrent">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="goodname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="goodnum" Type="Int32" />
+    <Property Name="customerid" Type="Int32" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="time" Type="DateTime" Precision="3" />
+    <Property Name="roomnum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isback" Type="Int32" />
+    <Property Name="creator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sale_man">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="sale_man_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sale_man_money" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Shift">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="goods_account_id" Type="Int32" />
+    <Property Name="shfit_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Shift_Exc">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Good_Account_Id" Type="Int32" />
+    <Property Name="meth_pay_id" Type="Int32" />
+    <Property Name="shift_id" Type="Int32" />
+    <Property Name="shift_state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="shift_money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="shift_dateTime" Type="DateTime" Precision="3" />
+    <Property Name="ga_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_num" Type="Int32" />
+    <Property Name="ga_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ga_zffs_id" Type="Int32" />
+    <Property Name="ga_date" Type="DateTime" Precision="3" />
+    <Property Name="ga_Type" Type="Int32" />
+    <Property Name="ga_sum_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ga_roomNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="shopInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="shop_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="shop_LxMan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shop_Telphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shop_chuanzen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shop_Province" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shop_City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shop_Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shop_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Shop_x" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shop_y" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Shop_Remaker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Shop_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Sincethehous">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="hs_Numberno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hs_room" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hs_yuany" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="hs_date" Type="DateTime" Precision="3" />
+    <Property Name="hs_ksDate" Type="DateTime" Precision="3" />
+    <Property Name="hs_ylDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hs_Documentno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hs_type" Type="Int32" />
+    <Property Name="hs_people" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hs_Result" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="hs_remaker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SuoRoom">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="SuoType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RoomNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SuoMa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SuoSys">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="SuoTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsComm" Type="Boolean" />
+    <Property Name="IsBackSuo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SysParamter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="CancellMin" Type="Int32" />
+    <Property Name="IsDeposit" Type="Boolean" />
+    <Property Name="Deposit" Type="Decimal" Precision="3" Scale="0" />
+    <Property Name="IsEarlyRoom" Type="Boolean" />
+    <Property Name="EarlyStart" Type="Time" Precision="7" />
+    <Property Name="EarlyEnd" Type="Time" Precision="7" />
+    <Property Name="EarlyOutTime" Type="Time" Precision="7" />
+    <Property Name="EarlyFee" Type="Int32" />
+    <Property Name="EarlyFeeSel" Type="Int32" />
+    <Property Name="EarlyOutTimes" Type="Time" Precision="7" />
+    <Property Name="EarlyFeeTwo" Type="Int32" />
+    <Property Name="DayOutTime" Type="Time" Precision="7" />
+    <Property Name="DayFee" Type="Int32" />
+    <Property Name="DayFeeTwo" Type="Time" Precision="7" />
+    <Property Name="DayTime" Type="Time" Precision="7" />
+    <Property Name="istype" Type="Boolean" />
+    <Property Name="ysTime" Type="Time" Precision="7" />
+    <Property Name="isOcczf" Type="Boolean" />
+    <Property Name="isCy" Type="Boolean" />
+    <Property Name="MarkSuo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TypeScheme">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="Earlyapart" Type="Int32" />
+    <Property Name="EarlyapartAddP" Type="Int32" />
+    <Property Name="EarlyInsufficient" Type="Int32" />
+    <Property Name="EarlyInExceed" Type="Int32" />
+    <Property Name="EarlyInAddPri" Type="Decimal" Precision="3" Scale="0" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="userID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cardID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="sex" Type="Boolean" />
+    <Property Name="cardTypeID" Type="Int32" />
+    <Property Name="cardValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="typeid" Type="Int32" />
+    <Property Name="xiaoshou" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="bairthday" Type="DateTime" Precision="0" />
+    <Property Name="xihao" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="meark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="manageID" Type="Int32" />
+    <Property Name="truename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="passwords" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="user_type" Type="Int32" />
+    <Property Name="pubdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="userType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="typeid" Type="Int32" />
+    <Property Name="typename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="typeprice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ZD_hourse">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="latest" Type="Time" Precision="7" />
+    <Property Name="Buffer" Type="Int32" />
+    <Property Name="tixing" Type="Int32" />
+    <Property Name="beigin" Type="Time" Precision="7" />
+    <Property Name="endtime" Type="Time" Precision="7" />
+  </EntityType>
+  <EntityType Name="account_goods">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="ga_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_Account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_roomNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_num" Type="Int32" />
+    <Property Name="ga_price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ga_zffs_id" Type="Int32" />
+    <Property Name="ga_date" Type="DateTime" Precision="3" />
+    <Property Name="ga_people" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_Type" Type="Int32" />
+    <Property Name="ga_sum_price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ga_remker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ga_occuid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_sfacount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_isjz" Type="Int32" />
+    <Property Name="ga_goodNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ga_isys" Type="Int32" />
+  </EntityType>
+  <EntityType Name="order_ext">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="roomnum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ordreno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hotelid" Type="Int32" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="num" Type="Int32" />
+    <Property Name="opentime" Type="DateTime" Precision="3" />
+    <Property Name="creator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createtime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="room_type">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="room_number" />
+      <PropertyRef Name="room_name" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="hoteid" Type="Int32" />
+    <Property Name="room_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="room_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="room_hour" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="room_listedmoney" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="room_zmmoney" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="room_hourmation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="room_reamker" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="room_image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="room_ealry_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="room_Moth_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="room_Bfb" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_Book_Rdetail_book_room">
+    <End Role="book_room" Type="Self.book_room" Multiplicity="1" />
+    <End Role="Book_Rdetail" Type="Self.Book_Rdetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="book_room">
+        <PropertyRef Name="book_no" />
+      </Principal>
+      <Dependent Role="Book_Rdetail">
+        <PropertyRef Name="Book_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts_Roles" EntityType="Self.Accounts_Roles" />
+    <EntitySet Name="Accounts_UserRoles" EntityType="Self.Accounts_UserRoles" />
+    <EntitySet Name="Accounts_Users" EntityType="Self.Accounts_Users" />
+    <EntitySet Name="AddPrice" EntityType="Self.AddPrice" />
+    <EntitySet Name="apartment" EntityType="Self.apartment" />
+    <EntitySet Name="banner" EntityType="Self.banner" />
+    <EntitySet Name="Book_Rdetail" EntityType="Self.Book_Rdetail" />
+    <EntitySet Name="book_room" EntityType="Self.book_room" />
+    <EntitySet Name="BookState" EntityType="Self.BookState" />
+    <EntitySet Name="breakfirstcoupon" EntityType="Self.breakfirstcoupon" />
+    <EntitySet Name="card_type" EntityType="Self.card_type" />
+    <EntitySet Name="cCall" EntityType="Self.cCall" />
+    <EntitySet Name="cDepartment" EntityType="Self.cDepartment" />
+    <EntitySet Name="cIndustry" EntityType="Self.cIndustry" />
+    <EntitySet Name="comm_unit" EntityType="Self.comm_unit" />
+    <EntitySet Name="Commission" EntityType="Self.Commission" />
+    <EntitySet Name="Contacts" EntityType="Self.Contacts" />
+    <EntitySet Name="cost_type" EntityType="Self.cost_type" />
+    <EntitySet Name="cPost" EntityType="Self.cPost" />
+    <EntitySet Name="cprotocol" EntityType="Self.cprotocol" />
+    <EntitySet Name="cprotocolPrice" EntityType="Self.cprotocolPrice" />
+    <EntitySet Name="cpType" EntityType="Self.cpType" />
+    <EntitySet Name="credit" EntityType="Self.credit" />
+    <EntitySet Name="csysType" EntityType="Self.csysType" />
+    <EntitySet Name="customer" EntityType="Self.customer" />
+    <EntitySet Name="customerState" EntityType="Self.customerState" />
+    <EntitySet Name="customerType" EntityType="Self.customerType" />
+    <EntitySet Name="Entry" EntityType="Self.Entry" />
+    <EntitySet Name="ExceedScheme" EntityType="Self.ExceedScheme" />
+    <EntitySet Name="floor_ld" EntityType="Self.floor_ld" />
+    <EntitySet Name="floor_manage" EntityType="Self.floor_manage" />
+    <EntitySet Name="FtSet" EntityType="Self.FtSet" />
+    <EntitySet Name="Goods" EntityType="Self.Goods" />
+    <EntitySet Name="goods_account" EntityType="Self.goods_account" />
+    <EntitySet Name="guest_source" EntityType="Self.guest_source" />
+    <EntitySet Name="Hotel" EntityType="Self.Hotel" />
+    <EntitySet Name="hour_room" EntityType="Self.hour_room" />
+    <EntitySet Name="hourse_scheme" EntityType="Self.hourse_scheme" />
+    <EntitySet Name="info" EntityType="Self.info" />
+    <EntitySet Name="log" EntityType="Self.log" />
+    <EntitySet Name="member" EntityType="Self.member" />
+    <EntitySet Name="memberState" EntityType="Self.memberState" />
+    <EntitySet Name="memberType" EntityType="Self.memberType" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" />
+    <EntitySet Name="meth_pay" EntityType="Self.meth_pay" />
+    <EntitySet Name="modes" EntityType="Self.modes" />
+    <EntitySet Name="mRecords" EntityType="Self.mRecords" />
+    <EntitySet Name="mtPrice" EntityType="Self.mtPrice" />
+    <EntitySet Name="occu_infor" EntityType="Self.occu_infor" />
+    <EntitySet Name="occu_informx" EntityType="Self.occu_informx" />
+    <EntitySet Name="order_infor" EntityType="Self.order_infor" />
+    <EntitySet Name="paymentMoney" EntityType="Self.paymentMoney" />
+    <EntitySet Name="price_type" EntityType="Self.price_type" />
+    <EntitySet Name="print" EntityType="Self.print" />
+    <EntitySet Name="real_mode" EntityType="Self.real_mode" />
+    <EntitySet Name="real_state" EntityType="Self.real_state" />
+    <EntitySet Name="receipt" EntityType="Self.receipt" />
+    <EntitySet Name="Remaker" EntityType="Self.Remaker" />
+    <EntitySet Name="Repair" EntityType="Self.Repair" />
+    <EntitySet Name="RoleMenu" EntityType="Self.RoleMenu" />
+    <EntitySet Name="room_feature" EntityType="Self.room_feature" />
+    <EntitySet Name="room_number" EntityType="Self.room_number" />
+    <EntitySet Name="room_state" EntityType="Self.room_state" />
+    <EntitySet Name="room_type_image" EntityType="Self.room_type_image" />
+    <EntitySet Name="roomcoupon" EntityType="Self.roomcoupon" />
+    <EntitySet Name="roomman" EntityType="Self.roomman" />
+    <EntitySet Name="roomrent" EntityType="Self.roomrent" />
+    <EntitySet Name="sale_man" EntityType="Self.sale_man" />
+    <EntitySet Name="Shift" EntityType="Self.Shift" />
+    <EntitySet Name="Shift_Exc" EntityType="Self.Shift_Exc" />
+    <EntitySet Name="shopInfo" EntityType="Self.shopInfo" />
+    <EntitySet Name="Sincethehous" EntityType="Self.Sincethehous" />
+    <EntitySet Name="SuoRoom" EntityType="Self.SuoRoom" />
+    <EntitySet Name="SuoSys" EntityType="Self.SuoSys" />
+    <EntitySet Name="SysParamter" EntityType="Self.SysParamter" />
+    <EntitySet Name="TypeScheme" EntityType="Self.TypeScheme" />
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="userType" EntityType="Self.userType" />
+    <EntitySet Name="ZD_hourse" EntityType="Self.ZD_hourse" />
+    <EntitySet Name="account_goods" EntityType="Self.account_goods" />
+    <EntitySet Name="order_ext" EntityType="Self.order_ext" />
+    <EntitySet Name="room_type" EntityType="Self.room_type" />
+    <AssociationSet Name="FK_Book_Rdetail_book_room" Association="Self.FK_Book_Rdetail_book_room">
+      <End Role="book_room" EntitySet="book_room" />
+      <End Role="Book_Rdetail" EntitySet="Book_Rdetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

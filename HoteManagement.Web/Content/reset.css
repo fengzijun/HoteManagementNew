@@ -1,0 +1,11 @@
+/*分页控件样式*/
+
+.cart-page{background:url(../images/horizontal.png) repeat-x 0px -258px; height:36px; color:#000; line-height:36px; font-size:12px; float:left; width:124%;
+}
+.cart-page a{ color:#000; cursor:pointer;}
+.cart-page img{border:solid 1px #4e4e4e;}
+.cart-page .inco{margin:7px 7px 0 7px; float:left; }
+.cart-page .incoleft{height:21px;margin:7px 7px 0 7px; line-height:21px; padding:0 10px; float:left; background:url(../images/leftpage.png) repeat-x; border:solid 1px #b9babd; }
+.mright{ width:95%; 
+float:left;
+}

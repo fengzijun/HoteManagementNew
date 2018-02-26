@@ -1,0 +1,19 @@
+﻿
+@if(TempData["error"]!=null)
+{
+    <div class="alert alert-danger" role="alert">
+  
+    @foreach (var item in TempData["error"] as Dictionary<string, ModelState>)
+    {
+        if (item.Value.Errors.Count > 0)
+        {
+            
+            <div>@item.Value.Errors[0].ErrorMessage</div>
+
+        }
+
+    }
+
+    </div>
+
+}

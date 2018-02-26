@@ -1,0 +1,83 @@
+﻿@model HoteManagement.Service.Model.Accounts_UsersDto
+
+@if (Model != null)
+{
+   
+<form>
+    <input type="hidden" value="@Model.Id" id="edituser_id" />
+    <div class="form-group">
+        <label for="recipient-name" class="control-label">用戶名:</label>
+        <input type="text" class="form-control" id="editUser_Username" value="@Model.UserName">
+    </div>
+    <div class="form-group">
+        <label for="recipient-name" class="control-label">密码:</label>
+        <input type="password" class="form-control" id="editUser_pwd" value="@Model.Password">
+    </div>
+    <div class="form-group">
+        <label for="recipient-name" class="control-label">确认密码:</label>
+        <input type="password" class="form-control" id="editUser_confirmpwd" value="@Model.Password">
+    </div>
+    <div class="form-group">
+        <label for="recipient-name" class="control-label">真实姓名:</label>
+        <input type="text" class="form-control" id="editUser_Turename" value="@Model.TrueName">
+    </div>
+    <div class="form-group">
+        <label for="recipient-name" class="control-label">性别:</label>
+        <div class="radio">
+            <label>
+                @if (Model.Sex == "男")
+                {
+                    <input type="radio" name="optionsRadios" id="editUser_sex_man" value="男" checked="checked"><text>男</text>
+                }
+                else
+                {
+                    <input type="radio" name="optionsRadios" id="editUser_sex_man" value="男"><text>男</text>
+                }
+
+
+
+            </label>
+            <label>
+                @if (Model.Sex == "男")
+                {
+                    <input type="radio" name="optionsRadios" id="editUser_sex_woman" value="女"><text>女</text>
+                }
+                else
+                {
+                    <input type="radio" name="optionsRadios" id="editUser_sex_woman" checked="checked" value="女"><text>女</text>
+                }
+            </label>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="recipient-name" class="control-label">电话:</label>
+        <input type="text" class="form-control" id="editUser_Mobile" value="@Model.Phone">
+    </div>
+
+    <div class="form-group">
+        <label for="recipient-name" class="control-label">角色:</label>
+        <select id="editUser_roleid" class="form-control">
+            @foreach (var item in ViewBag.Rolelist as List<SelectListItem>)
+    {
+        if (Model.UserRole.Id.ToString() == item.Value.Split(new char[] { '_' })[0])
+        {
+            <option value="@item.Value.Split(new char[] { '_'})[0]" selected="selected" hotelid="@item.Value.Split(new char[] { '_'})[1]">@item.Text</option>
+}
+else
+{
+        <option value="@item.Value.Split(new char[] { '_'})[0]"  hotelid="@item.Value.Split(new char[] { '_'})[1]">@item.Text</option>
+}
+
+}
+
+        </select>
+    </div>
+
+
+    <div class="form-group" id="errormsg">
+    </div>
+</form>
+}
+

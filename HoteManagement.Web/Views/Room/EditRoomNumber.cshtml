@@ -1,0 +1,87 @@
+﻿@model HoteManagement.Service.Model.room_numberDto
+@using HoteManagement;
+@using HoteManagement.Service.Model;
+@if (Model != null)
+{
+
+
+    <form>
+        <input type="hidden" value="@Model.Id" id="editroomnumber_id" />
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">房号名称:</label>
+            <input type="text" class="form-control" id="editroomnumber_name" value="@Model.Rn_roomNum">
+        </div>
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">房价:</label>
+            <input type="text" class="form-control" id="editroomnumber_price" value="@Model.Rn_price">
+        </div>
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">楼栋:</label>
+            <select id="editroomnumber_floorid" class="form-control">
+                @foreach (var item in ViewBag.flooridlist as IPagedList<floor_ldDto>)
+                {
+                    if (Model.Rn_flloeld == item.ld_Name)
+                    {
+                        <option selected="selected" value="@item.Id">@item.ld_Name</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Id">@item.ld_Name</option>
+                    }
+
+                }
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">楼层:</label>
+            <select id="editroomnumber_floormanage" class="form-control">
+                @foreach (var item in ViewBag.floormanagelist as IPagedList<floor_manageDto>)
+                {
+                    if (Model.Rn_floor == item.floor_name)
+                    {
+                        <option selected="selected" value="@item.Id">@item.floor_name</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Id">@item.floor_name</option>
+                    }
+
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">房型:</label>
+            <select id="editroomnumber_roomtype" class="form-control">
+                @foreach (var item in ViewBag.roomtypelist as IPagedList<room_typeDto>)
+                {
+                    if (Model.Rn_Type == item.Id)
+                    {
+                        <option selected="selected" value="@item.Id">@item.room_name</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Id">@item.room_name</option>
+                    }
+
+                }
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+            <label for="recipient-name" class="control-label">备注:</label>
+            <input type="text" class="form-control" id="editroomnumber_remark" value="@Model.Rn_remaker">
+        </div>
+
+
+        <div class="form-group" id="errormsg">
+        </div>
+    </form>
+
+}
+

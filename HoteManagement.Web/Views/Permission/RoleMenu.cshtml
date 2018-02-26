@@ -1,0 +1,39 @@
+﻿@using HoteManagement.Service.Model;
+@using HoteManagement;
+
+
+@if (ViewBag.menulist != null)
+{
+    foreach (var item in ViewBag.menulist as IPagedList<MenuDto>)
+    {
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">@item.title</h3>
+            </div>
+            <div class="panel-body">
+                @foreach (var clilditem in item.ChildMenus)
+    {
+
+
+            <div class="checkbox">
+                <label>
+                    @if ((ViewBag.rolemenulist as List<RoleMenuDto>).Any(s => s.Menu_id == clilditem.Id))
+    {
+                <input type="checkbox" id="@clilditem.Id" parentid="@item.Id" checked="checked" /> @clilditem.title
+}
+else
+{
+                <input type="checkbox" id="@clilditem.Id" parentid="@item.Id"  /> @clilditem.title
+}
+
+                </label>
+            </div>
+}
+
+            </div>
+        </div>
+    }
+
+}
+
+

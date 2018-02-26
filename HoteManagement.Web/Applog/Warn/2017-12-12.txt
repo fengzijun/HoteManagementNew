@@ -1,0 +1,32 @@
+2017-12-12 16:18:04
+²éÑ¯³¬¹ý3s sql: SELECT 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[UserID] AS [UserID], 
+    [Limit1].[UserName] AS [UserName], 
+    [Limit1].[Password] AS [Password], 
+    [Limit1].[TrueName] AS [TrueName], 
+    [Limit1].[Sex] AS [Sex], 
+    [Limit1].[Phone] AS [Phone], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[EmployeeID] AS [EmployeeID], 
+    [Limit1].[DepartmentID] AS [DepartmentID], 
+    [Limit1].[Activity] AS [Activity], 
+    [Limit1].[UserType] AS [UserType], 
+    [Limit1].[Style] AS [Style]
+    FROM ( SELECT TOP (1) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[UserID] AS [UserID], 
+        [Extent1].[UserName] AS [UserName], 
+        [Extent1].[Password] AS [Password], 
+        [Extent1].[TrueName] AS [TrueName], 
+        [Extent1].[Sex] AS [Sex], 
+        [Extent1].[Phone] AS [Phone], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[EmployeeID] AS [EmployeeID], 
+        [Extent1].[DepartmentID] AS [DepartmentID], 
+        [Extent1].[Activity] AS [Activity], 
+        [Extent1].[UserType] AS [UserType], 
+        [Extent1].[Style] AS [Style]
+        FROM [dbo].[Accounts_Users] AS [Extent1] WITH (NOLOCK)
+        WHERE (([Extent1].[UserName] = @p__linq__0) OR (([Extent1].[UserName] IS NULL) AND (@p__linq__0 IS NULL))) AND (([Extent1].[Password] = @p__linq__1) OR (([Extent1].[Password] IS NULL) AND (@p__linq__1 IS NULL)))
+    )  AS [Limit1],ºÄÊ±7513ms

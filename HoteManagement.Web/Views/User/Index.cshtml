@@ -1,0 +1,204 @@
+﻿@using HoteManagement.Service.Model;
+@using HoteManagement;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var editinfo = new HoteManagement.Web.Models.Api.ModelEdit { Name = "editUser", Title = "编辑用户", EditButtonId = "Usereditsave" };
+    var deleteinfo = new HoteManagement.Web.Models.Api.ModelDelete { Name = "deleteUser", Title = "删除用户", DeleteButtonId = "Userdeletesave" };
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">用户管理</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="input-group">
+                @*<span class="input-group-btn">
+                        <a class="btn btn-primary" href="/User/createUser">创建楼栋</a>
+                    </span>*@
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createUser">
+                    创建用戶
+                </button>
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>用户名</th>
+                        <th>密码</th>
+                        <th>角色</th>
+                        <th>真实姓名</th>
+                        <th>性别</th>
+                        <th>上次登录时间</th>
+                        <th>电话</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.Userlist as IPagedList<Accounts_UsersDto>)
+                    {
+                    <tr>
+                        <td>@item.UserName</td>
+                        <td>@item.Password</td>
+                        <td>
+                            @if (item.UserRole != null)
+        {
+                    <text>@item.UserRole.title</text>
+}
+
+                        </td>
+                        <td>@item.TrueName</td>
+                        <td>@item.Sex</td>
+                        <td>@item.Email</td>
+                        <td>@item.Phone</td>
+                        <td>
+
+                            <button type="button" class="btn btn-warning edit" data-toggle="modal" data-id="@item.Id">编辑</button>
+                            &nbsp;
+                            <button type="button" class="btn btn-danger delete" data-toggle="modal" data-id="@item.Id">删除</button>
+                        </td>
+                    </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        @Html.Partial("PageList", ViewBag.PageInfo as HoteManagement.Web.Models.Api.PageModel)
+    </div>
+</div>
+
+@Html.Partial("CreateUser")
+@Html.Partial("AdminEdit", editinfo)
+@Html.Partial("ConfirmDelete", deleteinfo)
+
+@section scripts{
+    <script>
+        $(function () {
+
+            $("#createUser_save").click(function () {
+                var gender = "男";
+
+                if ($('input:radio[id="createUser_sex_man"]:checked').val() == "undefined" || $('input:radio[id="createUser_sex_man"]:checked').val() == "" || $('input:radio[id="createUser_sex_man"]:checked').val() == null) {
+                    gender = "女";
+                }
+               
+              
+                var data = { "AccountName": $("#createUser_Username").val(), "Pwd": $("#createUser_pwd").val(), "ConfirmPwd": $("#createUser_confirmpwd").val(), "TureName": $("#createUser_Turename").val(), "Gender": gender, "Mobile": $("#createUser_Mobile").val(), "RoleId": $("#createUser_roleid").val(), "HotelId": $("#createUser_roleid").find("option:selected").attr("hotelid") };
+
+                $.ajax({
+                    url: "/User/CreateUser",
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.success == 1)
+                            window.location.reload();
+                        else {
+                            $("#errormsg").html("");
+                            $("#errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                        }
+                    }
+                });
+
+            })
+
+            $(".edit").click(function () {
+                var html = "<form><div class='form-group'><label for='recipient-name' class='control-label'>loading....</label></div></form >";
+                $("#adminedit div[class='modal-body']").html(html);
+                $('#adminedit').modal('toggle');
+                var id = $(this).attr("data-id");
+                var url = "/User/GetEditUserView?id=" + id.toString();
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    success: function (data) {
+                        $("#adminedit div[class='modal-body']").html(data);
+                        SaveUser();
+                    }
+                });
+            })
+
+            function SaveUser() {
+
+                $("#@editinfo.EditButtonId").click(function () {
+                    var gender = "男";
+
+                    if ($('input:radio[id="editUser_sex_man"]:checked').val() == "undefined" || $('input:radio[id="editUser_sex_man"]:checked').val() == "" || $('input:radio[id="editUser_sex_man"]:checked').val() == null) {
+                        gender = "女";
+                    }
+
+
+                    var data = { "Id": $("#edituser_id").val(), "AccountName": $("#editUser_Username").val(), "Pwd": $("#editUser_pwd").val(), "ConfirmPwd": $("#editUser_confirmpwd").val(), "TureName": $("#editUser_Turename").val(), "Gender": gender, "Mobile": $("#editUser_Mobile").val(), "RoleId": $("#editUser_roleid").val(), "HotelId": $("#editUser_roleid").find("option:selected").attr("hotelid") };
+                    $.ajax({
+                        url: "/User/EditUser",
+                        type: 'POST',
+                        dataType: 'json',
+                        data: JSON.stringify(data),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#adminedit #errormsg").html("");
+                                $("#adminedit #errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+
+            $(".delete").click(function () {
+                var id = $(this).attr("data-id");
+                $('#admindelete').modal('toggle');
+                DeleteUser(id);
+
+            })
+
+              function DeleteUser(id) {
+
+                $("#@deleteinfo.DeleteButtonId").click(function () {
+
+                    var url = "/User/deleteUser?id=" + id;
+                    $.ajax({
+                        url: url,
+                        type: 'get',
+
+                        success: function (data) {
+                            if (data.success == 1)
+                                window.location.reload();
+                            else {
+                                $("#admindelete #errormsg").html("");
+                                $("#admindelete #errormsg").html("<div class='alert alert-danger' role='alert'>" + data.message + "</div>");
+                            }
+                        }
+                    });
+                }
+                )
+            }
+        })
+
+    </script>
+
+}
+
+

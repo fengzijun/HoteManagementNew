@@ -1,0 +1,1440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EMTestModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Accounts_Roles">
+      <EntityTypeMapping TypeName="EM.TestModel.Accounts_Roles">
+        <MappingFragment StoreEntitySet="Accounts_Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accounts_UserRoles">
+      <EntityTypeMapping TypeName="EM.TestModel.Accounts_UserRoles">
+        <MappingFragment StoreEntitySet="Accounts_UserRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accounts_Users">
+      <EntityTypeMapping TypeName="EM.TestModel.Accounts_Users">
+        <MappingFragment StoreEntitySet="Accounts_Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="TrueName" ColumnName="TrueName" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Activity" ColumnName="Activity" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AddPrice">
+      <EntityTypeMapping TypeName="EM.TestModel.AddPrice">
+        <MappingFragment StoreEntitySet="AddPrice">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotel" ColumnName="hotel" />
+          <ScalarProperty Name="AddPice" ColumnName="AddPice" />
+          <ScalarProperty Name="ZsPice" ColumnName="ZsPice" />
+          <ScalarProperty Name="ZsJf" ColumnName="ZsJf" />
+          <ScalarProperty Name="IsOk" ColumnName="IsOk" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="apartment">
+      <EntityTypeMapping TypeName="EM.TestModel.apartment">
+        <MappingFragment StoreEntitySet="apartment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="occ_no" ColumnName="occ_no" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="occ_name" ColumnName="occ_name" />
+          <ScalarProperty Name="occ_with" ColumnName="occ_with" />
+          <ScalarProperty Name="real_type_id" ColumnName="real_type_id" />
+          <ScalarProperty Name="room_number" ColumnName="room_number" />
+          <ScalarProperty Name="real_scheme_id" ColumnName="real_scheme_id" />
+          <ScalarProperty Name="source_id" ColumnName="source_id" />
+          <ScalarProperty Name="mem_cardno" ColumnName="mem_cardno" />
+          <ScalarProperty Name="real_mode_id" ColumnName="real_mode_id" />
+          <ScalarProperty Name="real_price" ColumnName="real_price" />
+          <ScalarProperty Name="occ_time" ColumnName="occ_time" />
+          <ScalarProperty Name="pre_live_day" ColumnName="pre_live_day" />
+          <ScalarProperty Name="stay_day" ColumnName="stay_day" />
+          <ScalarProperty Name="stay_deposit" ColumnName="stay_deposit" />
+          <ScalarProperty Name="depar_time" ColumnName="depar_time" />
+          <ScalarProperty Name="pha_sched" ColumnName="pha_sched" />
+          <ScalarProperty Name="card_id" ColumnName="card_id" />
+          <ScalarProperty Name="card_no" ColumnName="card_no" />
+          <ScalarProperty Name="brithday" ColumnName="brithday" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="family_name" ColumnName="family_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="meth_pay_id" ColumnName="meth_pay_id" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="deposit" ColumnName="deposit" />
+          <ScalarProperty Name="pay_money" ColumnName="pay_money" />
+          <ScalarProperty Name="amount_money" ColumnName="amount_money" />
+          <ScalarProperty Name="amount_rece" ColumnName="amount_rece" />
+          <ScalarProperty Name="return_money" ColumnName="return_money" />
+          <ScalarProperty Name="sale_id" ColumnName="sale_id" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="lordRoomid" ColumnName="lordRoomid" />
+          <ScalarProperty Name="continuelive" ColumnName="continuelive" />
+          <ScalarProperty Name="phonenum" ColumnName="phonenum" />
+          <ScalarProperty Name="tuifaId" ColumnName="tuifaId" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="header_img" ColumnName="header_img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="banner">
+      <EntityTypeMapping TypeName="EM.TestModel.banner">
+        <MappingFragment StoreEntitySet="banner">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="banner_id" ColumnName="banner_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="imgurl" ColumnName="imgurl" />
+          <ScalarProperty Name="sortId" ColumnName="sortId" />
+          <ScalarProperty Name="pubdate" ColumnName="pubdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Book_Rdetail">
+      <EntityTypeMapping TypeName="EM.TestModel.Book_Rdetail">
+        <MappingFragment StoreEntitySet="Book_Rdetail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="Book_no" ColumnName="Book_no" />
+          <ScalarProperty Name="Real_type_Id" ColumnName="Real_type_Id" />
+          <ScalarProperty Name="Room_number" ColumnName="Room_number" />
+          <ScalarProperty Name="Real_num" ColumnName="Real_num" />
+          <ScalarProperty Name="Book_Price" ColumnName="Book_Price" />
+          <ScalarProperty Name="Real_Price" ColumnName="Real_Price" />
+          <ScalarProperty Name="Real_Scheme_Id" ColumnName="Real_Scheme_Id" />
+          <ScalarProperty Name="Ok_num" ColumnName="Ok_num" />
+          <ScalarProperty Name="Room_typeid" ColumnName="Room_typeid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="book_room">
+      <EntityTypeMapping TypeName="EM.TestModel.book_room">
+        <MappingFragment StoreEntitySet="book_room">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="book_no" ColumnName="book_no" />
+          <ScalarProperty Name="book_Name" ColumnName="book_Name" />
+          <ScalarProperty Name="tele_no" ColumnName="tele_no" />
+          <ScalarProperty Name="onli_no" ColumnName="onli_no" />
+          <ScalarProperty Name="guar_way" ColumnName="guar_way" />
+          <ScalarProperty Name="mem_cardno" ColumnName="mem_cardno" />
+          <ScalarProperty Name="time_to" ColumnName="time_to" />
+          <ScalarProperty Name="time_from" ColumnName="time_from" />
+          <ScalarProperty Name="real_time" ColumnName="real_time" />
+          <ScalarProperty Name="source_id" ColumnName="source_id" />
+          <ScalarProperty Name="meth_pay_id" ColumnName="meth_pay_id" />
+          <ScalarProperty Name="deposit" ColumnName="deposit" />
+          <ScalarProperty Name="real_type_id" ColumnName="real_type_id" />
+          <ScalarProperty Name="real_scheme_id" ColumnName="real_scheme_id" />
+          <ScalarProperty Name="real_price" ColumnName="real_price" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="real_num" ColumnName="real_num" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="room_number" ColumnName="room_number" />
+          <ScalarProperty Name="back_deposit" ColumnName="back_deposit" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="Accounts" ColumnName="Accounts" />
+          <ScalarProperty Name="CpID" ColumnName="CpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookState">
+      <EntityTypeMapping TypeName="EM.TestModel.BookState">
+        <MappingFragment StoreEntitySet="BookState">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="statName" ColumnName="statName" />
+          <ScalarProperty Name="Reamrk" ColumnName="Reamrk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="breakfirstcoupon">
+      <EntityTypeMapping TypeName="EM.TestModel.breakfirstcoupon">
+        <MappingFragment StoreEntitySet="breakfirstcoupon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="roomnum" ColumnName="roomnum" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+          <ScalarProperty Name="IsStandard" ColumnName="IsStandard" />
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+          <ScalarProperty Name="createor" ColumnName="createor" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="card_type">
+      <EntityTypeMapping TypeName="EM.TestModel.card_type">
+        <MappingFragment StoreEntitySet="card_type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotel" ColumnName="hotel" />
+          <ScalarProperty Name="ct_name" ColumnName="ct_name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cCall">
+      <EntityTypeMapping TypeName="EM.TestModel.cCall">
+        <MappingFragment StoreEntitySet="cCall">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotel" ColumnName="hotel" />
+          <ScalarProperty Name="callName" ColumnName="callName" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cDepartment">
+      <EntityTypeMapping TypeName="EM.TestModel.cDepartment">
+        <MappingFragment StoreEntitySet="cDepartment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="cDName" ColumnName="cDName" />
+          <ScalarProperty Name="Reamrk" ColumnName="Reamrk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cIndustry">
+      <EntityTypeMapping TypeName="EM.TestModel.cIndustry">
+        <MappingFragment StoreEntitySet="cIndustry">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="csName" ColumnName="csName" />
+          <ScalarProperty Name="Reamrk" ColumnName="Reamrk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comm_unit">
+      <EntityTypeMapping TypeName="EM.TestModel.comm_unit">
+        <MappingFragment StoreEntitySet="comm_unit">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotel" ColumnName="hotel" />
+          <ScalarProperty Name="unit_name" ColumnName="unit_name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commission">
+      <EntityTypeMapping TypeName="EM.TestModel.Commission">
+        <MappingFragment StoreEntitySet="Commission">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="Accounts" ColumnName="Accounts" />
+          <ScalarProperty Name="CommDesp" ColumnName="CommDesp" />
+          <ScalarProperty Name="CommDate" ColumnName="CommDate" />
+          <ScalarProperty Name="CommSum" ColumnName="CommSum" />
+          <ScalarProperty Name="IsBack" ColumnName="IsBack" />
+          <ScalarProperty Name="GoodNumber" ColumnName="GoodNumber" />
+          <ScalarProperty Name="IsEveryDay" ColumnName="IsEveryDay" />
+          <ScalarProperty Name="DayComm" ColumnName="DayComm" />
+          <ScalarProperty Name="CommRemark" ColumnName="CommRemark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="EM.TestModel.Contacts">
+        <MappingFragment StoreEntitySet="Contacts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="Accounts" ColumnName="Accounts" />
+          <ScalarProperty Name="cName" ColumnName="cName" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Bearthday" ColumnName="Bearthday" />
+          <ScalarProperty Name="editUser" ColumnName="editUser" />
+          <ScalarProperty Name="addDatetime" ColumnName="addDatetime" />
+          <ScalarProperty Name="Appellation" ColumnName="Appellation" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="officPhone" ColumnName="officPhone" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="familyPhone" ColumnName="familyPhone" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cost_type">
+      <EntityTypeMapping TypeName="EM.TestModel.cost_type">
+        <MappingFragment StoreEntitySet="cost_type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="ct_number" ColumnName="ct_number" />
+          <ScalarProperty Name="ct_name" ColumnName="ct_name" />
+          <ScalarProperty Name="ct_iftype" ColumnName="ct_iftype" />
+          <ScalarProperty Name="ct_remark" ColumnName="ct_remark" />
+          <ScalarProperty Name="ct_money" ColumnName="ct_money" />
+          <ScalarProperty Name="ct_categories" ColumnName="ct_categories" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cPost">
+      <EntityTypeMapping TypeName="EM.TestModel.cPost">
+        <MappingFragment StoreEntitySet="cPost">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="cpName" ColumnName="cpName" />
+          <ScalarProperty Name="Reamrk" ColumnName="Reamrk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cprotocol">
+      <EntityTypeMapping TypeName="EM.TestModel.cprotocol">
+        <MappingFragment StoreEntitySet="cprotocol">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="Accounts" ColumnName="Accounts" />
+          <ScalarProperty Name="Ptheme" ColumnName="Ptheme" />
+          <ScalarProperty Name="pType" ColumnName="pType" />
+          <ScalarProperty Name="PNumber" ColumnName="PNumber" />
+          <ScalarProperty Name="ishire" ColumnName="ishire" />
+          <ScalarProperty Name="term" ColumnName="term" />
+          <ScalarProperty Name="period" ColumnName="period" />
+          <ScalarProperty Name="breakfast" ColumnName="breakfast" />
+          <ScalarProperty Name="Commission" ColumnName="Commission" />
+          <ScalarProperty Name="Dayhire" ColumnName="Dayhire" />
+          <ScalarProperty Name="prohire" ColumnName="prohire" />
+          <ScalarProperty Name="signatory" ColumnName="signatory" />
+          <ScalarProperty Name="companysignatory" ColumnName="companysignatory" />
+          <ScalarProperty Name="roomNumber" ColumnName="roomNumber" />
+          <ScalarProperty Name="Isdiscount" ColumnName="Isdiscount" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="isVerify" ColumnName="isVerify" />
+          <ScalarProperty Name="editUser" ColumnName="editUser" />
+          <ScalarProperty Name="verifyUser" ColumnName="verifyUser" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cprotocolPrice">
+      <EntityTypeMapping TypeName="EM.TestModel.cprotocolPrice">
+        <MappingFragment StoreEntitySet="cprotocolPrice">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="Accounts" ColumnName="Accounts" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="protoPrice" ColumnName="protoPrice" />
+          <ScalarProperty Name="mothPrice" ColumnName="mothPrice" />
+          <ScalarProperty Name="zdPrice" ColumnName="zdPrice" />
+          <ScalarProperty Name="lcPrice" ColumnName="lcPrice" />
+          <ScalarProperty Name="Breakfast" ColumnName="Breakfast" />
+          <ScalarProperty Name="commission" ColumnName="commission" />
+          <ScalarProperty Name="cpID" ColumnName="cpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cpType">
+      <EntityTypeMapping TypeName="EM.TestModel.cpType">
+        <MappingFragment StoreEntitySet="cpType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="ptName" ColumnName="ptName" />
+          <ScalarProperty Name="Reamrk" ColumnName="Reamrk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="credit">
+      <EntityTypeMapping TypeName="EM.TestModel.credit">
+        <MappingFragment StoreEntitySet="credit">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="customerid" ColumnName="customerid" />
+          <ScalarProperty Name="roomnum" ColumnName="roomnum" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="creditno" ColumnName="creditno" />
+          <ScalarProperty Name="expiredtime" ColumnName="expiredtime" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="expire" ColumnName="expire" />
+          <ScalarProperty Name="creditmoney" ColumnName="creditmoney" />
+          <ScalarProperty Name="authorizationcode" ColumnName="authorizationcode" />
+          <ScalarProperty Name="documentno" ColumnName="documentno" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="creator" ColumnName="creator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="csysType">
+      <EntityTypeMapping TypeName="EM.TestModel.csysType">
+        <MappingFragment StoreEntitySet="csysType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="stName" ColumnName="stName" />
+          <ScalarProperty Name="Reamrk" ColumnName="Reamrk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer">
+      <EntityTypeMapping TypeName="EM.TestModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="accounts" ColumnName="accounts" />
+          <ScalarProperty Name="cName" ColumnName="cName" />
+          <ScalarProperty Name="sysType" ColumnName="sysType" />
+          <ScalarProperty Name="cusType" ColumnName="cusType" />
+          <ScalarProperty Name="cusDesy" ColumnName="cusDesy" />
+          <ScalarProperty Name="cusNumber" ColumnName="cusNumber" />
+          <ScalarProperty Name="contacts" ColumnName="contacts" />
+          <ScalarProperty Name="cPhone" ColumnName="cPhone" />
+          <ScalarProperty Name="Cstate" ColumnName="Cstate" />
+          <ScalarProperty Name="sales" ColumnName="sales" />
+          <ScalarProperty Name="prosceniumIss" ColumnName="prosceniumIss" />
+          <ScalarProperty Name="Ishire" ColumnName="Ishire" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Contsrr" ColumnName="Contsrr" />
+          <ScalarProperty Name="Shiji" ColumnName="Shiji" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ybNum" ColumnName="ybNum" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="companyPhone" ColumnName="companyPhone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="homepage" ColumnName="homepage" />
+          <ScalarProperty Name="Csource" ColumnName="Csource" />
+          <ScalarProperty Name="cindustry" ColumnName="cindustry" />
+          <ScalarProperty Name="Ischalk" ColumnName="Ischalk" />
+          <ScalarProperty Name="limit" ColumnName="limit" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="editUser" ColumnName="editUser" />
+          <ScalarProperty Name="verifyUser" ColumnName="verifyUser" />
+          <ScalarProperty Name="isVerify" ColumnName="isVerify" />
+          <ScalarProperty Name="Hotel" ColumnName="Hotel" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="occNum" ColumnName="occNum" />
+          <ScalarProperty Name="NoShow" ColumnName="NoShow" />
+          <ScalarProperty Name="xqBook" ColumnName="xqBook" />
+          <ScalarProperty Name="Pming" ColumnName="Pming" />
+          <ScalarProperty Name="isXz" ColumnName="isXz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customerState">
+      <EntityTypeMapping TypeName="EM.TestModel.customerState">
+        <MappingFragment StoreEntitySet="customerState">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="csName" ColumnName="csName" />
+          <ScalarProperty Name="Reamrk" ColumnName="Reamrk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customerType">
+      <EntityTypeMapping TypeName="EM.TestModel.customerType">
+        <MappingFragment StoreEntitySet="customerType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="ctName" ColumnName="ctName" />
+          <ScalarProperty Name="Reamrk" ColumnName="Reamrk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entry">
+      <EntityTypeMapping TypeName="EM.TestModel.Entry">
+        <MappingFragment StoreEntitySet="Entry">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="entry_name" ColumnName="entry_name" />
+          <ScalarProperty Name="entry_num" ColumnName="entry_num" />
+          <ScalarProperty Name="entry_time" ColumnName="entry_time" />
+          <ScalarProperty Name="entry_unit" ColumnName="entry_unit" />
+          <ScalarProperty Name="entry_price" ColumnName="entry_price" />
+          <ScalarProperty Name="entry_room" ColumnName="entry_room" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExceedScheme">
+      <EntityTypeMapping TypeName="EM.TestModel.ExceedScheme">
+        <MappingFragment StoreEntitySet="ExceedScheme">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="TypeRoom" ColumnName="TypeRoom" />
+          <ScalarProperty Name="GraceTime" ColumnName="GraceTime" />
+          <ScalarProperty Name="Earlyapart" ColumnName="Earlyapart" />
+          <ScalarProperty Name="EarlyapartAddP" ColumnName="EarlyapartAddP" />
+          <ScalarProperty Name="EarlyInsufficient" ColumnName="EarlyInsufficient" />
+          <ScalarProperty Name="EarlyInExceed" ColumnName="EarlyInExceed" />
+          <ScalarProperty Name="EarlyInAddPri" ColumnName="EarlyInAddPri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="floor_ld">
+      <EntityTypeMapping TypeName="EM.TestModel.floor_ld">
+        <MappingFragment StoreEntitySet="floor_ld">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="ld_Name" ColumnName="ld_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="floor_manage">
+      <EntityTypeMapping TypeName="EM.TestModel.floor_manage">
+        <MappingFragment StoreEntitySet="floor_manage">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="floor_number" ColumnName="floor_number" />
+          <ScalarProperty Name="floor_name" ColumnName="floor_name" />
+          <ScalarProperty Name="floor_sorting" ColumnName="floor_sorting" />
+          <ScalarProperty Name="floor_remaker" ColumnName="floor_remaker" />
+          <ScalarProperty Name="floor_shoping" ColumnName="floor_shoping" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FtSet">
+      <EntityTypeMapping TypeName="EM.TestModel.FtSet">
+        <MappingFragment StoreEntitySet="FtSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="Lwidth" ColumnName="Lwidth" />
+          <ScalarProperty Name="Lhieght" ColumnName="Lhieght" />
+          <ScalarProperty Name="Lfontf" ColumnName="Lfontf" />
+          <ScalarProperty Name="Fontsize" ColumnName="Fontsize" />
+          <ScalarProperty Name="Lmargin" ColumnName="Lmargin" />
+          <ScalarProperty Name="Backcolor" ColumnName="Backcolor" />
+          <ScalarProperty Name="Bordercolor" ColumnName="Bordercolor" />
+          <ScalarProperty Name="showType" ColumnName="showType" />
+          <ScalarProperty Name="showPrice" ColumnName="showPrice" />
+          <ScalarProperty Name="orderLC" ColumnName="orderLC" />
+          <ScalarProperty Name="ftNum" ColumnName="ftNum" />
+          <ScalarProperty Name="zzShowType" ColumnName="zzShowType" />
+          <ScalarProperty Name="zzShowPrice" ColumnName="zzShowPrice" />
+          <ScalarProperty Name="showFormTime" ColumnName="showFormTime" />
+          <ScalarProperty Name="showLFico" ColumnName="showLFico" />
+          <ScalarProperty Name="showBmico" ColumnName="showBmico" />
+          <ScalarProperty Name="showyjb" ColumnName="showyjb" />
+          <ScalarProperty Name="showday" ColumnName="showday" />
+          <ScalarProperty Name="daynum" ColumnName="daynum" />
+          <ScalarProperty Name="showyue" ColumnName="showyue" />
+          <ScalarProperty Name="moneyNum" ColumnName="moneyNum" />
+          <ScalarProperty Name="showcf" ColumnName="showcf" />
+          <ScalarProperty Name="showThem" ColumnName="showThem" />
+          <ScalarProperty Name="Themtext" ColumnName="Themtext" />
+          <ScalarProperty Name="showMember" ColumnName="showMember" />
+          <ScalarProperty Name="memberText" ColumnName="memberText" />
+          <ScalarProperty Name="showXy" ColumnName="showXy" />
+          <ScalarProperty Name="showYuli" ColumnName="showYuli" />
+          <ScalarProperty Name="yuliDay" ColumnName="yuliDay" />
+          <ScalarProperty Name="showDayTime" ColumnName="showDayTime" />
+          <ScalarProperty Name="dayNumYl" ColumnName="dayNumYl" />
+          <ScalarProperty Name="showxz" ColumnName="showxz" />
+          <ScalarProperty Name="showSf" ColumnName="showSf" />
+          <ScalarProperty Name="showYuee" ColumnName="showYuee" />
+          <ScalarProperty Name="Showzdftime" ColumnName="Showzdftime" />
+          <ScalarProperty Name="Showbooktime" ColumnName="Showbooktime" />
+          <ScalarProperty Name="Showzf" ColumnName="Showzf" />
+          <ScalarProperty Name="Showlc" ColumnName="Showlc" />
+          <ScalarProperty Name="showPeoNum" ColumnName="showPeoNum" />
+          <ScalarProperty Name="showRk" ColumnName="showRk" />
+          <ScalarProperty Name="showWupi" ColumnName="showWupi" />
+          <ScalarProperty Name="Showyz" ColumnName="Showyz" />
+          <ScalarProperty Name="Showmf" ColumnName="Showmf" />
+          <ScalarProperty Name="Showzdf" ColumnName="Showzdf" />
+          <ScalarProperty Name="Beiy" ColumnName="Beiy" />
+          <ScalarProperty Name="Beiy2" ColumnName="Beiy2" />
+          <ScalarProperty Name="numSize" ColumnName="numSize" />
+          <ScalarProperty Name="numColor" ColumnName="numColor" />
+          <ScalarProperty Name="fxSize" ColumnName="fxSize" />
+          <ScalarProperty Name="fxColor" ColumnName="fxColor" />
+          <ScalarProperty Name="yueSize" ColumnName="yueSize" />
+          <ScalarProperty Name="yueColor" ColumnName="yueColor" />
+          <ScalarProperty Name="nameSize" ColumnName="nameSize" />
+          <ScalarProperty Name="nameColor" ColumnName="nameColor" />
+          <ScalarProperty Name="priceSize" ColumnName="priceSize" />
+          <ScalarProperty Name="priceColor" ColumnName="priceColor" />
+          <ScalarProperty Name="TotimeSize" ColumnName="TotimeSize" />
+          <ScalarProperty Name="TotimeColor" ColumnName="TotimeColor" />
+          <ScalarProperty Name="zdSize" ColumnName="zdSize" />
+          <ScalarProperty Name="zdColor" ColumnName="zdColor" />
+          <ScalarProperty Name="icoColor" ColumnName="icoColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods">
+      <EntityTypeMapping TypeName="EM.TestModel.Goods">
+        <MappingFragment StoreEntitySet="Goods">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="Goods_number" ColumnName="Goods_number" />
+          <ScalarProperty Name="Goods_name" ColumnName="Goods_name" />
+          <ScalarProperty Name="Goods_price" ColumnName="Goods_price" />
+          <ScalarProperty Name="Goods_unit" ColumnName="Goods_unit" />
+          <ScalarProperty Name="Goods_state" ColumnName="Goods_state" />
+          <ScalarProperty Name="Goods_spell" ColumnName="Goods_spell" />
+          <ScalarProperty Name="Goods_ifType" ColumnName="Goods_ifType" />
+          <ScalarProperty Name="Goods_categories" ColumnName="Goods_categories" />
+          <ScalarProperty Name="Goods_Remaker" ColumnName="Goods_Remaker" />
+          <ScalarProperty Name="Goods_jf" ColumnName="Goods_jf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="goods_account">
+      <EntityTypeMapping TypeName="EM.TestModel.goods_account">
+        <MappingFragment StoreEntitySet="goods_account">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="ga_name" ColumnName="ga_name" />
+          <ScalarProperty Name="ga_number" ColumnName="ga_number" />
+          <ScalarProperty Name="ga_roomNumber" ColumnName="ga_roomNumber" />
+          <ScalarProperty Name="ga_unit" ColumnName="ga_unit" />
+          <ScalarProperty Name="ga_num" ColumnName="ga_num" />
+          <ScalarProperty Name="ga_price" ColumnName="ga_price" />
+          <ScalarProperty Name="ga_zffs_id" ColumnName="ga_zffs_id" />
+          <ScalarProperty Name="ga_date" ColumnName="ga_date" />
+          <ScalarProperty Name="ga_people" ColumnName="ga_people" />
+          <ScalarProperty Name="ga_Type" ColumnName="ga_Type" />
+          <ScalarProperty Name="ga_sum_price" ColumnName="ga_sum_price" />
+          <ScalarProperty Name="ga_remker" ColumnName="ga_remker" />
+          <ScalarProperty Name="ga_occuid" ColumnName="ga_occuid" />
+          <ScalarProperty Name="ga_sfacount" ColumnName="ga_sfacount" />
+          <ScalarProperty Name="ga_isjz" ColumnName="ga_isjz" />
+          <ScalarProperty Name="ga_goodNo" ColumnName="ga_goodNo" />
+          <ScalarProperty Name="ga_isys" ColumnName="ga_isys" />
+          <ScalarProperty Name="ga_Account" ColumnName="ga_Account" />
+          <ScalarProperty Name="ga_jsfs" ColumnName="ga_jsfs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="guest_source">
+      <EntityTypeMapping TypeName="EM.TestModel.guest_source">
+        <MappingFragment StoreEntitySet="guest_source">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="gs_name" ColumnName="gs_name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotel">
+      <EntityTypeMapping TypeName="EM.TestModel.Hotel">
+        <MappingFragment StoreEntitySet="Hotel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+          <ScalarProperty Name="IsChain" ColumnName="IsChain" />
+          <ScalarProperty Name="IsTop" ColumnName="IsTop" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Expiretime" ColumnName="Expiretime" />
+          <ScalarProperty Name="Registertime" ColumnName="Registertime" />
+          <ScalarProperty Name="CreateorId" ColumnName="CreateorId" />
+          <ScalarProperty Name="CreateorIp" ColumnName="CreateorIp" />
+          <ScalarProperty Name="Createtime" ColumnName="Createtime" />
+          <ScalarProperty Name="Updatetime" ColumnName="Updatetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hour_room">
+      <EntityTypeMapping TypeName="EM.TestModel.hour_room">
+        <MappingFragment StoreEntitySet="hour_room">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="hs_room_id" ColumnName="hs_room_id" />
+          <ScalarProperty Name="hs_name" ColumnName="hs_name" />
+          <ScalarProperty Name="hs_start_long" ColumnName="hs_start_long" />
+          <ScalarProperty Name="hs_start_price" ColumnName="hs_start_price" />
+          <ScalarProperty Name="hs_add_time" ColumnName="hs_add_time" />
+          <ScalarProperty Name="hs_add_price" ColumnName="hs_add_price" />
+          <ScalarProperty Name="hs_min_time" ColumnName="hs_min_time" />
+          <ScalarProperty Name="hs_min_price" ColumnName="hs_min_price" />
+          <ScalarProperty Name="hs_max_time" ColumnName="hs_max_time" />
+          <ScalarProperty Name="hs_type_id" ColumnName="hs_type_id" />
+          <ScalarProperty Name="hs_jgtype_id" ColumnName="hs_jgtype_id" />
+          <ScalarProperty Name="hs_source_id" ColumnName="hs_source_id" />
+          <ScalarProperty Name="lostTime" ColumnName="lostTime" />
+          <ScalarProperty Name="MtID" ColumnName="MtID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hourse_scheme">
+      <EntityTypeMapping TypeName="EM.TestModel.hourse_scheme">
+        <MappingFragment StoreEntitySet="hourse_scheme">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="hs_room" ColumnName="hs_room" />
+          <ScalarProperty Name="hs_name" ColumnName="hs_name" />
+          <ScalarProperty Name="hs_psmoney" ColumnName="hs_psmoney" />
+          <ScalarProperty Name="hs_Discount" ColumnName="hs_Discount" />
+          <ScalarProperty Name="hs_type" ColumnName="hs_type" />
+          <ScalarProperty Name="hs_jgtype" ColumnName="hs_jgtype" />
+          <ScalarProperty Name="hs_source_id" ColumnName="hs_source_id" />
+          <ScalarProperty Name="Hs_isAll" ColumnName="Hs_isAll" />
+          <ScalarProperty Name="Hs_Strat" ColumnName="Hs_Strat" />
+          <ScalarProperty Name="Hs_End" ColumnName="Hs_End" />
+          <ScalarProperty Name="Hs_zdr" ColumnName="Hs_zdr" />
+          <ScalarProperty Name="Hs_Reamrk" ColumnName="Hs_Reamrk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="info">
+      <EntityTypeMapping TypeName="EM.TestModel.info">
+        <MappingFragment StoreEntitySet="info">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log">
+      <EntityTypeMapping TypeName="EM.TestModel.log">
+        <MappingFragment StoreEntitySet="log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="creator" ColumnName="creator" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="member">
+      <EntityTypeMapping TypeName="EM.TestModel.member">
+        <MappingFragment StoreEntitySet="member">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="Mid" ColumnName="Mid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Zjtype" ColumnName="Zjtype" />
+          <ScalarProperty Name="ZjNumber" ColumnName="ZjNumber" />
+          <ScalarProperty Name="Mtype" ColumnName="Mtype" />
+          <ScalarProperty Name="sales" ColumnName="sales" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Baithday" ColumnName="Baithday" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Ramrek" ColumnName="Ramrek" />
+          <ScalarProperty Name="Integration" ColumnName="Integration" />
+          <ScalarProperty Name="IntegraDh" ColumnName="IntegraDh" />
+          <ScalarProperty Name="IntegraDj" ColumnName="IntegraDj" />
+          <ScalarProperty Name="Stored" ColumnName="Stored" />
+          <ScalarProperty Name="Statid" ColumnName="Statid" />
+          <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+          <ScalarProperty Name="addUser" ColumnName="addUser" />
+          <ScalarProperty Name="XqTime" ColumnName="XqTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="memberState">
+      <EntityTypeMapping TypeName="EM.TestModel.memberState">
+        <MappingFragment StoreEntitySet="memberState">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="memberType">
+      <EntityTypeMapping TypeName="EM.TestModel.memberType">
+        <MappingFragment StoreEntitySet="memberType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="typePrice" ColumnName="typePrice" />
+          <ScalarProperty Name="Limit" ColumnName="Limit" />
+          <ScalarProperty Name="LimitValue" ColumnName="LimitValue" />
+          <ScalarProperty Name="IntegraIs" ColumnName="IntegraIs" />
+          <ScalarProperty Name="IsConsump" ColumnName="IsConsump" />
+          <ScalarProperty Name="IsFz" ColumnName="IsFz" />
+          <ScalarProperty Name="IsXf" ColumnName="IsXf" />
+          <ScalarProperty Name="XfPrice" ColumnName="XfPrice" />
+          <ScalarProperty Name="XfConsump" ColumnName="XfConsump" />
+          <ScalarProperty Name="IsLive" ColumnName="IsLive" />
+          <ScalarProperty Name="LiveNum" ColumnName="LiveNum" />
+          <ScalarProperty Name="LiveConsump" ColumnName="LiveConsump" />
+          <ScalarProperty Name="IsTx" ColumnName="IsTx" />
+          <ScalarProperty Name="IsDeaflut" ColumnName="IsDeaflut" />
+          <ScalarProperty Name="IsUpgrade" ColumnName="IsUpgrade" />
+          <ScalarProperty Name="ConsumpSum" ColumnName="ConsumpSum" />
+          <ScalarProperty Name="UpLive" ColumnName="UpLive" />
+          <ScalarProperty Name="IsDeduction" ColumnName="IsDeduction" />
+          <ScalarProperty Name="Isout" ColumnName="Isout" />
+          <ScalarProperty Name="OutHour" ColumnName="OutHour" />
+          <ScalarProperty Name="OutZD" ColumnName="OutZD" />
+          <ScalarProperty Name="FirstPrice" ColumnName="FirstPrice" />
+          <ScalarProperty Name="StaPrice" ColumnName="StaPrice" />
+          <ScalarProperty Name="XqTime" ColumnName="XqTime" />
+          <ScalarProperty Name="machJf" ColumnName="machJf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu">
+      <EntityTypeMapping TypeName="EM.TestModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="imgurl" ColumnName="imgurl" />
+          <ScalarProperty Name="sortId" ColumnName="sortId" />
+          <ScalarProperty Name="isable" ColumnName="isable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="meth_pay">
+      <EntityTypeMapping TypeName="EM.TestModel.meth_pay">
+        <MappingFragment StoreEntitySet="meth_pay">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="meth_pay_name" ColumnName="meth_pay_name" />
+          <ScalarProperty Name="meth_is_ya" ColumnName="meth_is_ya" />
+          <ScalarProperty Name="meth_is_jie" ColumnName="meth_is_jie" />
+          <ScalarProperty Name="meth_sort" ColumnName="meth_sort" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="modes">
+      <EntityTypeMapping TypeName="EM.TestModel.modes">
+        <MappingFragment StoreEntitySet="modes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="moshi_name" ColumnName="moshi_name" />
+          <ScalarProperty Name="Reanker" ColumnName="Reanker" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mRecords">
+      <EntityTypeMapping TypeName="EM.TestModel.mRecords">
+        <MappingFragment StoreEntitySet="mRecords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="mmid" ColumnName="mmid" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mtPrice">
+      <EntityTypeMapping TypeName="EM.TestModel.mtPrice">
+        <MappingFragment StoreEntitySet="mtPrice">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="MTID" ColumnName="MTID" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Dayprice" ColumnName="Dayprice" />
+          <ScalarProperty Name="zdPrice" ColumnName="zdPrice" />
+          <ScalarProperty Name="lcPrice" ColumnName="lcPrice" />
+          <ScalarProperty Name="mothPrice" ColumnName="mothPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="occu_infor">
+      <EntityTypeMapping TypeName="EM.TestModel.occu_infor">
+        <MappingFragment StoreEntitySet="occu_infor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="occ_no" ColumnName="occ_no" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="occ_name" ColumnName="occ_name" />
+          <ScalarProperty Name="occ_with" ColumnName="occ_with" />
+          <ScalarProperty Name="real_type_id" ColumnName="real_type_id" />
+          <ScalarProperty Name="room_number" ColumnName="room_number" />
+          <ScalarProperty Name="real_scheme_id" ColumnName="real_scheme_id" />
+          <ScalarProperty Name="source_id" ColumnName="source_id" />
+          <ScalarProperty Name="mem_cardno" ColumnName="mem_cardno" />
+          <ScalarProperty Name="real_mode_id" ColumnName="real_mode_id" />
+          <ScalarProperty Name="real_price" ColumnName="real_price" />
+          <ScalarProperty Name="occ_time" ColumnName="occ_time" />
+          <ScalarProperty Name="pre_live_day" ColumnName="pre_live_day" />
+          <ScalarProperty Name="stay_day" ColumnName="stay_day" />
+          <ScalarProperty Name="stay_deposit" ColumnName="stay_deposit" />
+          <ScalarProperty Name="depar_time" ColumnName="depar_time" />
+          <ScalarProperty Name="pha_sched" ColumnName="pha_sched" />
+          <ScalarProperty Name="card_id" ColumnName="card_id" />
+          <ScalarProperty Name="card_no" ColumnName="card_no" />
+          <ScalarProperty Name="brithday" ColumnName="brithday" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="family_name" ColumnName="family_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="meth_pay_id" ColumnName="meth_pay_id" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="deposit" ColumnName="deposit" />
+          <ScalarProperty Name="pay_money" ColumnName="pay_money" />
+          <ScalarProperty Name="amount_money" ColumnName="amount_money" />
+          <ScalarProperty Name="amount_rece" ColumnName="amount_rece" />
+          <ScalarProperty Name="return_money" ColumnName="return_money" />
+          <ScalarProperty Name="sale_id" ColumnName="sale_id" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="lordRoomid" ColumnName="lordRoomid" />
+          <ScalarProperty Name="continuelive" ColumnName="continuelive" />
+          <ScalarProperty Name="phonenum" ColumnName="phonenum" />
+          <ScalarProperty Name="tuifaId" ColumnName="tuifaId" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="occ_StyDate" ColumnName="occ_StyDate" />
+          <ScalarProperty Name="occ_headerImg" ColumnName="occ_headerImg" />
+          <ScalarProperty Name="occ_TfTime" ColumnName="occ_TfTime" />
+          <ScalarProperty Name="gzRoom" ColumnName="gzRoom" />
+          <ScalarProperty Name="accounts" ColumnName="accounts" />
+          <ScalarProperty Name="cpID" ColumnName="cpID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="occu_informx">
+      <EntityTypeMapping TypeName="EM.TestModel.occu_informx">
+        <MappingFragment StoreEntitySet="occu_informx">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="occ_no" ColumnName="occ_no" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="occ_name" ColumnName="occ_name" />
+          <ScalarProperty Name="occ_with" ColumnName="occ_with" />
+          <ScalarProperty Name="real_type_id" ColumnName="real_type_id" />
+          <ScalarProperty Name="room_number" ColumnName="room_number" />
+          <ScalarProperty Name="real_scheme_id" ColumnName="real_scheme_id" />
+          <ScalarProperty Name="source_id" ColumnName="source_id" />
+          <ScalarProperty Name="mem_cardno" ColumnName="mem_cardno" />
+          <ScalarProperty Name="real_mode_id" ColumnName="real_mode_id" />
+          <ScalarProperty Name="real_price" ColumnName="real_price" />
+          <ScalarProperty Name="occ_time" ColumnName="occ_time" />
+          <ScalarProperty Name="stay_day" ColumnName="stay_day" />
+          <ScalarProperty Name="stay_deposit" ColumnName="stay_deposit" />
+          <ScalarProperty Name="depar_time" ColumnName="depar_time" />
+          <ScalarProperty Name="pha_sched" ColumnName="pha_sched" />
+          <ScalarProperty Name="card_id" ColumnName="card_id" />
+          <ScalarProperty Name="card_no" ColumnName="card_no" />
+          <ScalarProperty Name="brithday" ColumnName="brithday" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="family_name" ColumnName="family_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="deposit" ColumnName="deposit" />
+          <ScalarProperty Name="amount_money" ColumnName="amount_money" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="lordRoomid" ColumnName="lordRoomid" />
+          <ScalarProperty Name="continuelive" ColumnName="continuelive" />
+          <ScalarProperty Name="phonenum" ColumnName="phonenum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order_infor">
+      <EntityTypeMapping TypeName="EM.TestModel.order_infor">
+        <MappingFragment StoreEntitySet="order_infor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="order_no" ColumnName="order_no" />
+          <ScalarProperty Name="room_id" ColumnName="room_id" />
+          <ScalarProperty Name="occ_id" ColumnName="occ_id" />
+          <ScalarProperty Name="order_money" ColumnName="order_money" />
+          <ScalarProperty Name="return_money" ColumnName="return_money" />
+          <ScalarProperty Name="order_state" ColumnName="order_state" />
+          <ScalarProperty Name="order_time" ColumnName="order_time" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paymentMoney">
+      <EntityTypeMapping TypeName="EM.TestModel.paymentMoney">
+        <MappingFragment StoreEntitySet="paymentMoney">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="orderno" ColumnName="orderno" />
+          <ScalarProperty Name="pm_Money" ColumnName="pm_Money" />
+          <ScalarProperty Name="pm_MethPayid" ColumnName="pm_MethPayid" />
+          <ScalarProperty Name="pm_Name" ColumnName="pm_Name" />
+          <ScalarProperty Name="pm_roomNumber" ColumnName="pm_roomNumber" />
+          <ScalarProperty Name="pm_Date" ColumnName="pm_Date" />
+          <ScalarProperty Name="pm_Remaker" ColumnName="pm_Remaker" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="price_type">
+      <EntityTypeMapping TypeName="EM.TestModel.price_type">
+        <MappingFragment StoreEntitySet="price_type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="pt_name" ColumnName="pt_name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="print">
+      <EntityTypeMapping TypeName="EM.TestModel.print">
+        <MappingFragment StoreEntitySet="print">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="pritName" ColumnName="pritName" />
+          <ScalarProperty Name="priContent" ColumnName="priContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="real_mode">
+      <EntityTypeMapping TypeName="EM.TestModel.real_mode">
+        <MappingFragment StoreEntitySet="real_mode">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="real_mode_name" ColumnName="real_mode_name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="real_state">
+      <EntityTypeMapping TypeName="EM.TestModel.real_state">
+        <MappingFragment StoreEntitySet="real_state">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="tr_number" ColumnName="tr_number" />
+          <ScalarProperty Name="tr_name" ColumnName="tr_name" />
+          <ScalarProperty Name="tr_remaker" ColumnName="tr_remaker" />
+          <ScalarProperty Name="back1" ColumnName="back1" />
+          <ScalarProperty Name="back2" ColumnName="back2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="receipt">
+      <EntityTypeMapping TypeName="EM.TestModel.receipt">
+        <MappingFragment StoreEntitySet="receipt">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no" ColumnName="no" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="isquota" ColumnName="isquota" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="creator" ColumnName="creator" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Remaker">
+      <EntityTypeMapping TypeName="EM.TestModel.Remaker">
+        <MappingFragment StoreEntitySet="Remaker">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="remaker1" ColumnName="remaker" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repair">
+      <EntityTypeMapping TypeName="EM.TestModel.Repair">
+        <MappingFragment StoreEntitySet="Repair">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="repair_name" ColumnName="repair_name" />
+          <ScalarProperty Name="repair_time" ColumnName="repair_time" />
+          <ScalarProperty Name="repair_man" ColumnName="repair_man" />
+          <ScalarProperty Name="repair_num" ColumnName="repair_num" />
+          <ScalarProperty Name="repair_remark" ColumnName="repair_remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleMenu">
+      <EntityTypeMapping TypeName="EM.TestModel.RoleMenu">
+        <MappingFragment StoreEntitySet="RoleMenu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Menu_id" ColumnName="Menu_id" />
+          <ScalarProperty Name="Menu_pid" ColumnName="Menu_pid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="room_feature">
+      <EntityTypeMapping TypeName="EM.TestModel.room_feature">
+        <MappingFragment StoreEntitySet="room_feature">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="room_feature_name" ColumnName="room_feature_name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="room_number">
+      <EntityTypeMapping TypeName="EM.TestModel.room_number">
+        <MappingFragment StoreEntitySet="room_number">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="Rn_flloeld" ColumnName="Rn_flloeld" />
+          <ScalarProperty Name="Rn_floor" ColumnName="Rn_floor" />
+          <ScalarProperty Name="Rn_roomNum" ColumnName="Rn_roomNum" />
+          <ScalarProperty Name="Rn_state" ColumnName="Rn_state" />
+          <ScalarProperty Name="Rn_room" ColumnName="Rn_room" />
+          <ScalarProperty Name="Rn_Type" ColumnName="Rn_Type" />
+          <ScalarProperty Name="Rn_price" ColumnName="Rn_price" />
+          <ScalarProperty Name="Rn_remaker" ColumnName="Rn_remaker" />
+          <ScalarProperty Name="Room_suod" ColumnName="Room_suod" />
+          <ScalarProperty Name="Room_sort" ColumnName="Room_sort" />
+          <ScalarProperty Name="Rn_Tobe" ColumnName="Rn_Tobe" />
+          <ScalarProperty Name="Rn_suo" ColumnName="Rn_suo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="room_state">
+      <EntityTypeMapping TypeName="EM.TestModel.room_state">
+        <MappingFragment StoreEntitySet="room_state">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="room_state_name" ColumnName="room_state_name" />
+          <ScalarProperty Name="Room_suod" ColumnName="Room_suod" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="Room_color" ColumnName="Room_color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="room_type_image">
+      <EntityTypeMapping TypeName="EM.TestModel.room_type_image">
+        <MappingFragment StoreEntitySet="room_type_image">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="imgid" ColumnName="imgid" />
+          <ScalarProperty Name="typeid" ColumnName="typeid" />
+          <ScalarProperty Name="imgurl" ColumnName="imgurl" />
+          <ScalarProperty Name="sortId" ColumnName="sortId" />
+          <ScalarProperty Name="pubdate" ColumnName="pubdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roomcoupon">
+      <EntityTypeMapping TypeName="EM.TestModel.roomcoupon">
+        <MappingFragment StoreEntitySet="roomcoupon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bookid" ColumnName="bookid" />
+          <ScalarProperty Name="roomnum" ColumnName="roomnum" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="creator" ColumnName="creator" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roomman">
+      <EntityTypeMapping TypeName="EM.TestModel.roomman">
+        <MappingFragment StoreEntitySet="roomman">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="bookid" ColumnName="bookid" />
+          <ScalarProperty Name="roomnum" ColumnName="roomnum" />
+          <ScalarProperty Name="roomprice" ColumnName="roomprice" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="checkintype" ColumnName="checkintype" />
+          <ScalarProperty Name="breakfirstnum" ColumnName="breakfirstnum" />
+          <ScalarProperty Name="personnum" ColumnName="personnum" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="cardnum" ColumnName="cardnum" />
+          <ScalarProperty Name="memberid" ColumnName="memberid" />
+          <ScalarProperty Name="creator" ColumnName="creator" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roomrent">
+      <EntityTypeMapping TypeName="EM.TestModel.roomrent">
+        <MappingFragment StoreEntitySet="roomrent">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="goodname" ColumnName="goodname" />
+          <ScalarProperty Name="goodnum" ColumnName="goodnum" />
+          <ScalarProperty Name="customerid" ColumnName="customerid" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="roomnum" ColumnName="roomnum" />
+          <ScalarProperty Name="isback" ColumnName="isback" />
+          <ScalarProperty Name="creator" ColumnName="creator" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sale_man">
+      <EntityTypeMapping TypeName="EM.TestModel.sale_man">
+        <MappingFragment StoreEntitySet="sale_man">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="sale_man_name" ColumnName="sale_man_name" />
+          <ScalarProperty Name="sale_man_money" ColumnName="sale_man_money" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shift">
+      <EntityTypeMapping TypeName="EM.TestModel.Shift">
+        <MappingFragment StoreEntitySet="Shift">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="goods_account_id" ColumnName="goods_account_id" />
+          <ScalarProperty Name="shfit_name" ColumnName="shfit_name" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shift_Exc">
+      <EntityTypeMapping TypeName="EM.TestModel.Shift_Exc">
+        <MappingFragment StoreEntitySet="Shift_Exc">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Good_Account_Id" ColumnName="Good_Account_Id" />
+          <ScalarProperty Name="meth_pay_id" ColumnName="meth_pay_id" />
+          <ScalarProperty Name="shift_id" ColumnName="shift_id" />
+          <ScalarProperty Name="shift_state" ColumnName="shift_state" />
+          <ScalarProperty Name="shift_money" ColumnName="shift_money" />
+          <ScalarProperty Name="shift_dateTime" ColumnName="shift_dateTime" />
+          <ScalarProperty Name="ga_name" ColumnName="ga_name" />
+          <ScalarProperty Name="ga_number" ColumnName="ga_number" />
+          <ScalarProperty Name="ga_unit" ColumnName="ga_unit" />
+          <ScalarProperty Name="ga_num" ColumnName="ga_num" />
+          <ScalarProperty Name="ga_price" ColumnName="ga_price" />
+          <ScalarProperty Name="ga_zffs_id" ColumnName="ga_zffs_id" />
+          <ScalarProperty Name="ga_date" ColumnName="ga_date" />
+          <ScalarProperty Name="ga_Type" ColumnName="ga_Type" />
+          <ScalarProperty Name="ga_sum_price" ColumnName="ga_sum_price" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ga_roomNumber" ColumnName="ga_roomNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shopInfo">
+      <EntityTypeMapping TypeName="EM.TestModel.shopInfo">
+        <MappingFragment StoreEntitySet="shopInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="shop_Name" ColumnName="shop_Name" />
+          <ScalarProperty Name="shop_LxMan" ColumnName="shop_LxMan" />
+          <ScalarProperty Name="Shop_Telphone" ColumnName="Shop_Telphone" />
+          <ScalarProperty Name="Shop_chuanzen" ColumnName="Shop_chuanzen" />
+          <ScalarProperty Name="Shop_Province" ColumnName="Shop_Province" />
+          <ScalarProperty Name="Shop_City" ColumnName="Shop_City" />
+          <ScalarProperty Name="Shop_Area" ColumnName="Shop_Area" />
+          <ScalarProperty Name="Shop_Address" ColumnName="Shop_Address" />
+          <ScalarProperty Name="Shop_x" ColumnName="Shop_x" />
+          <ScalarProperty Name="Shop_y" ColumnName="Shop_y" />
+          <ScalarProperty Name="Shop_Remaker" ColumnName="Shop_Remaker" />
+          <ScalarProperty Name="Shop_date" ColumnName="Shop_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sincethehous">
+      <EntityTypeMapping TypeName="EM.TestModel.Sincethehous">
+        <MappingFragment StoreEntitySet="Sincethehous">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="hs_Numberno" ColumnName="hs_Numberno" />
+          <ScalarProperty Name="hs_room" ColumnName="hs_room" />
+          <ScalarProperty Name="hs_yuany" ColumnName="hs_yuany" />
+          <ScalarProperty Name="hs_date" ColumnName="hs_date" />
+          <ScalarProperty Name="hs_ksDate" ColumnName="hs_ksDate" />
+          <ScalarProperty Name="hs_ylDate" ColumnName="hs_ylDate" />
+          <ScalarProperty Name="hs_Documentno" ColumnName="hs_Documentno" />
+          <ScalarProperty Name="hs_type" ColumnName="hs_type" />
+          <ScalarProperty Name="hs_people" ColumnName="hs_people" />
+          <ScalarProperty Name="hs_Result" ColumnName="hs_Result" />
+          <ScalarProperty Name="hs_remaker" ColumnName="hs_remaker" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuoRoom">
+      <EntityTypeMapping TypeName="EM.TestModel.SuoRoom">
+        <MappingFragment StoreEntitySet="SuoRoom">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="SuoType" ColumnName="SuoType" />
+          <ScalarProperty Name="RoomNumber" ColumnName="RoomNumber" />
+          <ScalarProperty Name="SuoMa" ColumnName="SuoMa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuoSys">
+      <EntityTypeMapping TypeName="EM.TestModel.SuoSys">
+        <MappingFragment StoreEntitySet="SuoSys">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="SuoTypeName" ColumnName="SuoTypeName" />
+          <ScalarProperty Name="IsComm" ColumnName="IsComm" />
+          <ScalarProperty Name="IsBackSuo" ColumnName="IsBackSuo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysParamter">
+      <EntityTypeMapping TypeName="EM.TestModel.SysParamter">
+        <MappingFragment StoreEntitySet="SysParamter">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="CancellMin" ColumnName="CancellMin" />
+          <ScalarProperty Name="IsDeposit" ColumnName="IsDeposit" />
+          <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+          <ScalarProperty Name="IsEarlyRoom" ColumnName="IsEarlyRoom" />
+          <ScalarProperty Name="EarlyStart" ColumnName="EarlyStart" />
+          <ScalarProperty Name="EarlyEnd" ColumnName="EarlyEnd" />
+          <ScalarProperty Name="EarlyOutTime" ColumnName="EarlyOutTime" />
+          <ScalarProperty Name="EarlyFee" ColumnName="EarlyFee" />
+          <ScalarProperty Name="EarlyFeeSel" ColumnName="EarlyFeeSel" />
+          <ScalarProperty Name="EarlyOutTimes" ColumnName="EarlyOutTimes" />
+          <ScalarProperty Name="EarlyFeeTwo" ColumnName="EarlyFeeTwo" />
+          <ScalarProperty Name="DayOutTime" ColumnName="DayOutTime" />
+          <ScalarProperty Name="DayFee" ColumnName="DayFee" />
+          <ScalarProperty Name="DayFeeTwo" ColumnName="DayFeeTwo" />
+          <ScalarProperty Name="DayTime" ColumnName="DayTime" />
+          <ScalarProperty Name="istype" ColumnName="istype" />
+          <ScalarProperty Name="ysTime" ColumnName="ysTime" />
+          <ScalarProperty Name="isOcczf" ColumnName="isOcczf" />
+          <ScalarProperty Name="isCy" ColumnName="isCy" />
+          <ScalarProperty Name="MarkSuo" ColumnName="MarkSuo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeScheme">
+      <EntityTypeMapping TypeName="EM.TestModel.TypeScheme">
+        <MappingFragment StoreEntitySet="TypeScheme">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="Earlyapart" ColumnName="Earlyapart" />
+          <ScalarProperty Name="EarlyapartAddP" ColumnName="EarlyapartAddP" />
+          <ScalarProperty Name="EarlyInsufficient" ColumnName="EarlyInsufficient" />
+          <ScalarProperty Name="EarlyInExceed" ColumnName="EarlyInExceed" />
+          <ScalarProperty Name="EarlyInAddPri" ColumnName="EarlyInAddPri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="EM.TestModel.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="cardID" ColumnName="cardID" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="cardTypeID" ColumnName="cardTypeID" />
+          <ScalarProperty Name="cardValue" ColumnName="cardValue" />
+          <ScalarProperty Name="typeid" ColumnName="typeid" />
+          <ScalarProperty Name="xiaoshou" ColumnName="xiaoshou" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="bairthday" ColumnName="bairthday" />
+          <ScalarProperty Name="xihao" ColumnName="xihao" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="meark" ColumnName="meark" />
+          <ScalarProperty Name="manageID" ColumnName="manageID" />
+          <ScalarProperty Name="truename" ColumnName="truename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="EM.TestModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="passwords" ColumnName="passwords" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="pubdate" ColumnName="pubdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userType">
+      <EntityTypeMapping TypeName="EM.TestModel.userType">
+        <MappingFragment StoreEntitySet="userType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="typeid" ColumnName="typeid" />
+          <ScalarProperty Name="typename" ColumnName="typename" />
+          <ScalarProperty Name="typeprice" ColumnName="typeprice" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZD_hourse">
+      <EntityTypeMapping TypeName="EM.TestModel.ZD_hourse">
+        <MappingFragment StoreEntitySet="ZD_hourse">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="latest" ColumnName="latest" />
+          <ScalarProperty Name="Buffer" ColumnName="Buffer" />
+          <ScalarProperty Name="tixing" ColumnName="tixing" />
+          <ScalarProperty Name="beigin" ColumnName="beigin" />
+          <ScalarProperty Name="endtime" ColumnName="endtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="account_goods">
+      <EntityTypeMapping TypeName="EM.TestModel.account_goods">
+        <MappingFragment StoreEntitySet="account_goods">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="ga_name" ColumnName="ga_name" />
+          <ScalarProperty Name="ga_Account" ColumnName="ga_Account" />
+          <ScalarProperty Name="ga_number" ColumnName="ga_number" />
+          <ScalarProperty Name="ga_roomNumber" ColumnName="ga_roomNumber" />
+          <ScalarProperty Name="ga_unit" ColumnName="ga_unit" />
+          <ScalarProperty Name="ga_num" ColumnName="ga_num" />
+          <ScalarProperty Name="ga_price" ColumnName="ga_price" />
+          <ScalarProperty Name="ga_zffs_id" ColumnName="ga_zffs_id" />
+          <ScalarProperty Name="ga_date" ColumnName="ga_date" />
+          <ScalarProperty Name="ga_people" ColumnName="ga_people" />
+          <ScalarProperty Name="ga_Type" ColumnName="ga_Type" />
+          <ScalarProperty Name="ga_sum_price" ColumnName="ga_sum_price" />
+          <ScalarProperty Name="ga_remker" ColumnName="ga_remker" />
+          <ScalarProperty Name="ga_occuid" ColumnName="ga_occuid" />
+          <ScalarProperty Name="ga_sfacount" ColumnName="ga_sfacount" />
+          <ScalarProperty Name="ga_isjz" ColumnName="ga_isjz" />
+          <ScalarProperty Name="ga_goodNo" ColumnName="ga_goodNo" />
+          <ScalarProperty Name="ga_isys" ColumnName="ga_isys" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order_ext">
+      <EntityTypeMapping TypeName="EM.TestModel.order_ext">
+        <MappingFragment StoreEntitySet="order_ext">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="roomnum" ColumnName="roomnum" />
+          <ScalarProperty Name="ordreno" ColumnName="ordreno" />
+          <ScalarProperty Name="hotelid" ColumnName="hotelid" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="num" ColumnName="num" />
+          <ScalarProperty Name="opentime" ColumnName="opentime" />
+          <ScalarProperty Name="creator" ColumnName="creator" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="room_type">
+      <EntityTypeMapping TypeName="EM.TestModel.room_type">
+        <MappingFragment StoreEntitySet="room_type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="hoteid" ColumnName="hoteid" />
+          <ScalarProperty Name="room_number" ColumnName="room_number" />
+          <ScalarProperty Name="room_name" ColumnName="room_name" />
+          <ScalarProperty Name="room_hour" ColumnName="room_hour" />
+          <ScalarProperty Name="room_listedmoney" ColumnName="room_listedmoney" />
+          <ScalarProperty Name="room_zmmoney" ColumnName="room_zmmoney" />
+          <ScalarProperty Name="room_hourmation" ColumnName="room_hourmation" />
+          <ScalarProperty Name="room_reamker" ColumnName="room_reamker" />
+          <ScalarProperty Name="room_image" ColumnName="room_image" />
+          <ScalarProperty Name="room_ealry_price" ColumnName="room_ealry_price" />
+          <ScalarProperty Name="room_Moth_price" ColumnName="room_Moth_price" />
+          <ScalarProperty Name="room_Bfb" ColumnName="room_Bfb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
