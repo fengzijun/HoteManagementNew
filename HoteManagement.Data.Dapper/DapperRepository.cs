@@ -1,4 +1,5 @@
-﻿using HoteManagement.Infrastructure.UnitOfWork;
+﻿using HoteManagement.Data.Dapper.UnitOfWork;
+using HoteManagement.Infrastructure.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +14,14 @@ namespace HoteManagement.Data.Dapper
         #region Fields
 
         private IUnitOfWork _unitofwork;
+        private IDbConnectionProvider _dbconnectionProvider;
 
         #endregion Fields
 
-        public DapperRepository(IUnitOfWork unitofwork)
+        public DapperRepository(IUnitOfWork unitofwork,IDbConnectionProvider dbconnectionProvider)
         {
             _unitofwork = unitofwork;
+            _dbconnectionProvider = dbconnectionProvider;
         }
 
 
