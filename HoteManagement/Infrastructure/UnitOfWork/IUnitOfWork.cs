@@ -10,7 +10,6 @@ namespace HoteManagement.Infrastructure.UnitOfWork
     {
         bool IsDisposed { get; }
 
-
         void Complete();
 
         Task CompleteAsync();

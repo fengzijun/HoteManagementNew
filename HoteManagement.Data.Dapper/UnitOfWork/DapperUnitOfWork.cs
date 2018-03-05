@@ -126,36 +126,21 @@ namespace HoteManagement.Data.Dapper.UnitOfWork
             else
                 dbContext = EngineContext.Current.Resolve<IDbConnection>() as DbConnection;
 
-          
-            
             ActiveDbConnections[dbContext.ConnectionString] = dbContext;
             return dbContext;
         }
 
-        private static void ObjectContext_ObjectMaterialized(DbContext dbContext, ObjectMaterializedEventArgs e)
-        {
-            //var entityType = ObjectContext.GetObjectType(e.Entity.GetType());
-
-            //dbContext.Configuration.AutoDetectChangesEnabled = false;
-            //var previousState = dbContext.Entry(e.Entity).State;
-
-            ////DateTimePropertyInfoHelper.NormalizeDatePropertyKinds(e.Entity, entityType);
-
-            //dbContext.Entry(e.Entity).State = previousState;
-            //dbContext.Configuration.AutoDetectChangesEnabled = true;
-        }
-
         public void SaveChanges()
         {
-            GetAllActiveDbContexts().ForEach(SaveChangesInDbContext);
+           // GetAllActiveDbContexts().ForEach(SaveChangesInDbContext);
         }
 
         public async Task SaveChangesAsync()
         {
-            foreach (var dbContext in GetAllActiveDbContexts())
-            {
-                await SaveChangesInDbContextAsync(dbContext);
-            }
+            //foreach (var dbContext in GetAllActiveDbContexts())
+            //{
+            //    await SaveChangesInDbContextAsync(dbContext);
+            //}
         }
     }
 }

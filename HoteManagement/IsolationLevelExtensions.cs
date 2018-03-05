@@ -33,5 +33,35 @@ namespace HoteManagement
                     throw new ArticleException("Unknown isolation level: " + isolationLevel);
             }
         }
+
+        public static System.Transactions.IsolationLevel ToSystemIsolationLevel(this System.Data.IsolationLevel isolationLevel)
+        {
+            switch (isolationLevel)
+            {
+                case System.Data.IsolationLevel.Chaos:
+                    return System.Transactions.IsolationLevel.Chaos;
+
+                case IsolationLevel.ReadCommitted:
+                    return System.Transactions.IsolationLevel.ReadCommitted;
+
+                case IsolationLevel.ReadUncommitted:
+                    return System.Transactions.IsolationLevel.ReadUncommitted;
+
+                case IsolationLevel.RepeatableRead:
+                    return System.Transactions.IsolationLevel.RepeatableRead;
+
+                case IsolationLevel.Serializable:
+                    return System.Transactions.IsolationLevel.Serializable;
+
+                case IsolationLevel.Snapshot:
+                    return System.Transactions.IsolationLevel.Snapshot;
+
+                case IsolationLevel.Unspecified:
+                    return System.Transactions.IsolationLevel.Unspecified;
+
+                default:
+                    throw new ArticleException("Unknown isolation level: " + isolationLevel);
+            }
+        }
     }
 }
