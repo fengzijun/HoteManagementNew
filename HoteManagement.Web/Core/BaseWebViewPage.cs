@@ -6,36 +6,27 @@ using System.Web.Mvc;
 using HoteManagement.Caching;
 using HoteManagement.Infrastructure;
 using HoteManagement.Service.Model;
-using HoteManagement.Service.Pay;
-using HoteManagement.Service.Room;
-using HoteManagement.Service.Sys;
-using HoteManagement.Service.User;
+
 using System.Web.Security;
 
 namespace HoteManagement.Web.Core
 {
     public abstract class BaseWebViewPage<TModel> : WebViewPage<TModel>
     {
-        protected readonly IPayService payService;
-        protected readonly IRoomService roomService;
-        protected readonly ISysService sysService;
-        protected readonly IUserService userService;
+
         protected readonly ILogger logger;
         protected readonly IWebHelper webHelper;
         protected readonly ICacheManager cacheManager;
 
         public BaseWebViewPage()
         {
-            payService = EngineContext.Current.Resolve<IPayService>();
-            roomService = EngineContext.Current.Resolve<IRoomService>();
-            sysService = EngineContext.Current.Resolve<ISysService>();
-            userService = EngineContext.Current.Resolve<IUserService>();
+
             logger = EngineContext.Current.Resolve<ILogger>();
             webHelper = EngineContext.Current.Resolve<IWebHelper>();
             cacheManager = EngineContext.Current.Resolve<ICacheManager>();
         }
 
-        public Accounts_UsersDto UserInfo
+        public UserInfoDto UserInfo
         {
             get
             {
@@ -49,7 +40,7 @@ namespace HoteManagement.Web.Core
                         FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
                         if (authTicket == null || string.IsNullOrEmpty(authTicket.UserData))
                             return null;
-                        Accounts_UsersDto user = Newtonsoft.Json.JsonConvert.DeserializeObject<Accounts_UsersDto>(authTicket.UserData);
+                        UserInfoDto user = Newtonsoft.Json.JsonConvert.DeserializeObject<UserInfoDto>(authTicket.UserData);
 
                         return user;
 

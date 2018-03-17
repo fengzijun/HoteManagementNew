@@ -32,18 +32,18 @@ namespace HoteManagement.Web
             log4net.Config.XmlConfigurator.Configure(new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.xml"));
 
 
-            DbInterception.Add(new EFIntercepterLogging());
-            DbInterception.Add(new DbMasterSlaveCommandInterceptor());
-            DbInterception.Add(new DbMasterSlaveConnectionInterceptor());
-            DbInterception.Add(new WithNoLockInterceptor());
+            //DbInterception.Add(new EFIntercepterLogging());
+            //DbInterception.Add(new DbMasterSlaveCommandInterceptor());
+            //DbInterception.Add(new DbMasterSlaveConnectionInterceptor());
+            //DbInterception.Add(new WithNoLockInterceptor());
         }
 
         protected void EntityFrameworkGenerateViews()
         {
-            var dbcontext = EngineContext.Current.Resolve<IDbContext>();
-            var objectContext = ((IObjectContextAdapter)dbcontext).ObjectContext;
-            var mappingCollection = (StorageMappingItemCollection)objectContext.MetadataWorkspace.GetItemCollection(DataSpace.CSSpace);
-            mappingCollection.GenerateViews(new List<EdmSchemaError>());
+            //var dbcontext = EngineContext.Current.Resolve<IDbContext>();
+            //var objectContext = ((IObjectContextAdapter)dbcontext).ObjectContext;
+            //var mappingCollection = (StorageMappingItemCollection)objectContext.MetadataWorkspace.GetItemCollection(DataSpace.CSSpace);
+            //mappingCollection.GenerateViews(new List<EdmSchemaError>());
         }
 
         protected void Application_Error(object sender, EventArgs e)

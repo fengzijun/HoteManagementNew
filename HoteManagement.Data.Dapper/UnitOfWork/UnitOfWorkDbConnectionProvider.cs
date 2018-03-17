@@ -20,7 +20,11 @@ namespace HoteManagement.Data.Dapper.UnitOfWork
 
         public DbConnection GetConnection()
         {
-            return _unitOfWorkProvider.Current.GetDbContext();
+            var connection = _unitOfWorkProvider.Current.GetDbContext();
+            //if (connection.State != System.Data.ConnectionState.Open)
+            //    connection.Open();
+
+            return connection;
         }
     }
     

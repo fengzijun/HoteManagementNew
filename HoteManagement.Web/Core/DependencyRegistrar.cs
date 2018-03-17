@@ -16,14 +16,16 @@ using HoteManagement.Data;
 using HoteManagement.Caching;
 using HoteManagement.Service.Logging;
 using HoteManagement.Service.Events;
-using HoteManagement.Data.UnitOfWork;
+
 using HoteManagement.Infrastructure.UnitOfWork;
-using HoteManagement.Service.Pay;
+
 using Autofac.Extras.DynamicProxy;
-using HoteManagement.Service.Room;
-using HoteManagement.Service.User;
-using HoteManagement.Service.Sys;
+
 using HoteManagement.Service.Core;
+using System.Data;
+using System.Data.SqlClient;
+using HoteManagement.Data.Dapper;
+using HoteManagement.Data.Dapper.UnitOfWork;
 
 namespace EM.Article.Api.Framework
 {
@@ -71,17 +73,17 @@ namespace EM.Article.Api.Framework
 
             //data layer
 
-            builder.Register(x => new EfDataProviderManager(config)).As<BaseDataProviderManager>().InstancePerDependency();
+            //builder.Register(x => new EfDataProviderManager(config)).As<BaseDataProviderManager>().InstancePerDependency();
             builder.Register(x => x.Resolve<BaseDataProviderManager>().LoadDataProvider()).As<IDataProvider>().InstancePerDependency();
 
-            var efDataProviderManager = new EfDataProviderManager(config);
-            var dataProvider = efDataProviderManager.LoadDataProvider();
+            //var efDataProviderManager = new EfDataProviderManager(config);
+            //var dataProvider = efDataProviderManager.LoadDataProvider();
 
-            dataProvider.InitDatabase(config.DatabaseInstallModel);
+            //dataProvider.InitDatabase(config.DatabaseInstallModel);
 
-            builder.Register<IDbContext>(c => new BaseObjectContext(config.MsSqlConnectionString)).InstancePerLifetimeScope();
+            builder.Register<IDbConnection>(c => new SqlConnection(config.MsSqlConnectionString)).InstancePerLifetimeScope();
             //builder.Register<IWriteDbContext>(c => new WriteObjectContext(config.MsSqlWriteConnectionString)).InstancePerLifetimeScope();
-            builder.RegisterGeneric(typeof(EfRepository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
+            builder.RegisterGeneric(typeof(DapperRepository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
          
             //cache managers
             builder.RegisterType<MemoryCacheManager>().As<ICacheManager>().SingleInstance();
@@ -90,8 +92,8 @@ namespace EM.Article.Api.Framework
 
             //use static cache (between HTTP requests)
             builder.RegisterType<DefaultLogger>().As<ILogger>().InstancePerLifetimeScope();
-            builder.RegisterType<DbContextFactory>().As<IDbContextFactory>().InstancePerLifetimeScope();
-            builder.RegisterType<SingleStrategy>().As<IReadDbStrategy>().InstancePerLifetimeScope();
+            //builder.RegisterType<DbContextFactory>().As<IDbContextFactory>().InstancePerLifetimeScope();
+            //builder.RegisterType<SingleStrategy>().As<IReadDbStrategy>().InstancePerLifetimeScope();
             //use static cache (between HTTP requests)
 
             bool databaseInstalled = DataSettingsHelper.DatabaseIsInstalled(config);
@@ -125,30 +127,17 @@ namespace EM.Article.Api.Framework
             builder.RegisterType<SubscriptionService>().As<ISubscriptionService>().InstancePerLifetimeScope();
 
             //unit of work
-            builder.RegisterType<UnitOfWorkDbContextProvider>().As<IDbContextProvider>().InstancePerLifetimeScope();
+            builder.RegisterType<UnitOfWorkDbConnectionProvider>().As<IDbConnectionProvider>().InstancePerLifetimeScope();
             builder.RegisterType<CallContextCurrentUnitOfWorkProvider>().As<IUnitOfWorkProvider>().InstancePerLifetimeScope();
-            builder.RegisterType<EfUnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
+            builder.RegisterType<DapperUnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
             builder.RegisterType<UnitOfWorkManager>().As<IUnitOfWorkManager>().InstancePerLifetimeScope();
-            builder.RegisterType<DbContextEfTransactionStrategy>().As<IEfTransactionStrategy>().InstancePerLifetimeScope();
-            builder.RegisterType<CallContextAmbientDataContext>().As<IAmbientDataContext>().SingleInstance();
-            builder.RegisterGeneric(typeof(DataContextAmbientScopeProvider<>)).As(typeof(IAmbientScopeProvider<>)).InstancePerLifetimeScope();
+            builder.RegisterType<DbContextDapperTransactionStrategy>().As<IDapperTransactionStrategy>().InstancePerLifetimeScope();
+            //builder.RegisterType<CallContextAmbientDataContext>().As<IAmbientDataContext>().SingleInstance();
+            //builder.RegisterGeneric(typeof(DataContextAmbientScopeProvider<>)).As(typeof(IAmbientScopeProvider<>)).InstancePerLifetimeScope();
             
             //serivce
 
-            //Article
-            builder.RegisterType<PayService>().As<IPayService>().InstancePerLifetimeScope().EnableClassInterceptors();
-
-            //Auth
-            builder.RegisterType<RoomService>().As<IRoomService>().InstancePerLifetimeScope().EnableClassInterceptors();
-
-            //Author
-            builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope().EnableClassInterceptors();
-
-            //CounterService
-            builder.RegisterType<SysService>().As<ISysService>().InstancePerLifetimeScope().EnableClassInterceptors();
-
-            //CounterService
-            builder.RegisterType<GenerateService>().As<IGenerateService>().InstancePerLifetimeScope().EnableClassInterceptors();
+            builder.RegisterType<HoteManagement.Service.Core.Service>().As<IService>().InstancePerLifetimeScope().EnableClassInterceptors();
 
             builder.RegisterType<RedisCacheManager>().As<IRedis>().InstancePerLifetimeScope();
 

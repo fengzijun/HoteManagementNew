@@ -81,8 +81,8 @@
     <Compile Include="Core\ApplicationService.cs" />
     <Compile Include="Core\AutoMapperDependencyRegistrar.cs" />
     <Compile Include="Core\BaseDtoEntity.cs" />
-    <Compile Include="Core\GenerateService.cs" />
-    <Compile Include="Core\IGenerateService.cs" />
+    <Compile Include="Core\IService.cs" />
+    <Compile Include="Core\Service.cs" />
     <Compile Include="Events\EventPublisher.cs" />
     <Compile Include="Events\EventPublisherExtensions.cs" />
     <Compile Include="Events\IConsumer.cs" />
@@ -175,20 +175,12 @@
     <Compile Include="Model\UsersDto.cs" />
     <Compile Include="Model\userTypeDto.cs" />
     <Compile Include="Model\ZD_hourseDto.cs" />
-    <Compile Include="Pay\IPayService.cs" />
-    <Compile Include="Pay\PayService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Room\IRoomService.cs" />
-    <Compile Include="Room\RoomService.cs" />
-    <Compile Include="Sys\ISysService.cs" />
-    <Compile Include="Sys\SysService.cs" />
-    <Compile Include="User\IUserService.cs" />
-    <Compile Include="User\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HoteManagement.Data\HoteManagement.Data.csproj">
-      <Project>{8061e779-4664-43b2-9bc2-4ec00a9b6316}</Project>
-      <Name>HoteManagement.Data</Name>
+    <ProjectReference Include="..\HoteManagement.Data.Dapper\HoteManagement.Data.Dapper.csproj">
+      <Project>{7eecee4d-4761-4c44-a7cd-d24ca5a3b27c}</Project>
+      <Name>HoteManagement.Data.Dapper</Name>
     </ProjectReference>
     <ProjectReference Include="..\HoteManagement\HoteManagement.csproj">
       <Project>{07f589af-79a5-4116-bdef-ad2dead3d899}</Project>
@@ -201,6 +193,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extension\" />
+    <Folder Include="Pay\" />
+    <Folder Include="Room\" />
+    <Folder Include="Sys\" />
+    <Folder Include="User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

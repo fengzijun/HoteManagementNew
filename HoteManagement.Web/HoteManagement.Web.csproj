@@ -221,29 +221,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\CosttypeController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\FloorController.cs" />
-    <Compile Include="Controllers\GoodsController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HotelController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MenuController.cs" />
-    <Compile Include="Controllers\ModesController.cs" />
-    <Compile Include="Controllers\OtherController.cs" />
-    <Compile Include="Controllers\PermissionController.cs" />
-    <Compile Include="Controllers\RoleController.cs" />
-    <Compile Include="Controllers\RoomController.cs" />
-    <Compile Include="Controllers\ShiftController.cs" />
-    <Compile Include="Controllers\SysController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Core\BaseController.cs" />
     <Compile Include="Core\Baseresponse.cs" />
     <Compile Include="Core\BaseWebViewPage.cs" />
     <Compile Include="Core\BootStrapExtensions.cs" />
     <Compile Include="Core\Const.cs" />
     <Compile Include="Core\DependencyRegistrar.cs" />
-    <Compile Include="Core\DependencyRegistrarExtensions.cs" />
     <Compile Include="Core\ErrorModelFilterAttribute.cs" />
     <Compile Include="Core\ExceptionHandlingAttribute.cs" />
     <Compile Include="Core\HotelAuthorize.cs" />
@@ -922,9 +906,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HoteManagement.Data\HoteManagement.Data.csproj">
-      <Project>{8061e779-4664-43b2-9bc2-4ec00a9b6316}</Project>
-      <Name>HoteManagement.Data</Name>
+    <ProjectReference Include="..\HoteManagement.Data.Dapper\HoteManagement.Data.Dapper.csproj">
+      <Project>{7EECEE4D-4761-4C44-A7CD-D24CA5A3B27C}</Project>
+      <Name>HoteManagement.Data.Dapper</Name>
     </ProjectReference>
     <ProjectReference Include="..\HoteManagement.Service\HoteManagement.Service.csproj">
       <Project>{2dfd7b06-5608-4d79-8eb8-cca12e74586f}</Project>

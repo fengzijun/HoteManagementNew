@@ -2,10 +2,7 @@
 using HoteManagement.Infrastructure;
 using HoteManagement.Service.Core;
 using HoteManagement.Service.Model;
-using HoteManagement.Service.Pay;
-using HoteManagement.Service.Room;
-using HoteManagement.Service.Sys;
-using HoteManagement.Service.User;
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -21,25 +18,19 @@ namespace HoteManagement.Web.Core
     [ErrorModelFilter]
     public class BaseController : Controller
     {
-        protected readonly IPayService payService;
-        protected readonly IRoomService roomService;
-        protected readonly ISysService sysService;
-        protected readonly IUserService userService;
+     
         protected readonly ILogger logger;
         protected readonly IWebHelper webHelper;
         protected readonly ICacheManager cacheManager;
-        protected readonly IGenerateService generateService;
+        protected readonly IService generateService;
 
         public BaseController()
         {
-            payService = EngineContext.Current.Resolve<IPayService>();
-            roomService = EngineContext.Current.Resolve<IRoomService>();
-            sysService = EngineContext.Current.Resolve<ISysService>();
-            userService = EngineContext.Current.Resolve<IUserService>();
+          
             logger = EngineContext.Current.Resolve<ILogger>();
             webHelper = EngineContext.Current.Resolve<IWebHelper>();
             cacheManager = EngineContext.Current.Resolve<ICacheManager>();
-            generateService = EngineContext.Current.Resolve<IGenerateService>();
+            generateService = EngineContext.Current.Resolve<IService>();
             GetMenus();
         }
 
@@ -118,7 +109,7 @@ namespace HoteManagement.Web.Core
         }
 
 
-        public Accounts_UsersDto UserInfo { get {
+        public UserInfoDto UserInfo { get {
                 try
                 {
                     
@@ -129,7 +120,7 @@ namespace HoteManagement.Web.Core
                         FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
                         if (authTicket == null || string.IsNullOrEmpty(authTicket.UserData))
                             return null;
-                        Accounts_UsersDto user = Newtonsoft.Json.JsonConvert.DeserializeObject<Accounts_UsersDto>(authTicket.UserData);
+                        UserInfoDto user = Newtonsoft.Json.JsonConvert.DeserializeObject<UserInfoDto>(authTicket.UserData);
 
                         return user;
 
@@ -149,72 +140,72 @@ namespace HoteManagement.Web.Core
 
         public void GetMenus()
         {
-            if (UserInfo == null)
-                return;
-            var menus = cacheManager.Get<UserMenus>(Const.MENUKEY, () =>
-            {
-                return userService.GetAccountMenus(UserInfo.Id);
-            }, 60*60*5);
+            //if (UserInfo == null)
+            //    return;
+            //var menus = cacheManager.Get<UserMenus>(Const.MENUKEY, () =>
+            //{
+            //    return userService.GetAccountMenus(UserInfo.Id);
+            //}, 60*60*5);
 
 
-            var temp = cacheManager.Get<HoteManagement.Service.Model.UserMenus>(HoteManagement.Web.Core.Const.MENUKEY);
+            //var temp = cacheManager.Get<HoteManagement.Service.Model.UserMenus>(HoteManagement.Web.Core.Const.MENUKEY);
 
         }
 
         public void PrepareHotelList(string name,int? parentid, int? istop, int? isdeleted, int? ischain,bool hasselected)
         {
-            var models = generateService.GetHotelList(name, parentid, istop, isdeleted, ischain);
-            List<SelectListItem> list = new List<SelectListItem>();
-            foreach (var item in models)
-            {
-                list.Add(new SelectListItem { Text = item.HotelName, Value = item.Id.ToString() });
+            //var models = generateService.GetHotelList(name, parentid, istop, isdeleted, ischain);
+            //List<SelectListItem> list = new List<SelectListItem>();
+            //foreach (var item in models)
+            //{
+            //    list.Add(new SelectListItem { Text = item.HotelName, Value = item.Id.ToString() });
 
-            }
-            if(hasselected)
-                list.Insert(0, new SelectListItem { Value = "0", Text = "请选择" });
-            ViewBag.Hotellist = list;
+            //}
+            //if(hasselected)
+            //    list.Insert(0, new SelectListItem { Value = "0", Text = "请选择" });
+            //ViewBag.Hotellist = list;
         }
 
         public void PrepareRoleList(int? hotelid, bool hasselected)
         {
-            var models = generateService.GetAccounts_RolesList(hotelid);
-            List<SelectListItem> list = new List<SelectListItem>();
-            foreach (var item in models)
-            {
-                list.Add(new SelectListItem { Text = item.title, Value = item.Id.ToString() });
+            //var models = generateService.GetAccounts_RolesList(hotelid);
+            //List<SelectListItem> list = new List<SelectListItem>();
+            //foreach (var item in models)
+            //{
+            //    list.Add(new SelectListItem { Text = item.title, Value = item.Id.ToString() });
 
-            }
-            if (hasselected)
-                list.Insert(0, new SelectListItem { Value = "0", Text = "请选择" });
+            //}
+            //if (hasselected)
+            //    list.Insert(0, new SelectListItem { Value = "0", Text = "请选择" });
 
-            foreach (var item in list)
-            {
-                int id = int.Parse(item.Value);
-                var model = models.Where(s => s.Id == id).FirstOrDefault();
-                if (model != null)
-                {
-                    if (!hotelid.HasValue && model.UserHotel != null)
-                    {
-                        item.Text = item.Text + "(" + model.UserHotel.HotelName + ")";
-                    }
+            //foreach (var item in list)
+            //{
+            //    int id = int.Parse(item.Value);
+            //    var model = models.Where(s => s.Id == id).FirstOrDefault();
+            //    if (model != null)
+            //    {
+            //        if (!hotelid.HasValue && model.UserHotel != null)
+            //        {
+            //            item.Text = item.Text + "(" + model.UserHotel.HotelName + ")";
+            //        }
 
-                    item.Value = item.Value + "_" + (model.UserHotel == null ? "0" : model.UserHotel.Id.ToString());
-                }
-            }
+            //        item.Value = item.Value + "_" + (model.UserHotel == null ? "0" : model.UserHotel.Id.ToString());
+            //    }
+            //}
 
-            ViewBag.Rolelist = list;
+            //ViewBag.Rolelist = list;
         }
 
         public int? CheckHotelid(int? hotelid)
         {
-            if (hotelid.HasValue && hotelid.Value != 0)
-                return hotelid;
+            //if (hotelid.HasValue && hotelid.Value != 0)
+            //    return hotelid;
 
-            if (!hotelid.HasValue)
-                return UserInfo.hotelid;
+            //if (!hotelid.HasValue)
+            //    return UserInfo.hotelid;
 
-            if (hotelid.HasValue && hotelid.Value == 0)
-                return UserInfo.hotelid;
+            //if (hotelid.HasValue && hotelid.Value == 0)
+            //    return UserInfo.hotelid;
 
             return 0;
         }

@@ -13,10 +13,10 @@ namespace HoteManagement.Console
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class EM_TestEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public EM_TestEntities()
+            : base("name=EM_TestEntities")
         {
         }
     
@@ -25,88 +25,30 @@ namespace HoteManagement.Console
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Accounts_Roles> Accounts_Roles { get; set; }
-        public virtual DbSet<Accounts_UserRoles> Accounts_UserRoles { get; set; }
-        public virtual DbSet<Accounts_Users> Accounts_Users { get; set; }
-        public virtual DbSet<AddPrice> AddPrice { get; set; }
-        public virtual DbSet<apartment> apartment { get; set; }
-        public virtual DbSet<banner> banner { get; set; }
-        public virtual DbSet<Book_Rdetail> Book_Rdetail { get; set; }
-        public virtual DbSet<book_room> book_room { get; set; }
-        public virtual DbSet<BookState> BookState { get; set; }
-        public virtual DbSet<breakfirstcoupon> breakfirstcoupon { get; set; }
-        public virtual DbSet<card_type> card_type { get; set; }
-        public virtual DbSet<cCall> cCall { get; set; }
-        public virtual DbSet<cDepartment> cDepartment { get; set; }
-        public virtual DbSet<cIndustry> cIndustry { get; set; }
-        public virtual DbSet<comm_unit> comm_unit { get; set; }
-        public virtual DbSet<Commission> Commission { get; set; }
-        public virtual DbSet<Contacts> Contacts { get; set; }
-        public virtual DbSet<cost_type> cost_type { get; set; }
-        public virtual DbSet<cPost> cPost { get; set; }
-        public virtual DbSet<cprotocol> cprotocol { get; set; }
-        public virtual DbSet<cprotocolPrice> cprotocolPrice { get; set; }
-        public virtual DbSet<cpType> cpType { get; set; }
-        public virtual DbSet<credit> credit { get; set; }
-        public virtual DbSet<csysType> csysType { get; set; }
-        public virtual DbSet<customer> customer { get; set; }
-        public virtual DbSet<customerState> customerState { get; set; }
-        public virtual DbSet<customerType> customerType { get; set; }
-        public virtual DbSet<Entry> Entry { get; set; }
-        public virtual DbSet<ExceedScheme> ExceedScheme { get; set; }
-        public virtual DbSet<floor_ld> floor_ld { get; set; }
-        public virtual DbSet<floor_manage> floor_manage { get; set; }
-        public virtual DbSet<FtSet> FtSet { get; set; }
-        public virtual DbSet<Goods> Goods { get; set; }
-        public virtual DbSet<goods_account> goods_account { get; set; }
-        public virtual DbSet<guest_source> guest_source { get; set; }
-        public virtual DbSet<Hotel> Hotel { get; set; }
-        public virtual DbSet<hour_room> hour_room { get; set; }
-        public virtual DbSet<hourse_scheme> hourse_scheme { get; set; }
-        public virtual DbSet<info> info { get; set; }
-        public virtual DbSet<log> log { get; set; }
-        public virtual DbSet<member> member { get; set; }
-        public virtual DbSet<memberState> memberState { get; set; }
-        public virtual DbSet<memberType> memberType { get; set; }
-        public virtual DbSet<Menu> Menu { get; set; }
-        public virtual DbSet<meth_pay> meth_pay { get; set; }
-        public virtual DbSet<modes> modes { get; set; }
-        public virtual DbSet<mRecords> mRecords { get; set; }
-        public virtual DbSet<mtPrice> mtPrice { get; set; }
-        public virtual DbSet<occu_infor> occu_infor { get; set; }
-        public virtual DbSet<occu_informx> occu_informx { get; set; }
-        public virtual DbSet<order_infor> order_infor { get; set; }
-        public virtual DbSet<paymentMoney> paymentMoney { get; set; }
-        public virtual DbSet<price_type> price_type { get; set; }
-        public virtual DbSet<print> print { get; set; }
-        public virtual DbSet<real_mode> real_mode { get; set; }
-        public virtual DbSet<real_state> real_state { get; set; }
-        public virtual DbSet<receipt> receipt { get; set; }
-        public virtual DbSet<Remaker> Remaker { get; set; }
-        public virtual DbSet<Repair> Repair { get; set; }
-        public virtual DbSet<RoleMenu> RoleMenu { get; set; }
-        public virtual DbSet<room_feature> room_feature { get; set; }
-        public virtual DbSet<room_number> room_number { get; set; }
-        public virtual DbSet<room_state> room_state { get; set; }
-        public virtual DbSet<room_type_image> room_type_image { get; set; }
-        public virtual DbSet<roomcoupon> roomcoupon { get; set; }
-        public virtual DbSet<roomman> roomman { get; set; }
-        public virtual DbSet<roomrent> roomrent { get; set; }
-        public virtual DbSet<sale_man> sale_man { get; set; }
-        public virtual DbSet<Shift> Shift { get; set; }
-        public virtual DbSet<Shift_Exc> Shift_Exc { get; set; }
-        public virtual DbSet<shopInfo> shopInfo { get; set; }
-        public virtual DbSet<Sincethehous> Sincethehous { get; set; }
-        public virtual DbSet<SuoRoom> SuoRoom { get; set; }
-        public virtual DbSet<SuoSys> SuoSys { get; set; }
-        public virtual DbSet<SysParamter> SysParamter { get; set; }
-        public virtual DbSet<TypeScheme> TypeScheme { get; set; }
+        public virtual DbSet<d_qyjjlx> d_qyjjlx { get; set; }
+        public virtual DbSet<g_BusinessLog> g_BusinessLog { get; set; }
+        public virtual DbSet<g_statetransferrule> g_statetransferrule { get; set; }
+        public virtual DbSet<gczj_code> gczj_code { get; set; }
+        public virtual DbSet<gczj_glyh_dq> gczj_glyh_dq { get; set; }
+        public virtual DbSet<gczj_jgjs_dwgcxxb> gczj_jgjs_dwgcxxb { get; set; }
+        public virtual DbSet<gczj_jgjsglb> gczj_jgjsglb { get; set; }
+        public virtual DbSet<gczj_jjscglb> gczj_jjscglb { get; set; }
+        public virtual DbSet<gczj_sgcsfhdglb> gczj_sgcsfhdglb { get; set; }
+        public virtual DbSet<gczj_xmxx> gczj_xmxx { get; set; }
+        public virtual DbSet<gczj_zbkzjba_xmz> gczj_zbkzjba_xmz { get; set; }
+        public virtual DbSet<gczj_zbkzjbaglb> gczj_zbkzjbaglb { get; set; }
+        public virtual DbSet<jsdw_jbqkb> jsdw_jbqkb { get; set; }
+        public virtual DbSet<sgtyk_gljsryqkb> sgtyk_gljsryqkb { get; set; }
+        public virtual DbSet<sgtyk_qyjbqkb> sgtyk_qyjbqkb { get; set; }
+        public virtual DbSet<UEPP_Code> UEPP_Code { get; set; }
+        public virtual DbSet<UEPP_Qycsyw> UEPP_Qycsyw { get; set; }
+        public virtual DbSet<UEPP_Qyjbxx> UEPP_Qyjbxx { get; set; }
+        public virtual DbSet<UEPP_QyRy> UEPP_QyRy { get; set; }
+        public virtual DbSet<UEPP_Ryjbxx> UEPP_Ryjbxx { get; set; }
         public virtual DbSet<UserInfo> UserInfo { get; set; }
-        public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<userType> userType { get; set; }
-        public virtual DbSet<ZD_hourse> ZD_hourse { get; set; }
-        public virtual DbSet<account_goods> account_goods { get; set; }
-        public virtual DbSet<order_ext> order_ext { get; set; }
-        public virtual DbSet<room_type> room_type { get; set; }
+        public virtual DbSet<wdecolinf> wdecolinf { get; set; }
+        public virtual DbSet<wdetabinf> wdetabinf { get; set; }
+        public virtual DbSet<gczj_zbkzjbaglb_20140709> gczj_zbkzjbaglb_20140709 { get; set; }
+        public virtual DbSet<gczj_zbkzjbaglb_20150610> gczj_zbkzjbaglb_20150610 { get; set; }
     }
 }

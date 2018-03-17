@@ -47,13 +47,9 @@ namespace HoteManagement.Web.Controllers
                 return View(model);
             }
 
-            var user = userService.GetAccountUser(model.UserName, model.Password);
+            var user = generateService.GetUserinfoByUsernameAndPwd(model.UserName, model.Password);
             if(user!=null)
             {
-
-                user.Email = DateTime.Now.ToString();
-                user.Phone = webHelper.GetCurrentIpAddress();
-                userService.UpdateAccountUser(user);
 
                 FormsAuthenticationTicket authTicket =
                     new FormsAuthenticationTicket(

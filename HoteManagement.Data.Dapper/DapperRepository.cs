@@ -2,10 +2,14 @@
 using HoteManagement.Infrastructure.UnitOfWork;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper;
+using DapperExtensions;
+using HoteManagement.Data.Dapper.Filters.Query;
 
 namespace HoteManagement.Data.Dapper
 {
@@ -15,13 +19,16 @@ namespace HoteManagement.Data.Dapper
 
         private IUnitOfWork _unitofwork;
         private IDbConnectionProvider _dbconnectionProvider;
+        private IDapperQueryFilterExecuter _dapperQueryFilterExecuter;
 
         #endregion Fields
 
-        public DapperRepository(IUnitOfWork unitofwork,IDbConnectionProvider dbconnectionProvider)
+        public DapperRepository(IUnitOfWork unitofwork,IDbConnectionProvider dbconnectionProvider, IDapperQueryFilterExecuter dapperQueryFilterExecuter)
         {
             _unitofwork = unitofwork;
             _dbconnectionProvider = dbconnectionProvider;
+            _dapperQueryFilterExecuter = dapperQueryFilterExecuter;
+
         }
 
 
@@ -32,7 +39,41 @@ namespace HoteManagement.Data.Dapper
         /// <returns>Entity</returns>
         public T GetById(object id)
         {
-            throw new NotImplementedException();
+            IDbConnection connnection = _dbconnectionProvider.GetConnection();
+            //string sql = string.Format("Select * from {0} where id = @id", typeof(T).Name);
+            return connnection.Get<T>(id);
+        }
+
+        public IEnumerable<T> GetList(string sql, object parameters = null)
+        {
+            IDbConnection connnection = _dbconnectionProvider.GetConnection();
+            
+            return connnection.Query<T>(sql, parameters);
+        }
+
+        public int Execute(string query, object parameters = null)
+        {
+            IDbConnection connnection = _dbconnectionProvider.GetConnection();
+            return connnection.Execute(query, parameters);
+        }
+
+        public IEnumerable<T> GetAllPaged(Expression<Func<T, bool>> predicate, int pageNumber, int itemsPerPage, string sortingProperty, bool ascending = true)
+        {
+            IPredicate filteredPredicate = _dapperQueryFilterExecuter.ExecuteFilter<T>(predicate);
+            IDbConnection connnection = _dbconnectionProvider.GetConnection();
+            return connnection.GetPage<T>(
+                filteredPredicate,
+                new List<ISort> { new Sort { Ascending = ascending, PropertyName = sortingProperty } },
+                pageNumber,
+                itemsPerPage,
+                null);
+        }
+
+        public int Count(Expression<Func<T, bool>> predicate)
+        {
+            IPredicate filteredPredicate = _dapperQueryFilterExecuter.ExecuteFilter<T>(predicate);
+            IDbConnection connnection = _dbconnectionProvider.GetConnection();
+            return connnection.Count<T>(filteredPredicate);
         }
 
         /// <summary>
@@ -41,8 +82,12 @@ namespace HoteManagement.Data.Dapper
         /// <param name="entity">Entity</param>
         public T Insert(T entity)
         {
-            throw new NotImplementedException();
+            IDbConnection connnection = _dbconnectionProvider.GetConnection();
+            connnection.Insert(entity);
+            return entity;
         }
+
+    
 
         /// <summary>
         /// Insert entities
@@ -50,7 +95,9 @@ namespace HoteManagement.Data.Dapper
         /// <param name="entities">Entities</param>
         public void Insert(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            IDbConnection connnection = _dbconnectionProvider.GetConnection();
+            foreach (var item in entities)
+                connnection.Insert(item);
         }
 
         /// <summary>
@@ -59,7 +106,8 @@ namespace HoteManagement.Data.Dapper
         /// <param name="entity">Entity</param>
         public  void Update(T entity)
         {
-            throw new NotImplementedException();
+            IDbConnection connnection = _dbconnectionProvider.GetConnection();
+            connnection.Update(entity);
         }
 
         /// <summary>
@@ -68,7 +116,9 @@ namespace HoteManagement.Data.Dapper
         /// <param name="entities">Entities</param>
         public void Update(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            IDbConnection connnection = _dbconnectionProvider.GetConnection();
+            foreach (var item in entities)
+                connnection.Update(item);
         }
 
         /// <summary>
@@ -77,7 +127,9 @@ namespace HoteManagement.Data.Dapper
         /// <param name="id"></param>
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            IDbConnection connnection = _dbconnectionProvider.GetConnection();
+            var entity = connnection.Get<T>(id);
+            connnection.Delete(entity);
         }
 
         /// <summary>
@@ -86,7 +138,8 @@ namespace HoteManagement.Data.Dapper
         /// <param name="entity">Entity</param>
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            IDbConnection connnection = _dbconnectionProvider.GetConnection();
+            connnection.Delete(entity);
         }
 
         /// <summary>
@@ -95,7 +148,9 @@ namespace HoteManagement.Data.Dapper
         /// <param name="entities">Entities</param>
         public void Delete(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            IDbConnection connnection = _dbconnectionProvider.GetConnection();
+            foreach(var item in entities)
+                connnection.Delete(item);
         }
 
         /// <summary>

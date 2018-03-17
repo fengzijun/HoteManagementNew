@@ -1,5 +1,8 @@
 using System;
 
+using Dapper;
+using DapperExtensions;
+
 namespace HoteManagement
 {
     /// <summary>
@@ -7,63 +10,64 @@ namespace HoteManagement
     /// </summary>
     public abstract partial class BaseEntity
     {
-        public BaseEntity()
-        {
-        }
+        //public BaseEntity()
+        //{
+        //}
 
-        public virtual int Id { get; set; }
 
-        public override bool Equals(object obj)
-        {
-            return Equals(obj as BaseEntity);
-        }
+        //public virtual int Id { get; set; }
 
-        private static bool IsTransient(BaseEntity obj)
-        {
-            return obj != null && Equals(obj.Id, default(int));
-        }
+        //public override bool Equals(object obj)
+        //{
+        //    return Equals(obj as BaseEntity);
+        //}
 
-        private Type GetUnproxiedType()
-        {
-            return GetType();
-        }
+        //private static bool IsTransient(BaseEntity obj)
+        //{
+        //    return obj != null && Equals(obj.Id, default(int));
+        //}
 
-        public virtual bool Equals(BaseEntity other)
-        {
-            if (other == null)
-                return false;
+        //private Type GetUnproxiedType()
+        //{
+        //    return GetType();
+        //}
 
-            if (ReferenceEquals(this, other))
-                return true;
+        //public virtual bool Equals(BaseEntity other)
+        //{
+        //    if (other == null)
+        //        return false;
 
-            if (!IsTransient(this) &&
-                !IsTransient(other) &&
-                Equals(Id, other.Id))
-            {
-                var otherType = other.GetUnproxiedType();
-                var thisType = GetUnproxiedType();
-                return thisType.IsAssignableFrom(otherType) ||
-                        otherType.IsAssignableFrom(thisType);
-            }
+        //    if (ReferenceEquals(this, other))
+        //        return true;
 
-            return false;
-        }
+        //    if (!IsTransient(this) &&
+        //        !IsTransient(other) &&
+        //        Equals(Id, other.Id))
+        //    {
+        //        var otherType = other.GetUnproxiedType();
+        //        var thisType = GetUnproxiedType();
+        //        return thisType.IsAssignableFrom(otherType) ||
+        //                otherType.IsAssignableFrom(thisType);
+        //    }
 
-        public override int GetHashCode()
-        {
-            if (Equals(Id, default(int)))
-                return base.GetHashCode();
-            return Id.GetHashCode();
-        }
+        //    return false;
+        //}
 
-        public static bool operator ==(BaseEntity x, BaseEntity y)
-        {
-            return Equals(x, y);
-        }
+        //public override int GetHashCode()
+        //{
+        //    if (Equals(Id, default(int)))
+        //        return base.GetHashCode();
+        //    return Id.GetHashCode();
+        //}
 
-        public static bool operator !=(BaseEntity x, BaseEntity y)
-        {
-            return !(x == y);
-        }
+        //public static bool operator ==(BaseEntity x, BaseEntity y)
+        //{
+        //    return Equals(x, y);
+        //}
+
+        //public static bool operator !=(BaseEntity x, BaseEntity y)
+        //{
+        //    return !(x == y);
+        //}
     }
 }

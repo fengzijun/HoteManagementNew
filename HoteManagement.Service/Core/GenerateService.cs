@@ -99,7 +99,6 @@ namespace HoteManagement.Service.Core
       IRepository<Domain.Users> UsersRepository,
       IRepository<Domain.userType> userTypeRepository,
       IRepository<Domain.ZD_hourse> ZD_hourseRepository,
-    IDbContext dbcontext,
     IRedis redishelper,
     IEventPublisher eventPublisher,
     ILogger logger) : base(
@@ -187,7 +186,6 @@ UsersRepository,
 userTypeRepository,
 ZD_hourseRepository,
 
-dbcontext,
 redishelper,
 eventPublisher,
 logger)

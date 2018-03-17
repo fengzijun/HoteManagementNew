@@ -4,8 +4,7 @@ using Autofac.Core;
 using Autofac.Extras.DynamicProxy;
 using HoteManagement.Caching;
 using HoteManagement.Configuration;
-using HoteManagement.Data;
-using HoteManagement.Data.UnitOfWork;
+
 using HoteManagement.Fakes;
 using HoteManagement.Infrastructure;
 using HoteManagement.Infrastructure.DependencyManagement;

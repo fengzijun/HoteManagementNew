@@ -19,7 +19,7 @@ namespace HoteManagement.Web.Core
                 FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
                 if (authTicket == null || string.IsNullOrEmpty(authTicket.UserData))
                     return false;
-                Accounts_UsersDto user = Newtonsoft.Json.JsonConvert.DeserializeObject<Accounts_UsersDto>(authTicket.UserData);
+                UserInfoDto user = Newtonsoft.Json.JsonConvert.DeserializeObject<UserInfoDto>(authTicket.UserData);
 
                 if (user != null)
                     return true;

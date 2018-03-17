@@ -85,6 +85,43 @@ namespace HoteManagement.Data
         /// Gets a table with "no tracking" enabled (EF feature) Use it only when you load record(s) only for read-only operations
         /// </summary>
         IQueryable<T> TableNoTracking { get; }
+
+
+        /// <summary>
+        /// for dapper
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        IEnumerable<T> GetList(string sql, object parameters = null);
+
+        /// <summary>
+        /// execute sql
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        int Execute(string query, object parameters = null);
+
+        /// <summary>
+        /// dapper query paged data
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="pageNumber"></param>
+        /// <param name="itemsPerPage"></param>
+        /// <param name="sortingProperty"></param>
+        /// <param name="ascending"></param>
+        /// <returns></returns>
+        IEnumerable<T> GetAllPaged(Expression<Func<T, bool>> predicate, int pageNumber, int itemsPerPage, string sortingProperty, bool ascending = true);
+
+        /// <summary>
+        /// count
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        int Count(Expression<Func<T, bool>> predicate);
+    
+
     }
 
     //public partial interface IWriteRepository<T> : IRepository<T> where T : BaseEntity

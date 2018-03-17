@@ -14,21 +14,32 @@ namespace HoteManagement.Console
     
     public partial class UserInfo
     {
-        public int Id { get; set; }
-        public Nullable<int> hotelid { get; set; }
-        public string userID { get; set; }
-        public string cardID { get; set; }
-        public Nullable<bool> sex { get; set; }
-        public Nullable<int> cardTypeID { get; set; }
-        public string cardValue { get; set; }
-        public Nullable<int> typeid { get; set; }
-        public string xiaoshou { get; set; }
-        public string phone { get; set; }
-        public Nullable<System.DateTime> bairthday { get; set; }
-        public string xihao { get; set; }
-        public string address { get; set; }
-        public string meark { get; set; }
-        public Nullable<int> manageID { get; set; }
-        public string truename { get; set; }
+        public int LoginID { get; set; }
+        public string LoginName { get; set; }
+        public string Password { get; set; }
+        public string UserRealName { get; set; }
+        public string UserSex { get; set; }
+        public string UserIDCardNumber { get; set; }
+        public string UserEmail { get; set; }
+        public string UserTel { get; set; }
+        public string UserMobile { get; set; }
+        public string UserAddress { get; set; }
+        public string UserZipcode { get; set; }
+        public Nullable<System.DateTime> UserRegTime { get; set; }
+        public Nullable<System.DateTime> UserEndTime { get; set; }
+        public string UserVerify { get; set; }
+        public string UserFeeType { get; set; }
+        public string UserType { get; set; }
+        public string UserState { get; set; }
+        public string UserCity { get; set; }
+        public string OrgName { get; set; }
+        public string OrgUnitName { get; set; }
+        public string UserFax { get; set; }
+        public string Certi_id { get; set; }
+        public string DealMan { get; set; }
+        public string DealmanTel { get; set; }
+        public string UserLoginType { get; set; }
+        public string UserSignPic { get; set; }
+        public Nullable<bool> Status_CA { get; set; }
     }
 }

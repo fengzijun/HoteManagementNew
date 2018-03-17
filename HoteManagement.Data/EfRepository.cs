@@ -363,5 +363,52 @@ namespace HoteManagement.Data
             return alreadyAttached;
         }
 
+
+        /// <summary>
+        /// for dapper
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public IEnumerable<T> GetList(string sql, object parameters = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// execute sql
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        public int Execute(string query, object parameters = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// dapper query paged data
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <param name="pageNumber"></param>
+        /// <param name="itemsPerPage"></param>
+        /// <param name="sortingProperty"></param>
+        /// <param name="ascending"></param>
+        /// <returns></returns>
+        public IEnumerable<T> GetAllPaged(Expression<Func<T, bool>> predicate, int pageNumber, int itemsPerPage, string sortingProperty, bool ascending = true)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// count
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public int Count(Expression<Func<T, bool>> predicate)
+        {
+            return TableNoTracking.Count(predicate);
+        }
+
     }
 }

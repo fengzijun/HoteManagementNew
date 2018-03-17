@@ -51,6 +51,10 @@ namespace HoteManagement.Data.Dapper.UnitOfWork
             {
                 _transactionStrategy.InitOptions(Options);
             }
+
+            var connection = GetOrCreateDbContext();
+            if (connection.State != ConnectionState.Open)
+                connection.Open();
         }
 
         public override void DisposeUow()
@@ -71,6 +75,10 @@ namespace HoteManagement.Data.Dapper.UnitOfWork
             }
 
             ActiveDbConnections.Clear();
+
+            var connection = GetOrCreateDbContext();
+            if (connection != null)
+                connection.Dispose();
         }
 
         public override void RollBack()
