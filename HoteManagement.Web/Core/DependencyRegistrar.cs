@@ -26,6 +26,7 @@ using System.Data;
 using System.Data.SqlClient;
 using HoteManagement.Data.Dapper;
 using HoteManagement.Data.Dapper.UnitOfWork;
+using HoteManagement.Data.Dapper.Filters.Query;
 
 namespace EM.Article.Api.Framework
 {
@@ -92,6 +93,7 @@ namespace EM.Article.Api.Framework
 
             //use static cache (between HTTP requests)
             builder.RegisterType<DefaultLogger>().As<ILogger>().InstancePerLifetimeScope();
+            builder.RegisterType<DapperQueryFilterExecuter>().As<IDapperQueryFilterExecuter>().InstancePerLifetimeScope();
             //builder.RegisterType<DbContextFactory>().As<IDbContextFactory>().InstancePerLifetimeScope();
             //builder.RegisterType<SingleStrategy>().As<IReadDbStrategy>().InstancePerLifetimeScope();
             //use static cache (between HTTP requests)
@@ -137,7 +139,7 @@ namespace EM.Article.Api.Framework
             
             //serivce
 
-            builder.RegisterType<HoteManagement.Service.Core.Service>().As<IService>().InstancePerLifetimeScope().EnableClassInterceptors();
+            builder.RegisterType<GenerateService>().As<IGenerateService>().InstancePerLifetimeScope().EnableClassInterceptors();
 
             builder.RegisterType<RedisCacheManager>().As<IRedis>().InstancePerLifetimeScope();
 

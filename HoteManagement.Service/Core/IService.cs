@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HoteManagement.Service.Core
 {
-    public interface IService
+    public interface IGenerateService
     {
         UserInfoDto GetUserinfoByUsernameAndPwd(string username, string pwd);
     }

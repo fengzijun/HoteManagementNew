@@ -4,78 +4,114 @@
     ViewBag.Title = "登录";
     Layout = null;
 }
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    @*<link href="~/Content/css.css" rel="stylesheet" type="text/css" />*@
+    <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap Core CSS -->
+    <link href="~/content/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<title>欢迎登陆酒店系统</title>
-<link href="~/Content/css.css" rel="stylesheet" type="text/css" />
-@Scripts.Render("~/bundles/jquery")
+    <!-- MetisMenu CSS -->
+    <link href="~/content/bootstrap/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <link href="~/content/bootstrap/dist/css/sb-admin-2.css" rel="stylesheet">
 
-            @using (Html.BeginForm("Login", "Admin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
+    <!-- Morris Charts CSS -->
+    <link href="~/content/bootstrap/vendor/morrisjs/morris.css" rel="stylesheet">
 
-                <div class="bglogin">
-                    <ul class="bglogin2">
-                        <li><img src="~/Content/Images/loginText.png" /></li>
-                        <li class="inputK">
-                            用户名：@Html.TextBoxFor(m => m.UserName)
+    <!-- Custom Fonts -->
+    <link href="~/content/bootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="~/content/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        @using (Html.BeginForm("Login", "Admin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            <fieldset>
+                                <div class="form-group">
+                                    @*<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>*@
+                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "用户名", autofocus = "true" })
+                                </div>
+                                <div class="form-group">
+                                    @*<input class="form-control" placeholder="Password" name="password" type="password" value="">*@
+                                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "密码" })
+                                </div>
+
+                                <!-- Change this to a button or input when using this as a form -->
+                                <input type="submit" class="btn btn-lg btn-success btn-block" value="登陆" />
+                            </fieldset>
                             <font color="red">
-                         
+                                @Html.ValidationSummary()
                             </font>
-                        </li>
-                        <li class="inputK">
-                            密　码：@Html.TextBoxFor(m => m.Password)
-                            <font color="red">
-                     
-                            </font>
-
-                        </li>
-                        <li class="inputK1" style="position:relative;">
-                            验证码：
-                         @Html.TextBoxFor(m => m.Code)
-                            <font color="red">
-                            
-                            </font>
-                            <img id="validatacode" src="/admin/ValidateCode" width="65px" height="26px"
-                                 alt="验证码" onclick="javascript:document.getElementById('validatacode').src='/admin/ValidateCode?id='+Math.random(10);"
-                                 style="cursor: hand;position:absolute;top:6px;" />
-                        </li>
-                        <li class="BtnK">
-                            
-
-                            <input type="submit" value="登录" class="button01" />
-                            <input type="reset" value="清空" class="button01" />
-                        </li>
-                        <font color="red">
-                            @Html.ValidationSummary()
-                        </font>
-                            <li class="BtnK" style="margin-top:5px;color:#f00;"></li>
-</ul>
-
+                        }
+                    </div>
                 </div>
-            }
+            </div>
+        </div>
+    </div>
+
+    @*<div class="bglogin">
+            <ul class="bglogin2">
+                <li><img src="~/Content/Images/loginText.png" /></li>
+                <li class="inputK">
+                    用户名：@Html.TextBoxFor(m => m.UserName)
+                    <font color="red">
+
+                    </font>
+                </li>
+                <li class="inputK">
+                    密　码：@Html.TextBoxFor(m => m.Password)
+                    <font color="red">
+
+                    </font>
+
+                </li>
+                <li class="inputK1" style="position:relative;">
+                    验证码：
+                    @Html.TextBoxFor(m => m.Code)
+                    <font color="red">
+
+                    </font>
+                    <img id="validatacode" src="/admin/ValidateCode" width="65px" height="26px"
+                         alt="验证码" onclick="javascript:document.getElementById('validatacode').src='/admin/ValidateCode?id='+Math.random(10);"
+                         style="cursor: hand;position:absolute;top:6px;" />
+                </li>
+                <li class="BtnK">
+
+
+                    <input type="submit" value="登录" class="button01" />
+                    <input type="reset" value="清空" class="button01" />
+                </li>
+
+                <li class="BtnK" style="margin-top:5px;color:#f00;"></li>
+            </ul>
+
+        </div>*@
 
 
 
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 
-<script type="text/javascript">
-    $(function () {
-        $('.bglogin').height($(document).height() - 155);
-    })
-</script>
-<style type="text/css">
-    body {
-        background: #4486b7
-    }
-
-    .bglogin2 li.inputK1 input {
-        width: 138px;
-        margin: 5px 0;
-        line-height: 26px;
-        height: 26px;
-        border: 1px solid #0068b8;
-    }
-
-    .bglogin2 li.inputK1 img {
-        margin-left: -5px;
-    }
-</style>
+    <script type="text/javascript">
+        $(function () {
+            $('.bglogin').height($(document).height() - 155);
+        })
+    </script>
+  
+</body>
+</html>

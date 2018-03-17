@@ -10,7 +10,7 @@ namespace HoteManagement.Data.Dapper.Filters.Query
 {
     public class DapperQueryFilterExecuter : IDapperQueryFilterExecuter
     {
-        private readonly IEnumerable<IDapperQueryFilter> _queryFilters;
+        //private readonly IEnumerable<IDapperQueryFilter> _queryFilters;
 
         public IPredicate ExecuteFilter<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : BaseEntity, new()
         {

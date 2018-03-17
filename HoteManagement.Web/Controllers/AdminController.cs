@@ -41,11 +41,11 @@ namespace HoteManagement.Web.Controllers
                 return View(model);
             }
 
-            if(model.Code !=Session["CheckCode"].ToString())
-            {
-                ModelState.AddModelError("", "验证码错误。");
-                return View(model);
-            }
+            //if(model.Code !=Session["CheckCode"].ToString())
+            //{
+            //    ModelState.AddModelError("", "验证码错误。");
+            //    return View(model);
+            //}
 
             var user = generateService.GetUserinfoByUsernameAndPwd(model.UserName, model.Password);
             if(user!=null)

@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 namespace HoteManagement.Service.Core
 {
     [Intercept(typeof(UnitOfWorkInterceptor))]
-    public class Service : ApplicationService
+    public class GenerateService : ApplicationService, IGenerateService
     {
-        public Service(IRepository<Domain.UserInfo> UserInfoRepository,
+        public GenerateService(IRepository<Domain.UserInfo> UserInfoRepository,
             IDbConnectionProvider DbConnectionProvider,
           ILogger logger):base(UserInfoRepository, DbConnectionProvider,logger)
         {

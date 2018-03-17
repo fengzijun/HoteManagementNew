@@ -190,3 +190,4 @@ G:\HoteManagementNew\HoteManagement\bin\Debug\Dapper.dll
 G:\HoteManagementNew\HoteManagement\bin\Debug\DapperExtensions.dll
 G:\HoteManagementNew\HoteManagement\bin\Debug\Dapper.xml
 G:\HoteManagementNew\HoteManagement\bin\Debug\DapperExtensions.pdb
+G:\HoteManagementNew\HoteManagement\obj\Debug\HoteManagement.csprojResolveAssemblyReference.cache

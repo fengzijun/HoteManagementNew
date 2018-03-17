@@ -22,7 +22,7 @@ namespace HoteManagement.Web.Core
         protected readonly ILogger logger;
         protected readonly IWebHelper webHelper;
         protected readonly ICacheManager cacheManager;
-        protected readonly IService generateService;
+        protected readonly IGenerateService generateService;
 
         public BaseController()
         {
@@ -30,7 +30,7 @@ namespace HoteManagement.Web.Core
             logger = EngineContext.Current.Resolve<ILogger>();
             webHelper = EngineContext.Current.Resolve<IWebHelper>();
             cacheManager = EngineContext.Current.Resolve<ICacheManager>();
-            generateService = EngineContext.Current.Resolve<IService>();
+            generateService = EngineContext.Current.Resolve<IGenerateService>();
             GetMenus();
         }
 
