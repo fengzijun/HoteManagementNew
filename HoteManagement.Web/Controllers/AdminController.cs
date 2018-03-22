@@ -146,11 +146,13 @@ namespace HoteManagement.Web.Controllers
             if(Request.Files.Count == 4)
                 other = Guid.NewGuid().ToString();
             
-            Request.Files[0].SaveAs(path + "/" + contract + ".doc");
-            Request.Files[1].SaveAs(path + "/" + report + ".doc");
-            Request.Files[2].SaveAs(path + "/" + price + ".doc");
-
-            if (Request.Files.Count == 4)
+            if(!string.IsNullOrEmpty(Request.Files[0].FileName))
+                 Request.Files[0].SaveAs(path + "/" + contract + ".doc");
+            if (!string.IsNullOrEmpty(Request.Files[1].FileName))
+                Request.Files[1].SaveAs(path + "/" + report + ".doc");
+            if (!string.IsNullOrEmpty(Request.Files[2].FileName))
+                Request.Files[2].SaveAs(path + "/" + price + ".doc");
+            if (!string.IsNullOrEmpty(Request.Files[3].FileName))
                 Request.Files[3].SaveAs(path + "/" + other + ".doc");
 
             Org_BusinessDto business = new Org_BusinessDto
