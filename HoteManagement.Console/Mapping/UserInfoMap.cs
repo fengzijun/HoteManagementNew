@@ -17,22 +17,33 @@ namespace HoteManagement.Console.Model
     {
        public UserInfoMap()
        {
-          this.HasKey(t => t.Id);
-          this.Property(t => t.hotelid);
-          this.Property(t => t.userID).HasMaxLength(50);
-          this.Property(t => t.cardID).HasMaxLength(10);
-          this.Property(t => t.sex);
-          this.Property(t => t.cardTypeID);
-          this.Property(t => t.cardValue).HasMaxLength(50);
-          this.Property(t => t.typeid);
-          this.Property(t => t.xiaoshou).HasMaxLength(50);
-          this.Property(t => t.phone).HasMaxLength(50);
-          this.Property(t => t.bairthday);
-          this.Property(t => t.xihao).HasMaxLength(100);
-          this.Property(t => t.address).HasMaxLength(100);
-          this.Property(t => t.meark);
-          this.Property(t => t.manageID);
-          this.Property(t => t.truename).HasMaxLength(50);
+          this.Property(t => t.LoginID);
+          this.Property(t => t.LoginName).HasMaxLength(50);
+          this.Property(t => t.Password).HasMaxLength(40);
+          this.Property(t => t.UserRealName).HasMaxLength(100);
+          this.Property(t => t.UserSex).HasMaxLength(10);
+          this.Property(t => t.UserIDCardNumber).HasMaxLength(50);
+          this.Property(t => t.UserEmail).HasMaxLength(100);
+          this.Property(t => t.UserTel).HasMaxLength(50);
+          this.Property(t => t.UserMobile).HasMaxLength(50);
+          this.Property(t => t.UserAddress).HasMaxLength(255);
+          this.Property(t => t.UserZipcode).HasMaxLength(50);
+          this.Property(t => t.UserRegTime);
+          this.Property(t => t.UserEndTime);
+          this.Property(t => t.UserVerify).HasMaxLength(20);
+          this.Property(t => t.UserFeeType).HasMaxLength(50);
+          this.Property(t => t.UserType).HasMaxLength(50);
+          this.Property(t => t.UserState).HasMaxLength(50);
+          this.Property(t => t.UserCity).HasMaxLength(50);
+          this.Property(t => t.OrgName).HasMaxLength(255);
+          this.Property(t => t.OrgUnitName).HasMaxLength(255);
+          this.Property(t => t.UserFax).HasMaxLength(50);
+          this.Property(t => t.Certi_id).HasMaxLength(50);
+          this.Property(t => t.DealMan).HasMaxLength(50);
+          this.Property(t => t.DealmanTel).HasMaxLength(50);
+          this.Property(t => t.UserLoginType).HasMaxLength(50);
+          this.Property(t => t.UserSignPic).HasMaxLength(100);
+          this.Property(t => t.Status_CA);
           this.HasRequired(t => t.UserHotel).WithMany().HasForeignKey(t => t.hotelid);
        }
     }

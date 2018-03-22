@@ -22,10 +22,12 @@ namespace HoteManagement.Service.Model
         protected readonly IRepository<Domain.UserInfo> _UserInfoRepository;
         protected readonly ILogger _logger;
         protected IDbConnectionProvider _dbConnectionProvider;
+        protected readonly IRepository<Domain.Org_Business> _org_BusinessRepository;
 
         public ApplicationService(
 
           IRepository<Domain.UserInfo> UserInfoRepository,
+          IRepository<Domain.Org_Business> org_BusinessRepository,
           IDbConnectionProvider dbConnectionProvider,
           ILogger logger)
         {
@@ -33,6 +35,7 @@ namespace HoteManagement.Service.Model
             _UserInfoRepository = UserInfoRepository;
             _dbConnectionProvider = dbConnectionProvider;
             _logger = logger;
+            _org_BusinessRepository = org_BusinessRepository;
 
         }
 

@@ -1,6 +1,7 @@
 ﻿using Autofac.Extras.DynamicProxy;
 using HoteManagement.Data;
 using HoteManagement.Data.Dapper.UnitOfWork;
+using HoteManagement.Domain;
 using HoteManagement.Infrastructure.UnitOfWork;
 using HoteManagement.Service.Model;
 using System;
@@ -15,8 +16,9 @@ namespace HoteManagement.Service.Core
     public class GenerateService : ApplicationService, IGenerateService
     {
         public GenerateService(IRepository<Domain.UserInfo> UserInfoRepository,
+             IRepository<Domain.Org_Business> org_BusinessRepository,
             IDbConnectionProvider DbConnectionProvider,
-          ILogger logger):base(UserInfoRepository, DbConnectionProvider,logger)
+          ILogger logger):base(UserInfoRepository, org_BusinessRepository, DbConnectionProvider,logger)
         {
 
         }
@@ -29,6 +31,13 @@ namespace HoteManagement.Service.Core
                 return AutoMapper.Mapper.Map<UserInfoDto>(model);
 
             return null;
+        }
+
+        public virtual void CreateBusiness(Org_BusinessDto org_BusinessDto)
+        {
+            var model = AutoMapper.Mapper.Map<Org_Business>(org_BusinessDto);
+            
+            _org_BusinessRepository.Insert(model);
         }
 
     }

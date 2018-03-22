@@ -21,7 +21,7 @@ namespace HoteManagement.Console
         public string gczylb { get; set; }
         public string jsbzrid { get; set; }
         public string jsbzr { get; set; }
-        public string jsshrid { get; set; }
+        public string o { get; set; }
         public string jsshr { get; set; }
         public Nullable<decimal> ssj { get; set; }
         public Nullable<decimal> sdj { get; set; }

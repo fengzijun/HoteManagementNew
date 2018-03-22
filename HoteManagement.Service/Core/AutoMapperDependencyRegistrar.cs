@@ -285,6 +285,9 @@ namespace HoteManagement.Service.Core
                 cfg.CreateMap<Domain.ZD_hourse, ZD_hourseDto>();
                 cfg.CreateMap<ZD_hourseDto, Domain.ZD_hourse>();
 
+                cfg.CreateMap<Domain.Org_Business, Org_BusinessDto>();
+                cfg.CreateMap<Org_BusinessDto, Domain.Org_Business>();
+
             });
         }
 

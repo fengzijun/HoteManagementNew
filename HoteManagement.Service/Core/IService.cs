@@ -10,5 +10,7 @@ namespace HoteManagement.Service.Core
     public interface IGenerateService
     {
         UserInfoDto GetUserinfoByUsernameAndPwd(string username, string pwd);
+
+        void CreateBusiness(Org_BusinessDto org_BusinessDto);
     }
 }

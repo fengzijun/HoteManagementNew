@@ -144,6 +144,7 @@
     <Compile Include="Model\occu_informxDto.cs" />
     <Compile Include="Model\order_extDto.cs" />
     <Compile Include="Model\order_inforDto.cs" />
+    <Compile Include="Model\Org_BusinessDto.cs" />
     <Compile Include="Model\paymentMoneyDto.cs" />
     <Compile Include="Model\price_typeDto.cs" />
     <Compile Include="Model\printDto.cs" />

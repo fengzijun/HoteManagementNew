@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EM_TestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EM_TestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="d_qyjjlx">
           <Key>
             <PropertyRef Name="qyjjlxid" />
@@ -553,6 +553,30 @@
           <Property Name="Zzzsh" Type="varchar" MaxLength="50" />
           <Property Name="Zzzsjzrq" Type="datetime" />
         </EntityType>
+        <EntityType Name="org_business">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="projectname" Type="nvarchar" MaxLength="50" />
+          <Property Name="buildunit" Type="nvarchar" MaxLength="50" />
+          <Property Name="compileunit" Type="nvarchar" MaxLength="50" />
+          <Property Name="auditunit" Type="nvarchar" MaxLength="50" />
+          <Property Name="projecttype" Type="nvarchar" MaxLength="50" />
+          <Property Name="projectsummary" Type="nvarchar" MaxLength="200" />
+          <Property Name="contract" Type="nvarchar" MaxLength="50" />
+          <Property Name="report" Type="nvarchar" MaxLength="50" />
+          <Property Name="price" Type="nvarchar" MaxLength="50" />
+          <Property Name="other" Type="nvarchar" MaxLength="50" />
+          <Property Name="createtime" Type="datetime" />
+          <Property Name="updatetime" Type="datetime" />
+          <Property Name="orgname" Type="nvarchar" MaxLength="50" />
+          <Property Name="creator" Type="nvarchar" MaxLength="50" />
+          <Property Name="creatorid" Type="int" />
+          <Property Name="audituser" Type="nvarchar" MaxLength="50" />
+          <Property Name="audituserid" Type="int" />
+          <Property Name="statues" Type="int" />
+        </EntityType>
         <EntityType Name="sgtyk_gljsryqkb">
           <Key>
             <PropertyRef Name="ryID" />
@@ -857,6 +881,7 @@
           <EntitySet Name="gczj_zbkzjba_xmz" EntityType="Self.gczj_zbkzjba_xmz" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gczj_zbkzjbaglb" EntityType="Self.gczj_zbkzjbaglb" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="jsdw_jbqkb" EntityType="Self.jsdw_jbqkb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="org_business" EntityType="Self.org_business" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sgtyk_gljsryqkb" EntityType="Self.sgtyk_gljsryqkb" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sgtyk_qyjbqkb" EntityType="Self.sgtyk_qyjbqkb" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UEPP_Code" EntityType="Self.UEPP_Code" Schema="dbo" store:Type="Tables" />
@@ -976,8 +1001,7 @@
     FROM [dbo].[gczj_zbkzjbaglb_20150610] AS [gczj_zbkzjbaglb_20150610]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EM_TestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1004,7 +1028,7 @@
           <Property Name="MessageInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="OperatorID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="OperatorName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="OperateDateTime" Type="DateTime" Nullable="false" />
+          <Property Name="OperateDateTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="g_statetransferrule">
           <Key>
@@ -1052,7 +1076,7 @@
           <Property Name="gczylb" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="jsbzrid" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="jsbzr" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="jsshrid" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="o" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="jsshr" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="ssj" Type="Decimal" Precision="14" Scale="4" />
           <Property Name="sdj" Type="Decimal" Precision="14" Scale="4" />
@@ -1109,9 +1133,9 @@
           <Property Name="zjxmfzr" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="jbdwid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="jbdw" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="jssj" Type="DateTime" />
-          <Property Name="sssj" Type="DateTime" />
-          <Property Name="jssdsj" Type="DateTime" />
+          <Property Name="jssj" Type="DateTime" Precision="3" />
+          <Property Name="sssj" Type="DateTime" Precision="3" />
+          <Property Name="jssdsj" Type="DateTime" Precision="3" />
           <Property Name="shcqyy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="zbj" Type="Decimal" Precision="14" Scale="4" />
           <Property Name="htj" Type="Decimal" Precision="14" Scale="4" />
@@ -1122,27 +1146,27 @@
           <Property Name="DataState" Type="Int32" Nullable="false" />
           <Property Name="OperateState" Type="Int32" Nullable="false" />
           <Property Name="CancelState" Type="Int32" Nullable="false" />
-          <Property Name="cjrqsj" Type="DateTime" />
-          <Property Name="xgrqsj" Type="DateTime" />
+          <Property Name="cjrqsj" Type="DateTime" Precision="3" />
+          <Property Name="xgrqsj" Type="DateTime" Precision="3" />
           <Property Name="txr_UserID" Type="Int64" />
           <Property Name="txr_UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz1" Type="Int32" Nullable="false" />
           <Property Name="shyj1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="shrqsj1" Type="DateTime" />
+          <Property Name="shrqsj1" Type="DateTime" Precision="3" />
           <Property Name="checkUserID1" Type="Int64" />
           <Property Name="checkUserName1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptname1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz2" Type="Int32" Nullable="false" />
           <Property Name="Shyj2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Shrqsj2" Type="DateTime" />
+          <Property Name="Shrqsj2" Type="DateTime" Precision="3" />
           <Property Name="checkUserID2" Type="Int64" />
           <Property Name="checkUserName2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptname2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz3" Type="Int32" Nullable="false" />
           <Property Name="Shyj3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Shrqsj3" Type="DateTime" />
+          <Property Name="Shrqsj3" Type="DateTime" Precision="3" />
           <Property Name="checkUserID3" Type="Int64" />
           <Property Name="checkUserName3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -1163,7 +1187,7 @@
           <Property Name="fddbr" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="qyxzID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="qyxz" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="clrq" Type="DateTime" />
+          <Property Name="clrq" Type="DateTime" Precision="3" />
           <Property Name="lxr" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="lxdh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="yzbm" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -1174,42 +1198,42 @@
           <Property Name="zzjgdm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="sgqy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="cbfw" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="scyxqsrq" Type="DateTime" />
-          <Property Name="scyxjsrq" Type="DateTime" />
+          <Property Name="scyxqsrq" Type="DateTime" Precision="3" />
+          <Property Name="scyxjsrq" Type="DateTime" Precision="3" />
           <Property Name="bz" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="bgsx" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="bgq" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="bgh" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="hfjgid" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="hfjg" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="hfrq" Type="DateTime" />
+          <Property Name="hfrq" Type="DateTime" Precision="3" />
           <Property Name="DataState" Type="Int32" Nullable="false" />
           <Property Name="OperateState" Type="Int32" Nullable="false" />
           <Property Name="CancelState" Type="Int32" Nullable="false" />
-          <Property Name="cjrqsj" Type="DateTime" />
-          <Property Name="xgrqsj" Type="DateTime" />
-          <Property Name="sbrqsj" Type="DateTime" />
+          <Property Name="cjrqsj" Type="DateTime" Precision="3" />
+          <Property Name="xgrqsj" Type="DateTime" Precision="3" />
+          <Property Name="sbrqsj" Type="DateTime" Precision="3" />
           <Property Name="txr_UserID" Type="Int64" />
           <Property Name="txr_UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="tbr" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="tbrdh" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz1" Type="Int32" Nullable="false" />
           <Property Name="shyj1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="shrqsj1" Type="DateTime" />
+          <Property Name="shrqsj1" Type="DateTime" Precision="3" />
           <Property Name="checkUserID1" Type="Int64" />
           <Property Name="checkUserName1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptname1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz2" Type="Int32" Nullable="false" />
           <Property Name="Shyj2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Shrqsj2" Type="DateTime" />
+          <Property Name="Shrqsj2" Type="DateTime" Precision="3" />
           <Property Name="checkUserID2" Type="Int64" />
           <Property Name="checkUserName2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptname2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz3" Type="Int32" Nullable="false" />
           <Property Name="Shyj3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Shrqsj3" Type="DateTime" />
+          <Property Name="Shrqsj3" Type="DateTime" Precision="3" />
           <Property Name="checkUserID3" Type="Int64" />
           <Property Name="checkUserName3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -1260,9 +1284,9 @@
           <Property Name="zjxmfzrid" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="zjxmfzr" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="sfzb" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="zbsj" Type="DateTime" />
-          <Property Name="sssj" Type="DateTime" />
-          <Property Name="sbsj" Type="DateTime" />
+          <Property Name="zbsj" Type="DateTime" Precision="3" />
+          <Property Name="sssj" Type="DateTime" Precision="3" />
+          <Property Name="sbsj" Type="DateTime" Precision="3" />
           <Property Name="zbj" Type="Decimal" Precision="14" Scale="4" />
           <Property Name="htj" Type="Decimal" Precision="14" Scale="4" />
           <Property Name="ssj" Type="Decimal" Precision="14" Scale="4" />
@@ -1273,27 +1297,27 @@
           <Property Name="DataState" Type="Int32" Nullable="false" />
           <Property Name="OperateState" Type="Int32" Nullable="false" />
           <Property Name="CancelState" Type="Int32" Nullable="false" />
-          <Property Name="cjrqsj" Type="DateTime" />
-          <Property Name="xgrqsj" Type="DateTime" />
+          <Property Name="cjrqsj" Type="DateTime" Precision="3" />
+          <Property Name="xgrqsj" Type="DateTime" Precision="3" />
           <Property Name="txr_UserID" Type="Int64" />
           <Property Name="txr_UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz1" Type="Int32" Nullable="false" />
           <Property Name="shyj1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="shrqsj1" Type="DateTime" />
+          <Property Name="shrqsj1" Type="DateTime" Precision="3" />
           <Property Name="checkUserID1" Type="Int64" />
           <Property Name="checkUserName1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptname1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz2" Type="Int32" Nullable="false" />
           <Property Name="Shyj2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Shrqsj2" Type="DateTime" />
+          <Property Name="Shrqsj2" Type="DateTime" Precision="3" />
           <Property Name="checkUserID2" Type="Int64" />
           <Property Name="checkUserName2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptname2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz3" Type="Int32" Nullable="false" />
           <Property Name="Shyj3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Shrqsj3" Type="DateTime" />
+          <Property Name="Shrqsj3" Type="DateTime" Precision="3" />
           <Property Name="checkUserID3" Type="Int64" />
           <Property Name="checkUserName3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -1341,7 +1365,7 @@
           <Property Name="zxzy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="htbhxmmc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="zbkzj" Type="Decimal" Precision="14" Scale="4" />
-          <Property Name="kbsj" Type="DateTime" />
+          <Property Name="kbsj" Type="DateTime" Precision="3" />
           <Property Name="gctzms" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="gclb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="degq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1359,27 +1383,27 @@
           <Property Name="DataState" Type="Int32" Nullable="false" />
           <Property Name="OperateState" Type="Int32" Nullable="false" />
           <Property Name="CancelState" Type="Int32" Nullable="false" />
-          <Property Name="cjrqsj" Type="DateTime" />
-          <Property Name="xgrqsj" Type="DateTime" />
+          <Property Name="cjrqsj" Type="DateTime" Precision="3" />
+          <Property Name="xgrqsj" Type="DateTime" Precision="3" />
           <Property Name="txr_UserID" Type="Int64" />
           <Property Name="txr_UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz1" Type="Int32" Nullable="false" />
           <Property Name="shyj1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="shrqsj1" Type="DateTime" />
+          <Property Name="shrqsj1" Type="DateTime" Precision="3" />
           <Property Name="checkUserID1" Type="Int64" />
           <Property Name="checkUserName1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptname1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz2" Type="Int32" Nullable="false" />
           <Property Name="Shyj2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Shrqsj2" Type="DateTime" />
+          <Property Name="Shrqsj2" Type="DateTime" Precision="3" />
           <Property Name="checkUserID2" Type="Int64" />
           <Property Name="checkUserName2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptname2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz3" Type="Int32" Nullable="false" />
           <Property Name="Shyj3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Shrqsj3" Type="DateTime" />
+          <Property Name="Shrqsj3" Type="DateTime" Precision="3" />
           <Property Name="checkUserID3" Type="Int64" />
           <Property Name="checkUserName3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -1401,7 +1425,7 @@
           <Property Name="lxdh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Zzdj" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Zzzsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Zzzsjzrq" Type="DateTime" />
+          <Property Name="Zzzsjzrq" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="sgtyk_gljsryqkb">
           <Key>
@@ -1413,11 +1437,11 @@
           <Property Name="lx_com" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Name="ryfl_com" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Name="sex_com" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="csny" Type="DateTime" />
+          <Property Name="csny" Type="DateTime" Precision="3" />
           <Property Name="zw_com" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Name="zc_com" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Name="xl_com" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="bysj" Type="DateTime" />
+          <Property Name="bysj" Type="DateTime" Precision="3" />
           <Property Name="byyx" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="zy" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="gcglzl" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
@@ -1430,8 +1454,8 @@
           <Property Name="zcbh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="zczsbh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="zczsfzdw" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="zczsyxqrq" Type="DateTime" />
-          <Property Name="zczsyxzrq" Type="DateTime" />
+          <Property Name="zczsyxqrq" Type="DateTime" Precision="3" />
+          <Property Name="zczsyxzrq" Type="DateTime" Precision="3" />
           <Property Name="zczlj" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="sgtyk_qyjbqkb">
@@ -1447,7 +1471,7 @@
           <Property Name="Sscs_com" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Name="Ssdq_com" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Name="yyzzh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="clsj" Type="DateTime" />
+          <Property Name="clsj" Type="DateTime" Precision="3" />
           <Property Name="jjxz_com" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Name="zyfw" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="jyfw" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
@@ -1557,7 +1581,7 @@
           <Property Name="sjzb" Type="Decimal" Precision="14" Scale="4" />
           <Property Name="zyfw" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="jyfw" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="clrq" Type="DateTime" />
+          <Property Name="clrq" Type="DateTime" Precision="3" />
           <Property Name="qyjj" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="xxdd" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="yzbm" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
@@ -1574,13 +1598,13 @@
           <Property Name="slbmID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="slbm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="DataState" Type="Int16" Nullable="false" />
-          <Property Name="cjrqsj" Type="DateTime" />
-          <Property Name="xgrqsj" Type="DateTime" />
-          <Property Name="sbrqsj" Type="DateTime" />
-          <Property Name="bgrqsj" Type="DateTime" />
-          <Property Name="bgsbrqsj" Type="DateTime" />
+          <Property Name="cjrqsj" Type="DateTime" Precision="3" />
+          <Property Name="xgrqsj" Type="DateTime" Precision="3" />
+          <Property Name="sbrqsj" Type="DateTime" Precision="3" />
+          <Property Name="bgrqsj" Type="DateTime" Precision="3" />
+          <Property Name="bgsbrqsj" Type="DateTime" Precision="3" />
           <Property Name="shyj" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="shrqsj" Type="DateTime" />
+          <Property Name="shrqsj" Type="DateTime" Precision="3" />
           <Property Name="shr_UserID" Type="Int32" />
           <Property Name="shr_UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -1595,7 +1619,7 @@
           <Property Name="ryID" Type="Int32" Nullable="false" />
           <Property Name="ryzyzglxID" Type="Int32" />
           <Property Name="ryzyzglx" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="xgrqsj" Type="DateTime" />
+          <Property Name="xgrqsj" Type="DateTime" Precision="3" />
           <Property Name="DataState" Type="Int16" Nullable="false" />
         </EntityType>
         <EntityType Name="UEPP_Ryjbxx">
@@ -1605,14 +1629,14 @@
           <Property Name="ryID" Type="Int32" Nullable="false" />
           <Property Name="xm" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="xb" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Name="csrq" Type="DateTime" />
+          <Property Name="csrq" Type="DateTime" Precision="3" />
           <Property Name="jkzt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="mz" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="xlID" Type="Int32" />
           <Property Name="xl" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="sxzy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="byyx" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="byny" Type="DateTime" />
+          <Property Name="byny" Type="DateTime" Precision="3" />
           <Property Name="zcID" Type="Int32" />
           <Property Name="zc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="zczh" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
@@ -1628,18 +1652,18 @@
           <Property Name="slbmID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="slbm" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="DataState" Type="Int16" Nullable="false" />
-          <Property Name="cjrqsj" Type="DateTime" />
-          <Property Name="xgrqsj" Type="DateTime" />
-          <Property Name="sbrqsj" Type="DateTime" />
-          <Property Name="bgrqsj" Type="DateTime" />
-          <Property Name="bgsbrqsj" Type="DateTime" />
+          <Property Name="cjrqsj" Type="DateTime" Precision="3" />
+          <Property Name="xgrqsj" Type="DateTime" Precision="3" />
+          <Property Name="sbrqsj" Type="DateTime" Precision="3" />
+          <Property Name="bgrqsj" Type="DateTime" Precision="3" />
+          <Property Name="bgsbrqsj" Type="DateTime" Precision="3" />
           <Property Name="shyj" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="shrqsj" Type="DateTime" />
+          <Property Name="shrqsj" Type="DateTime" Precision="3" />
           <Property Name="shr_UserID" Type="Int32" />
           <Property Name="shr_UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="zyzgId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="zyzg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="pdsj" Type="DateTime" />
+          <Property Name="pdsj" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="UserInfo">
           <Key>
@@ -1656,8 +1680,8 @@
           <Property Name="UserMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UserAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="UserZipcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UserRegTime" Type="DateTime" />
-          <Property Name="UserEndTime" Type="DateTime" />
+          <Property Name="UserRegTime" Type="DateTime" Precision="3" />
+          <Property Name="UserEndTime" Type="DateTime" Precision="3" />
           <Property Name="UserVerify" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="UserFeeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -1710,7 +1734,7 @@
           <Property Name="zxzy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="htbhxmmc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="zbkzj" Type="Decimal" Precision="14" Scale="4" />
-          <Property Name="kbsj" Type="DateTime" />
+          <Property Name="kbsj" Type="DateTime" Precision="3" />
           <Property Name="gctzms" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="gclb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="degq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1728,27 +1752,27 @@
           <Property Name="DataState" Type="Int32" Nullable="false" />
           <Property Name="OperateState" Type="Int32" Nullable="false" />
           <Property Name="CancelState" Type="Int32" Nullable="false" />
-          <Property Name="cjrqsj" Type="DateTime" />
-          <Property Name="xgrqsj" Type="DateTime" />
+          <Property Name="cjrqsj" Type="DateTime" Precision="3" />
+          <Property Name="xgrqsj" Type="DateTime" Precision="3" />
           <Property Name="txr_UserID" Type="Int64" />
           <Property Name="txr_UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz1" Type="Int32" Nullable="false" />
           <Property Name="shyj1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="shrqsj1" Type="DateTime" />
+          <Property Name="shrqsj1" Type="DateTime" Precision="3" />
           <Property Name="checkUserID1" Type="Int64" />
           <Property Name="checkUserName1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptname1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz2" Type="Int32" Nullable="false" />
           <Property Name="Shyj2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Shrqsj2" Type="DateTime" />
+          <Property Name="Shrqsj2" Type="DateTime" Precision="3" />
           <Property Name="checkUserID2" Type="Int64" />
           <Property Name="checkUserName2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptname2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz3" Type="Int32" Nullable="false" />
           <Property Name="Shyj3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Shrqsj3" Type="DateTime" />
+          <Property Name="Shrqsj3" Type="DateTime" Precision="3" />
           <Property Name="checkUserID3" Type="Int64" />
           <Property Name="checkUserName3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -1771,7 +1795,7 @@
           <Property Name="zxzy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="htbhxmmc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="zbkzj" Type="Decimal" Precision="14" Scale="4" />
-          <Property Name="kbsj" Type="DateTime" />
+          <Property Name="kbsj" Type="DateTime" Precision="3" />
           <Property Name="gctzms" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="gclb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="degq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1789,27 +1813,27 @@
           <Property Name="DataState" Type="Int32" Nullable="false" />
           <Property Name="OperateState" Type="Int32" Nullable="false" />
           <Property Name="CancelState" Type="Int32" Nullable="false" />
-          <Property Name="cjrqsj" Type="DateTime" />
-          <Property Name="xgrqsj" Type="DateTime" />
+          <Property Name="cjrqsj" Type="DateTime" Precision="3" />
+          <Property Name="xgrqsj" Type="DateTime" Precision="3" />
           <Property Name="txr_UserID" Type="Int64" />
           <Property Name="txr_UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz1" Type="Int32" Nullable="false" />
           <Property Name="shyj1" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="shrqsj1" Type="DateTime" />
+          <Property Name="shrqsj1" Type="DateTime" Precision="3" />
           <Property Name="checkUserID1" Type="Int64" />
           <Property Name="checkUserName1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptname1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz2" Type="Int32" Nullable="false" />
           <Property Name="Shyj2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Shrqsj2" Type="DateTime" />
+          <Property Name="Shrqsj2" Type="DateTime" Precision="3" />
           <Property Name="checkUserID2" Type="Int64" />
           <Property Name="checkUserName2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptname2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Checkbz3" Type="Int32" Nullable="false" />
           <Property Name="Shyj3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Shrqsj3" Type="DateTime" />
+          <Property Name="Shrqsj3" Type="DateTime" Precision="3" />
           <Property Name="checkUserID3" Type="Int64" />
           <Property Name="checkUserName3" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="checkdeptcode3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -1841,7 +1865,32 @@
           <EntitySet Name="wdetabinf" EntityType="Self.wdetabinf" />
           <EntitySet Name="gczj_zbkzjbaglb_20140709" EntityType="Self.gczj_zbkzjbaglb_20140709" />
           <EntitySet Name="gczj_zbkzjbaglb_20150610" EntityType="Self.gczj_zbkzjbaglb_20150610" />
+          <EntitySet Name="org_business" EntityType="EM_TestModel.org_business" />
         </EntityContainer>
+        <EntityType Name="org_business">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="projectname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="buildunit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="compileunit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="auditunit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="projecttype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="projectsummary" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="contract" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="report" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="other" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="createtime" Type="DateTime" Precision="3" />
+          <Property Name="updatetime" Type="DateTime" Precision="3" />
+          <Property Name="orgname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="creator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="creatorid" Type="Int32" />
+          <Property Name="audituser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="audituserid" Type="Int32" />
+          <Property Name="statues" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1922,7 +1971,7 @@
                 <ScalarProperty Name="gczylb" ColumnName="gczylb" />
                 <ScalarProperty Name="jsbzrid" ColumnName="jsbzrid" />
                 <ScalarProperty Name="jsbzr" ColumnName="jsbzr" />
-                <ScalarProperty Name="jsshrid" ColumnName="jsshrid" />
+                <ScalarProperty Name="o" ColumnName="jsshrid" />
                 <ScalarProperty Name="jsshr" ColumnName="jsshr" />
                 <ScalarProperty Name="ssj" ColumnName="ssj" />
                 <ScalarProperty Name="sdj" ColumnName="sdj" />
@@ -2690,6 +2739,31 @@
                 <ScalarProperty Name="checkUserName3" ColumnName="checkUserName3" />
                 <ScalarProperty Name="checkdeptcode3" ColumnName="checkdeptcode3" />
                 <ScalarProperty Name="checkdeptname3" ColumnName="checkdeptname3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="org_business">
+            <EntityTypeMapping TypeName="EM_TestModel.org_business">
+              <MappingFragment StoreEntitySet="org_business">
+                <ScalarProperty Name="statues" ColumnName="statues" />
+                <ScalarProperty Name="audituserid" ColumnName="audituserid" />
+                <ScalarProperty Name="audituser" ColumnName="audituser" />
+                <ScalarProperty Name="creatorid" ColumnName="creatorid" />
+                <ScalarProperty Name="creator" ColumnName="creator" />
+                <ScalarProperty Name="orgname" ColumnName="orgname" />
+                <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+                <ScalarProperty Name="other" ColumnName="other" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="report" ColumnName="report" />
+                <ScalarProperty Name="contract" ColumnName="contract" />
+                <ScalarProperty Name="projectsummary" ColumnName="projectsummary" />
+                <ScalarProperty Name="projecttype" ColumnName="projecttype" />
+                <ScalarProperty Name="auditunit" ColumnName="auditunit" />
+                <ScalarProperty Name="compileunit" ColumnName="compileunit" />
+                <ScalarProperty Name="buildunit" ColumnName="buildunit" />
+                <ScalarProperty Name="projectname" ColumnName="projectname" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

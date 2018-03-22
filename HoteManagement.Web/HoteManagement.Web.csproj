@@ -222,6 +222,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\SysController.cs" />
     <Compile Include="Core\BaseController.cs" />
     <Compile Include="Core\Baseresponse.cs" />
     <Compile Include="Core\BaseWebViewPage.cs" />
@@ -240,6 +241,7 @@
     <Compile Include="Models\AjaxResponseOfTResult.cs" />
     <Compile Include="Models\Api\BatchCreateRoomNumberRequest.cs" />
     <Compile Include="Models\Api\Createcost_typeRequest.cs" />
+    <Compile Include="Models\Api\CreateOrgBusinessRequest.cs" />
     <Compile Include="Models\Api\Editcost_typeRequest.cs" />
     <Compile Include="Models\Api\EditgoodsRequest.cs" />
     <Compile Include="Models\Api\CreategoodsRequest.cs" />
@@ -886,6 +888,7 @@
     <Content Include="Views\Other\GuestsourceIndex.cshtml" />
     <Content Include="Views\Other\CreateGuestSource.cshtml" />
     <Content Include="Views\Other\EditGuestSource.cshtml" />
+    <Content Include="Views\Admin\CreateBusiness.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

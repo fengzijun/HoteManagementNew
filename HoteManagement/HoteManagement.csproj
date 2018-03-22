@@ -187,6 +187,7 @@
     <Compile Include="Domain\occu_informx.cs" />
     <Compile Include="Domain\order_ext.cs" />
     <Compile Include="Domain\order_infor.cs" />
+    <Compile Include="Domain\Org_Business.cs" />
     <Compile Include="Domain\paymentMoney.cs" />
     <Compile Include="Domain\price_type.cs" />
     <Compile Include="Domain\print.cs" />

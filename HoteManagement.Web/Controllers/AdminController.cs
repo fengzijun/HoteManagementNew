@@ -1,5 +1,7 @@
-﻿using HoteManagement.Web.Core;
+﻿using HoteManagement.Service.Model;
+using HoteManagement.Web.Core;
 using HoteManagement.Web.Models;
+using HoteManagement.Web.Models.Api;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
@@ -40,12 +42,6 @@ namespace HoteManagement.Web.Controllers
             {
                 return View(model);
             }
-
-            //if(model.Code !=Session["CheckCode"].ToString())
-            //{
-            //    ModelState.AddModelError("", "验证码错误。");
-            //    return View(model);
-            //}
 
             var user = generateService.GetUserinfoByUsernameAndPwd(model.UserName, model.Password);
             if(user!=null)
@@ -96,6 +92,155 @@ namespace HoteManagement.Web.Controllers
             }
             Session["CheckCode"] = serverCode;
             return File(bytes, @"image/jpeg");
+        }
+
+        public ActionResult CreateBusiness()
+        {
+            GetProjectType();
+
+            return View();
+        }
+
+        public ActionResult EditBusiness()
+        {
+            GetProjectType();
+
+            return View();
+        }
+
+        public void GetProjectType()
+        {
+            List<SelectListItem> list = new List<SelectListItem>();
+            //编制、审计
+            list.Add(new SelectListItem { Text = "编制", Value = "编制" });
+            list.Add(new SelectListItem { Text = "审计", Value = "审计" });
+            ViewBag.ProjectList = list;
+        }
+
+        [HttpPost]
+        public ActionResult CreateBusiness(CreateOrgBusinessRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                GetProjectType();
+                return View();
+            }
+               
+
+            if(Request.Files.Count<3)
+            {
+                ModelState.AddModelError("","请上传制定的附件");
+                GetProjectType();
+                return View();
+            }
+
+            string contract = string.Empty;
+            string report = string.Empty;
+            string price = string.Empty;
+            string other = string.Empty;
+            string path = Server.MapPath("~/upload");
+            contract = Guid.NewGuid().ToString();
+            report = Guid.NewGuid().ToString();
+            price = Guid.NewGuid().ToString();
+
+            if(Request.Files.Count == 4)
+                other = Guid.NewGuid().ToString();
+            
+            Request.Files[0].SaveAs(path + "/" + contract + ".doc");
+            Request.Files[1].SaveAs(path + "/" + report + ".doc");
+            Request.Files[2].SaveAs(path + "/" + price + ".doc");
+
+            if (Request.Files.Count == 4)
+                Request.Files[3].SaveAs(path + "/" + other + ".doc");
+
+            Org_BusinessDto business = new Org_BusinessDto
+            {
+                auditunit = request.auditunit,
+                buildunit = request.buildunit,
+                compileunit = request.compileunit,
+                createtime = DateTime.Now,
+                creator = UserInfo.LoginName,
+                creatorid = UserInfo.LoginID,
+                orgname = UserInfo.OrgName,
+                projectname = request.projectname,
+                projectsummary = request.projectsummary,
+                projecttype = request.projecttype,
+                statues = 0,
+                updatetime = DateTime.Now,
+                contract = contract,
+                other = other,
+                price = price,
+                report = report
+            };
+
+            generateService.CreateBusiness(business);
+
+            return Redirect("/sys/OperationResult?returnurl=/Admin/CreateBusiness");
+
+        }
+
+        [HttpPost]
+        public ActionResult EditBusiness(EditOrgBusinessRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                GetProjectType();
+                return View();
+            }
+
+
+            if (Request.Files.Count < 3)
+            {
+                ModelState.AddModelError("", "请上传制定的附件");
+                GetProjectType();
+                return View();
+            }
+
+            string contract = string.Empty;
+            string report = string.Empty;
+            string price = string.Empty;
+            string other = string.Empty;
+            string path = Server.MapPath("~/upload");
+            contract = Guid.NewGuid().ToString();
+            report = Guid.NewGuid().ToString();
+            price = Guid.NewGuid().ToString();
+
+          
+
+            if (Request.Files.Count == 4)
+                other = Guid.NewGuid().ToString();
+
+            Request.Files[0].SaveAs(path + "/" + contract + ".doc");
+            Request.Files[1].SaveAs(path + "/" + report + ".doc");
+            Request.Files[2].SaveAs(path + "/" + price + ".doc");
+
+            if (Request.Files.Count == 4)
+                Request.Files[3].SaveAs(path + "/" + other + ".doc");
+
+            Org_BusinessDto business = new Org_BusinessDto
+            {
+                auditunit = request.auditunit,
+                buildunit = request.buildunit,
+                compileunit = request.compileunit,
+                createtime = DateTime.Now,
+                creator = UserInfo.LoginName,
+                creatorid = UserInfo.LoginID,
+                orgname = UserInfo.OrgName,
+                projectname = request.projectname,
+                projectsummary = request.projectsummary,
+                projecttype = request.projecttype,
+                statues = 0,
+                updatetime = DateTime.Now,
+                contract = contract,
+                other = other,
+                price = price,
+                report = report
+            };
+
+            generateService.CreateBusiness(business);
+
+            return Redirect("/sys/OperationResult?returnurl=/Admin/CreateBusiness");
+
         }
     }
 }

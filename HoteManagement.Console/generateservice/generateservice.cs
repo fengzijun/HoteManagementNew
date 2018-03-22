@@ -9,2927 +9,855 @@
 using System;
 using System.Collections.Generic;
 
-  public virtual void Addaccount_goods(account_goodsDto account_goods)
+  public virtual void Addd_qyjjlx(d_qyjjlxDto d_qyjjlx)
   {
-      Domain.account_goods model = AutoMapper.Mapper.Map<Domain.account_goods>(account_goods);
-      _account_goodsRepository.Insert(model);
+      Domain.d_qyjjlx model = AutoMapper.Mapper.Map<Domain.d_qyjjlx>(d_qyjjlx);
+      _d_qyjjlxRepository.Insert(model);
   }
-   public virtual void Updateaccount_goods(account_goodsDto account_goods)
+   public virtual void Updated_qyjjlx(d_qyjjlxDto d_qyjjlx)
   {
-      Domain.account_goods model = AutoMapper.Mapper.Map<Domain.account_goods>(account_goods);
-      _account_goodsRepository.Update(model);
+      Domain.d_qyjjlx model = AutoMapper.Mapper.Map<Domain.d_qyjjlx>(d_qyjjlx);
+      _d_qyjjlxRepository.Update(model);
   }
 
-     public virtual account_goodsDto Getaccount_goodsById(int id)
+     public virtual d_qyjjlxDto Getd_qyjjlxById(int id)
 	  {
-	      return _account_goodsRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<account_goodsDto>();
+	      return _d_qyjjlxRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<d_qyjjlxDto>();
 	    }
 
-		  public virtual List<account_goodsDto> Getaccount_goodsList(int? hotelid)
+		  public virtual List<d_qyjjlxDto> Getd_qyjjlxList(int? hotelid)
 	  {
-	    var result = _account_goodsRepository.TableNoTracking;
+	    var result = _d_qyjjlxRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<account_goodsDto>();
+		return result.ProjectToList<d_qyjjlxDto>();
 	    }
 
-	  public virtual IPagedList<account_goodsDto> Getaccount_goodsList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<d_qyjjlxDto> Getd_qyjjlxList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _account_goodsRepository.TableNoTracking;
+	    var result = _d_qyjjlxRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<account_goodsDto>(result.ProjectToQueryable<account_goodsDto>(), pageindex, pagesize);
+		return new PagedList<d_qyjjlxDto>(result.ProjectToQueryable<d_qyjjlxDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void Deleteaccount_goods(int id)
+	   public virtual void Deleted_qyjjlx(int id)
 	    {
-		 _account_goodsRepository.Delete(id);
+		 _d_qyjjlxRepository.Delete(id);
 		   }
 
-  public virtual void AddAccounts_Roles(Accounts_RolesDto Accounts_Roles)
+  public virtual void Addg_BusinessLog(g_BusinessLogDto g_BusinessLog)
   {
-      Domain.Accounts_Roles model = AutoMapper.Mapper.Map<Domain.Accounts_Roles>(Accounts_Roles);
-      _Accounts_RolesRepository.Insert(model);
+      Domain.g_BusinessLog model = AutoMapper.Mapper.Map<Domain.g_BusinessLog>(g_BusinessLog);
+      _g_BusinessLogRepository.Insert(model);
   }
-   public virtual void UpdateAccounts_Roles(Accounts_RolesDto Accounts_Roles)
+   public virtual void Updateg_BusinessLog(g_BusinessLogDto g_BusinessLog)
   {
-      Domain.Accounts_Roles model = AutoMapper.Mapper.Map<Domain.Accounts_Roles>(Accounts_Roles);
-      _Accounts_RolesRepository.Update(model);
+      Domain.g_BusinessLog model = AutoMapper.Mapper.Map<Domain.g_BusinessLog>(g_BusinessLog);
+      _g_BusinessLogRepository.Update(model);
   }
 
-     public virtual Accounts_RolesDto GetAccounts_RolesById(int id)
+     public virtual g_BusinessLogDto Getg_BusinessLogById(int id)
 	  {
-	      return _Accounts_RolesRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_RolesDto>();
+	      return _g_BusinessLogRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<g_BusinessLogDto>();
 	    }
 
-		  public virtual List<Accounts_RolesDto> GetAccounts_RolesList(int? hotelid)
+		  public virtual List<g_BusinessLogDto> Getg_BusinessLogList(int? hotelid)
 	  {
-	    var result = _Accounts_RolesRepository.TableNoTracking;
+	    var result = _g_BusinessLogRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<Accounts_RolesDto>();
+		return result.ProjectToList<g_BusinessLogDto>();
 	    }
 
-	  public virtual IPagedList<Accounts_RolesDto> GetAccounts_RolesList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<g_BusinessLogDto> Getg_BusinessLogList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _Accounts_RolesRepository.TableNoTracking;
+	    var result = _g_BusinessLogRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<Accounts_RolesDto>(result.ProjectToQueryable<Accounts_RolesDto>(), pageindex, pagesize);
+		return new PagedList<g_BusinessLogDto>(result.ProjectToQueryable<g_BusinessLogDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeleteAccounts_Roles(int id)
+	   public virtual void Deleteg_BusinessLog(int id)
 	    {
-		 _Accounts_RolesRepository.Delete(id);
+		 _g_BusinessLogRepository.Delete(id);
 		   }
 
-  public virtual void AddAccounts_UserRoles(Accounts_UserRolesDto Accounts_UserRoles)
+  public virtual void Addg_statetransferrule(g_statetransferruleDto g_statetransferrule)
   {
-      Domain.Accounts_UserRoles model = AutoMapper.Mapper.Map<Domain.Accounts_UserRoles>(Accounts_UserRoles);
-      _Accounts_UserRolesRepository.Insert(model);
+      Domain.g_statetransferrule model = AutoMapper.Mapper.Map<Domain.g_statetransferrule>(g_statetransferrule);
+      _g_statetransferruleRepository.Insert(model);
   }
-   public virtual void UpdateAccounts_UserRoles(Accounts_UserRolesDto Accounts_UserRoles)
+   public virtual void Updateg_statetransferrule(g_statetransferruleDto g_statetransferrule)
   {
-      Domain.Accounts_UserRoles model = AutoMapper.Mapper.Map<Domain.Accounts_UserRoles>(Accounts_UserRoles);
-      _Accounts_UserRolesRepository.Update(model);
+      Domain.g_statetransferrule model = AutoMapper.Mapper.Map<Domain.g_statetransferrule>(g_statetransferrule);
+      _g_statetransferruleRepository.Update(model);
   }
 
-     public virtual Accounts_UserRolesDto GetAccounts_UserRolesById(int id)
+     public virtual g_statetransferruleDto Getg_statetransferruleById(int id)
 	  {
-	      return _Accounts_UserRolesRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_UserRolesDto>();
+	      return _g_statetransferruleRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<g_statetransferruleDto>();
 	    }
 
-		  public virtual List<Accounts_UserRolesDto> GetAccounts_UserRolesList(int? hotelid)
+		  public virtual List<g_statetransferruleDto> Getg_statetransferruleList(int? hotelid)
 	  {
-	    var result = _Accounts_UserRolesRepository.TableNoTracking;
+	    var result = _g_statetransferruleRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<Accounts_UserRolesDto>();
+		return result.ProjectToList<g_statetransferruleDto>();
 	    }
 
-	  public virtual IPagedList<Accounts_UserRolesDto> GetAccounts_UserRolesList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<g_statetransferruleDto> Getg_statetransferruleList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _Accounts_UserRolesRepository.TableNoTracking;
+	    var result = _g_statetransferruleRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<Accounts_UserRolesDto>(result.ProjectToQueryable<Accounts_UserRolesDto>(), pageindex, pagesize);
+		return new PagedList<g_statetransferruleDto>(result.ProjectToQueryable<g_statetransferruleDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeleteAccounts_UserRoles(int id)
+	   public virtual void Deleteg_statetransferrule(int id)
 	    {
-		 _Accounts_UserRolesRepository.Delete(id);
+		 _g_statetransferruleRepository.Delete(id);
 		   }
 
-  public virtual void AddAccounts_Users(Accounts_UsersDto Accounts_Users)
+  public virtual void Addgczj_code(gczj_codeDto gczj_code)
   {
-      Domain.Accounts_Users model = AutoMapper.Mapper.Map<Domain.Accounts_Users>(Accounts_Users);
-      _Accounts_UsersRepository.Insert(model);
+      Domain.gczj_code model = AutoMapper.Mapper.Map<Domain.gczj_code>(gczj_code);
+      _gczj_codeRepository.Insert(model);
   }
-   public virtual void UpdateAccounts_Users(Accounts_UsersDto Accounts_Users)
+   public virtual void Updategczj_code(gczj_codeDto gczj_code)
   {
-      Domain.Accounts_Users model = AutoMapper.Mapper.Map<Domain.Accounts_Users>(Accounts_Users);
-      _Accounts_UsersRepository.Update(model);
+      Domain.gczj_code model = AutoMapper.Mapper.Map<Domain.gczj_code>(gczj_code);
+      _gczj_codeRepository.Update(model);
   }
 
-     public virtual Accounts_UsersDto GetAccounts_UsersById(int id)
+     public virtual gczj_codeDto Getgczj_codeById(int id)
 	  {
-	      return _Accounts_UsersRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Accounts_UsersDto>();
+	      return _gczj_codeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<gczj_codeDto>();
 	    }
 
-		  public virtual List<Accounts_UsersDto> GetAccounts_UsersList(int? hotelid)
+		  public virtual List<gczj_codeDto> Getgczj_codeList(int? hotelid)
 	  {
-	    var result = _Accounts_UsersRepository.TableNoTracking;
+	    var result = _gczj_codeRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<Accounts_UsersDto>();
+		return result.ProjectToList<gczj_codeDto>();
 	    }
 
-	  public virtual IPagedList<Accounts_UsersDto> GetAccounts_UsersList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<gczj_codeDto> Getgczj_codeList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _Accounts_UsersRepository.TableNoTracking;
+	    var result = _gczj_codeRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<Accounts_UsersDto>(result.ProjectToQueryable<Accounts_UsersDto>(), pageindex, pagesize);
+		return new PagedList<gczj_codeDto>(result.ProjectToQueryable<gczj_codeDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeleteAccounts_Users(int id)
+	   public virtual void Deletegczj_code(int id)
 	    {
-		 _Accounts_UsersRepository.Delete(id);
+		 _gczj_codeRepository.Delete(id);
 		   }
 
-  public virtual void AddAddPrice(AddPriceDto AddPrice)
+  public virtual void Addgczj_glyh_dq(gczj_glyh_dqDto gczj_glyh_dq)
   {
-      Domain.AddPrice model = AutoMapper.Mapper.Map<Domain.AddPrice>(AddPrice);
-      _AddPriceRepository.Insert(model);
+      Domain.gczj_glyh_dq model = AutoMapper.Mapper.Map<Domain.gczj_glyh_dq>(gczj_glyh_dq);
+      _gczj_glyh_dqRepository.Insert(model);
   }
-   public virtual void UpdateAddPrice(AddPriceDto AddPrice)
+   public virtual void Updategczj_glyh_dq(gczj_glyh_dqDto gczj_glyh_dq)
   {
-      Domain.AddPrice model = AutoMapper.Mapper.Map<Domain.AddPrice>(AddPrice);
-      _AddPriceRepository.Update(model);
+      Domain.gczj_glyh_dq model = AutoMapper.Mapper.Map<Domain.gczj_glyh_dq>(gczj_glyh_dq);
+      _gczj_glyh_dqRepository.Update(model);
   }
 
-     public virtual AddPriceDto GetAddPriceById(int id)
+     public virtual gczj_glyh_dqDto Getgczj_glyh_dqById(int id)
 	  {
-	      return _AddPriceRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<AddPriceDto>();
+	      return _gczj_glyh_dqRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<gczj_glyh_dqDto>();
 	    }
 
-		  public virtual List<AddPriceDto> GetAddPriceList(int? hotelid)
+		  public virtual List<gczj_glyh_dqDto> Getgczj_glyh_dqList(int? hotelid)
 	  {
-	    var result = _AddPriceRepository.TableNoTracking;
+	    var result = _gczj_glyh_dqRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<AddPriceDto>();
+		return result.ProjectToList<gczj_glyh_dqDto>();
 	    }
 
-	  public virtual IPagedList<AddPriceDto> GetAddPriceList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<gczj_glyh_dqDto> Getgczj_glyh_dqList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _AddPriceRepository.TableNoTracking;
+	    var result = _gczj_glyh_dqRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<AddPriceDto>(result.ProjectToQueryable<AddPriceDto>(), pageindex, pagesize);
+		return new PagedList<gczj_glyh_dqDto>(result.ProjectToQueryable<gczj_glyh_dqDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeleteAddPrice(int id)
+	   public virtual void Deletegczj_glyh_dq(int id)
 	    {
-		 _AddPriceRepository.Delete(id);
+		 _gczj_glyh_dqRepository.Delete(id);
 		   }
 
-  public virtual void Addapartment(apartmentDto apartment)
+  public virtual void Addgczj_jgjs_dwgcxxb(gczj_jgjs_dwgcxxbDto gczj_jgjs_dwgcxxb)
   {
-      Domain.apartment model = AutoMapper.Mapper.Map<Domain.apartment>(apartment);
-      _apartmentRepository.Insert(model);
+      Domain.gczj_jgjs_dwgcxxb model = AutoMapper.Mapper.Map<Domain.gczj_jgjs_dwgcxxb>(gczj_jgjs_dwgcxxb);
+      _gczj_jgjs_dwgcxxbRepository.Insert(model);
   }
-   public virtual void Updateapartment(apartmentDto apartment)
+   public virtual void Updategczj_jgjs_dwgcxxb(gczj_jgjs_dwgcxxbDto gczj_jgjs_dwgcxxb)
   {
-      Domain.apartment model = AutoMapper.Mapper.Map<Domain.apartment>(apartment);
-      _apartmentRepository.Update(model);
+      Domain.gczj_jgjs_dwgcxxb model = AutoMapper.Mapper.Map<Domain.gczj_jgjs_dwgcxxb>(gczj_jgjs_dwgcxxb);
+      _gczj_jgjs_dwgcxxbRepository.Update(model);
   }
 
-     public virtual apartmentDto GetapartmentById(int id)
+     public virtual gczj_jgjs_dwgcxxbDto Getgczj_jgjs_dwgcxxbById(int id)
 	  {
-	      return _apartmentRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<apartmentDto>();
+	      return _gczj_jgjs_dwgcxxbRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<gczj_jgjs_dwgcxxbDto>();
 	    }
 
-		  public virtual List<apartmentDto> GetapartmentList(int? hotelid)
+		  public virtual List<gczj_jgjs_dwgcxxbDto> Getgczj_jgjs_dwgcxxbList(int? hotelid)
 	  {
-	    var result = _apartmentRepository.TableNoTracking;
+	    var result = _gczj_jgjs_dwgcxxbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<apartmentDto>();
+		return result.ProjectToList<gczj_jgjs_dwgcxxbDto>();
 	    }
 
-	  public virtual IPagedList<apartmentDto> GetapartmentList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<gczj_jgjs_dwgcxxbDto> Getgczj_jgjs_dwgcxxbList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _apartmentRepository.TableNoTracking;
+	    var result = _gczj_jgjs_dwgcxxbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<apartmentDto>(result.ProjectToQueryable<apartmentDto>(), pageindex, pagesize);
+		return new PagedList<gczj_jgjs_dwgcxxbDto>(result.ProjectToQueryable<gczj_jgjs_dwgcxxbDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void Deleteapartment(int id)
+	   public virtual void Deletegczj_jgjs_dwgcxxb(int id)
 	    {
-		 _apartmentRepository.Delete(id);
+		 _gczj_jgjs_dwgcxxbRepository.Delete(id);
 		   }
 
-  public virtual void Addbanner(bannerDto banner)
+  public virtual void Addgczj_jgjsglb(gczj_jgjsglbDto gczj_jgjsglb)
   {
-      Domain.banner model = AutoMapper.Mapper.Map<Domain.banner>(banner);
-      _bannerRepository.Insert(model);
+      Domain.gczj_jgjsglb model = AutoMapper.Mapper.Map<Domain.gczj_jgjsglb>(gczj_jgjsglb);
+      _gczj_jgjsglbRepository.Insert(model);
   }
-   public virtual void Updatebanner(bannerDto banner)
+   public virtual void Updategczj_jgjsglb(gczj_jgjsglbDto gczj_jgjsglb)
   {
-      Domain.banner model = AutoMapper.Mapper.Map<Domain.banner>(banner);
-      _bannerRepository.Update(model);
+      Domain.gczj_jgjsglb model = AutoMapper.Mapper.Map<Domain.gczj_jgjsglb>(gczj_jgjsglb);
+      _gczj_jgjsglbRepository.Update(model);
   }
 
-     public virtual bannerDto GetbannerById(int id)
+     public virtual gczj_jgjsglbDto Getgczj_jgjsglbById(int id)
 	  {
-	      return _bannerRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<bannerDto>();
+	      return _gczj_jgjsglbRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<gczj_jgjsglbDto>();
 	    }
 
-		  public virtual List<bannerDto> GetbannerList(int? hotelid)
+		  public virtual List<gczj_jgjsglbDto> Getgczj_jgjsglbList(int? hotelid)
 	  {
-	    var result = _bannerRepository.TableNoTracking;
+	    var result = _gczj_jgjsglbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<bannerDto>();
+		return result.ProjectToList<gczj_jgjsglbDto>();
 	    }
 
-	  public virtual IPagedList<bannerDto> GetbannerList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<gczj_jgjsglbDto> Getgczj_jgjsglbList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _bannerRepository.TableNoTracking;
+	    var result = _gczj_jgjsglbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<bannerDto>(result.ProjectToQueryable<bannerDto>(), pageindex, pagesize);
+		return new PagedList<gczj_jgjsglbDto>(result.ProjectToQueryable<gczj_jgjsglbDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void Deletebanner(int id)
+	   public virtual void Deletegczj_jgjsglb(int id)
 	    {
-		 _bannerRepository.Delete(id);
+		 _gczj_jgjsglbRepository.Delete(id);
 		   }
 
-  public virtual void AddBook_Rdetail(Book_RdetailDto Book_Rdetail)
+  public virtual void Addgczj_jjscglb(gczj_jjscglbDto gczj_jjscglb)
   {
-      Domain.Book_Rdetail model = AutoMapper.Mapper.Map<Domain.Book_Rdetail>(Book_Rdetail);
-      _Book_RdetailRepository.Insert(model);
+      Domain.gczj_jjscglb model = AutoMapper.Mapper.Map<Domain.gczj_jjscglb>(gczj_jjscglb);
+      _gczj_jjscglbRepository.Insert(model);
   }
-   public virtual void UpdateBook_Rdetail(Book_RdetailDto Book_Rdetail)
+   public virtual void Updategczj_jjscglb(gczj_jjscglbDto gczj_jjscglb)
   {
-      Domain.Book_Rdetail model = AutoMapper.Mapper.Map<Domain.Book_Rdetail>(Book_Rdetail);
-      _Book_RdetailRepository.Update(model);
+      Domain.gczj_jjscglb model = AutoMapper.Mapper.Map<Domain.gczj_jjscglb>(gczj_jjscglb);
+      _gczj_jjscglbRepository.Update(model);
   }
 
-     public virtual Book_RdetailDto GetBook_RdetailById(int id)
+     public virtual gczj_jjscglbDto Getgczj_jjscglbById(int id)
 	  {
-	      return _Book_RdetailRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Book_RdetailDto>();
+	      return _gczj_jjscglbRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<gczj_jjscglbDto>();
 	    }
 
-		  public virtual List<Book_RdetailDto> GetBook_RdetailList(int? hotelid)
+		  public virtual List<gczj_jjscglbDto> Getgczj_jjscglbList(int? hotelid)
 	  {
-	    var result = _Book_RdetailRepository.TableNoTracking;
+	    var result = _gczj_jjscglbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<Book_RdetailDto>();
+		return result.ProjectToList<gczj_jjscglbDto>();
 	    }
 
-	  public virtual IPagedList<Book_RdetailDto> GetBook_RdetailList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<gczj_jjscglbDto> Getgczj_jjscglbList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _Book_RdetailRepository.TableNoTracking;
+	    var result = _gczj_jjscglbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<Book_RdetailDto>(result.ProjectToQueryable<Book_RdetailDto>(), pageindex, pagesize);
+		return new PagedList<gczj_jjscglbDto>(result.ProjectToQueryable<gczj_jjscglbDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeleteBook_Rdetail(int id)
+	   public virtual void Deletegczj_jjscglb(int id)
 	    {
-		 _Book_RdetailRepository.Delete(id);
+		 _gczj_jjscglbRepository.Delete(id);
 		   }
 
-  public virtual void Addbook_room(book_roomDto book_room)
+  public virtual void Addgczj_sgcsfhdglb(gczj_sgcsfhdglbDto gczj_sgcsfhdglb)
   {
-      Domain.book_room model = AutoMapper.Mapper.Map<Domain.book_room>(book_room);
-      _book_roomRepository.Insert(model);
+      Domain.gczj_sgcsfhdglb model = AutoMapper.Mapper.Map<Domain.gczj_sgcsfhdglb>(gczj_sgcsfhdglb);
+      _gczj_sgcsfhdglbRepository.Insert(model);
   }
-   public virtual void Updatebook_room(book_roomDto book_room)
+   public virtual void Updategczj_sgcsfhdglb(gczj_sgcsfhdglbDto gczj_sgcsfhdglb)
   {
-      Domain.book_room model = AutoMapper.Mapper.Map<Domain.book_room>(book_room);
-      _book_roomRepository.Update(model);
+      Domain.gczj_sgcsfhdglb model = AutoMapper.Mapper.Map<Domain.gczj_sgcsfhdglb>(gczj_sgcsfhdglb);
+      _gczj_sgcsfhdglbRepository.Update(model);
   }
 
-     public virtual book_roomDto Getbook_roomById(int id)
+     public virtual gczj_sgcsfhdglbDto Getgczj_sgcsfhdglbById(int id)
 	  {
-	      return _book_roomRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<book_roomDto>();
+	      return _gczj_sgcsfhdglbRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<gczj_sgcsfhdglbDto>();
 	    }
 
-		  public virtual List<book_roomDto> Getbook_roomList(int? hotelid)
+		  public virtual List<gczj_sgcsfhdglbDto> Getgczj_sgcsfhdglbList(int? hotelid)
 	  {
-	    var result = _book_roomRepository.TableNoTracking;
+	    var result = _gczj_sgcsfhdglbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<book_roomDto>();
+		return result.ProjectToList<gczj_sgcsfhdglbDto>();
 	    }
 
-	  public virtual IPagedList<book_roomDto> Getbook_roomList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<gczj_sgcsfhdglbDto> Getgczj_sgcsfhdglbList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _book_roomRepository.TableNoTracking;
+	    var result = _gczj_sgcsfhdglbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<book_roomDto>(result.ProjectToQueryable<book_roomDto>(), pageindex, pagesize);
+		return new PagedList<gczj_sgcsfhdglbDto>(result.ProjectToQueryable<gczj_sgcsfhdglbDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void Deletebook_room(int id)
+	   public virtual void Deletegczj_sgcsfhdglb(int id)
 	    {
-		 _book_roomRepository.Delete(id);
+		 _gczj_sgcsfhdglbRepository.Delete(id);
 		   }
 
-  public virtual void AddBookState(BookStateDto BookState)
+  public virtual void Addgczj_xmxx(gczj_xmxxDto gczj_xmxx)
   {
-      Domain.BookState model = AutoMapper.Mapper.Map<Domain.BookState>(BookState);
-      _BookStateRepository.Insert(model);
+      Domain.gczj_xmxx model = AutoMapper.Mapper.Map<Domain.gczj_xmxx>(gczj_xmxx);
+      _gczj_xmxxRepository.Insert(model);
   }
-   public virtual void UpdateBookState(BookStateDto BookState)
+   public virtual void Updategczj_xmxx(gczj_xmxxDto gczj_xmxx)
   {
-      Domain.BookState model = AutoMapper.Mapper.Map<Domain.BookState>(BookState);
-      _BookStateRepository.Update(model);
+      Domain.gczj_xmxx model = AutoMapper.Mapper.Map<Domain.gczj_xmxx>(gczj_xmxx);
+      _gczj_xmxxRepository.Update(model);
   }
 
-     public virtual BookStateDto GetBookStateById(int id)
+     public virtual gczj_xmxxDto Getgczj_xmxxById(int id)
 	  {
-	      return _BookStateRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<BookStateDto>();
+	      return _gczj_xmxxRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<gczj_xmxxDto>();
 	    }
 
-		  public virtual List<BookStateDto> GetBookStateList(int? hotelid)
+		  public virtual List<gczj_xmxxDto> Getgczj_xmxxList(int? hotelid)
 	  {
-	    var result = _BookStateRepository.TableNoTracking;
+	    var result = _gczj_xmxxRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<BookStateDto>();
+		return result.ProjectToList<gczj_xmxxDto>();
 	    }
 
-	  public virtual IPagedList<BookStateDto> GetBookStateList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<gczj_xmxxDto> Getgczj_xmxxList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _BookStateRepository.TableNoTracking;
+	    var result = _gczj_xmxxRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<BookStateDto>(result.ProjectToQueryable<BookStateDto>(), pageindex, pagesize);
+		return new PagedList<gczj_xmxxDto>(result.ProjectToQueryable<gczj_xmxxDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeleteBookState(int id)
+	   public virtual void Deletegczj_xmxx(int id)
 	    {
-		 _BookStateRepository.Delete(id);
+		 _gczj_xmxxRepository.Delete(id);
 		   }
 
-  public virtual void Addbreakfirstcoupon(breakfirstcouponDto breakfirstcoupon)
+  public virtual void Addgczj_zbkzjba_xmz(gczj_zbkzjba_xmzDto gczj_zbkzjba_xmz)
   {
-      Domain.breakfirstcoupon model = AutoMapper.Mapper.Map<Domain.breakfirstcoupon>(breakfirstcoupon);
-      _breakfirstcouponRepository.Insert(model);
+      Domain.gczj_zbkzjba_xmz model = AutoMapper.Mapper.Map<Domain.gczj_zbkzjba_xmz>(gczj_zbkzjba_xmz);
+      _gczj_zbkzjba_xmzRepository.Insert(model);
   }
-   public virtual void Updatebreakfirstcoupon(breakfirstcouponDto breakfirstcoupon)
+   public virtual void Updategczj_zbkzjba_xmz(gczj_zbkzjba_xmzDto gczj_zbkzjba_xmz)
   {
-      Domain.breakfirstcoupon model = AutoMapper.Mapper.Map<Domain.breakfirstcoupon>(breakfirstcoupon);
-      _breakfirstcouponRepository.Update(model);
+      Domain.gczj_zbkzjba_xmz model = AutoMapper.Mapper.Map<Domain.gczj_zbkzjba_xmz>(gczj_zbkzjba_xmz);
+      _gczj_zbkzjba_xmzRepository.Update(model);
   }
 
-     public virtual breakfirstcouponDto GetbreakfirstcouponById(int id)
+     public virtual gczj_zbkzjba_xmzDto Getgczj_zbkzjba_xmzById(int id)
 	  {
-	      return _breakfirstcouponRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<breakfirstcouponDto>();
+	      return _gczj_zbkzjba_xmzRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<gczj_zbkzjba_xmzDto>();
 	    }
 
-		  public virtual List<breakfirstcouponDto> GetbreakfirstcouponList(int? hotelid)
+		  public virtual List<gczj_zbkzjba_xmzDto> Getgczj_zbkzjba_xmzList(int? hotelid)
 	  {
-	    var result = _breakfirstcouponRepository.TableNoTracking;
+	    var result = _gczj_zbkzjba_xmzRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<breakfirstcouponDto>();
+		return result.ProjectToList<gczj_zbkzjba_xmzDto>();
 	    }
 
-	  public virtual IPagedList<breakfirstcouponDto> GetbreakfirstcouponList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<gczj_zbkzjba_xmzDto> Getgczj_zbkzjba_xmzList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _breakfirstcouponRepository.TableNoTracking;
+	    var result = _gczj_zbkzjba_xmzRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<breakfirstcouponDto>(result.ProjectToQueryable<breakfirstcouponDto>(), pageindex, pagesize);
+		return new PagedList<gczj_zbkzjba_xmzDto>(result.ProjectToQueryable<gczj_zbkzjba_xmzDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void Deletebreakfirstcoupon(int id)
+	   public virtual void Deletegczj_zbkzjba_xmz(int id)
 	    {
-		 _breakfirstcouponRepository.Delete(id);
+		 _gczj_zbkzjba_xmzRepository.Delete(id);
 		   }
 
-  public virtual void Addcard_type(card_typeDto card_type)
+  public virtual void Addgczj_zbkzjbaglb(gczj_zbkzjbaglbDto gczj_zbkzjbaglb)
   {
-      Domain.card_type model = AutoMapper.Mapper.Map<Domain.card_type>(card_type);
-      _card_typeRepository.Insert(model);
+      Domain.gczj_zbkzjbaglb model = AutoMapper.Mapper.Map<Domain.gczj_zbkzjbaglb>(gczj_zbkzjbaglb);
+      _gczj_zbkzjbaglbRepository.Insert(model);
   }
-   public virtual void Updatecard_type(card_typeDto card_type)
+   public virtual void Updategczj_zbkzjbaglb(gczj_zbkzjbaglbDto gczj_zbkzjbaglb)
   {
-      Domain.card_type model = AutoMapper.Mapper.Map<Domain.card_type>(card_type);
-      _card_typeRepository.Update(model);
+      Domain.gczj_zbkzjbaglb model = AutoMapper.Mapper.Map<Domain.gczj_zbkzjbaglb>(gczj_zbkzjbaglb);
+      _gczj_zbkzjbaglbRepository.Update(model);
   }
 
-     public virtual card_typeDto Getcard_typeById(int id)
+     public virtual gczj_zbkzjbaglbDto Getgczj_zbkzjbaglbById(int id)
 	  {
-	      return _card_typeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<card_typeDto>();
+	      return _gczj_zbkzjbaglbRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<gczj_zbkzjbaglbDto>();
 	    }
 
-		  public virtual List<card_typeDto> Getcard_typeList(int? hotelid)
+		  public virtual List<gczj_zbkzjbaglbDto> Getgczj_zbkzjbaglbList(int? hotelid)
 	  {
-	    var result = _card_typeRepository.TableNoTracking;
+	    var result = _gczj_zbkzjbaglbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<card_typeDto>();
+		return result.ProjectToList<gczj_zbkzjbaglbDto>();
 	    }
 
-	  public virtual IPagedList<card_typeDto> Getcard_typeList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<gczj_zbkzjbaglbDto> Getgczj_zbkzjbaglbList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _card_typeRepository.TableNoTracking;
+	    var result = _gczj_zbkzjbaglbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<card_typeDto>(result.ProjectToQueryable<card_typeDto>(), pageindex, pagesize);
+		return new PagedList<gczj_zbkzjbaglbDto>(result.ProjectToQueryable<gczj_zbkzjbaglbDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void Deletecard_type(int id)
+	   public virtual void Deletegczj_zbkzjbaglb(int id)
 	    {
-		 _card_typeRepository.Delete(id);
+		 _gczj_zbkzjbaglbRepository.Delete(id);
 		   }
 
-  public virtual void AddcCall(cCallDto cCall)
+  public virtual void Addgczj_zbkzjbaglb_20140709(gczj_zbkzjbaglb_20140709Dto gczj_zbkzjbaglb_20140709)
   {
-      Domain.cCall model = AutoMapper.Mapper.Map<Domain.cCall>(cCall);
-      _cCallRepository.Insert(model);
+      Domain.gczj_zbkzjbaglb_20140709 model = AutoMapper.Mapper.Map<Domain.gczj_zbkzjbaglb_20140709>(gczj_zbkzjbaglb_20140709);
+      _gczj_zbkzjbaglb_20140709Repository.Insert(model);
   }
-   public virtual void UpdatecCall(cCallDto cCall)
+   public virtual void Updategczj_zbkzjbaglb_20140709(gczj_zbkzjbaglb_20140709Dto gczj_zbkzjbaglb_20140709)
   {
-      Domain.cCall model = AutoMapper.Mapper.Map<Domain.cCall>(cCall);
-      _cCallRepository.Update(model);
+      Domain.gczj_zbkzjbaglb_20140709 model = AutoMapper.Mapper.Map<Domain.gczj_zbkzjbaglb_20140709>(gczj_zbkzjbaglb_20140709);
+      _gczj_zbkzjbaglb_20140709Repository.Update(model);
   }
 
-     public virtual cCallDto GetcCallById(int id)
+     public virtual gczj_zbkzjbaglb_20140709Dto Getgczj_zbkzjbaglb_20140709ById(int id)
 	  {
-	      return _cCallRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<cCallDto>();
+	      return _gczj_zbkzjbaglb_20140709Repository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<gczj_zbkzjbaglb_20140709Dto>();
 	    }
 
-		  public virtual List<cCallDto> GetcCallList(int? hotelid)
+		  public virtual List<gczj_zbkzjbaglb_20140709Dto> Getgczj_zbkzjbaglb_20140709List(int? hotelid)
 	  {
-	    var result = _cCallRepository.TableNoTracking;
+	    var result = _gczj_zbkzjbaglb_20140709Repository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<cCallDto>();
+		return result.ProjectToList<gczj_zbkzjbaglb_20140709Dto>();
 	    }
 
-	  public virtual IPagedList<cCallDto> GetcCallList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<gczj_zbkzjbaglb_20140709Dto> Getgczj_zbkzjbaglb_20140709List(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _cCallRepository.TableNoTracking;
+	    var result = _gczj_zbkzjbaglb_20140709Repository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<cCallDto>(result.ProjectToQueryable<cCallDto>(), pageindex, pagesize);
+		return new PagedList<gczj_zbkzjbaglb_20140709Dto>(result.ProjectToQueryable<gczj_zbkzjbaglb_20140709Dto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeletecCall(int id)
+	   public virtual void Deletegczj_zbkzjbaglb_20140709(int id)
 	    {
-		 _cCallRepository.Delete(id);
+		 _gczj_zbkzjbaglb_20140709Repository.Delete(id);
 		   }
 
-  public virtual void AddcDepartment(cDepartmentDto cDepartment)
+  public virtual void Addgczj_zbkzjbaglb_20150610(gczj_zbkzjbaglb_20150610Dto gczj_zbkzjbaglb_20150610)
   {
-      Domain.cDepartment model = AutoMapper.Mapper.Map<Domain.cDepartment>(cDepartment);
-      _cDepartmentRepository.Insert(model);
+      Domain.gczj_zbkzjbaglb_20150610 model = AutoMapper.Mapper.Map<Domain.gczj_zbkzjbaglb_20150610>(gczj_zbkzjbaglb_20150610);
+      _gczj_zbkzjbaglb_20150610Repository.Insert(model);
   }
-   public virtual void UpdatecDepartment(cDepartmentDto cDepartment)
+   public virtual void Updategczj_zbkzjbaglb_20150610(gczj_zbkzjbaglb_20150610Dto gczj_zbkzjbaglb_20150610)
   {
-      Domain.cDepartment model = AutoMapper.Mapper.Map<Domain.cDepartment>(cDepartment);
-      _cDepartmentRepository.Update(model);
+      Domain.gczj_zbkzjbaglb_20150610 model = AutoMapper.Mapper.Map<Domain.gczj_zbkzjbaglb_20150610>(gczj_zbkzjbaglb_20150610);
+      _gczj_zbkzjbaglb_20150610Repository.Update(model);
   }
 
-     public virtual cDepartmentDto GetcDepartmentById(int id)
+     public virtual gczj_zbkzjbaglb_20150610Dto Getgczj_zbkzjbaglb_20150610ById(int id)
 	  {
-	      return _cDepartmentRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<cDepartmentDto>();
+	      return _gczj_zbkzjbaglb_20150610Repository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<gczj_zbkzjbaglb_20150610Dto>();
 	    }
 
-		  public virtual List<cDepartmentDto> GetcDepartmentList(int? hotelid)
+		  public virtual List<gczj_zbkzjbaglb_20150610Dto> Getgczj_zbkzjbaglb_20150610List(int? hotelid)
 	  {
-	    var result = _cDepartmentRepository.TableNoTracking;
+	    var result = _gczj_zbkzjbaglb_20150610Repository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<cDepartmentDto>();
+		return result.ProjectToList<gczj_zbkzjbaglb_20150610Dto>();
 	    }
 
-	  public virtual IPagedList<cDepartmentDto> GetcDepartmentList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<gczj_zbkzjbaglb_20150610Dto> Getgczj_zbkzjbaglb_20150610List(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _cDepartmentRepository.TableNoTracking;
+	    var result = _gczj_zbkzjbaglb_20150610Repository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<cDepartmentDto>(result.ProjectToQueryable<cDepartmentDto>(), pageindex, pagesize);
+		return new PagedList<gczj_zbkzjbaglb_20150610Dto>(result.ProjectToQueryable<gczj_zbkzjbaglb_20150610Dto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeletecDepartment(int id)
+	   public virtual void Deletegczj_zbkzjbaglb_20150610(int id)
 	    {
-		 _cDepartmentRepository.Delete(id);
+		 _gczj_zbkzjbaglb_20150610Repository.Delete(id);
 		   }
 
-  public virtual void AddcIndustry(cIndustryDto cIndustry)
+  public virtual void Addjsdw_jbqkb(jsdw_jbqkbDto jsdw_jbqkb)
   {
-      Domain.cIndustry model = AutoMapper.Mapper.Map<Domain.cIndustry>(cIndustry);
-      _cIndustryRepository.Insert(model);
+      Domain.jsdw_jbqkb model = AutoMapper.Mapper.Map<Domain.jsdw_jbqkb>(jsdw_jbqkb);
+      _jsdw_jbqkbRepository.Insert(model);
   }
-   public virtual void UpdatecIndustry(cIndustryDto cIndustry)
+   public virtual void Updatejsdw_jbqkb(jsdw_jbqkbDto jsdw_jbqkb)
   {
-      Domain.cIndustry model = AutoMapper.Mapper.Map<Domain.cIndustry>(cIndustry);
-      _cIndustryRepository.Update(model);
+      Domain.jsdw_jbqkb model = AutoMapper.Mapper.Map<Domain.jsdw_jbqkb>(jsdw_jbqkb);
+      _jsdw_jbqkbRepository.Update(model);
   }
 
-     public virtual cIndustryDto GetcIndustryById(int id)
+     public virtual jsdw_jbqkbDto Getjsdw_jbqkbById(int id)
 	  {
-	      return _cIndustryRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<cIndustryDto>();
+	      return _jsdw_jbqkbRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<jsdw_jbqkbDto>();
 	    }
 
-		  public virtual List<cIndustryDto> GetcIndustryList(int? hotelid)
+		  public virtual List<jsdw_jbqkbDto> Getjsdw_jbqkbList(int? hotelid)
 	  {
-	    var result = _cIndustryRepository.TableNoTracking;
+	    var result = _jsdw_jbqkbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<cIndustryDto>();
+		return result.ProjectToList<jsdw_jbqkbDto>();
 	    }
 
-	  public virtual IPagedList<cIndustryDto> GetcIndustryList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<jsdw_jbqkbDto> Getjsdw_jbqkbList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _cIndustryRepository.TableNoTracking;
+	    var result = _jsdw_jbqkbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<cIndustryDto>(result.ProjectToQueryable<cIndustryDto>(), pageindex, pagesize);
+		return new PagedList<jsdw_jbqkbDto>(result.ProjectToQueryable<jsdw_jbqkbDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeletecIndustry(int id)
+	   public virtual void Deletejsdw_jbqkb(int id)
 	    {
-		 _cIndustryRepository.Delete(id);
+		 _jsdw_jbqkbRepository.Delete(id);
 		   }
 
-  public virtual void Addcomm_unit(comm_unitDto comm_unit)
+  public virtual void Addorg_business(org_businessDto org_business)
   {
-      Domain.comm_unit model = AutoMapper.Mapper.Map<Domain.comm_unit>(comm_unit);
-      _comm_unitRepository.Insert(model);
+      Domain.org_business model = AutoMapper.Mapper.Map<Domain.org_business>(org_business);
+      _org_businessRepository.Insert(model);
   }
-   public virtual void Updatecomm_unit(comm_unitDto comm_unit)
+   public virtual void Updateorg_business(org_businessDto org_business)
   {
-      Domain.comm_unit model = AutoMapper.Mapper.Map<Domain.comm_unit>(comm_unit);
-      _comm_unitRepository.Update(model);
+      Domain.org_business model = AutoMapper.Mapper.Map<Domain.org_business>(org_business);
+      _org_businessRepository.Update(model);
   }
 
-     public virtual comm_unitDto Getcomm_unitById(int id)
+     public virtual org_businessDto Getorg_businessById(int id)
 	  {
-	      return _comm_unitRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<comm_unitDto>();
+	      return _org_businessRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<org_businessDto>();
 	    }
 
-		  public virtual List<comm_unitDto> Getcomm_unitList(int? hotelid)
+		  public virtual List<org_businessDto> Getorg_businessList(int? hotelid)
 	  {
-	    var result = _comm_unitRepository.TableNoTracking;
+	    var result = _org_businessRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<comm_unitDto>();
+		return result.ProjectToList<org_businessDto>();
 	    }
 
-	  public virtual IPagedList<comm_unitDto> Getcomm_unitList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<org_businessDto> Getorg_businessList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _comm_unitRepository.TableNoTracking;
+	    var result = _org_businessRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<comm_unitDto>(result.ProjectToQueryable<comm_unitDto>(), pageindex, pagesize);
+		return new PagedList<org_businessDto>(result.ProjectToQueryable<org_businessDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void Deletecomm_unit(int id)
+	   public virtual void Deleteorg_business(int id)
 	    {
-		 _comm_unitRepository.Delete(id);
+		 _org_businessRepository.Delete(id);
 		   }
 
-  public virtual void AddCommission(CommissionDto Commission)
+  public virtual void Addsgtyk_gljsryqkb(sgtyk_gljsryqkbDto sgtyk_gljsryqkb)
   {
-      Domain.Commission model = AutoMapper.Mapper.Map<Domain.Commission>(Commission);
-      _CommissionRepository.Insert(model);
+      Domain.sgtyk_gljsryqkb model = AutoMapper.Mapper.Map<Domain.sgtyk_gljsryqkb>(sgtyk_gljsryqkb);
+      _sgtyk_gljsryqkbRepository.Insert(model);
   }
-   public virtual void UpdateCommission(CommissionDto Commission)
+   public virtual void Updatesgtyk_gljsryqkb(sgtyk_gljsryqkbDto sgtyk_gljsryqkb)
   {
-      Domain.Commission model = AutoMapper.Mapper.Map<Domain.Commission>(Commission);
-      _CommissionRepository.Update(model);
+      Domain.sgtyk_gljsryqkb model = AutoMapper.Mapper.Map<Domain.sgtyk_gljsryqkb>(sgtyk_gljsryqkb);
+      _sgtyk_gljsryqkbRepository.Update(model);
   }
 
-     public virtual CommissionDto GetCommissionById(int id)
+     public virtual sgtyk_gljsryqkbDto Getsgtyk_gljsryqkbById(int id)
 	  {
-	      return _CommissionRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<CommissionDto>();
+	      return _sgtyk_gljsryqkbRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<sgtyk_gljsryqkbDto>();
 	    }
 
-		  public virtual List<CommissionDto> GetCommissionList(int? hotelid)
+		  public virtual List<sgtyk_gljsryqkbDto> Getsgtyk_gljsryqkbList(int? hotelid)
 	  {
-	    var result = _CommissionRepository.TableNoTracking;
+	    var result = _sgtyk_gljsryqkbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<CommissionDto>();
+		return result.ProjectToList<sgtyk_gljsryqkbDto>();
 	    }
 
-	  public virtual IPagedList<CommissionDto> GetCommissionList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<sgtyk_gljsryqkbDto> Getsgtyk_gljsryqkbList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _CommissionRepository.TableNoTracking;
+	    var result = _sgtyk_gljsryqkbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<CommissionDto>(result.ProjectToQueryable<CommissionDto>(), pageindex, pagesize);
+		return new PagedList<sgtyk_gljsryqkbDto>(result.ProjectToQueryable<sgtyk_gljsryqkbDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeleteCommission(int id)
+	   public virtual void Deletesgtyk_gljsryqkb(int id)
 	    {
-		 _CommissionRepository.Delete(id);
+		 _sgtyk_gljsryqkbRepository.Delete(id);
 		   }
 
-  public virtual void AddContacts(ContactsDto Contacts)
+  public virtual void Addsgtyk_qyjbqkb(sgtyk_qyjbqkbDto sgtyk_qyjbqkb)
   {
-      Domain.Contacts model = AutoMapper.Mapper.Map<Domain.Contacts>(Contacts);
-      _ContactsRepository.Insert(model);
+      Domain.sgtyk_qyjbqkb model = AutoMapper.Mapper.Map<Domain.sgtyk_qyjbqkb>(sgtyk_qyjbqkb);
+      _sgtyk_qyjbqkbRepository.Insert(model);
   }
-   public virtual void UpdateContacts(ContactsDto Contacts)
+   public virtual void Updatesgtyk_qyjbqkb(sgtyk_qyjbqkbDto sgtyk_qyjbqkb)
   {
-      Domain.Contacts model = AutoMapper.Mapper.Map<Domain.Contacts>(Contacts);
-      _ContactsRepository.Update(model);
+      Domain.sgtyk_qyjbqkb model = AutoMapper.Mapper.Map<Domain.sgtyk_qyjbqkb>(sgtyk_qyjbqkb);
+      _sgtyk_qyjbqkbRepository.Update(model);
   }
 
-     public virtual ContactsDto GetContactsById(int id)
+     public virtual sgtyk_qyjbqkbDto Getsgtyk_qyjbqkbById(int id)
 	  {
-	      return _ContactsRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<ContactsDto>();
+	      return _sgtyk_qyjbqkbRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<sgtyk_qyjbqkbDto>();
 	    }
 
-		  public virtual List<ContactsDto> GetContactsList(int? hotelid)
+		  public virtual List<sgtyk_qyjbqkbDto> Getsgtyk_qyjbqkbList(int? hotelid)
 	  {
-	    var result = _ContactsRepository.TableNoTracking;
+	    var result = _sgtyk_qyjbqkbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<ContactsDto>();
+		return result.ProjectToList<sgtyk_qyjbqkbDto>();
 	    }
 
-	  public virtual IPagedList<ContactsDto> GetContactsList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<sgtyk_qyjbqkbDto> Getsgtyk_qyjbqkbList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _ContactsRepository.TableNoTracking;
+	    var result = _sgtyk_qyjbqkbRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<ContactsDto>(result.ProjectToQueryable<ContactsDto>(), pageindex, pagesize);
+		return new PagedList<sgtyk_qyjbqkbDto>(result.ProjectToQueryable<sgtyk_qyjbqkbDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeleteContacts(int id)
+	   public virtual void Deletesgtyk_qyjbqkb(int id)
 	    {
-		 _ContactsRepository.Delete(id);
+		 _sgtyk_qyjbqkbRepository.Delete(id);
 		   }
 
-  public virtual void Addcost_type(cost_typeDto cost_type)
+  public virtual void AddUEPP_Code(UEPP_CodeDto UEPP_Code)
   {
-      Domain.cost_type model = AutoMapper.Mapper.Map<Domain.cost_type>(cost_type);
-      _cost_typeRepository.Insert(model);
+      Domain.UEPP_Code model = AutoMapper.Mapper.Map<Domain.UEPP_Code>(UEPP_Code);
+      _UEPP_CodeRepository.Insert(model);
   }
-   public virtual void Updatecost_type(cost_typeDto cost_type)
+   public virtual void UpdateUEPP_Code(UEPP_CodeDto UEPP_Code)
   {
-      Domain.cost_type model = AutoMapper.Mapper.Map<Domain.cost_type>(cost_type);
-      _cost_typeRepository.Update(model);
+      Domain.UEPP_Code model = AutoMapper.Mapper.Map<Domain.UEPP_Code>(UEPP_Code);
+      _UEPP_CodeRepository.Update(model);
   }
 
-     public virtual cost_typeDto Getcost_typeById(int id)
+     public virtual UEPP_CodeDto GetUEPP_CodeById(int id)
 	  {
-	      return _cost_typeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<cost_typeDto>();
+	      return _UEPP_CodeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<UEPP_CodeDto>();
 	    }
 
-		  public virtual List<cost_typeDto> Getcost_typeList(int? hotelid)
+		  public virtual List<UEPP_CodeDto> GetUEPP_CodeList(int? hotelid)
 	  {
-	    var result = _cost_typeRepository.TableNoTracking;
+	    var result = _UEPP_CodeRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<cost_typeDto>();
+		return result.ProjectToList<UEPP_CodeDto>();
 	    }
 
-	  public virtual IPagedList<cost_typeDto> Getcost_typeList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<UEPP_CodeDto> GetUEPP_CodeList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _cost_typeRepository.TableNoTracking;
+	    var result = _UEPP_CodeRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<cost_typeDto>(result.ProjectToQueryable<cost_typeDto>(), pageindex, pagesize);
+		return new PagedList<UEPP_CodeDto>(result.ProjectToQueryable<UEPP_CodeDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void Deletecost_type(int id)
+	   public virtual void DeleteUEPP_Code(int id)
 	    {
-		 _cost_typeRepository.Delete(id);
+		 _UEPP_CodeRepository.Delete(id);
 		   }
 
-  public virtual void AddcPost(cPostDto cPost)
+  public virtual void AddUEPP_Qycsyw(UEPP_QycsywDto UEPP_Qycsyw)
   {
-      Domain.cPost model = AutoMapper.Mapper.Map<Domain.cPost>(cPost);
-      _cPostRepository.Insert(model);
+      Domain.UEPP_Qycsyw model = AutoMapper.Mapper.Map<Domain.UEPP_Qycsyw>(UEPP_Qycsyw);
+      _UEPP_QycsywRepository.Insert(model);
   }
-   public virtual void UpdatecPost(cPostDto cPost)
+   public virtual void UpdateUEPP_Qycsyw(UEPP_QycsywDto UEPP_Qycsyw)
   {
-      Domain.cPost model = AutoMapper.Mapper.Map<Domain.cPost>(cPost);
-      _cPostRepository.Update(model);
+      Domain.UEPP_Qycsyw model = AutoMapper.Mapper.Map<Domain.UEPP_Qycsyw>(UEPP_Qycsyw);
+      _UEPP_QycsywRepository.Update(model);
   }
 
-     public virtual cPostDto GetcPostById(int id)
+     public virtual UEPP_QycsywDto GetUEPP_QycsywById(int id)
 	  {
-	      return _cPostRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<cPostDto>();
+	      return _UEPP_QycsywRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<UEPP_QycsywDto>();
 	    }
 
-		  public virtual List<cPostDto> GetcPostList(int? hotelid)
+		  public virtual List<UEPP_QycsywDto> GetUEPP_QycsywList(int? hotelid)
 	  {
-	    var result = _cPostRepository.TableNoTracking;
+	    var result = _UEPP_QycsywRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<cPostDto>();
+		return result.ProjectToList<UEPP_QycsywDto>();
 	    }
 
-	  public virtual IPagedList<cPostDto> GetcPostList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<UEPP_QycsywDto> GetUEPP_QycsywList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _cPostRepository.TableNoTracking;
+	    var result = _UEPP_QycsywRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<cPostDto>(result.ProjectToQueryable<cPostDto>(), pageindex, pagesize);
+		return new PagedList<UEPP_QycsywDto>(result.ProjectToQueryable<UEPP_QycsywDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeletecPost(int id)
+	   public virtual void DeleteUEPP_Qycsyw(int id)
 	    {
-		 _cPostRepository.Delete(id);
+		 _UEPP_QycsywRepository.Delete(id);
 		   }
 
-  public virtual void Addcprotocol(cprotocolDto cprotocol)
+  public virtual void AddUEPP_Qyjbxx(UEPP_QyjbxxDto UEPP_Qyjbxx)
   {
-      Domain.cprotocol model = AutoMapper.Mapper.Map<Domain.cprotocol>(cprotocol);
-      _cprotocolRepository.Insert(model);
+      Domain.UEPP_Qyjbxx model = AutoMapper.Mapper.Map<Domain.UEPP_Qyjbxx>(UEPP_Qyjbxx);
+      _UEPP_QyjbxxRepository.Insert(model);
   }
-   public virtual void Updatecprotocol(cprotocolDto cprotocol)
+   public virtual void UpdateUEPP_Qyjbxx(UEPP_QyjbxxDto UEPP_Qyjbxx)
   {
-      Domain.cprotocol model = AutoMapper.Mapper.Map<Domain.cprotocol>(cprotocol);
-      _cprotocolRepository.Update(model);
+      Domain.UEPP_Qyjbxx model = AutoMapper.Mapper.Map<Domain.UEPP_Qyjbxx>(UEPP_Qyjbxx);
+      _UEPP_QyjbxxRepository.Update(model);
   }
 
-     public virtual cprotocolDto GetcprotocolById(int id)
+     public virtual UEPP_QyjbxxDto GetUEPP_QyjbxxById(int id)
 	  {
-	      return _cprotocolRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<cprotocolDto>();
+	      return _UEPP_QyjbxxRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<UEPP_QyjbxxDto>();
 	    }
 
-		  public virtual List<cprotocolDto> GetcprotocolList(int? hotelid)
+		  public virtual List<UEPP_QyjbxxDto> GetUEPP_QyjbxxList(int? hotelid)
 	  {
-	    var result = _cprotocolRepository.TableNoTracking;
+	    var result = _UEPP_QyjbxxRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<cprotocolDto>();
+		return result.ProjectToList<UEPP_QyjbxxDto>();
 	    }
 
-	  public virtual IPagedList<cprotocolDto> GetcprotocolList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<UEPP_QyjbxxDto> GetUEPP_QyjbxxList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _cprotocolRepository.TableNoTracking;
+	    var result = _UEPP_QyjbxxRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<cprotocolDto>(result.ProjectToQueryable<cprotocolDto>(), pageindex, pagesize);
+		return new PagedList<UEPP_QyjbxxDto>(result.ProjectToQueryable<UEPP_QyjbxxDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void Deletecprotocol(int id)
+	   public virtual void DeleteUEPP_Qyjbxx(int id)
 	    {
-		 _cprotocolRepository.Delete(id);
+		 _UEPP_QyjbxxRepository.Delete(id);
 		   }
 
-  public virtual void AddcprotocolPrice(cprotocolPriceDto cprotocolPrice)
+  public virtual void AddUEPP_QyRy(UEPP_QyRyDto UEPP_QyRy)
   {
-      Domain.cprotocolPrice model = AutoMapper.Mapper.Map<Domain.cprotocolPrice>(cprotocolPrice);
-      _cprotocolPriceRepository.Insert(model);
+      Domain.UEPP_QyRy model = AutoMapper.Mapper.Map<Domain.UEPP_QyRy>(UEPP_QyRy);
+      _UEPP_QyRyRepository.Insert(model);
   }
-   public virtual void UpdatecprotocolPrice(cprotocolPriceDto cprotocolPrice)
+   public virtual void UpdateUEPP_QyRy(UEPP_QyRyDto UEPP_QyRy)
   {
-      Domain.cprotocolPrice model = AutoMapper.Mapper.Map<Domain.cprotocolPrice>(cprotocolPrice);
-      _cprotocolPriceRepository.Update(model);
+      Domain.UEPP_QyRy model = AutoMapper.Mapper.Map<Domain.UEPP_QyRy>(UEPP_QyRy);
+      _UEPP_QyRyRepository.Update(model);
   }
 
-     public virtual cprotocolPriceDto GetcprotocolPriceById(int id)
+     public virtual UEPP_QyRyDto GetUEPP_QyRyById(int id)
 	  {
-	      return _cprotocolPriceRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<cprotocolPriceDto>();
+	      return _UEPP_QyRyRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<UEPP_QyRyDto>();
 	    }
 
-		  public virtual List<cprotocolPriceDto> GetcprotocolPriceList(int? hotelid)
+		  public virtual List<UEPP_QyRyDto> GetUEPP_QyRyList(int? hotelid)
 	  {
-	    var result = _cprotocolPriceRepository.TableNoTracking;
+	    var result = _UEPP_QyRyRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<cprotocolPriceDto>();
+		return result.ProjectToList<UEPP_QyRyDto>();
 	    }
 
-	  public virtual IPagedList<cprotocolPriceDto> GetcprotocolPriceList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<UEPP_QyRyDto> GetUEPP_QyRyList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _cprotocolPriceRepository.TableNoTracking;
+	    var result = _UEPP_QyRyRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<cprotocolPriceDto>(result.ProjectToQueryable<cprotocolPriceDto>(), pageindex, pagesize);
+		return new PagedList<UEPP_QyRyDto>(result.ProjectToQueryable<UEPP_QyRyDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeletecprotocolPrice(int id)
+	   public virtual void DeleteUEPP_QyRy(int id)
 	    {
-		 _cprotocolPriceRepository.Delete(id);
+		 _UEPP_QyRyRepository.Delete(id);
 		   }
 
-  public virtual void AddcpType(cpTypeDto cpType)
+  public virtual void AddUEPP_Ryjbxx(UEPP_RyjbxxDto UEPP_Ryjbxx)
   {
-      Domain.cpType model = AutoMapper.Mapper.Map<Domain.cpType>(cpType);
-      _cpTypeRepository.Insert(model);
+      Domain.UEPP_Ryjbxx model = AutoMapper.Mapper.Map<Domain.UEPP_Ryjbxx>(UEPP_Ryjbxx);
+      _UEPP_RyjbxxRepository.Insert(model);
   }
-   public virtual void UpdatecpType(cpTypeDto cpType)
+   public virtual void UpdateUEPP_Ryjbxx(UEPP_RyjbxxDto UEPP_Ryjbxx)
   {
-      Domain.cpType model = AutoMapper.Mapper.Map<Domain.cpType>(cpType);
-      _cpTypeRepository.Update(model);
+      Domain.UEPP_Ryjbxx model = AutoMapper.Mapper.Map<Domain.UEPP_Ryjbxx>(UEPP_Ryjbxx);
+      _UEPP_RyjbxxRepository.Update(model);
   }
 
-     public virtual cpTypeDto GetcpTypeById(int id)
+     public virtual UEPP_RyjbxxDto GetUEPP_RyjbxxById(int id)
 	  {
-	      return _cpTypeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<cpTypeDto>();
+	      return _UEPP_RyjbxxRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<UEPP_RyjbxxDto>();
 	    }
 
-		  public virtual List<cpTypeDto> GetcpTypeList(int? hotelid)
+		  public virtual List<UEPP_RyjbxxDto> GetUEPP_RyjbxxList(int? hotelid)
 	  {
-	    var result = _cpTypeRepository.TableNoTracking;
+	    var result = _UEPP_RyjbxxRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<cpTypeDto>();
+		return result.ProjectToList<UEPP_RyjbxxDto>();
 	    }
 
-	  public virtual IPagedList<cpTypeDto> GetcpTypeList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<UEPP_RyjbxxDto> GetUEPP_RyjbxxList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _cpTypeRepository.TableNoTracking;
+	    var result = _UEPP_RyjbxxRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<cpTypeDto>(result.ProjectToQueryable<cpTypeDto>(), pageindex, pagesize);
+		return new PagedList<UEPP_RyjbxxDto>(result.ProjectToQueryable<UEPP_RyjbxxDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeletecpType(int id)
+	   public virtual void DeleteUEPP_Ryjbxx(int id)
 	    {
-		 _cpTypeRepository.Delete(id);
-		   }
-
-  public virtual void Addcredit(creditDto credit)
-  {
-      Domain.credit model = AutoMapper.Mapper.Map<Domain.credit>(credit);
-      _creditRepository.Insert(model);
-  }
-   public virtual void Updatecredit(creditDto credit)
-  {
-      Domain.credit model = AutoMapper.Mapper.Map<Domain.credit>(credit);
-      _creditRepository.Update(model);
-  }
-
-     public virtual creditDto GetcreditById(int id)
-	  {
-	      return _creditRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<creditDto>();
-	    }
-
-		  public virtual List<creditDto> GetcreditList(int? hotelid)
-	  {
-	    var result = _creditRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<creditDto>();
-	    }
-
-	  public virtual IPagedList<creditDto> GetcreditList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _creditRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<creditDto>(result.ProjectToQueryable<creditDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletecredit(int id)
-	    {
-		 _creditRepository.Delete(id);
-		   }
-
-  public virtual void AddcsysType(csysTypeDto csysType)
-  {
-      Domain.csysType model = AutoMapper.Mapper.Map<Domain.csysType>(csysType);
-      _csysTypeRepository.Insert(model);
-  }
-   public virtual void UpdatecsysType(csysTypeDto csysType)
-  {
-      Domain.csysType model = AutoMapper.Mapper.Map<Domain.csysType>(csysType);
-      _csysTypeRepository.Update(model);
-  }
-
-     public virtual csysTypeDto GetcsysTypeById(int id)
-	  {
-	      return _csysTypeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<csysTypeDto>();
-	    }
-
-		  public virtual List<csysTypeDto> GetcsysTypeList(int? hotelid)
-	  {
-	    var result = _csysTypeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<csysTypeDto>();
-	    }
-
-	  public virtual IPagedList<csysTypeDto> GetcsysTypeList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _csysTypeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<csysTypeDto>(result.ProjectToQueryable<csysTypeDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeletecsysType(int id)
-	    {
-		 _csysTypeRepository.Delete(id);
-		   }
-
-  public virtual void Addcustomer(customerDto customer)
-  {
-      Domain.customer model = AutoMapper.Mapper.Map<Domain.customer>(customer);
-      _customerRepository.Insert(model);
-  }
-   public virtual void Updatecustomer(customerDto customer)
-  {
-      Domain.customer model = AutoMapper.Mapper.Map<Domain.customer>(customer);
-      _customerRepository.Update(model);
-  }
-
-     public virtual customerDto GetcustomerById(int id)
-	  {
-	      return _customerRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<customerDto>();
-	    }
-
-		  public virtual List<customerDto> GetcustomerList(int? hotelid)
-	  {
-	    var result = _customerRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<customerDto>();
-	    }
-
-	  public virtual IPagedList<customerDto> GetcustomerList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _customerRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<customerDto>(result.ProjectToQueryable<customerDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletecustomer(int id)
-	    {
-		 _customerRepository.Delete(id);
-		   }
-
-  public virtual void AddcustomerState(customerStateDto customerState)
-  {
-      Domain.customerState model = AutoMapper.Mapper.Map<Domain.customerState>(customerState);
-      _customerStateRepository.Insert(model);
-  }
-   public virtual void UpdatecustomerState(customerStateDto customerState)
-  {
-      Domain.customerState model = AutoMapper.Mapper.Map<Domain.customerState>(customerState);
-      _customerStateRepository.Update(model);
-  }
-
-     public virtual customerStateDto GetcustomerStateById(int id)
-	  {
-	      return _customerStateRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<customerStateDto>();
-	    }
-
-		  public virtual List<customerStateDto> GetcustomerStateList(int? hotelid)
-	  {
-	    var result = _customerStateRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<customerStateDto>();
-	    }
-
-	  public virtual IPagedList<customerStateDto> GetcustomerStateList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _customerStateRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<customerStateDto>(result.ProjectToQueryable<customerStateDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeletecustomerState(int id)
-	    {
-		 _customerStateRepository.Delete(id);
-		   }
-
-  public virtual void AddcustomerType(customerTypeDto customerType)
-  {
-      Domain.customerType model = AutoMapper.Mapper.Map<Domain.customerType>(customerType);
-      _customerTypeRepository.Insert(model);
-  }
-   public virtual void UpdatecustomerType(customerTypeDto customerType)
-  {
-      Domain.customerType model = AutoMapper.Mapper.Map<Domain.customerType>(customerType);
-      _customerTypeRepository.Update(model);
-  }
-
-     public virtual customerTypeDto GetcustomerTypeById(int id)
-	  {
-	      return _customerTypeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<customerTypeDto>();
-	    }
-
-		  public virtual List<customerTypeDto> GetcustomerTypeList(int? hotelid)
-	  {
-	    var result = _customerTypeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<customerTypeDto>();
-	    }
-
-	  public virtual IPagedList<customerTypeDto> GetcustomerTypeList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _customerTypeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<customerTypeDto>(result.ProjectToQueryable<customerTypeDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeletecustomerType(int id)
-	    {
-		 _customerTypeRepository.Delete(id);
-		   }
-
-  public virtual void AddEntry(EntryDto Entry)
-  {
-      Domain.Entry model = AutoMapper.Mapper.Map<Domain.Entry>(Entry);
-      _EntryRepository.Insert(model);
-  }
-   public virtual void UpdateEntry(EntryDto Entry)
-  {
-      Domain.Entry model = AutoMapper.Mapper.Map<Domain.Entry>(Entry);
-      _EntryRepository.Update(model);
-  }
-
-     public virtual EntryDto GetEntryById(int id)
-	  {
-	      return _EntryRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<EntryDto>();
-	    }
-
-		  public virtual List<EntryDto> GetEntryList(int? hotelid)
-	  {
-	    var result = _EntryRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<EntryDto>();
-	    }
-
-	  public virtual IPagedList<EntryDto> GetEntryList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _EntryRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<EntryDto>(result.ProjectToQueryable<EntryDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteEntry(int id)
-	    {
-		 _EntryRepository.Delete(id);
-		   }
-
-  public virtual void AddExceedScheme(ExceedSchemeDto ExceedScheme)
-  {
-      Domain.ExceedScheme model = AutoMapper.Mapper.Map<Domain.ExceedScheme>(ExceedScheme);
-      _ExceedSchemeRepository.Insert(model);
-  }
-   public virtual void UpdateExceedScheme(ExceedSchemeDto ExceedScheme)
-  {
-      Domain.ExceedScheme model = AutoMapper.Mapper.Map<Domain.ExceedScheme>(ExceedScheme);
-      _ExceedSchemeRepository.Update(model);
-  }
-
-     public virtual ExceedSchemeDto GetExceedSchemeById(int id)
-	  {
-	      return _ExceedSchemeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<ExceedSchemeDto>();
-	    }
-
-		  public virtual List<ExceedSchemeDto> GetExceedSchemeList(int? hotelid)
-	  {
-	    var result = _ExceedSchemeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<ExceedSchemeDto>();
-	    }
-
-	  public virtual IPagedList<ExceedSchemeDto> GetExceedSchemeList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _ExceedSchemeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<ExceedSchemeDto>(result.ProjectToQueryable<ExceedSchemeDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteExceedScheme(int id)
-	    {
-		 _ExceedSchemeRepository.Delete(id);
-		   }
-
-  public virtual void Addfloor_ld(floor_ldDto floor_ld)
-  {
-      Domain.floor_ld model = AutoMapper.Mapper.Map<Domain.floor_ld>(floor_ld);
-      _floor_ldRepository.Insert(model);
-  }
-   public virtual void Updatefloor_ld(floor_ldDto floor_ld)
-  {
-      Domain.floor_ld model = AutoMapper.Mapper.Map<Domain.floor_ld>(floor_ld);
-      _floor_ldRepository.Update(model);
-  }
-
-     public virtual floor_ldDto Getfloor_ldById(int id)
-	  {
-	      return _floor_ldRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<floor_ldDto>();
-	    }
-
-		  public virtual List<floor_ldDto> Getfloor_ldList(int? hotelid)
-	  {
-	    var result = _floor_ldRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<floor_ldDto>();
-	    }
-
-	  public virtual IPagedList<floor_ldDto> Getfloor_ldList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _floor_ldRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<floor_ldDto>(result.ProjectToQueryable<floor_ldDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletefloor_ld(int id)
-	    {
-		 _floor_ldRepository.Delete(id);
-		   }
-
-  public virtual void Addfloor_manage(floor_manageDto floor_manage)
-  {
-      Domain.floor_manage model = AutoMapper.Mapper.Map<Domain.floor_manage>(floor_manage);
-      _floor_manageRepository.Insert(model);
-  }
-   public virtual void Updatefloor_manage(floor_manageDto floor_manage)
-  {
-      Domain.floor_manage model = AutoMapper.Mapper.Map<Domain.floor_manage>(floor_manage);
-      _floor_manageRepository.Update(model);
-  }
-
-     public virtual floor_manageDto Getfloor_manageById(int id)
-	  {
-	      return _floor_manageRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<floor_manageDto>();
-	    }
-
-		  public virtual List<floor_manageDto> Getfloor_manageList(int? hotelid)
-	  {
-	    var result = _floor_manageRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<floor_manageDto>();
-	    }
-
-	  public virtual IPagedList<floor_manageDto> Getfloor_manageList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _floor_manageRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<floor_manageDto>(result.ProjectToQueryable<floor_manageDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletefloor_manage(int id)
-	    {
-		 _floor_manageRepository.Delete(id);
-		   }
-
-  public virtual void AddFtSet(FtSetDto FtSet)
-  {
-      Domain.FtSet model = AutoMapper.Mapper.Map<Domain.FtSet>(FtSet);
-      _FtSetRepository.Insert(model);
-  }
-   public virtual void UpdateFtSet(FtSetDto FtSet)
-  {
-      Domain.FtSet model = AutoMapper.Mapper.Map<Domain.FtSet>(FtSet);
-      _FtSetRepository.Update(model);
-  }
-
-     public virtual FtSetDto GetFtSetById(int id)
-	  {
-	      return _FtSetRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<FtSetDto>();
-	    }
-
-		  public virtual List<FtSetDto> GetFtSetList(int? hotelid)
-	  {
-	    var result = _FtSetRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<FtSetDto>();
-	    }
-
-	  public virtual IPagedList<FtSetDto> GetFtSetList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _FtSetRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<FtSetDto>(result.ProjectToQueryable<FtSetDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteFtSet(int id)
-	    {
-		 _FtSetRepository.Delete(id);
-		   }
-
-  public virtual void AddGoods(GoodsDto Goods)
-  {
-      Domain.Goods model = AutoMapper.Mapper.Map<Domain.Goods>(Goods);
-      _GoodsRepository.Insert(model);
-  }
-   public virtual void UpdateGoods(GoodsDto Goods)
-  {
-      Domain.Goods model = AutoMapper.Mapper.Map<Domain.Goods>(Goods);
-      _GoodsRepository.Update(model);
-  }
-
-     public virtual GoodsDto GetGoodsById(int id)
-	  {
-	      return _GoodsRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<GoodsDto>();
-	    }
-
-		  public virtual List<GoodsDto> GetGoodsList(int? hotelid)
-	  {
-	    var result = _GoodsRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<GoodsDto>();
-	    }
-
-	  public virtual IPagedList<GoodsDto> GetGoodsList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _GoodsRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<GoodsDto>(result.ProjectToQueryable<GoodsDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteGoods(int id)
-	    {
-		 _GoodsRepository.Delete(id);
-		   }
-
-  public virtual void Addgoods_account(goods_accountDto goods_account)
-  {
-      Domain.goods_account model = AutoMapper.Mapper.Map<Domain.goods_account>(goods_account);
-      _goods_accountRepository.Insert(model);
-  }
-   public virtual void Updategoods_account(goods_accountDto goods_account)
-  {
-      Domain.goods_account model = AutoMapper.Mapper.Map<Domain.goods_account>(goods_account);
-      _goods_accountRepository.Update(model);
-  }
-
-     public virtual goods_accountDto Getgoods_accountById(int id)
-	  {
-	      return _goods_accountRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<goods_accountDto>();
-	    }
-
-		  public virtual List<goods_accountDto> Getgoods_accountList(int? hotelid)
-	  {
-	    var result = _goods_accountRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<goods_accountDto>();
-	    }
-
-	  public virtual IPagedList<goods_accountDto> Getgoods_accountList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _goods_accountRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<goods_accountDto>(result.ProjectToQueryable<goods_accountDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletegoods_account(int id)
-	    {
-		 _goods_accountRepository.Delete(id);
-		   }
-
-  public virtual void Addguest_source(guest_sourceDto guest_source)
-  {
-      Domain.guest_source model = AutoMapper.Mapper.Map<Domain.guest_source>(guest_source);
-      _guest_sourceRepository.Insert(model);
-  }
-   public virtual void Updateguest_source(guest_sourceDto guest_source)
-  {
-      Domain.guest_source model = AutoMapper.Mapper.Map<Domain.guest_source>(guest_source);
-      _guest_sourceRepository.Update(model);
-  }
-
-     public virtual guest_sourceDto Getguest_sourceById(int id)
-	  {
-	      return _guest_sourceRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<guest_sourceDto>();
-	    }
-
-		  public virtual List<guest_sourceDto> Getguest_sourceList(int? hotelid)
-	  {
-	    var result = _guest_sourceRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<guest_sourceDto>();
-	    }
-
-	  public virtual IPagedList<guest_sourceDto> Getguest_sourceList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _guest_sourceRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<guest_sourceDto>(result.ProjectToQueryable<guest_sourceDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteguest_source(int id)
-	    {
-		 _guest_sourceRepository.Delete(id);
-		   }
-
-  public virtual void AddHotel(HotelDto Hotel)
-  {
-      Domain.Hotel model = AutoMapper.Mapper.Map<Domain.Hotel>(Hotel);
-      _HotelRepository.Insert(model);
-  }
-   public virtual void UpdateHotel(HotelDto Hotel)
-  {
-      Domain.Hotel model = AutoMapper.Mapper.Map<Domain.Hotel>(Hotel);
-      _HotelRepository.Update(model);
-  }
-
-     public virtual HotelDto GetHotelById(int id)
-	  {
-	      return _HotelRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<HotelDto>();
-	    }
-
-		  public virtual List<HotelDto> GetHotelList(int? hotelid)
-	  {
-	    var result = _HotelRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<HotelDto>();
-	    }
-
-	  public virtual IPagedList<HotelDto> GetHotelList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _HotelRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<HotelDto>(result.ProjectToQueryable<HotelDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteHotel(int id)
-	    {
-		 _HotelRepository.Delete(id);
-		   }
-
-  public virtual void Addhour_room(hour_roomDto hour_room)
-  {
-      Domain.hour_room model = AutoMapper.Mapper.Map<Domain.hour_room>(hour_room);
-      _hour_roomRepository.Insert(model);
-  }
-   public virtual void Updatehour_room(hour_roomDto hour_room)
-  {
-      Domain.hour_room model = AutoMapper.Mapper.Map<Domain.hour_room>(hour_room);
-      _hour_roomRepository.Update(model);
-  }
-
-     public virtual hour_roomDto Gethour_roomById(int id)
-	  {
-	      return _hour_roomRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<hour_roomDto>();
-	    }
-
-		  public virtual List<hour_roomDto> Gethour_roomList(int? hotelid)
-	  {
-	    var result = _hour_roomRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<hour_roomDto>();
-	    }
-
-	  public virtual IPagedList<hour_roomDto> Gethour_roomList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _hour_roomRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<hour_roomDto>(result.ProjectToQueryable<hour_roomDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletehour_room(int id)
-	    {
-		 _hour_roomRepository.Delete(id);
-		   }
-
-  public virtual void Addhourse_scheme(hourse_schemeDto hourse_scheme)
-  {
-      Domain.hourse_scheme model = AutoMapper.Mapper.Map<Domain.hourse_scheme>(hourse_scheme);
-      _hourse_schemeRepository.Insert(model);
-  }
-   public virtual void Updatehourse_scheme(hourse_schemeDto hourse_scheme)
-  {
-      Domain.hourse_scheme model = AutoMapper.Mapper.Map<Domain.hourse_scheme>(hourse_scheme);
-      _hourse_schemeRepository.Update(model);
-  }
-
-     public virtual hourse_schemeDto Gethourse_schemeById(int id)
-	  {
-	      return _hourse_schemeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<hourse_schemeDto>();
-	    }
-
-		  public virtual List<hourse_schemeDto> Gethourse_schemeList(int? hotelid)
-	  {
-	    var result = _hourse_schemeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<hourse_schemeDto>();
-	    }
-
-	  public virtual IPagedList<hourse_schemeDto> Gethourse_schemeList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _hourse_schemeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<hourse_schemeDto>(result.ProjectToQueryable<hourse_schemeDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletehourse_scheme(int id)
-	    {
-		 _hourse_schemeRepository.Delete(id);
-		   }
-
-  public virtual void Addinfo(infoDto info)
-  {
-      Domain.info model = AutoMapper.Mapper.Map<Domain.info>(info);
-      _infoRepository.Insert(model);
-  }
-   public virtual void Updateinfo(infoDto info)
-  {
-      Domain.info model = AutoMapper.Mapper.Map<Domain.info>(info);
-      _infoRepository.Update(model);
-  }
-
-     public virtual infoDto GetinfoById(int id)
-	  {
-	      return _infoRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<infoDto>();
-	    }
-
-		  public virtual List<infoDto> GetinfoList(int? hotelid)
-	  {
-	    var result = _infoRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<infoDto>();
-	    }
-
-	  public virtual IPagedList<infoDto> GetinfoList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _infoRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<infoDto>(result.ProjectToQueryable<infoDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteinfo(int id)
-	    {
-		 _infoRepository.Delete(id);
-		   }
-
-  public virtual void Addlog(logDto log)
-  {
-      Domain.log model = AutoMapper.Mapper.Map<Domain.log>(log);
-      _logRepository.Insert(model);
-  }
-   public virtual void Updatelog(logDto log)
-  {
-      Domain.log model = AutoMapper.Mapper.Map<Domain.log>(log);
-      _logRepository.Update(model);
-  }
-
-     public virtual logDto GetlogById(int id)
-	  {
-	      return _logRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<logDto>();
-	    }
-
-		  public virtual List<logDto> GetlogList(int? hotelid)
-	  {
-	    var result = _logRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<logDto>();
-	    }
-
-	  public virtual IPagedList<logDto> GetlogList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _logRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<logDto>(result.ProjectToQueryable<logDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletelog(int id)
-	    {
-		 _logRepository.Delete(id);
-		   }
-
-  public virtual void Addmember(memberDto member)
-  {
-      Domain.member model = AutoMapper.Mapper.Map<Domain.member>(member);
-      _memberRepository.Insert(model);
-  }
-   public virtual void Updatemember(memberDto member)
-  {
-      Domain.member model = AutoMapper.Mapper.Map<Domain.member>(member);
-      _memberRepository.Update(model);
-  }
-
-     public virtual memberDto GetmemberById(int id)
-	  {
-	      return _memberRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<memberDto>();
-	    }
-
-		  public virtual List<memberDto> GetmemberList(int? hotelid)
-	  {
-	    var result = _memberRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<memberDto>();
-	    }
-
-	  public virtual IPagedList<memberDto> GetmemberList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _memberRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<memberDto>(result.ProjectToQueryable<memberDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletemember(int id)
-	    {
-		 _memberRepository.Delete(id);
-		   }
-
-  public virtual void AddmemberState(memberStateDto memberState)
-  {
-      Domain.memberState model = AutoMapper.Mapper.Map<Domain.memberState>(memberState);
-      _memberStateRepository.Insert(model);
-  }
-   public virtual void UpdatememberState(memberStateDto memberState)
-  {
-      Domain.memberState model = AutoMapper.Mapper.Map<Domain.memberState>(memberState);
-      _memberStateRepository.Update(model);
-  }
-
-     public virtual memberStateDto GetmemberStateById(int id)
-	  {
-	      return _memberStateRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<memberStateDto>();
-	    }
-
-		  public virtual List<memberStateDto> GetmemberStateList(int? hotelid)
-	  {
-	    var result = _memberStateRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<memberStateDto>();
-	    }
-
-	  public virtual IPagedList<memberStateDto> GetmemberStateList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _memberStateRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<memberStateDto>(result.ProjectToQueryable<memberStateDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeletememberState(int id)
-	    {
-		 _memberStateRepository.Delete(id);
-		   }
-
-  public virtual void AddmemberType(memberTypeDto memberType)
-  {
-      Domain.memberType model = AutoMapper.Mapper.Map<Domain.memberType>(memberType);
-      _memberTypeRepository.Insert(model);
-  }
-   public virtual void UpdatememberType(memberTypeDto memberType)
-  {
-      Domain.memberType model = AutoMapper.Mapper.Map<Domain.memberType>(memberType);
-      _memberTypeRepository.Update(model);
-  }
-
-     public virtual memberTypeDto GetmemberTypeById(int id)
-	  {
-	      return _memberTypeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<memberTypeDto>();
-	    }
-
-		  public virtual List<memberTypeDto> GetmemberTypeList(int? hotelid)
-	  {
-	    var result = _memberTypeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<memberTypeDto>();
-	    }
-
-	  public virtual IPagedList<memberTypeDto> GetmemberTypeList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _memberTypeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<memberTypeDto>(result.ProjectToQueryable<memberTypeDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeletememberType(int id)
-	    {
-		 _memberTypeRepository.Delete(id);
-		   }
-
-  public virtual void AddMenu(MenuDto Menu)
-  {
-      Domain.Menu model = AutoMapper.Mapper.Map<Domain.Menu>(Menu);
-      _MenuRepository.Insert(model);
-  }
-   public virtual void UpdateMenu(MenuDto Menu)
-  {
-      Domain.Menu model = AutoMapper.Mapper.Map<Domain.Menu>(Menu);
-      _MenuRepository.Update(model);
-  }
-
-     public virtual MenuDto GetMenuById(int id)
-	  {
-	      return _MenuRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<MenuDto>();
-	    }
-
-		  public virtual List<MenuDto> GetMenuList(int? hotelid)
-	  {
-	    var result = _MenuRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<MenuDto>();
-	    }
-
-	  public virtual IPagedList<MenuDto> GetMenuList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _MenuRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<MenuDto>(result.ProjectToQueryable<MenuDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteMenu(int id)
-	    {
-		 _MenuRepository.Delete(id);
-		   }
-
-  public virtual void Addmeth_pay(meth_payDto meth_pay)
-  {
-      Domain.meth_pay model = AutoMapper.Mapper.Map<Domain.meth_pay>(meth_pay);
-      _meth_payRepository.Insert(model);
-  }
-   public virtual void Updatemeth_pay(meth_payDto meth_pay)
-  {
-      Domain.meth_pay model = AutoMapper.Mapper.Map<Domain.meth_pay>(meth_pay);
-      _meth_payRepository.Update(model);
-  }
-
-     public virtual meth_payDto Getmeth_payById(int id)
-	  {
-	      return _meth_payRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<meth_payDto>();
-	    }
-
-		  public virtual List<meth_payDto> Getmeth_payList(int? hotelid)
-	  {
-	    var result = _meth_payRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<meth_payDto>();
-	    }
-
-	  public virtual IPagedList<meth_payDto> Getmeth_payList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _meth_payRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<meth_payDto>(result.ProjectToQueryable<meth_payDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletemeth_pay(int id)
-	    {
-		 _meth_payRepository.Delete(id);
-		   }
-
-  public virtual void Addmodes(modesDto modes)
-  {
-      Domain.modes model = AutoMapper.Mapper.Map<Domain.modes>(modes);
-      _modesRepository.Insert(model);
-  }
-   public virtual void Updatemodes(modesDto modes)
-  {
-      Domain.modes model = AutoMapper.Mapper.Map<Domain.modes>(modes);
-      _modesRepository.Update(model);
-  }
-
-     public virtual modesDto GetmodesById(int id)
-	  {
-	      return _modesRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<modesDto>();
-	    }
-
-		  public virtual List<modesDto> GetmodesList(int? hotelid)
-	  {
-	    var result = _modesRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<modesDto>();
-	    }
-
-	  public virtual IPagedList<modesDto> GetmodesList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _modesRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<modesDto>(result.ProjectToQueryable<modesDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletemodes(int id)
-	    {
-		 _modesRepository.Delete(id);
-		   }
-
-  public virtual void AddmRecords(mRecordsDto mRecords)
-  {
-      Domain.mRecords model = AutoMapper.Mapper.Map<Domain.mRecords>(mRecords);
-      _mRecordsRepository.Insert(model);
-  }
-   public virtual void UpdatemRecords(mRecordsDto mRecords)
-  {
-      Domain.mRecords model = AutoMapper.Mapper.Map<Domain.mRecords>(mRecords);
-      _mRecordsRepository.Update(model);
-  }
-
-     public virtual mRecordsDto GetmRecordsById(int id)
-	  {
-	      return _mRecordsRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<mRecordsDto>();
-	    }
-
-		  public virtual List<mRecordsDto> GetmRecordsList(int? hotelid)
-	  {
-	    var result = _mRecordsRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<mRecordsDto>();
-	    }
-
-	  public virtual IPagedList<mRecordsDto> GetmRecordsList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _mRecordsRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<mRecordsDto>(result.ProjectToQueryable<mRecordsDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeletemRecords(int id)
-	    {
-		 _mRecordsRepository.Delete(id);
-		   }
-
-  public virtual void AddmtPrice(mtPriceDto mtPrice)
-  {
-      Domain.mtPrice model = AutoMapper.Mapper.Map<Domain.mtPrice>(mtPrice);
-      _mtPriceRepository.Insert(model);
-  }
-   public virtual void UpdatemtPrice(mtPriceDto mtPrice)
-  {
-      Domain.mtPrice model = AutoMapper.Mapper.Map<Domain.mtPrice>(mtPrice);
-      _mtPriceRepository.Update(model);
-  }
-
-     public virtual mtPriceDto GetmtPriceById(int id)
-	  {
-	      return _mtPriceRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<mtPriceDto>();
-	    }
-
-		  public virtual List<mtPriceDto> GetmtPriceList(int? hotelid)
-	  {
-	    var result = _mtPriceRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<mtPriceDto>();
-	    }
-
-	  public virtual IPagedList<mtPriceDto> GetmtPriceList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _mtPriceRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<mtPriceDto>(result.ProjectToQueryable<mtPriceDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeletemtPrice(int id)
-	    {
-		 _mtPriceRepository.Delete(id);
-		   }
-
-  public virtual void Addoccu_infor(occu_inforDto occu_infor)
-  {
-      Domain.occu_infor model = AutoMapper.Mapper.Map<Domain.occu_infor>(occu_infor);
-      _occu_inforRepository.Insert(model);
-  }
-   public virtual void Updateoccu_infor(occu_inforDto occu_infor)
-  {
-      Domain.occu_infor model = AutoMapper.Mapper.Map<Domain.occu_infor>(occu_infor);
-      _occu_inforRepository.Update(model);
-  }
-
-     public virtual occu_inforDto Getoccu_inforById(int id)
-	  {
-	      return _occu_inforRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<occu_inforDto>();
-	    }
-
-		  public virtual List<occu_inforDto> Getoccu_inforList(int? hotelid)
-	  {
-	    var result = _occu_inforRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<occu_inforDto>();
-	    }
-
-	  public virtual IPagedList<occu_inforDto> Getoccu_inforList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _occu_inforRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<occu_inforDto>(result.ProjectToQueryable<occu_inforDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteoccu_infor(int id)
-	    {
-		 _occu_inforRepository.Delete(id);
-		   }
-
-  public virtual void Addoccu_informx(occu_informxDto occu_informx)
-  {
-      Domain.occu_informx model = AutoMapper.Mapper.Map<Domain.occu_informx>(occu_informx);
-      _occu_informxRepository.Insert(model);
-  }
-   public virtual void Updateoccu_informx(occu_informxDto occu_informx)
-  {
-      Domain.occu_informx model = AutoMapper.Mapper.Map<Domain.occu_informx>(occu_informx);
-      _occu_informxRepository.Update(model);
-  }
-
-     public virtual occu_informxDto Getoccu_informxById(int id)
-	  {
-	      return _occu_informxRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<occu_informxDto>();
-	    }
-
-		  public virtual List<occu_informxDto> Getoccu_informxList(int? hotelid)
-	  {
-	    var result = _occu_informxRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<occu_informxDto>();
-	    }
-
-	  public virtual IPagedList<occu_informxDto> Getoccu_informxList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _occu_informxRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<occu_informxDto>(result.ProjectToQueryable<occu_informxDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteoccu_informx(int id)
-	    {
-		 _occu_informxRepository.Delete(id);
-		   }
-
-  public virtual void Addorder_ext(order_extDto order_ext)
-  {
-      Domain.order_ext model = AutoMapper.Mapper.Map<Domain.order_ext>(order_ext);
-      _order_extRepository.Insert(model);
-  }
-   public virtual void Updateorder_ext(order_extDto order_ext)
-  {
-      Domain.order_ext model = AutoMapper.Mapper.Map<Domain.order_ext>(order_ext);
-      _order_extRepository.Update(model);
-  }
-
-     public virtual order_extDto Getorder_extById(int id)
-	  {
-	      return _order_extRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<order_extDto>();
-	    }
-
-		  public virtual List<order_extDto> Getorder_extList(int? hotelid)
-	  {
-	    var result = _order_extRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<order_extDto>();
-	    }
-
-	  public virtual IPagedList<order_extDto> Getorder_extList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _order_extRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<order_extDto>(result.ProjectToQueryable<order_extDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteorder_ext(int id)
-	    {
-		 _order_extRepository.Delete(id);
-		   }
-
-  public virtual void Addorder_infor(order_inforDto order_infor)
-  {
-      Domain.order_infor model = AutoMapper.Mapper.Map<Domain.order_infor>(order_infor);
-      _order_inforRepository.Insert(model);
-  }
-   public virtual void Updateorder_infor(order_inforDto order_infor)
-  {
-      Domain.order_infor model = AutoMapper.Mapper.Map<Domain.order_infor>(order_infor);
-      _order_inforRepository.Update(model);
-  }
-
-     public virtual order_inforDto Getorder_inforById(int id)
-	  {
-	      return _order_inforRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<order_inforDto>();
-	    }
-
-		  public virtual List<order_inforDto> Getorder_inforList(int? hotelid)
-	  {
-	    var result = _order_inforRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<order_inforDto>();
-	    }
-
-	  public virtual IPagedList<order_inforDto> Getorder_inforList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _order_inforRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<order_inforDto>(result.ProjectToQueryable<order_inforDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteorder_infor(int id)
-	    {
-		 _order_inforRepository.Delete(id);
-		   }
-
-  public virtual void AddpaymentMoney(paymentMoneyDto paymentMoney)
-  {
-      Domain.paymentMoney model = AutoMapper.Mapper.Map<Domain.paymentMoney>(paymentMoney);
-      _paymentMoneyRepository.Insert(model);
-  }
-   public virtual void UpdatepaymentMoney(paymentMoneyDto paymentMoney)
-  {
-      Domain.paymentMoney model = AutoMapper.Mapper.Map<Domain.paymentMoney>(paymentMoney);
-      _paymentMoneyRepository.Update(model);
-  }
-
-     public virtual paymentMoneyDto GetpaymentMoneyById(int id)
-	  {
-	      return _paymentMoneyRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<paymentMoneyDto>();
-	    }
-
-		  public virtual List<paymentMoneyDto> GetpaymentMoneyList(int? hotelid)
-	  {
-	    var result = _paymentMoneyRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<paymentMoneyDto>();
-	    }
-
-	  public virtual IPagedList<paymentMoneyDto> GetpaymentMoneyList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _paymentMoneyRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<paymentMoneyDto>(result.ProjectToQueryable<paymentMoneyDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeletepaymentMoney(int id)
-	    {
-		 _paymentMoneyRepository.Delete(id);
-		   }
-
-  public virtual void Addprice_type(price_typeDto price_type)
-  {
-      Domain.price_type model = AutoMapper.Mapper.Map<Domain.price_type>(price_type);
-      _price_typeRepository.Insert(model);
-  }
-   public virtual void Updateprice_type(price_typeDto price_type)
-  {
-      Domain.price_type model = AutoMapper.Mapper.Map<Domain.price_type>(price_type);
-      _price_typeRepository.Update(model);
-  }
-
-     public virtual price_typeDto Getprice_typeById(int id)
-	  {
-	      return _price_typeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<price_typeDto>();
-	    }
-
-		  public virtual List<price_typeDto> Getprice_typeList(int? hotelid)
-	  {
-	    var result = _price_typeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<price_typeDto>();
-	    }
-
-	  public virtual IPagedList<price_typeDto> Getprice_typeList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _price_typeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<price_typeDto>(result.ProjectToQueryable<price_typeDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteprice_type(int id)
-	    {
-		 _price_typeRepository.Delete(id);
-		   }
-
-  public virtual void Addprint(printDto print)
-  {
-      Domain.print model = AutoMapper.Mapper.Map<Domain.print>(print);
-      _printRepository.Insert(model);
-  }
-   public virtual void Updateprint(printDto print)
-  {
-      Domain.print model = AutoMapper.Mapper.Map<Domain.print>(print);
-      _printRepository.Update(model);
-  }
-
-     public virtual printDto GetprintById(int id)
-	  {
-	      return _printRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<printDto>();
-	    }
-
-		  public virtual List<printDto> GetprintList(int? hotelid)
-	  {
-	    var result = _printRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<printDto>();
-	    }
-
-	  public virtual IPagedList<printDto> GetprintList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _printRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<printDto>(result.ProjectToQueryable<printDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteprint(int id)
-	    {
-		 _printRepository.Delete(id);
-		   }
-
-  public virtual void Addreal_mode(real_modeDto real_mode)
-  {
-      Domain.real_mode model = AutoMapper.Mapper.Map<Domain.real_mode>(real_mode);
-      _real_modeRepository.Insert(model);
-  }
-   public virtual void Updatereal_mode(real_modeDto real_mode)
-  {
-      Domain.real_mode model = AutoMapper.Mapper.Map<Domain.real_mode>(real_mode);
-      _real_modeRepository.Update(model);
-  }
-
-     public virtual real_modeDto Getreal_modeById(int id)
-	  {
-	      return _real_modeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<real_modeDto>();
-	    }
-
-		  public virtual List<real_modeDto> Getreal_modeList(int? hotelid)
-	  {
-	    var result = _real_modeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<real_modeDto>();
-	    }
-
-	  public virtual IPagedList<real_modeDto> Getreal_modeList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _real_modeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<real_modeDto>(result.ProjectToQueryable<real_modeDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletereal_mode(int id)
-	    {
-		 _real_modeRepository.Delete(id);
-		   }
-
-  public virtual void Addreal_state(real_stateDto real_state)
-  {
-      Domain.real_state model = AutoMapper.Mapper.Map<Domain.real_state>(real_state);
-      _real_stateRepository.Insert(model);
-  }
-   public virtual void Updatereal_state(real_stateDto real_state)
-  {
-      Domain.real_state model = AutoMapper.Mapper.Map<Domain.real_state>(real_state);
-      _real_stateRepository.Update(model);
-  }
-
-     public virtual real_stateDto Getreal_stateById(int id)
-	  {
-	      return _real_stateRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<real_stateDto>();
-	    }
-
-		  public virtual List<real_stateDto> Getreal_stateList(int? hotelid)
-	  {
-	    var result = _real_stateRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<real_stateDto>();
-	    }
-
-	  public virtual IPagedList<real_stateDto> Getreal_stateList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _real_stateRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<real_stateDto>(result.ProjectToQueryable<real_stateDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletereal_state(int id)
-	    {
-		 _real_stateRepository.Delete(id);
-		   }
-
-  public virtual void Addreceipt(receiptDto receipt)
-  {
-      Domain.receipt model = AutoMapper.Mapper.Map<Domain.receipt>(receipt);
-      _receiptRepository.Insert(model);
-  }
-   public virtual void Updatereceipt(receiptDto receipt)
-  {
-      Domain.receipt model = AutoMapper.Mapper.Map<Domain.receipt>(receipt);
-      _receiptRepository.Update(model);
-  }
-
-     public virtual receiptDto GetreceiptById(int id)
-	  {
-	      return _receiptRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<receiptDto>();
-	    }
-
-		  public virtual List<receiptDto> GetreceiptList(int? hotelid)
-	  {
-	    var result = _receiptRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<receiptDto>();
-	    }
-
-	  public virtual IPagedList<receiptDto> GetreceiptList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _receiptRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<receiptDto>(result.ProjectToQueryable<receiptDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletereceipt(int id)
-	    {
-		 _receiptRepository.Delete(id);
-		   }
-
-  public virtual void AddRemaker(RemakerDto Remaker)
-  {
-      Domain.Remaker model = AutoMapper.Mapper.Map<Domain.Remaker>(Remaker);
-      _RemakerRepository.Insert(model);
-  }
-   public virtual void UpdateRemaker(RemakerDto Remaker)
-  {
-      Domain.Remaker model = AutoMapper.Mapper.Map<Domain.Remaker>(Remaker);
-      _RemakerRepository.Update(model);
-  }
-
-     public virtual RemakerDto GetRemakerById(int id)
-	  {
-	      return _RemakerRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<RemakerDto>();
-	    }
-
-		  public virtual List<RemakerDto> GetRemakerList(int? hotelid)
-	  {
-	    var result = _RemakerRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<RemakerDto>();
-	    }
-
-	  public virtual IPagedList<RemakerDto> GetRemakerList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _RemakerRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<RemakerDto>(result.ProjectToQueryable<RemakerDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteRemaker(int id)
-	    {
-		 _RemakerRepository.Delete(id);
-		   }
-
-  public virtual void AddRepair(RepairDto Repair)
-  {
-      Domain.Repair model = AutoMapper.Mapper.Map<Domain.Repair>(Repair);
-      _RepairRepository.Insert(model);
-  }
-   public virtual void UpdateRepair(RepairDto Repair)
-  {
-      Domain.Repair model = AutoMapper.Mapper.Map<Domain.Repair>(Repair);
-      _RepairRepository.Update(model);
-  }
-
-     public virtual RepairDto GetRepairById(int id)
-	  {
-	      return _RepairRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<RepairDto>();
-	    }
-
-		  public virtual List<RepairDto> GetRepairList(int? hotelid)
-	  {
-	    var result = _RepairRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<RepairDto>();
-	    }
-
-	  public virtual IPagedList<RepairDto> GetRepairList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _RepairRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<RepairDto>(result.ProjectToQueryable<RepairDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteRepair(int id)
-	    {
-		 _RepairRepository.Delete(id);
-		   }
-
-  public virtual void AddRoleMenu(RoleMenuDto RoleMenu)
-  {
-      Domain.RoleMenu model = AutoMapper.Mapper.Map<Domain.RoleMenu>(RoleMenu);
-      _RoleMenuRepository.Insert(model);
-  }
-   public virtual void UpdateRoleMenu(RoleMenuDto RoleMenu)
-  {
-      Domain.RoleMenu model = AutoMapper.Mapper.Map<Domain.RoleMenu>(RoleMenu);
-      _RoleMenuRepository.Update(model);
-  }
-
-     public virtual RoleMenuDto GetRoleMenuById(int id)
-	  {
-	      return _RoleMenuRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<RoleMenuDto>();
-	    }
-
-		  public virtual List<RoleMenuDto> GetRoleMenuList(int? hotelid)
-	  {
-	    var result = _RoleMenuRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<RoleMenuDto>();
-	    }
-
-	  public virtual IPagedList<RoleMenuDto> GetRoleMenuList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _RoleMenuRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<RoleMenuDto>(result.ProjectToQueryable<RoleMenuDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteRoleMenu(int id)
-	    {
-		 _RoleMenuRepository.Delete(id);
-		   }
-
-  public virtual void Addroom_feature(room_featureDto room_feature)
-  {
-      Domain.room_feature model = AutoMapper.Mapper.Map<Domain.room_feature>(room_feature);
-      _room_featureRepository.Insert(model);
-  }
-   public virtual void Updateroom_feature(room_featureDto room_feature)
-  {
-      Domain.room_feature model = AutoMapper.Mapper.Map<Domain.room_feature>(room_feature);
-      _room_featureRepository.Update(model);
-  }
-
-     public virtual room_featureDto Getroom_featureById(int id)
-	  {
-	      return _room_featureRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<room_featureDto>();
-	    }
-
-		  public virtual List<room_featureDto> Getroom_featureList(int? hotelid)
-	  {
-	    var result = _room_featureRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<room_featureDto>();
-	    }
-
-	  public virtual IPagedList<room_featureDto> Getroom_featureList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _room_featureRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<room_featureDto>(result.ProjectToQueryable<room_featureDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteroom_feature(int id)
-	    {
-		 _room_featureRepository.Delete(id);
-		   }
-
-  public virtual void Addroom_number(room_numberDto room_number)
-  {
-      Domain.room_number model = AutoMapper.Mapper.Map<Domain.room_number>(room_number);
-      _room_numberRepository.Insert(model);
-  }
-   public virtual void Updateroom_number(room_numberDto room_number)
-  {
-      Domain.room_number model = AutoMapper.Mapper.Map<Domain.room_number>(room_number);
-      _room_numberRepository.Update(model);
-  }
-
-     public virtual room_numberDto Getroom_numberById(int id)
-	  {
-	      return _room_numberRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<room_numberDto>();
-	    }
-
-		  public virtual List<room_numberDto> Getroom_numberList(int? hotelid)
-	  {
-	    var result = _room_numberRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<room_numberDto>();
-	    }
-
-	  public virtual IPagedList<room_numberDto> Getroom_numberList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _room_numberRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<room_numberDto>(result.ProjectToQueryable<room_numberDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteroom_number(int id)
-	    {
-		 _room_numberRepository.Delete(id);
-		   }
-
-  public virtual void Addroom_state(room_stateDto room_state)
-  {
-      Domain.room_state model = AutoMapper.Mapper.Map<Domain.room_state>(room_state);
-      _room_stateRepository.Insert(model);
-  }
-   public virtual void Updateroom_state(room_stateDto room_state)
-  {
-      Domain.room_state model = AutoMapper.Mapper.Map<Domain.room_state>(room_state);
-      _room_stateRepository.Update(model);
-  }
-
-     public virtual room_stateDto Getroom_stateById(int id)
-	  {
-	      return _room_stateRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<room_stateDto>();
-	    }
-
-		  public virtual List<room_stateDto> Getroom_stateList(int? hotelid)
-	  {
-	    var result = _room_stateRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<room_stateDto>();
-	    }
-
-	  public virtual IPagedList<room_stateDto> Getroom_stateList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _room_stateRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<room_stateDto>(result.ProjectToQueryable<room_stateDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteroom_state(int id)
-	    {
-		 _room_stateRepository.Delete(id);
-		   }
-
-  public virtual void Addroom_type(room_typeDto room_type)
-  {
-      Domain.room_type model = AutoMapper.Mapper.Map<Domain.room_type>(room_type);
-      _room_typeRepository.Insert(model);
-  }
-   public virtual void Updateroom_type(room_typeDto room_type)
-  {
-      Domain.room_type model = AutoMapper.Mapper.Map<Domain.room_type>(room_type);
-      _room_typeRepository.Update(model);
-  }
-
-     public virtual room_typeDto Getroom_typeById(int id)
-	  {
-	      return _room_typeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<room_typeDto>();
-	    }
-
-		  public virtual List<room_typeDto> Getroom_typeList(int? hotelid)
-	  {
-	    var result = _room_typeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<room_typeDto>();
-	    }
-
-	  public virtual IPagedList<room_typeDto> Getroom_typeList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _room_typeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<room_typeDto>(result.ProjectToQueryable<room_typeDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteroom_type(int id)
-	    {
-		 _room_typeRepository.Delete(id);
-		   }
-
-  public virtual void Addroom_type_image(room_type_imageDto room_type_image)
-  {
-      Domain.room_type_image model = AutoMapper.Mapper.Map<Domain.room_type_image>(room_type_image);
-      _room_type_imageRepository.Insert(model);
-  }
-   public virtual void Updateroom_type_image(room_type_imageDto room_type_image)
-  {
-      Domain.room_type_image model = AutoMapper.Mapper.Map<Domain.room_type_image>(room_type_image);
-      _room_type_imageRepository.Update(model);
-  }
-
-     public virtual room_type_imageDto Getroom_type_imageById(int id)
-	  {
-	      return _room_type_imageRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<room_type_imageDto>();
-	    }
-
-		  public virtual List<room_type_imageDto> Getroom_type_imageList(int? hotelid)
-	  {
-	    var result = _room_type_imageRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<room_type_imageDto>();
-	    }
-
-	  public virtual IPagedList<room_type_imageDto> Getroom_type_imageList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _room_type_imageRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<room_type_imageDto>(result.ProjectToQueryable<room_type_imageDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteroom_type_image(int id)
-	    {
-		 _room_type_imageRepository.Delete(id);
-		   }
-
-  public virtual void Addroomcoupon(roomcouponDto roomcoupon)
-  {
-      Domain.roomcoupon model = AutoMapper.Mapper.Map<Domain.roomcoupon>(roomcoupon);
-      _roomcouponRepository.Insert(model);
-  }
-   public virtual void Updateroomcoupon(roomcouponDto roomcoupon)
-  {
-      Domain.roomcoupon model = AutoMapper.Mapper.Map<Domain.roomcoupon>(roomcoupon);
-      _roomcouponRepository.Update(model);
-  }
-
-     public virtual roomcouponDto GetroomcouponById(int id)
-	  {
-	      return _roomcouponRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<roomcouponDto>();
-	    }
-
-		  public virtual List<roomcouponDto> GetroomcouponList(int? hotelid)
-	  {
-	    var result = _roomcouponRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<roomcouponDto>();
-	    }
-
-	  public virtual IPagedList<roomcouponDto> GetroomcouponList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _roomcouponRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<roomcouponDto>(result.ProjectToQueryable<roomcouponDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteroomcoupon(int id)
-	    {
-		 _roomcouponRepository.Delete(id);
-		   }
-
-  public virtual void Addroomman(roommanDto roomman)
-  {
-      Domain.roomman model = AutoMapper.Mapper.Map<Domain.roomman>(roomman);
-      _roommanRepository.Insert(model);
-  }
-   public virtual void Updateroomman(roommanDto roomman)
-  {
-      Domain.roomman model = AutoMapper.Mapper.Map<Domain.roomman>(roomman);
-      _roommanRepository.Update(model);
-  }
-
-     public virtual roommanDto GetroommanById(int id)
-	  {
-	      return _roommanRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<roommanDto>();
-	    }
-
-		  public virtual List<roommanDto> GetroommanList(int? hotelid)
-	  {
-	    var result = _roommanRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<roommanDto>();
-	    }
-
-	  public virtual IPagedList<roommanDto> GetroommanList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _roommanRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<roommanDto>(result.ProjectToQueryable<roommanDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteroomman(int id)
-	    {
-		 _roommanRepository.Delete(id);
-		   }
-
-  public virtual void Addroomrent(roomrentDto roomrent)
-  {
-      Domain.roomrent model = AutoMapper.Mapper.Map<Domain.roomrent>(roomrent);
-      _roomrentRepository.Insert(model);
-  }
-   public virtual void Updateroomrent(roomrentDto roomrent)
-  {
-      Domain.roomrent model = AutoMapper.Mapper.Map<Domain.roomrent>(roomrent);
-      _roomrentRepository.Update(model);
-  }
-
-     public virtual roomrentDto GetroomrentById(int id)
-	  {
-	      return _roomrentRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<roomrentDto>();
-	    }
-
-		  public virtual List<roomrentDto> GetroomrentList(int? hotelid)
-	  {
-	    var result = _roomrentRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<roomrentDto>();
-	    }
-
-	  public virtual IPagedList<roomrentDto> GetroomrentList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _roomrentRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<roomrentDto>(result.ProjectToQueryable<roomrentDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deleteroomrent(int id)
-	    {
-		 _roomrentRepository.Delete(id);
-		   }
-
-  public virtual void Addsale_man(sale_manDto sale_man)
-  {
-      Domain.sale_man model = AutoMapper.Mapper.Map<Domain.sale_man>(sale_man);
-      _sale_manRepository.Insert(model);
-  }
-   public virtual void Updatesale_man(sale_manDto sale_man)
-  {
-      Domain.sale_man model = AutoMapper.Mapper.Map<Domain.sale_man>(sale_man);
-      _sale_manRepository.Update(model);
-  }
-
-     public virtual sale_manDto Getsale_manById(int id)
-	  {
-	      return _sale_manRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<sale_manDto>();
-	    }
-
-		  public virtual List<sale_manDto> Getsale_manList(int? hotelid)
-	  {
-	    var result = _sale_manRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<sale_manDto>();
-	    }
-
-	  public virtual IPagedList<sale_manDto> Getsale_manList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _sale_manRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<sale_manDto>(result.ProjectToQueryable<sale_manDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void Deletesale_man(int id)
-	    {
-		 _sale_manRepository.Delete(id);
-		   }
-
-  public virtual void AddShift(ShiftDto Shift)
-  {
-      Domain.Shift model = AutoMapper.Mapper.Map<Domain.Shift>(Shift);
-      _ShiftRepository.Insert(model);
-  }
-   public virtual void UpdateShift(ShiftDto Shift)
-  {
-      Domain.Shift model = AutoMapper.Mapper.Map<Domain.Shift>(Shift);
-      _ShiftRepository.Update(model);
-  }
-
-     public virtual ShiftDto GetShiftById(int id)
-	  {
-	      return _ShiftRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<ShiftDto>();
-	    }
-
-		  public virtual List<ShiftDto> GetShiftList(int? hotelid)
-	  {
-	    var result = _ShiftRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<ShiftDto>();
-	    }
-
-	  public virtual IPagedList<ShiftDto> GetShiftList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _ShiftRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<ShiftDto>(result.ProjectToQueryable<ShiftDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteShift(int id)
-	    {
-		 _ShiftRepository.Delete(id);
-		   }
-
-  public virtual void AddShift_Exc(Shift_ExcDto Shift_Exc)
-  {
-      Domain.Shift_Exc model = AutoMapper.Mapper.Map<Domain.Shift_Exc>(Shift_Exc);
-      _Shift_ExcRepository.Insert(model);
-  }
-   public virtual void UpdateShift_Exc(Shift_ExcDto Shift_Exc)
-  {
-      Domain.Shift_Exc model = AutoMapper.Mapper.Map<Domain.Shift_Exc>(Shift_Exc);
-      _Shift_ExcRepository.Update(model);
-  }
-
-     public virtual Shift_ExcDto GetShift_ExcById(int id)
-	  {
-	      return _Shift_ExcRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<Shift_ExcDto>();
-	    }
-
-		  public virtual List<Shift_ExcDto> GetShift_ExcList(int? hotelid)
-	  {
-	    var result = _Shift_ExcRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<Shift_ExcDto>();
-	    }
-
-	  public virtual IPagedList<Shift_ExcDto> GetShift_ExcList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _Shift_ExcRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<Shift_ExcDto>(result.ProjectToQueryable<Shift_ExcDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteShift_Exc(int id)
-	    {
-		 _Shift_ExcRepository.Delete(id);
-		   }
-
-  public virtual void AddshopInfo(shopInfoDto shopInfo)
-  {
-      Domain.shopInfo model = AutoMapper.Mapper.Map<Domain.shopInfo>(shopInfo);
-      _shopInfoRepository.Insert(model);
-  }
-   public virtual void UpdateshopInfo(shopInfoDto shopInfo)
-  {
-      Domain.shopInfo model = AutoMapper.Mapper.Map<Domain.shopInfo>(shopInfo);
-      _shopInfoRepository.Update(model);
-  }
-
-     public virtual shopInfoDto GetshopInfoById(int id)
-	  {
-	      return _shopInfoRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<shopInfoDto>();
-	    }
-
-		  public virtual List<shopInfoDto> GetshopInfoList(int? hotelid)
-	  {
-	    var result = _shopInfoRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<shopInfoDto>();
-	    }
-
-	  public virtual IPagedList<shopInfoDto> GetshopInfoList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _shopInfoRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<shopInfoDto>(result.ProjectToQueryable<shopInfoDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteshopInfo(int id)
-	    {
-		 _shopInfoRepository.Delete(id);
-		   }
-
-  public virtual void AddSincethehous(SincethehousDto Sincethehous)
-  {
-      Domain.Sincethehous model = AutoMapper.Mapper.Map<Domain.Sincethehous>(Sincethehous);
-      _SincethehousRepository.Insert(model);
-  }
-   public virtual void UpdateSincethehous(SincethehousDto Sincethehous)
-  {
-      Domain.Sincethehous model = AutoMapper.Mapper.Map<Domain.Sincethehous>(Sincethehous);
-      _SincethehousRepository.Update(model);
-  }
-
-     public virtual SincethehousDto GetSincethehousById(int id)
-	  {
-	      return _SincethehousRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<SincethehousDto>();
-	    }
-
-		  public virtual List<SincethehousDto> GetSincethehousList(int? hotelid)
-	  {
-	    var result = _SincethehousRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<SincethehousDto>();
-	    }
-
-	  public virtual IPagedList<SincethehousDto> GetSincethehousList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _SincethehousRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<SincethehousDto>(result.ProjectToQueryable<SincethehousDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteSincethehous(int id)
-	    {
-		 _SincethehousRepository.Delete(id);
-		   }
-
-  public virtual void AddSuoRoom(SuoRoomDto SuoRoom)
-  {
-      Domain.SuoRoom model = AutoMapper.Mapper.Map<Domain.SuoRoom>(SuoRoom);
-      _SuoRoomRepository.Insert(model);
-  }
-   public virtual void UpdateSuoRoom(SuoRoomDto SuoRoom)
-  {
-      Domain.SuoRoom model = AutoMapper.Mapper.Map<Domain.SuoRoom>(SuoRoom);
-      _SuoRoomRepository.Update(model);
-  }
-
-     public virtual SuoRoomDto GetSuoRoomById(int id)
-	  {
-	      return _SuoRoomRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<SuoRoomDto>();
-	    }
-
-		  public virtual List<SuoRoomDto> GetSuoRoomList(int? hotelid)
-	  {
-	    var result = _SuoRoomRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<SuoRoomDto>();
-	    }
-
-	  public virtual IPagedList<SuoRoomDto> GetSuoRoomList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _SuoRoomRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<SuoRoomDto>(result.ProjectToQueryable<SuoRoomDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteSuoRoom(int id)
-	    {
-		 _SuoRoomRepository.Delete(id);
-		   }
-
-  public virtual void AddSuoSys(SuoSysDto SuoSys)
-  {
-      Domain.SuoSys model = AutoMapper.Mapper.Map<Domain.SuoSys>(SuoSys);
-      _SuoSysRepository.Insert(model);
-  }
-   public virtual void UpdateSuoSys(SuoSysDto SuoSys)
-  {
-      Domain.SuoSys model = AutoMapper.Mapper.Map<Domain.SuoSys>(SuoSys);
-      _SuoSysRepository.Update(model);
-  }
-
-     public virtual SuoSysDto GetSuoSysById(int id)
-	  {
-	      return _SuoSysRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<SuoSysDto>();
-	    }
-
-		  public virtual List<SuoSysDto> GetSuoSysList(int? hotelid)
-	  {
-	    var result = _SuoSysRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<SuoSysDto>();
-	    }
-
-	  public virtual IPagedList<SuoSysDto> GetSuoSysList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _SuoSysRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<SuoSysDto>(result.ProjectToQueryable<SuoSysDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteSuoSys(int id)
-	    {
-		 _SuoSysRepository.Delete(id);
-		   }
-
-  public virtual void AddSysParamter(SysParamterDto SysParamter)
-  {
-      Domain.SysParamter model = AutoMapper.Mapper.Map<Domain.SysParamter>(SysParamter);
-      _SysParamterRepository.Insert(model);
-  }
-   public virtual void UpdateSysParamter(SysParamterDto SysParamter)
-  {
-      Domain.SysParamter model = AutoMapper.Mapper.Map<Domain.SysParamter>(SysParamter);
-      _SysParamterRepository.Update(model);
-  }
-
-     public virtual SysParamterDto GetSysParamterById(int id)
-	  {
-	      return _SysParamterRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<SysParamterDto>();
-	    }
-
-		  public virtual List<SysParamterDto> GetSysParamterList(int? hotelid)
-	  {
-	    var result = _SysParamterRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<SysParamterDto>();
-	    }
-
-	  public virtual IPagedList<SysParamterDto> GetSysParamterList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _SysParamterRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<SysParamterDto>(result.ProjectToQueryable<SysParamterDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteSysParamter(int id)
-	    {
-		 _SysParamterRepository.Delete(id);
-		   }
-
-  public virtual void AddTypeScheme(TypeSchemeDto TypeScheme)
-  {
-      Domain.TypeScheme model = AutoMapper.Mapper.Map<Domain.TypeScheme>(TypeScheme);
-      _TypeSchemeRepository.Insert(model);
-  }
-   public virtual void UpdateTypeScheme(TypeSchemeDto TypeScheme)
-  {
-      Domain.TypeScheme model = AutoMapper.Mapper.Map<Domain.TypeScheme>(TypeScheme);
-      _TypeSchemeRepository.Update(model);
-  }
-
-     public virtual TypeSchemeDto GetTypeSchemeById(int id)
-	  {
-	      return _TypeSchemeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<TypeSchemeDto>();
-	    }
-
-		  public virtual List<TypeSchemeDto> GetTypeSchemeList(int? hotelid)
-	  {
-	    var result = _TypeSchemeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<TypeSchemeDto>();
-	    }
-
-	  public virtual IPagedList<TypeSchemeDto> GetTypeSchemeList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _TypeSchemeRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<TypeSchemeDto>(result.ProjectToQueryable<TypeSchemeDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteTypeScheme(int id)
-	    {
-		 _TypeSchemeRepository.Delete(id);
+		 _UEPP_RyjbxxRepository.Delete(id);
 		   }
 
   public virtual void AddUserInfo(UserInfoDto UserInfo)
@@ -2969,115 +897,78 @@ using System.Collections.Generic;
 		 _UserInfoRepository.Delete(id);
 		   }
 
-  public virtual void AddUsers(UsersDto Users)
+  public virtual void Addwdecolinf(wdecolinfDto wdecolinf)
   {
-      Domain.Users model = AutoMapper.Mapper.Map<Domain.Users>(Users);
-      _UsersRepository.Insert(model);
+      Domain.wdecolinf model = AutoMapper.Mapper.Map<Domain.wdecolinf>(wdecolinf);
+      _wdecolinfRepository.Insert(model);
   }
-   public virtual void UpdateUsers(UsersDto Users)
+   public virtual void Updatewdecolinf(wdecolinfDto wdecolinf)
   {
-      Domain.Users model = AutoMapper.Mapper.Map<Domain.Users>(Users);
-      _UsersRepository.Update(model);
+      Domain.wdecolinf model = AutoMapper.Mapper.Map<Domain.wdecolinf>(wdecolinf);
+      _wdecolinfRepository.Update(model);
   }
 
-     public virtual UsersDto GetUsersById(int id)
+     public virtual wdecolinfDto GetwdecolinfById(int id)
 	  {
-	      return _UsersRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<UsersDto>();
+	      return _wdecolinfRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<wdecolinfDto>();
 	    }
 
-		  public virtual List<UsersDto> GetUsersList(int? hotelid)
+		  public virtual List<wdecolinfDto> GetwdecolinfList(int? hotelid)
 	  {
-	    var result = _UsersRepository.TableNoTracking;
+	    var result = _wdecolinfRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<UsersDto>();
+		return result.ProjectToList<wdecolinfDto>();
 	    }
 
-	  public virtual IPagedList<UsersDto> GetUsersList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<wdecolinfDto> GetwdecolinfList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _UsersRepository.TableNoTracking;
+	    var result = _wdecolinfRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<UsersDto>(result.ProjectToQueryable<UsersDto>(), pageindex, pagesize);
+		return new PagedList<wdecolinfDto>(result.ProjectToQueryable<wdecolinfDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeleteUsers(int id)
+	   public virtual void Deletewdecolinf(int id)
 	    {
-		 _UsersRepository.Delete(id);
+		 _wdecolinfRepository.Delete(id);
 		   }
 
-  public virtual void AdduserType(userTypeDto userType)
+  public virtual void Addwdetabinf(wdetabinfDto wdetabinf)
   {
-      Domain.userType model = AutoMapper.Mapper.Map<Domain.userType>(userType);
-      _userTypeRepository.Insert(model);
+      Domain.wdetabinf model = AutoMapper.Mapper.Map<Domain.wdetabinf>(wdetabinf);
+      _wdetabinfRepository.Insert(model);
   }
-   public virtual void UpdateuserType(userTypeDto userType)
+   public virtual void Updatewdetabinf(wdetabinfDto wdetabinf)
   {
-      Domain.userType model = AutoMapper.Mapper.Map<Domain.userType>(userType);
-      _userTypeRepository.Update(model);
+      Domain.wdetabinf model = AutoMapper.Mapper.Map<Domain.wdetabinf>(wdetabinf);
+      _wdetabinfRepository.Update(model);
   }
 
-     public virtual userTypeDto GetuserTypeById(int id)
+     public virtual wdetabinfDto GetwdetabinfById(int id)
 	  {
-	      return _userTypeRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<userTypeDto>();
+	      return _wdetabinfRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<wdetabinfDto>();
 	    }
 
-		  public virtual List<userTypeDto> GetuserTypeList(int? hotelid)
+		  public virtual List<wdetabinfDto> GetwdetabinfList(int? hotelid)
 	  {
-	    var result = _userTypeRepository.TableNoTracking;
+	    var result = _wdetabinfRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<userTypeDto>();
+		return result.ProjectToList<wdetabinfDto>();
 	    }
 
-	  public virtual IPagedList<userTypeDto> GetuserTypeList(int? hotelid,int pageindex, int pagesize)
+	  public virtual IPagedList<wdetabinfDto> GetwdetabinfList(int? hotelid,int pageindex, int pagesize)
 	  {
-	    var result = _userTypeRepository.TableNoTracking;
+	    var result = _wdetabinfRepository.TableNoTracking;
 		  if(hotelid.HasValue)
 		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<userTypeDto>(result.ProjectToQueryable<userTypeDto>(), pageindex, pagesize);
+		return new PagedList<wdetabinfDto>(result.ProjectToQueryable<wdetabinfDto>(), pageindex, pagesize);
 	    }
 
-	   public virtual void DeleteuserType(int id)
+	   public virtual void Deletewdetabinf(int id)
 	    {
-		 _userTypeRepository.Delete(id);
-		   }
-
-  public virtual void AddZD_hourse(ZD_hourseDto ZD_hourse)
-  {
-      Domain.ZD_hourse model = AutoMapper.Mapper.Map<Domain.ZD_hourse>(ZD_hourse);
-      _ZD_hourseRepository.Insert(model);
-  }
-   public virtual void UpdateZD_hourse(ZD_hourseDto ZD_hourse)
-  {
-      Domain.ZD_hourse model = AutoMapper.Mapper.Map<Domain.ZD_hourse>(ZD_hourse);
-      _ZD_hourseRepository.Update(model);
-  }
-
-     public virtual ZD_hourseDto GetZD_hourseById(int id)
-	  {
-	      return _ZD_hourseRepository.TableNoTracking.Where(s => s.Id == id).ProjectToFirstOrDefault<ZD_hourseDto>();
-	    }
-
-		  public virtual List<ZD_hourseDto> GetZD_hourseList(int? hotelid)
-	  {
-	    var result = _ZD_hourseRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return result.ProjectToList<ZD_hourseDto>();
-	    }
-
-	  public virtual IPagedList<ZD_hourseDto> GetZD_hourseList(int? hotelid,int pageindex, int pagesize)
-	  {
-	    var result = _ZD_hourseRepository.TableNoTracking;
-		  if(hotelid.HasValue)
-		      result = result.Where(s=>s.hotelid == hotelid);
-		return new PagedList<ZD_hourseDto>(result.ProjectToQueryable<ZD_hourseDto>(), pageindex, pagesize);
-	    }
-
-	   public virtual void DeleteZD_hourse(int id)
-	    {
-		 _ZD_hourseRepository.Delete(id);
+		 _wdetabinfRepository.Delete(id);
 		   }
 
 

@@ -50,5 +50,6 @@ namespace HoteManagement.Console
         public virtual DbSet<wdetabinf> wdetabinf { get; set; }
         public virtual DbSet<gczj_zbkzjbaglb_20140709> gczj_zbkzjbaglb_20140709 { get; set; }
         public virtual DbSet<gczj_zbkzjbaglb_20150610> gczj_zbkzjbaglb_20150610 { get; set; }
+        public virtual DbSet<org_business> org_business { get; set; }
     }
 }
