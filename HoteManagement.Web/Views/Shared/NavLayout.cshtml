@@ -7,12 +7,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">酒店管理系统</a>
+        <a class="navbar-brand" href="index.html">后台管理系统</a>
     </div>
     <!-- /.navbar-header -->
 
     <ul class="nav navbar-top-links navbar-right">
-        <li class="dropdown">
+        @*<li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
@@ -60,10 +60,10 @@
                     </a>
                 </li>
             </ul>
-            <!-- /.dropdown-messages -->
-        </li>
+         
+        </li>*@
         <!-- /.dropdown -->
-        <li class="dropdown">
+        @*<li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
@@ -139,10 +139,10 @@
                     </a>
                 </li>
             </ul>
-            <!-- /.dropdown-tasks -->
-        </li>
+         
+        </li>*@
         <!-- /.dropdown -->
-        <li class="dropdown">
+        @*<li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
@@ -199,23 +199,23 @@
                     </a>
                 </li>
             </ul>
-            <!-- /.dropdown-alerts -->
-        </li>
+
+        </li>*@
         <!-- /.dropdown -->
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li>
+                @*<li>
                     <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                 </li>
-                <li class="divider"></li>
+                <li class="divider"></li>*@
                 <li>
-                    <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <a href="/admin/Loginout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
             </ul>
             <!-- /.dropdown-user -->
@@ -224,7 +224,7 @@
     </ul>
     <!-- /.navbar-top-links -->
     @{
-        var menus = cacheManager.Get<HoteManagement.Service.Model.UserMenus>(HoteManagement.Web.Core.Const.MENUKEY);
+//var menus = cacheManager.Get<HoteManagement.Service.Model.UserMenus>(HoteManagement.Web.Core.Const.MENUKEY);
      }
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
@@ -241,24 +241,17 @@
              /input-group
         </li>*@
 
-                @if (menus != null)
-                {
-                    foreach (var item in menus.Menus)
-                        {
-                        <li>
-                            <a href=""><i class="fa fa-dashboard fa-fw"></i> @item.ParentMenu.title<span class="fa arrow"></span></a>
+                <li>
+                    <a href=""><i class="fa fa-dashboard fa-fw"></i> 菜单<span class="fa arrow"></span></a>
 
-                            <ul class="nav nav-second-level">
-                                @foreach (var child in item.ClildMenus)
-                                {
-                                        <li>
-                                            <a href="@child.url">@child.title</a>
-                                        </li>
-                                }
-                            </ul>
-                        </li>
-                        }
-              }
+                    <ul class="nav nav-second-level">
+                       
+                <li>
+                    <a href="/admin/getbusiness">业务报表管理</a>
+                </li>
+
+                    </ul>
+                </li>
 
 
             </ul>

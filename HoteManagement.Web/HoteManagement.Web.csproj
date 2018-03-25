@@ -232,6 +232,7 @@
     <Compile Include="Core\ErrorModelFilterAttribute.cs" />
     <Compile Include="Core\ExceptionHandlingAttribute.cs" />
     <Compile Include="Core\HotelAuthorize.cs" />
+    <Compile Include="Core\ModelExtenstion.cs" />
     <Compile Include="Core\NewJsonResult.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -239,6 +240,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AjaxResponse.cs" />
     <Compile Include="Models\AjaxResponseOfTResult.cs" />
+    <Compile Include="Models\Api\AuditBusinessRequest.cs" />
     <Compile Include="Models\Api\BatchCreateRoomNumberRequest.cs" />
     <Compile Include="Models\Api\Createcost_typeRequest.cs" />
     <Compile Include="Models\Api\CreateOrgBusinessRequest.cs" />
@@ -889,6 +891,9 @@
     <Content Include="Views\Other\CreateGuestSource.cshtml" />
     <Content Include="Views\Other\EditGuestSource.cshtml" />
     <Content Include="Views\Admin\CreateBusiness.cshtml" />
+    <Content Include="Views\Admin\GetBusiness.cshtml" />
+    <Content Include="Views\Admin\EditBusiness.cshtml" />
+    <Content Include="Views\Admin\AuditBusiness.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

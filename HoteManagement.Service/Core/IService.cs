@@ -12,5 +12,11 @@ namespace HoteManagement.Service.Core
         UserInfoDto GetUserinfoByUsernameAndPwd(string username, string pwd);
 
         void CreateBusiness(Org_BusinessDto org_BusinessDto);
+
+        List<Org_BusinessDto> GetBusiness(int? creatorid, string orgname, bool isadmin, int? pageindex, out int totalpagecount);
+
+        void UpdateBusiness(Org_BusinessDto org_BusinessDto);
+
+        Org_BusinessDto GetBusiness(int id);
     }
 }

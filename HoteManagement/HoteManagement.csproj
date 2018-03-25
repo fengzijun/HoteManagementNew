@@ -221,6 +221,7 @@
     <Compile Include="Events\EntityDeleted.cs" />
     <Compile Include="Events\EntityInserted.cs" />
     <Compile Include="Events\EntityUpdated.cs" />
+    <Compile Include="ExpressionRebinder.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Fakes\FakeHttpContext.cs" />
     <Compile Include="Fakes\FakeHttpRequest.cs" />
@@ -258,6 +259,7 @@
     <Compile Include="IStoreContext.cs" />
     <Compile Include="IWebHelper.cs" />
     <Compile Include="IWorkContext.cs" />
+    <Compile Include="LambdaExtensions.cs" />
     <Compile Include="NoLockIInterceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimestampID.cs" />
