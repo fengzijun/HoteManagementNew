@@ -1,0 +1,39 @@
+﻿USE [EM_Test]
+GO
+
+/****** Object:  Table [dbo].[org_business]    Script Date: 2018/3/25 17:57:19 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[org_business](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[projectname] [nvarchar](50) NULL,
+	[buildunit] [nvarchar](50) NULL,
+	[compileunit] [nvarchar](50) NULL,
+	[auditunit] [nvarchar](50) NULL,
+	[projecttype] [nvarchar](50) NULL,
+	[projectsummary] [nvarchar](200) NULL,
+	[contract] [nvarchar](50) NULL,
+	[report] [nvarchar](50) NULL,
+	[price] [nvarchar](50) NULL,
+	[other] [nvarchar](50) NULL,
+	[createtime] [datetime] NULL,
+	[updatetime] [datetime] NULL,
+	[orgname] [nvarchar](50) NULL,
+	[creator] [nvarchar](50) NULL,
+	[creatorid] [int] NULL,
+	[audituser] [nvarchar](50) NULL,
+	[audituserid] [int] NULL,
+	[statues] [int] NULL,
+ CONSTRAINT [PK_org_business] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
