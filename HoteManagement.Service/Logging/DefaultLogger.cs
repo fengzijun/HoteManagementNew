@@ -19,7 +19,7 @@ namespace HoteManagement.Service.Logging
                 ex = innerexcept.InnerException;
             }
 
-            return innerexcept;
+            return innerexcept ?? ex;
         }
 
         public void WriteLog(string message)
@@ -74,8 +74,9 @@ namespace HoteManagement.Service.Logging
                 else
                     logger.Error(innerexception.Message + "\n" + innerexception.Source + "\n" + innerexception.StackTrace + "\n" + innerexception.TargetSite);
             }
-            catch
+            catch(Exception e)
             {
+                throw e;
             }
         }
 

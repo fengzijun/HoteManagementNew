@@ -53,6 +53,7 @@ namespace HoteManagement.Data.Dapper.UnitOfWork
             }
 
             var connection = GetOrCreateDbContext();
+            Logger.WriteWarn(connection.ConnectionString);
             if (connection.State != ConnectionState.Open)
                 connection.Open();
         }

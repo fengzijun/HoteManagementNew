@@ -50,7 +50,7 @@ namespace HoteManagement.Web.Controllers
             {
                 return View(model);
             }
-
+            logger.WriteWarn("start login");
             var user = generateService.GetUserinfoByUsernameAndPwd(model.UserName, model.Password);
             if(user!=null)
             {
@@ -67,7 +67,7 @@ namespace HoteManagement.Web.Controllers
                 string encTicket = FormsAuthentication.Encrypt(authTicket);
                 HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
                 Response.Cookies.Add(faCookie);
-
+                logger.WriteWarn("end login");
                 return RedirectToAction("getbusiness");
             }
 
@@ -276,10 +276,12 @@ namespace HoteManagement.Web.Controllers
 
         public ActionResult GetBusiness(int? pageindex)
         {
+            logger.WriteWarn("start getbusiness");
             int pagecount = 0;
             int? loginid = UserInfo.UserType == "管理用户" ? (int?)null : UserInfo.LoginID;
             var models = generateService.GetBusiness(loginid, UserInfo.OrgName, UserInfo.UserType == "管理用户" ? true:false ,( pageindex.HasValue ? pageindex.Value : 1)-1, out pagecount);
             string url = "/Admin/GetBusiness";
+            logger.WriteWarn("end getbusiness");
             ViewBag.PageInfo = new PageModel { PageCount = pagecount, PageIndex = pageindex.HasValue ? pageindex.Value : 1, Url = url };
             return View(models);
         }

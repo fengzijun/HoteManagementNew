@@ -30,6 +30,9 @@ namespace HoteManagement.Web.Core
                 throw new ArgumentNullException("context");
             }
 
+            if (context.Exception != null)
+                Logger?.WriteErrorLog(context.Exception);
+
             //If exception handled before, do nothing.
             //If this is child action, exception should be handled by main action.
             if (context.ExceptionHandled || context.IsChildAction)
