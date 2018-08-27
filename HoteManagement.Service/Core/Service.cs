@@ -36,6 +36,15 @@ namespace HoteManagement.Service.Core
             return null;
         }
 
+        public virtual UserInfoDto GetUserById(int id)
+        {
+            var model = _UserInfoRepository.GetById(id);
+            if (model != null)
+                return AutoMapper.Mapper.Map<UserInfoDto>(model);
+
+            return null;
+        }
+
         public virtual void CreateBusiness(Org_BusinessDto org_BusinessDto)
         {
             var model = AutoMapper.Mapper.Map<Org_Business>(org_BusinessDto);
@@ -85,13 +94,15 @@ namespace HoteManagement.Service.Core
 
             IPredicateGroup predGroup = Predicates.Group(GroupOperator.And, predList.ToArray());
             var connection = _dbConnectionProvider.GetConnection();
-            var models = connection.GetPage<Org_Business>(predGroup, new List<ISort> { new Sort { Ascending = true, PropertyName = "id" } },
-                pageindex.Value,
-                pagesize,
-                null);
-            var count = connection.Count<Org_Business>(predGroup);
-            totalpagecount = count % pagesize == 0 ? count / pagesize : (count / pagesize) + 1;
-            var result = AutoMapper.Mapper.Map<List<Org_BusinessDto>>(models.ToList());
+            //var models = connection.GetPage<Org_Business>(predGroup, new List<ISort> { new Sort { Ascending = true, PropertyName = "id" } },
+            //    pageindex.Value,
+            //    pagesize,
+            //    null);
+            //var count = connection.Count<Org_Business>(predGroup);
+
+            var models = connection.GetList<Org_Business>(predGroup).ToList();
+            totalpagecount = models.Count() % pagesize == 0 ? models.Count() / pagesize : (models.Count() / pagesize) + 1;
+            var result = AutoMapper.Mapper.Map<List<Org_BusinessDto>>(models.Skip(pagesize * (pageindex ?? 1 - 1) * pagesize).Take(pagesize).ToList());
             return result;
         }
 

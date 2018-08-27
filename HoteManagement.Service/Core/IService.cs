@@ -18,5 +18,7 @@ namespace HoteManagement.Service.Core
         void UpdateBusiness(Org_BusinessDto org_BusinessDto);
 
         Org_BusinessDto GetBusiness(int id);
+
+        UserInfoDto GetUserById(int id);
     }
 }

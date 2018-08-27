@@ -12,7 +12,43 @@ using System.Collections.Generic;
 
 namespace HoteManagement.Domain
 {
-
+    //  ,[LoginName]
+      //,[Password]
+      //,[UserRealName]
+      //,[UserRegTime]
+      //,[UserEndTime]
+      //,[UserVerify]
+      //,[UserFeeType]
+      //,[UserType]
+      //,[deptCode]
+      //,[OrgName]
+      //,[UserLoginType]
+      //,[UserSex]
+      //,[UserIDCardNumber]
+      //,[UserEmail]
+      //,[UserTel]
+      //,[UserMobile]
+      //,[UserAddress]
+      //,[UserZipcode]
+      //,[UserState]
+      //,[UserCity]
+      //,[UserFax]
+      //,[Certi_id]
+      //,[DealMan]
+      //,[UserSignPic]
+      //,[gl_deptCode]
+      //,[gl_UserSex]
+      //,[gl_IdNumber]
+      //,[gl_UserEmail]
+      //,[gl_UserMobile]
+      //,[gl_UserTel]
+      //,[qy_UserAddress]
+      //,[qy_UserEmail]
+      //,[qy_UserZipcode]
+      //,[qy_UserFax]
+      //,[qy_DealMan]
+      //,[qy_UserMobile]
+      //,[qy_UserTel]
     public partial class UserInfo : BaseEntity
     {
         public int LoginID { get; set; }
@@ -34,13 +70,11 @@ namespace HoteManagement.Domain
         public string UserState { get; set; }
         public string UserCity { get; set; }
         public string OrgName { get; set; }
-        public string OrgUnitName { get; set; }
+
         public string UserFax { get; set; }
         public string Certi_id { get; set; }
         public string DealMan { get; set; }
-        public string DealmanTel { get; set; }
         public string UserLoginType { get; set; }
-        public string UserSignPic { get; set; }
-        public Nullable<bool> Status_CA { get; set; }
+
     }
 }

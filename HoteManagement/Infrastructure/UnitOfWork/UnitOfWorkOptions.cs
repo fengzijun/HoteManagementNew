@@ -17,7 +17,7 @@ namespace HoteManagement.Infrastructure.UnitOfWork
 
         public IsolationLevel? IsolationLevel { get; set; }
 
-        public TransactionScopeAsyncFlowOption? AsyncFlowOption { get; set; }
+       // public TransactionScopeAsyncFlowOption? AsyncFlowOption { get; set; }
 
         /// <summary>
         /// Creates a new <see cref="UnitOfWorkOptions"/> object.

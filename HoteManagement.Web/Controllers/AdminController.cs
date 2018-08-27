@@ -13,7 +13,7 @@ using System.Web.Security;
 
 namespace HoteManagement.Web.Controllers
 {
-    [HotelAuthorize]
+    //[HotelAuthorize]
     public class AdminController : BaseController
     {
 
@@ -274,12 +274,42 @@ namespace HoteManagement.Web.Controllers
         }
 
 
-        public ActionResult GetBusiness(int? pageindex)
+        public ActionResult GetBusiness(int? pageindex,int? loginid)
         {
             logger.WriteWarn("start getbusiness");
             int pagecount = 0;
-            int? loginid = UserInfo.UserType == "管理用户" ? (int?)null : UserInfo.LoginID;
-            var models = generateService.GetBusiness(loginid, UserInfo.OrgName, UserInfo.UserType == "管理用户" ? true:false ,( pageindex.HasValue ? pageindex.Value : 1)-1, out pagecount);
+            int? accountid = 0;
+            if(loginid.HasValue)
+            {
+                var user = generateService.GetUserById(loginid.Value);
+                if (user != null)
+                {
+
+                    FormsAuthenticationTicket authTicket =
+                        new FormsAuthenticationTicket(
+                 1,
+                 user.LoginName,
+                 DateTime.Now,
+                 DateTime.Now.AddDays(30),
+                 false, //pass here true, if you want to implement remember me functionality
+                 Newtonsoft.Json.JsonConvert.SerializeObject(user));
+
+                    string encTicket = FormsAuthentication.Encrypt(authTicket);
+                    HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
+                    Response.Cookies.Add(faCookie);
+   
+                }
+
+                accountid = user.UserType == "管理用户" ? (int?)null : user.LoginID; ;
+
+            }
+            else
+            {
+                accountid = UserInfo.UserType == "管理用户" ? (int?)null : UserInfo.LoginID;
+            }
+
+            //int? loginid = loginid.HasValue : loginid.Value: ( UserInfo.UserType == "管理用户" ? (int?)null : UserInfo.LoginID );
+            var models = generateService.GetBusiness(accountid, UserInfo.OrgName, UserInfo.UserType == "管理用户" ? true:false ,( pageindex.HasValue ? pageindex.Value : 1)-1, out pagecount);
             string url = "/Admin/GetBusiness";
             logger.WriteWarn("end getbusiness");
             ViewBag.PageInfo = new PageModel { PageCount = pagecount, PageIndex = pageindex.HasValue ? pageindex.Value : 1, Url = url };
