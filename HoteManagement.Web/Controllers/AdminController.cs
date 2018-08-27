@@ -300,18 +300,17 @@ namespace HoteManagement.Web.Controllers
    
                 }
 
-                accountid = user.UserType == "管理用户" ? (int?)null : user.LoginID; ;
-
+                accountid = user.OrgName == "管理员" ? (int?)null : user.LoginID; ;
+                ViewBag.loginid = loginid.Value;
             }
             else
             {
-                accountid = UserInfo.UserType == "管理用户" ? (int?)null : UserInfo.LoginID;
+                accountid = UserInfo.OrgName == "管理员" ? (int?)null : UserInfo.LoginID;
             }
 
             //int? loginid = loginid.HasValue : loginid.Value: ( UserInfo.UserType == "管理用户" ? (int?)null : UserInfo.LoginID );
-            var models = generateService.GetBusiness(accountid, UserInfo.OrgName, UserInfo.UserType == "管理用户" ? true:false ,( pageindex.HasValue ? pageindex.Value : 1)-1, out pagecount);
+            var models = generateService.GetBusiness(accountid, null, false ,( pageindex.HasValue ? pageindex.Value : 1)-1, out pagecount);
             string url = "/Admin/GetBusiness";
-            logger.WriteWarn("end getbusiness");
             ViewBag.PageInfo = new PageModel { PageCount = pagecount, PageIndex = pageindex.HasValue ? pageindex.Value : 1, Url = url };
             return View(models);
         }

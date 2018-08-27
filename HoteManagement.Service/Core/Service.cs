@@ -99,8 +99,10 @@ namespace HoteManagement.Service.Core
             //    pagesize,
             //    null);
             //var count = connection.Count<Org_Business>(predGroup);
+            List<ISort> sortList = new List<ISort>();
+            sortList.Add(Predicates.Sort<Org_Business>(x => x.id, false));
 
-            var models = connection.GetList<Org_Business>(predGroup).ToList();
+            var models = connection.GetList<Org_Business>(predGroup, sortList).ToList();
             totalpagecount = models.Count() % pagesize == 0 ? models.Count() / pagesize : (models.Count() / pagesize) + 1;
             var result = AutoMapper.Mapper.Map<List<Org_BusinessDto>>(models.Skip(pagesize * (pageindex ?? 1 - 1) * pagesize).Take(pagesize).ToList());
             return result;

@@ -50,7 +50,7 @@
                     @foreach (var item in Model)
                     {
                     <tr>
-                        @if (UserInfo.UserType == "企业用户")
+                    @if (UserInfo.OrgName != "管理员")
                     {
                     <td><a href="/admin/editbusiness?id=@item.id">@item.projectname</a> </td>
                     }
