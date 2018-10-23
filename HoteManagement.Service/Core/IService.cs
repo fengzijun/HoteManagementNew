@@ -13,12 +13,23 @@ namespace HoteManagement.Service.Core
 
         void CreateBusiness(Org_BusinessDto org_BusinessDto);
 
-        List<Org_BusinessDto> GetBusiness(int? creatorid, string orgname, bool isadmin, int? pageindex, out int totalpagecount);
+        List<Org_BusinessDto> GetBusiness(int? creatorid, string orgname, string name, int? approvalstatues, string unitname, string compileunit, string auditunit, DateTime? time, int? pageindex, out int totalpagecount);
 
         void UpdateBusiness(Org_BusinessDto org_BusinessDto);
 
         Org_BusinessDto GetBusiness(int id);
 
         UserInfoDto GetUserById(int id);
+
+
+        List<ProjectSettlementDto> GetProjectSettlements(int? creatorid, int? pageindex, int? approvalstatues, string unitname, string unitname2, string unitname3, string projectname, DateTime? starttime, out int totalpagecount);
+
+        void CreateProjectSettlement(ProjectSettlementDto projectSettlementDto);
+
+        void UpdateProjectSettlement(ProjectSettlementDto projectSettlementDto);
+
+        ProjectSettlementDto GetProjectSettlement(int id);
+
+        void DeleteProjectSettlement(int id);
     }
 }

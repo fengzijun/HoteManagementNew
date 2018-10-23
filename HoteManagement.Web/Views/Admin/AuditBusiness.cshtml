@@ -2,9 +2,10 @@
 @{
     ViewBag.Title = "AuditBusiness";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var userid = ViewBag.UserId == null ? UserInfo.LoginID : ViewBag.UserId;
 }
 
-<div id="page-wrapper">
+<div class="right_col" role="main">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">新增业务报送</h1>
@@ -14,118 +15,147 @@
     <!-- /.row -->
     <div class="row">
         @using (Html.BeginForm("AuditBusiness", "Admin", FormMethod.Post, new { @class = "form-horizontal" }))
-    {
-        @Html.HiddenFor(s => s.Id)
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">项目名称</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                @Html.TextBoxFor(s => s.Model.projectname, new { @class = "form-control" , disabled = true })
+        {
+            @Html.HiddenFor(s => s.Id)
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">项目名称</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.Model.projectname, new { @class = "form-control", disabled = true })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">建设单位</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                @Html.TextBoxFor(s => s.Model.buildunit, new { @class = "form-control", disabled = true })
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">建设单位</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.Model.buildunit, new { @class = "form-control", disabled = true })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">编制单位</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                @Html.TextBoxFor(s => s.Model.compileunit, new { @class = "form-control", disabled = true })
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">编制单位</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.Model.compileunit, new { @class = "form-control", disabled = true })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">审计单位</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                @Html.TextBoxFor(s => s.Model.auditunit, new { @class = "form-control", disabled = true })
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">审计单位</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.Model.auditunit, new { @class = "form-control", disabled = true })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">项目类型</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                @Html.DropDownListFor(s => s.Model.projecttype, ViewBag.ProjectList as List<SelectListItem>, new { @class = "form-control", disabled = true })
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">项目类型</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.DropDownListFor(s => s.Model.projecttype, ViewBag.ProjectList as List<SelectListItem>, new { @class = "form-control", disabled = true })
+                </div>
             </div>
-        </div>
+            @Html.HiddenFor(s => s.UserId)
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">合同书</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">合同书</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
 
-             
-                <span class="input-group-btn">
+                    <span class="input-group-btn">
+                        @if (string.IsNullOrEmpty(Model.Model.contract))
+                        {
+                            <a class="btn btn-primary disabled" href="#">查看上传文件</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary" target="_blank" href="/admin/filedownload?id=@Model.Model.contract">查看上传文件</a>
+                        }
 
-                    <a class="btn btn-primary" target="_blank" href="/admin/filedownload?id=@Model.Model.contract">查看上传文件</a>
-                </span>
+                    </span>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">咨询报告书</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">咨询报告书</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
 
-                <span class="input-group-btn">
+                    <span class="input-group-btn">
+                        @if (string.IsNullOrEmpty(Model.Model.report))
+                        {
+                            <a class="btn btn-primary disabled" href="#">查看上传文件</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary" target="_blank" href="/admin/filedownload?id=@Model.Model.report">查看上传文件</a>
+                        }
 
-                    <a class="btn btn-primary" target="_blank"  href="/admin/filedownload?id=@Model.Model.report">查看上传文件</a>
-                </span>
+                    </span>
 
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">工程量清单（计价书）</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                <span class="input-group-btn">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">工程量清单（计价书）</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    <span class="input-group-btn">
+                        @if (string.IsNullOrEmpty(Model.Model.price))
+                        {
+                            <a class="btn btn-primary disabled" href="#">查看上传文件</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary" target="_blank" href="/admin/filedownload?id=@Model.Model.price">查看上传文件</a>
+                        }
 
-                    <a class="btn btn-primary" target="_blank" href="/admin/filedownload?id=@Model.Model.price">查看上传文件</a>
-                </span>
+                    </span>
 
 
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">其他</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">其他</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
 
-                <span class="input-group-btn">
+                    <span class="input-group-btn">
+                        @if (string.IsNullOrEmpty(Model.Model.other))
+                        {
+                            <a class="btn btn-primary disabled" href="#">查看上传文件</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary" target="_blank" href="/admin/filedownload?id=@Model.Model.other">查看上传文件</a>
+                        }
 
-                    <a class="btn btn-primary" target="_blank" href="/admin/filedownload?id=@Model.Model.other">查看上传文件</a>
-                </span>
 
+                    </span>
+
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">审核</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">审核</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
 
-                @Html.RadioButtonFor(model => model.ApprovalStatues, 1, new { @id = "radio2", @name = "rdolstState", @checked = true })通过
-                @Html.RadioButtonFor(model => model.ApprovalStatues, 0, new { @id = "radio1", @name = "rdolstState" })不通过
+                    @Html.RadioButtonFor(model => model.ApprovalStatues, 1, new { @id = "radio2", @name = "rdolstState", @checked = true })通过
+                    @Html.RadioButtonFor(model => model.ApprovalStatues, 0, new { @id = "radio1", @name = "rdolstState" })不通过
 
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <input value="提交" type="submit" class="btn btn-primary" />
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-4">
+                    <input value="提交" type="submit" class="btn btn-primary" />
 
+                </div>
             </div>
-        </div>
-}
+        }
     </div>
 
 </div>

@@ -1,0 +1,250 @@
+﻿@using HoteManagement.Service.Model;
+@using HoteManagement;
+@using HoteManagement.Web.Core;
+@model  List<ProjectSettlementDto>
+@{
+    ViewBag.Title = "GetProjectSettlement";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var userid = ViewBag.UserId == null ? 0 : ViewBag.UserId;
+}
+
+<div class="right_col" role="main">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">竣工结算备案</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-1 control-label">项目名称</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    <input type="text" id="seach_projectname" class="form-control" />
+
+                </div>
+                <label for="inputEmail3" class="col-sm-1 control-label">建设单位</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @*@Html.TextBoxFor(s => s.buildunit, new { @class = "form-control" })*@
+                    <input type="text" id="seach_unitname" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-1 control-label">施工单位</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    <input type="text" id="seach_unitname3" class="form-control" />
+
+                </div>
+                <label for="inputEmail3" class="col-sm-1 control-label">造价机构</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @*@Html.TextBoxFor(s => s.buildunit, new { @class = "form-control" })*@
+                    <input type="text" id="seach_unitname2" class="form-control" />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-1 control-label">送审日期</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @*@Html.TextBoxFor(s => s.compileunit, new { @class = "form-control" })*@
+                    <input type="text" id="seach_starttime" class="datetime form-control" />
+                </div>
+                <label for="inputEmail3" class="col-sm-1 control-label">状态</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @*@Html.TextBoxFor(s => s.auditunit, new { @class = "form-control" })*@
+                    <select id="search_approvalstatues" class="form-control">
+                        <option value="-2">请选择</option>
+                        <option value="-1">未通过</option>
+                        <option value="0">未上报</option>
+                        <option value="1">审核通过</option>
+                        <option value="2">已上报</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-1">
+
+                    <input value="搜索" type="button" class="btn btn-default" id="search" />
+                </div>
+            </div>
+            @if (UserInfo.OrgName != "管理员")
+            {
+                <div class="col-lg-12">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            @if (userid == 0)
+                            {
+                                <a class="btn btn-primary" href="/admin/CreateProjectSettlement">新增竣工结算</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-primary" href="/admin/CreateProjectSettlement?userid=@userid">新增竣工结算</a>
+                            }
+
+
+                        </span>
+
+                    </div>
+                </div>
+            }
+
+        </div>
+
+
+
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12 table-responsive">
+            <table class="table table-striped jambo_table bulk_action">
+                <thead>
+                    <tr>
+                        <th>项目名称</th>
+                        <th>建设单位</th>
+                        <th>施工单位</th>
+                        <th>造价机构</th>
+                        <th>送审金额	</th>
+                        <th>送审日期	</th>
+                        @if (UserInfo.OrgName != "管理员")
+                        {
+                            <th>编辑	</th>
+                            <th>删除	</th>
+                            <th>申报	</th>
+                        }
+                        else
+                        {
+                            <th>审核	</th>
+                        }
+
+                        <th>状态</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            @if (UserInfo.OrgName != "管理员")
+                            {
+                                if (userid == 0)
+                                {
+                                    <td><a href="/admin/editProjectSettlement?id=@item.id">@item.projectname</a> </td>
+                                }
+                                else
+                                {
+                                    <td><a href="/admin/editProjectSettlement?id=@item.id&userid=@userid">@item.projectname</a> </td>
+                                }
+
+                            }
+                            else
+                            {
+                                if (userid == 0)
+                                {
+                                    <td><a href="/admin/auditProjectSettlement?id=@item.id">@item.projectname</a> </td>
+                                }
+                                else
+                                {
+                                    <td><a href="/admin/auditProjectSettlement?id=@item.id&userid=@userid">@item.projectname</a> </td>
+                                }
+
+                            }
+
+                            <td>
+                                @item.unitname
+                            </td>
+
+                            <td>@item.unitname3</td>
+                            <td>
+                                @item.unitname2
+
+                            </td>
+                            <td>@item.sprice</td>
+                            <td>@item.auditstarttime</td>
+                            @if (UserInfo.OrgName != "管理员")
+                            {
+                                if (userid == 0)
+                                {
+                                    <td><a href="/admin/editProjectSettlement?id=@item.id">编辑</a></td>
+                                    <td><a href="/admin/delProjectSettlement?id=@item.id">删除</a></td>
+                                    <td><a href="/admin/accessProjectSettlement?id=@item.id">申报</a></td>
+                                }
+                                else
+                                {
+                                    <td><a href="/admin/editProjectSettlement?id=@item.id&userid=@userid">编辑</a></td>
+                                    <td><a href="/admin/delProjectSettlement?id=@item.id&userid=@userid">删除</a></td>
+                                    <td><a href="/admin/accessProjectSettlement?id=@item.id&userid=@userid">申报</a></td>
+                                }
+
+                            }
+                            else
+                            {
+                                if (userid == 0)
+                                {
+                                    <td><a href="/admin/auditProjectSettlement?id=@item.id">@item.projectname</a></td>
+                                }
+                                else
+                                {
+                                    <td><a href="/admin/auditProjectSettlement?id=@item.id&userid=@userid">@item.projectname</a></td>
+                                }
+
+                            }
+
+                            <td>
+                                @Html.Raw(item.GetDisplayText())
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        @Html.Partial("PageList", ViewBag.PageInfo as HoteManagement.Web.Models.Api.PageModel)
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(function () {
+            $("#search").click(function () {
+                var projectname = $("#seach_projectname").val();
+                var unitname = $("#seach_unitname").val();
+                var unitname2 = $("#seach_unitname2").val();
+                var unitname3 = $("#seach_unitname3").val();
+                var starttime = $("#seach_starttime").val();
+                var approvalstatues = $("#search_approvalstatues").val();
+                var userid = @userid;
+                if (userid == 0) {
+                    window.location.href = "/admin/GetProjectSettlement?projectname=" + projectname + "&unitname=" + unitname + "&unitname2=" + unitname2 + "&unitname3=" + unitname3 + "&starttime=" + starttime + "&approvalstatus=" + approvalstatues;
+                }
+                else {
+                    window.location.href = "/admin/GetProjectSettlement?projectname=" + projectname + "&unitname=" + unitname + "&unitname2=" + unitname2 + "&unitname3=" + unitname3 + "&starttime=" + starttime + "&approvalstatus=" + approvalstatues + "&loginid="+@userid;
+                }
+            })
+        })
+    </script>
+}
+
+

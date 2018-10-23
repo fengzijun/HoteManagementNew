@@ -8,6 +8,7 @@ using HoteManagement.Infrastructure;
 using HoteManagement.Service.Model;
 
 using System.Web.Security;
+using HoteManagement.Service.Core;
 
 namespace HoteManagement.Web.Core
 {
@@ -17,6 +18,7 @@ namespace HoteManagement.Web.Core
         protected readonly ILogger logger;
         protected readonly IWebHelper webHelper;
         protected readonly ICacheManager cacheManager;
+        protected readonly IGenerateService generateService;
 
         public BaseWebViewPage()
         {
@@ -24,6 +26,7 @@ namespace HoteManagement.Web.Core
             logger = EngineContext.Current.Resolve<ILogger>();
             webHelper = EngineContext.Current.Resolve<IWebHelper>();
             cacheManager = EngineContext.Current.Resolve<ICacheManager>();
+            generateService = EngineContext.Current.Resolve<IGenerateService>();
         }
 
         public UserInfoDto UserInfo
@@ -32,18 +35,27 @@ namespace HoteManagement.Web.Core
             {
                 try
                 {
-
-                    HttpCookie authCookie = System.Web.HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName];
-                    if (authCookie != null)
+                    var userid = System.Web.HttpContext.Current.Request.QueryString["loginid"] ?? System.Web.HttpContext.Current.Request.QueryString["userid"];
+                    if (string.IsNullOrEmpty(userid))
                     {
 
-                        FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
-                        if (authTicket == null || string.IsNullOrEmpty(authTicket.UserData))
-                            return null;
-                        UserInfoDto user = Newtonsoft.Json.JsonConvert.DeserializeObject<UserInfoDto>(authTicket.UserData);
+                        HttpCookie authCookie = System.Web.HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName];
+                        if (authCookie != null)
+                        {
 
+                            FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+                            if (authTicket == null || string.IsNullOrEmpty(authTicket.UserData))
+                                return null;
+                            UserInfoDto user = Newtonsoft.Json.JsonConvert.DeserializeObject<UserInfoDto>(authTicket.UserData);
+
+                            return user;
+
+                        }
+                    }
+                    else
+                    {
+                        var user = generateService.GetUserById(int.Parse(userid));
                         return user;
-
                     }
 
                     return null;

@@ -152,6 +152,7 @@
     <Compile Include="Model\paymentMoneyDto.cs" />
     <Compile Include="Model\price_typeDto.cs" />
     <Compile Include="Model\printDto.cs" />
+    <Compile Include="Model\ProjectSettlementDto.cs" />
     <Compile Include="Model\real_modeDto.cs" />
     <Compile Include="Model\real_stateDto.cs" />
     <Compile Include="Model\receiptDto.cs" />

@@ -13,6 +13,15 @@ namespace HoteManagement
     public static class Extensions
     {
 
+        public static string GetFileExt(this string filename)
+        {
+            if (!filename.Contains("."))
+                return string.Empty;
+
+            return filename.Substring(filename.LastIndexOf(".") + 1, filename.Length - filename.LastIndexOf(".") - 1);
+
+        }
+
         public static string GenerateKey(this object sourceObject)
         {
             String hashString;

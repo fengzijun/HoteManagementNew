@@ -4,109 +4,111 @@
 @{
     ViewBag.Title = "CreateBusiness";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var userid = ViewBag.UserId == null ? 0 : ViewBag.UserId;
 }
 
-<div id="page-wrapper">
+<div class="right_col" role="main">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-6">
             <h1 class="page-header">新增业务报送</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
     <div class="row">
-    @using (Html.BeginForm("CreateBusiness", "Admin", FormMethod.Post, new { @class = "form-horizontal" , enctype = "multipart/form-data" }))
-    {
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">项目名称</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                @Html.TextBoxFor(s => s.projectname, new { @class = "form-control" })
+        @using (Html.BeginForm("CreateBusiness", "Admin", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">项目名称</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.projectname, new { @class = "form-control" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">建设单位</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                @Html.TextBoxFor(s => s.buildunit, new { @class = "form-control" })
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">建设单位</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.buildunit, new { @class = "form-control" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">编制单位</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                @Html.TextBoxFor(s => s.compileunit, new { @class = "form-control" })
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">编制单位</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.compileunit, new { @class = "form-control" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">审计单位</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                @Html.TextBoxFor(s => s.auditunit, new { @class = "form-control" })
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">审计单位</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.TextBoxFor(s => s.auditunit, new { @class = "form-control" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">项目类型</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                @Html.DropDownListFor(s => s.projecttype, ViewBag.ProjectList as List<SelectListItem>, new { @class = "form-control" })
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">项目类型</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    @Html.DropDownListFor(s => s.projecttype, ViewBag.ProjectList as List<SelectListItem>, new { @class = "form-control" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">合同书</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                <input type="file" name="contract_file" />
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">合同书</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    <input type="file" name="contract_file" />
 
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">咨询报告书</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                <input type="file" name="report_file" />
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">咨询报告书</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    <input type="file" name="report_file" />
 
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">工程量清单（计价书）</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                <input type="file" name="price_file" />
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">工程量清单（计价书）</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    <input type="file" name="price_file" />
 
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">其他</label>
-            <div class="col-sm-10">
-                @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
-                <input type="file" name="other_file" />
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">其他</label>
+                <div class="col-sm-4">
+                    @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                    <input type="file" name="other_file" />
 
+                </div>
             </div>
-        </div>
+            @Html.HiddenFor(s => s.UserId);
 
-        <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label"></label>
-            <div class="col-sm-10">
-                @Html.Partial("DisplayErrorView")
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                <div class="col-sm-4">
+                    @Html.Partial("DisplayErrorView")
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-4">
 
-                <input value="提交" type="submit" class="btn btn-primary" />
+                    <input value="提交" type="submit" class="btn btn-primary" />
+                </div>
             </div>
-        </div>
-}
+        }
     </div>
 
 </div>

@@ -13,62 +13,96 @@
     @*<link href="~/Content/css.css" rel="stylesheet" type="text/css" />*@
     <!-- Bootstrap Core CSS -->
     <!-- Bootstrap Core CSS -->
+    <link href="~/content/style2.css" rel="stylesheet">
     <link href="~/content/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="~/content/bootstrap/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="~/content/bootstrap/dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="~/content/bootstrap/vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="~/content/bootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <link href="~/content/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+
+
+    <link href="~/content/form-elements.css" rel="stylesheet" type="text/css">
+    <link href="~/content/style.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
 </head>
 <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
-                    </div>
-                    <div class="panel-body">
-                        @using (Html.BeginForm("Login", "Admin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
-                        {
-                        <fieldset>
-                            <div class="form-group">
-                                @*<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>*@
-                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "用户名", autofocus = "true" })
-                            </div>
-                            <div class="form-group">
-                                @*<input class="form-control" placeholder="Password" name="password" type="password" value="">*@
-                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "密码" })
-                            </div>
+    <!-- Top content -->
+    <div class="top-content">
 
-                            <!-- Change this to a button or input when using this as a form -->
-                            <input type="submit" class="btn btn-lg btn-success btn-block" value="登陆" />
+        <div class="inner-bg">
+            <div class="container">
+                @*<div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Bootstrap</strong> Login Form</h1>
+                            <div class="description">
+                                <p>
+                                    This is a free responsive login form made with Bootstrap.
+                                    Download it on <a href="#"><strong>AZMIND</strong></a>, customize and use it as you like!
+                                </p>
+                            </div>
+                        </div>
+                    </div>*@
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Login to our site</h3>
+                                <p>Enter your username and password to log on:</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-lock"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            @using (Html.BeginForm("Login", "Admin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form", @class = "login-form" }))
+    {
+                        <div class="form-group">
+                            <label class="sr-only" for="form-username">Username</label>
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-username form-control", placeholder = "Username...", autofocus = "true" })
 
-                            <font color="red">
-                                @Html.ValidationSummary()
-                            </font>
-                        </fieldset>
-                        }
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="form-password">Password</label>
+                            @*<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">*@
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-password form-control", placeholder = "Password..." })
+                        </div>
+                        <button type="submit" class="btn">Sign in!</button>
+                        <font color="red">
+                            @Html.ValidationSummary()
+                        </font>
+}
+
+
+
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
+
     </div>
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 
-    
-  
+    <script src="~/Content/js/jquery.backstretch.min.js"></script>
+    <script src="~/Content/js/scripts.js"></script>
+
+    <!--[if lt IE 10]>
+        <script src="~/Content/js/placeholder.js"></script>
+    <![endif]-->
+
+
 </body>
 </html>

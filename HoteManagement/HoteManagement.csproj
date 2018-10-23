@@ -192,6 +192,7 @@
     <Compile Include="Domain\paymentMoney.cs" />
     <Compile Include="Domain\price_type.cs" />
     <Compile Include="Domain\print.cs" />
+    <Compile Include="Domain\ProjectSettlement.cs" />
     <Compile Include="Domain\real_mode.cs" />
     <Compile Include="Domain\real_state.cs" />
     <Compile Include="Domain\receipt.cs" />

@@ -1,38 +1,75 @@
 ﻿USE [EM_Test]
 GO
 
-/****** Object:  Table [dbo].[org_business]    Script Date: 2018/3/25 17:57:19 ******/
+/****** Object:  Table [dbo].[ProjectSettlement]    Script Date: 2018/9/27 23:21:46 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[org_business](
+CREATE TABLE [dbo].[ProjectSettlement](
 	[id] [int] IDENTITY(1,1) NOT NULL,
 	[projectname] [nvarchar](50) NULL,
-	[buildunit] [nvarchar](50) NULL,
-	[compileunit] [nvarchar](50) NULL,
-	[auditunit] [nvarchar](50) NULL,
 	[projecttype] [nvarchar](50) NULL,
-	[projectsummary] [nvarchar](200) NULL,
-	[contract] [nvarchar](50) NULL,
-	[report] [nvarchar](50) NULL,
-	[price] [nvarchar](50) NULL,
-	[other] [nvarchar](50) NULL,
+	[projectaddress] [nvarchar](250) NULL,
+	[projectsope] [nvarchar](50) NULL,
+	[projectfeature] [nvarchar](max) NULL,
+	[unittype] [nvarchar](50) NULL,
+	[auditstarttime] [datetime] NULL,
+	[auditendtime] [datetime] NULL,
+	[timeoutreasion] [nvarchar](500) NULL,
+	[zprice] [decimal](18, 2) NULL,
+	[cprice] [decimal](18, 2) NULL,
+	[sprice] [decimal](18, 2) NULL,
+	[sdprice] [decimal](18, 2) NULL,
+	[unitname] [nvarchar](50) NULL,
+	[orgcode] [nvarchar](50) NULL,
+	[unitaddress] [nvarchar](250) NULL,
+	[unitzip] [nvarchar](50) NULL,
+	[contact] [nvarchar](50) NULL,
+	[mobile] [nvarchar](50) NULL,
+	[idcard] [nvarchar](50) NULL,
+	[unitphone] [nvarchar](50) NULL,
+	[unitname2] [nvarchar](50) NULL,
+	[orgname2] [nvarchar](50) NULL,
+	[unitlevel] [nvarchar](50) NULL,
+	[unitaddress2] [nvarchar](250) NULL,
+	[contact2] [nvarchar](50) NULL,
+	[mobile2] [nvarchar](50) NULL,
+	[idcard2] [nvarchar](50) NULL,
+	[unitphone2] [nvarchar](50) NULL,
+	[unitname3] [nvarchar](50) NULL,
+	[orgcode3] [nvarchar](50) NULL,
+	[unitaddress3] [nvarchar](250) NULL,
+	[unitzip3] [nvarchar](50) NULL,
+	[contact3] [nvarchar](50) NULL,
+	[mobile3] [nvarchar](50) NULL,
+	[idcard3] [nvarchar](50) NULL,
+	[unitphone3] [nvarchar](50) NULL,
+	[approvalstatues] [int] NULL,
 	[createtime] [datetime] NULL,
 	[updatetime] [datetime] NULL,
-	[orgname] [nvarchar](50) NULL,
-	[creator] [nvarchar](50) NULL,
-	[creatorid] [int] NULL,
-	[audituser] [nvarchar](50) NULL,
-	[audituserid] [int] NULL,
-	[statues] [int] NULL,
- CONSTRAINT [PK_org_business] PRIMARY KEY CLUSTERED 
+	[createid] [int] NULL,
+	[unitprojectname] [nvarchar](50) NULL,
+	[major] [nvarchar](50) NULL,
+	[suser] [nvarchar](50) NULL,
+	[sauser] [nvarchar](50) NULL,
+	[reasion] [nvarchar](500) NULL,
+	[applyfile] [nvarchar](max) NULL,
+	[recordfile] [nvarchar](max) NULL,
+	[reportfile] [nvarchar](max) NULL,
+	[pricefile] [nvarchar](max) NULL,
+	[otherfile] [nvarchar](max) NULL,
+	[qualification2] [nvarchar](50) NULL,
+	[certificate2] [nvarchar](50) NULL,
+	[qualification] [nvarchar](50) NULL,
+	[certificate] [nvarchar](50) NULL,
+ CONSTRAINT [PK_ProjectSettlement] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
 

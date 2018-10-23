@@ -13,5 +13,7 @@ namespace HoteManagement.Web.Models.Api
         public int ApprovalStatues { get; set; }
 
         public Org_BusinessDto Model { get; set; }
+
+        public int? UserId{get;set;}
     }
 }

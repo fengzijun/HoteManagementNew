@@ -314,3 +314,220 @@ C:\sourcecode\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.
 C:\sourcecode\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.csproj.CopyComplete
 C:\sourcecode\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.dll
 C:\sourcecode\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Service.dll.config
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Service.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Service.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Extras.DynamicProxy.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\AutoMapper.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\AutoMapper.EF6.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Castle.Core.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\DapperExtensions.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\DelegateDecompiler.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\DelegateDecompiler.EntityFramework.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Data.Dapper.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\log4net.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Mono.Reflection.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Dapper.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\StackExchange.Redis.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Integration.Mvc.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Mvc.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Newtonsoft.Json.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Razor.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Data.Dapper.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Data.Dapper.dll.config
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.dll.config
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Extras.DynamicProxy.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\AutoMapper.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Castle.Core.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\DapperExtensions.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\log4net.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Dapper.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\StackExchange.Redis.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Integration.Mvc.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Mvc.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\Newtonsoft.Json.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Razor.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.csprojResolveAssemblyReference.cache
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.csproj.CoreCompileInputs.cache
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Service.dll.config
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Service.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Service.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Extras.DynamicProxy.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\AutoMapper.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\AutoMapper.EF6.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Castle.Core.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\DapperExtensions.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\DelegateDecompiler.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\DelegateDecompiler.EntityFramework.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Data.Dapper.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\log4net.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Mono.Reflection.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Dapper.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\StackExchange.Redis.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Integration.Mvc.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Mvc.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Newtonsoft.Json.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Razor.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Data.Dapper.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Data.Dapper.dll.config
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.dll.config
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Extras.DynamicProxy.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\AutoMapper.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Castle.Core.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\DapperExtensions.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\log4net.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Dapper.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\StackExchange.Redis.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Integration.Mvc.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Mvc.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Newtonsoft.Json.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Razor.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.csprojAssemblyReference.cache
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.csproj.CoreCompileInputs.cache
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.csproj.CopyComplete
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Service.dll.config
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Service.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Service.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Extras.DynamicProxy.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\AutoMapper.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\AutoMapper.EF6.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Castle.Core.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\DapperExtensions.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\DelegateDecompiler.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\DelegateDecompiler.EntityFramework.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Data.Dapper.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\log4net.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Mono.Reflection.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Dapper.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\StackExchange.Redis.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Integration.Mvc.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Mvc.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Newtonsoft.Json.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Razor.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Data.Dapper.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Data.Dapper.dll.config
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.dll.config
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Extras.DynamicProxy.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\AutoMapper.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Castle.Core.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\DapperExtensions.pdb
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\log4net.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Dapper.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\StackExchange.Redis.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Integration.Mvc.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Mvc.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\Newtonsoft.Json.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Razor.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.csprojResolveAssemblyReference.cache
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.csproj.CoreCompileInputs.cache
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.dll
+C:\Users\fengzijun\Desktop\HoteManagementNew - 复件\HoteManagementNew\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.pdb
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Service.dll.config
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Service.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Service.pdb
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Extras.DynamicProxy.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\AutoMapper.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\AutoMapper.EF6.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Castle.Core.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\DapperExtensions.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\DelegateDecompiler.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\DelegateDecompiler.EntityFramework.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Data.Dapper.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\log4net.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Mono.Reflection.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Dapper.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\StackExchange.Redis.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Integration.Mvc.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Mvc.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Newtonsoft.Json.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Razor.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Data.Dapper.pdb
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.Data.Dapper.dll.config
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.pdb
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\HoteManagement.dll.config
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Extras.DynamicProxy.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\AutoMapper.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Castle.Core.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\DapperExtensions.pdb
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\log4net.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Dapper.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\StackExchange.Redis.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Autofac.Integration.Mvc.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Mvc.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\Newtonsoft.Json.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.Razor.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.csproj.CoreCompileInputs.cache
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.dll
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.pdb
+C:\Users\fengzijun\Desktop\project\HoteManagementNew\HoteManagement.Service\obj\Debug\HoteManagement.Service.csprojResolveAssemblyReference.cache

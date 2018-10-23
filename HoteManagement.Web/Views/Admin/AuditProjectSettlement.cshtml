@@ -1,0 +1,389 @@
+﻿
+
+
+@model HoteManagement.Web.Models.Api.CreateProjectSettlementRequest
+@{
+    ViewBag.Title = "CreateProjectSettlement";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    var userid = ViewBag.UserId == null ?0: ViewBag.UserId;
+}
+
+<div class="right_col" role="main">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">竣工结算审核</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        @using (Html.BeginForm("AuditProjectSettlement", "Admin", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">工程基本信息</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">项目名称:</label>
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.projectname</label>
+
+
+                        <label for="inputEmail3" class="col-sm-2 control-label">工程地址:</label>
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.projectaddress</label>
+                       
+                    </div>
+
+                    <div class="form-group">
+
+
+                        <label for="inputEmail3" class="col-sm-2 control-label">规模（m2或m）:</label>
+
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.projectsope</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">经办单位类型:</label>
+    
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.unittype</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">结算审核受理时间:</label>
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.auditstarttime</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">结算审定时间:</label>
+                     
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.auditendtime</label>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">审核超期原因:</label>
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.timeoutreasion</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">中标价（万元）:</label>
+        
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.zprice</label>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">合同价（万元）:</label>
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.cprice</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">送审价（万元）:</label>
+                     
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.sprice</label>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">审定价（万元）:</label>
+             
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.sdprice</label>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">工程特征:</label>
+               
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.projectfeature</label>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">建设单位信息</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">单位名称:</label>
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.unitname</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">联系人:</label>
+ 
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.contact</label>
+                    </div>
+
+                    <div class="form-group">
+
+
+                        <label for="inputEmail3" class="col-sm-2 control-label">手机号码:</label>
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.mobile</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">单位号码:</label>
+                      
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.unitphone</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">造价咨询单位信息</div>
+                <div class="panel-body">
+                    <div class="form-group">
+
+                        <label for="inputEmail3" class="col-sm-2 control-label">单位名称:</label>
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.unitname2</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">资质等级:</label>
+       
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.level</label>
+                    </div>
+
+
+                    <div class="form-group">
+
+
+                        <label for="inputEmail3" class="col-sm-2 control-label">结算审核人:</label>
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.contact2</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">联系方式:</label>
+                    
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.mobile2</label>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="inputEmail3" class="col-sm-2 control-label">执业资格:</label>
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.qualification</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">证书编号:</label>
+     
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.certificate</label>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">施工单位信息</div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">单位名称:</label>
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.unitname3</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">资质等级:</label>
+  
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.orgcode3</label>
+                    </div>
+
+
+
+                    <div class="form-group">
+
+
+                        <label for="inputEmail3" class="col-sm-2 control-label">结算编制人:</label>
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.contact3</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">联系方式:</label>
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.mobile3</label>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="inputEmail3" class="col-sm-2 control-label">执业资格:</label>
+
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.qualification2</label>
+                        <label for="inputEmail3" class="col-sm-2 control-label">证书编号:</label>
+   
+                        <label for="inputEmail3" class="col-sm-4 control-label" style="text-align:left">@Model.certificate2</label>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">附件</div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">苏州市吴江区建设工程竣工结算备案申请表</label>
+                        <div class="col-sm-20">
+                            @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+
+                            @if (!string.IsNullOrEmpty(@Model.applyfile))
+                            {
+                                <a class="btn btn-primary" target="_blank" href="~/upload/@Model.applyfile">查看上传文件</a>
+                            }
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">苏州市吴江区建设工程竣工结算备案表</label>
+                        <div class="col-sm-20">
+                            @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+
+                            @if (!string.IsNullOrEmpty(@Model.recordfile))
+                            {
+                                <a class="btn btn-primary" target="_blank" href="~/upload/@Model.recordfile">查看上传文件</a>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">工程造价咨询报告书</label>
+                        <div class="col-sm-20">
+                            @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+
+                            @if (!string.IsNullOrEmpty(@Model.reportfile))
+                            {
+                                <a class="btn btn-primary" target="_blank" href="~/upload/@Model.reportfile">查看上传文件</a>
+                            }
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">工程结算审定单</label>
+                        <div class="col-sm-20">
+                            @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+
+                            @if (!string.IsNullOrEmpty(@Model.pricefile))
+                            {
+                                <a class="btn btn-primary" target="_blank" href="~/upload/@Model.pricefile">查看上传文件</a>
+                            }
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="col-sm-20">
+                            @*<input type="email" class="form-control" id="inputEmail3" placeholder="Email">*@
+                          
+                            @if (!string.IsNullOrEmpty(@Model.otherfile))
+                            {
+                                <a class="btn btn-primary" target="_blank" href="~/upload/@Model.otherfile">查看上传文件</a>
+                            }
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">审核</div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">意见</label>
+                        <div class="col-sm-4">
+
+                            @Html.TextAreaFor(s => s.reasion, new { @class = "form-control" })
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+
+            @Html.HiddenFor(s => s.id);
+            @Html.HiddenFor(s => s.createid);
+            @Html.HiddenFor(s => s.updatetime);
+            @Html.HiddenFor(s => s.createtime);
+            @Html.HiddenFor(s => s.approvalstatues);
+            @Html.HiddenFor(s => s.UserId);
+            @Html.HiddenFor(s => s.reasion);
+
+
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                <div class="col-sm-4">
+                    @Html.Partial("DisplayErrorView")
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-8">
+
+                    <input value="通过" id="approval" type="button" class="btn btn-primary" />
+                    <input value="打回" id="unapproval" type="button" class="btn btn-primary" />
+                </div>
+            </div>
+            @section scripts
+           {
+                <script>
+             $(function () {
+
+                $("#approval").click(function () {
+                    $("#approvalstatues").val(1);
+
+                    var data = { "id": $("#id").val(), "approvalstatues": $("#approvalstatues").val(), "reasion": $("#reasion").val() };
+                    var userid = $("#@Html.IdFor(s => s.UserId)").val();
+                    $.ajax({
+                        url: "/admin/AuditProjectSettlement",
+                        type: 'POST',
+                        dataType: 'json',
+                        data: JSON.stringify(data),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data.success == 1)
+                                if (userid == 0) {
+                                    window.location.href = "/admin/getProjectSettlement";
+                                }
+                                else {
+                                    window.location.href = "/admin/getProjectSettlement?loginid=" + userid
+                                }
+
+                            else {
+                                alert(data.message);
+                            }
+                        }
+                    });
+                })
+
+                $("#unapproval").click(function () {
+                    $("#approvalstatues").val(-1);
+                    var data = { "id": $("#id").val(), "approvalstatues": $("#approvalstatues").val(), "reasion": $("#reasion").val() };
+                      var userid = $("#@Html.IdFor(s => s.UserId)").val();
+                    $.ajax({
+                        url: "/admin/AuditProjectSettlement",
+                        type: 'POST',
+                        dataType: 'json',
+                        data: JSON.stringify(data),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data.success == 1)
+                                if (userid == 0) {
+                                    window.location.href = "/admin/getProjectSettlement";
+                                }
+                                else {
+                                    window.location.href = "/admin/getProjectSettlement?loginid=" + userid
+                                }
+                            else {
+                                alert(data.message);
+                            }
+                        }
+                    });
+                })
+
+
+            })
+
+                </script>
+            }
+
+        }
+    </div>
+
+</div>
+

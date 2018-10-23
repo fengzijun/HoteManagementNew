@@ -288,6 +288,9 @@ namespace HoteManagement.Service.Core
                 cfg.CreateMap<Domain.Org_Business, Org_BusinessDto>();
                 cfg.CreateMap<Org_BusinessDto, Domain.Org_Business>();
 
+                cfg.CreateMap<Domain.ProjectSettlement, ProjectSettlementDto>();
+                cfg.CreateMap<ProjectSettlementDto, Domain.ProjectSettlement>();
+
             });
         }
 

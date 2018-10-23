@@ -27,5 +27,7 @@ namespace HoteManagement.Service.Model
         public string audituser { get; set; }
         public Nullable<int> audituserid { get; set; }
         public Nullable<int> statues { get; set; }
+
+        public int? UserId { get; set; }
     }
 }

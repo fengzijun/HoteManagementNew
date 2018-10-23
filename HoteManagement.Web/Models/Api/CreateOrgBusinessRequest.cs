@@ -10,11 +10,11 @@ namespace HoteManagement.Web.Models.Api
     {
         [Required(ErrorMessage = "项目名称不能为空")]
         public string projectname { get; set; }
-        [Required(ErrorMessage = "建设单位不能为空")]
+
         public string buildunit { get; set; }
-        [Required(ErrorMessage = "编制单位不能为空")]
+
         public string compileunit { get; set; }
-        [Required(ErrorMessage = "审计单位不能为空")]
+     
         public string auditunit { get; set; }
 
         public string projecttype { get; set; }
@@ -25,6 +25,8 @@ namespace HoteManagement.Web.Models.Api
         public string report { get; set; }
         public string price { get; set; }
         public string other { get; set; }
+
+        public int? UserId { get; set; }
     }
 
 
@@ -49,6 +51,8 @@ namespace HoteManagement.Web.Models.Api
         public string report { get; set; }
         public string price { get; set; }
         public string other { get; set; }
+
+        public int? UserId { get; set; }
 
     }
 }

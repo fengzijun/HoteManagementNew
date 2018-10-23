@@ -102,18 +102,19 @@ namespace HoteManagement.Web.Controllers
             return File(bytes, @"image/jpeg");
         }
 
-        public ActionResult CreateBusiness()
+
+        public ActionResult CreateBusiness(int? userid)
         {
             GetProjectType();
-
-            return View();
+            CreateOrgBusinessRequest createOrgBusinessRequest = new CreateOrgBusinessRequest { UserId = userid ?? 0 };
+            return View(createOrgBusinessRequest);
         }
 
-        public ActionResult EditBusiness(int id)
+        public ActionResult EditBusiness(int id,int? userid)
         {
             var model = generateService.GetBusiness(id);
             GetProjectType();
-
+            model.UserId = userid;
             return View(model);
         }
 
@@ -131,6 +132,13 @@ namespace HoteManagement.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
+                GetProjectType();
+                return View();
+            }
+
+            if(request == null)
+            {
+                ModelState.AddModelError("", "参数不能为空");
                 GetProjectType();
                 return View();
             }
@@ -174,18 +182,28 @@ namespace HoteManagement.Web.Controllers
                 Request.Files[3].SaveAs(path + "/" + other + ".doc");
             }
 
+            UserInfoDto user = null;
+            if(request.UserId.HasValue && request.UserId.Value!=0)
+            {
+                user = generateService.GetUserById(request.UserId.Value);
+            }
+            else
+            {
+                user = UserInfo;
+            }
+
             Org_BusinessDto business = new Org_BusinessDto
             {
                 auditunit = request.auditunit,
                 buildunit = request.buildunit,
                 compileunit = request.compileunit,
                 createtime = DateTime.Now,
-                creator = UserInfo.LoginName,
-                creatorid = UserInfo.LoginID,
-                orgname = UserInfo.OrgName,
-                projectname = request.projectname,
-                projectsummary = request.projectsummary,
-                projecttype = request.projecttype,
+                creator = UserInfo?.LoginName,
+                creatorid = UserInfo?.LoginID,
+                orgname = UserInfo?.OrgName??string.Empty,
+                projectname = request.projectname??string.Empty,
+                projectsummary = request.projectsummary??string.Empty,
+                projecttype = request.projecttype??string.Empty,
                 statues = 0,
                 updatetime = DateTime.Now,
                 contract = contract,
@@ -195,8 +213,15 @@ namespace HoteManagement.Web.Controllers
             };
 
             generateService.CreateBusiness(business);
-
-            return Redirect("/sys/OperationResult?returnurl=/Admin/getBusiness");
+            if(request.UserId.HasValue && request.UserId.Value !=0)
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/getBusiness?loginid=" + user.LoginID);
+            }
+            else
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/getBusiness");
+            }
+           
 
         }
 
@@ -268,13 +293,20 @@ namespace HoteManagement.Web.Controllers
             
 
             generateService.UpdateBusiness(business);
-
-            return Redirect("/sys/OperationResult?returnurl=/Admin/getBusiness");
+            if(request.UserId.HasValue && request.UserId.Value!=0)
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/getBusiness?login=" + request.UserId.Value);
+            }
+            else
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/getBusiness");
+            }
+            
 
         }
 
 
-        public ActionResult GetBusiness(int? pageindex,int? loginid)
+        public ActionResult GetBusiness(int? pageindex,int? loginid,string name,string compileunit,string auditunit, int? approvalstatues,string unitname,DateTime? time)
         {
             logger.WriteWarn("start getbusiness");
             int pagecount = 0;
@@ -297,11 +329,21 @@ namespace HoteManagement.Web.Controllers
                     string encTicket = FormsAuthentication.Encrypt(authTicket);
                     HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
                     Response.Cookies.Add(faCookie);
-   
+
+                  
                 }
 
-                accountid = user.OrgName == "管理员" ? (int?)null : user.LoginID; ;
-                ViewBag.loginid = loginid.Value;
+                if (user !=null && !string.IsNullOrEmpty(user.OrgName) && user.OrgName == "管理员")
+                {
+                    accountid = (int?)null;
+                }
+                else
+                {
+                    accountid = user.LoginID;
+                }
+
+                ViewBag.UserId = loginid.Value;
+
             }
             else
             {
@@ -309,8 +351,9 @@ namespace HoteManagement.Web.Controllers
             }
 
             //int? loginid = loginid.HasValue : loginid.Value: ( UserInfo.UserType == "管理用户" ? (int?)null : UserInfo.LoginID );
-            var models = generateService.GetBusiness(accountid, null, false ,( pageindex.HasValue ? pageindex.Value : 1)-1, out pagecount);
-            string url = "/Admin/GetBusiness";
+            var models = generateService.GetBusiness(accountid, null, name, approvalstatues, unitname, compileunit, auditunit, time, (pageindex.HasValue ? pageindex.Value : 1) - 1, out pagecount);
+            
+            string url = $"/Admin/GetBusiness?loginid={loginid}&approvalstatues={approvalstatues}&name={name}&unitname={unitname}&compileunit={compileunit}&auditunit={auditunit}&time={time}";
             ViewBag.PageInfo = new PageModel { PageCount = pagecount, PageIndex = pageindex.HasValue ? pageindex.Value : 1, Url = url };
             return View(models);
         }
@@ -331,11 +374,11 @@ namespace HoteManagement.Web.Controllers
         }
 
 
-        public ActionResult AuditBusiness(int id)
+        public ActionResult AuditBusiness(int id,int? userid)
         {
             var model = generateService.GetBusiness(id);
             GetProjectType();
-            AuditBusinessRequest auditBusinessRequest = new AuditBusinessRequest { Id = id, ApprovalStatues = 0, Model = model };
+            AuditBusinessRequest auditBusinessRequest = new AuditBusinessRequest { Id = id, ApprovalStatues = 0, Model = model, UserId = userid };
             return View(auditBusinessRequest);
 
         }
@@ -347,8 +390,528 @@ namespace HoteManagement.Web.Controllers
             //GetProjectType();
             model.statues = request.ApprovalStatues == 1 ? 1 : -1;
             generateService.UpdateBusiness(model);
-            return Redirect("/sys/OperationResult?returnurl=/Admin/getBusiness");
+            if(request.UserId.HasValue && request.UserId.Value!=0)
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/getBusiness?loginid=" + request.UserId.Value);
+            }
+            else
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/getBusiness");
+            }
 
+
+        }
+
+        public ActionResult EditProjectSettlement(int id, int? userid)
+        {
+            var model = generateService.GetProjectSettlement(id);
+            GetProjectType();
+            model.UserId = userid.HasValue ? userid.Value : 0;
+            ViewBag.UserId = model.UserId;
+            CreateProjectSettlementRequest createProjectSettlementRequest = new CreateProjectSettlementRequest
+            {
+                id = id,
+                auditendtime = model.auditendtime,
+                auditstarttime = model.auditstarttime,
+                contact = model.contact,
+                contact2 = model.contact2,
+                contact3 = model.contact3,
+                cprice = model.cprice,
+                createid = model.UserId == 0? UserInfo.LoginID : model.UserId,
+                idcard = model.idcard,
+                idcard2 = model.idcard2,
+                idcard3 = model.idcard3,
+                level = model.unitlevel,
+                mobile = model.mobile,
+                mobile2 = model.mobile2,
+                mobile3 = model.mobile3,
+                orgcode = model.orgcode,
+                orgcode3 = model.orgcode3,
+                orgname2 = model.orgname2,
+                projectaddress = model.projectaddress,
+                projectfeature = model.projectfeature,
+                projectname = model.projectname,
+                projectsope = model.projectsope,
+                projecttype = model.projecttype,
+                sdprice = model.sdprice,
+                sprice = model.sprice,
+                timeoutreasion = model.timeoutreasion,
+                unitaddress = model.unitaddress,
+                unitaddress2 = model.unitaddress2,
+                unitaddress3 = model.unitaddress3,
+                unitname = model.unitname,
+                unitname2 = model.unitname2,
+                unitname3 = model.unitname3,
+                unitphone = model.unitphone,
+                unitphone2 = model.unitphone2,
+                unitphone3 = model.unitphone3,
+                unittype = model.unittype,
+                unitzip = model.unitzip,
+                unitzip3 = model.unitzip3,
+                zprice = model.zprice,
+                approvalstatues = model.approvalstatues,
+                createtime = model.createtime,
+                major = model.major,
+                sauser = model.sauser,
+                unitprojectname = model.unitprojectname,
+                suser = model.suser,
+                updatetime = model.updatetime,
+                UserId = model.UserId,
+                certificate = model.certificate,
+                reasion = model.reasion,
+                qualification = model.qualification,
+                applyfile = model.applyfile,
+                certificate2 = model.certificate2,
+                qualification2 = model.qualification2,
+                recordfile = model.recordfile,
+                reportfile = model.reportfile,
+                pricefile = model.pricefile,
+                otherfile = model.otherfile
+            };
+            return View(createProjectSettlementRequest);
+        }
+
+        public ActionResult AuditProjectSettlement(int id, int? userid)
+        {
+            var model = generateService.GetProjectSettlement(id);
+            GetProjectType();
+            model.UserId = userid.HasValue ? userid.Value : 0;
+            ViewBag.UserId = userid;
+            CreateProjectSettlementRequest createProjectSettlementRequest = new CreateProjectSettlementRequest
+            {
+                id = id,
+                auditendtime = model.auditendtime,
+                auditstarttime = model.auditstarttime,
+                contact = model.contact,
+                contact2 = model.contact2,
+                contact3 = model.contact3,
+                cprice = model.cprice,
+                createid = model.createid,
+                idcard = model.idcard,
+                idcard2 = model.idcard2,
+                idcard3 = model.idcard3,
+                level = model.unitlevel,
+                mobile = model.mobile,
+                mobile2 = model.mobile2,
+                mobile3 = model.mobile3,
+                orgcode = model.orgcode,
+                orgcode3 = model.orgcode3,
+                orgname2 = model.orgname2,
+                projectaddress = model.projectaddress,
+                projectfeature = model.projectfeature,
+                projectname = model.projectname,
+                projectsope = model.projectsope,
+                projecttype = model.projecttype,
+                sdprice = model.sdprice,
+                sprice = model.sprice,
+                timeoutreasion = model.timeoutreasion,
+                unitaddress = model.unitaddress,
+                unitaddress2 = model.unitaddress2,
+                unitaddress3 = model.unitaddress3,
+                unitname = model.unitname,
+                unitname2 = model.unitname2,
+                unitname3 = model.unitname3,
+                unitphone = model.unitphone,
+                unitphone2 = model.unitphone2,
+                unitphone3 = model.unitphone3,
+                unittype = model.unittype,
+                unitzip = model.unitzip,
+                unitzip3 = model.unitzip3,
+                zprice = model.zprice,
+                approvalstatues = model.approvalstatues,
+                createtime = model.createtime,
+                major = model.major,
+                sauser = model.sauser,
+                unitprojectname = model.unitprojectname,
+                suser = model.suser,
+                updatetime = model.updatetime,
+                UserId = model.UserId,
+                qualification = model.qualification,
+                reasion = model.reasion,
+                certificate = model.certificate,
+                certificate2 = model.certificate2,
+                qualification2 = model.qualification2,
+                otherfile = model.otherfile,
+                pricefile = model.pricefile,
+                reportfile = model.reportfile,
+                recordfile = model.recordfile,
+                applyfile = model.applyfile
+            };
+            return View(createProjectSettlementRequest);
+        }
+
+
+        public ActionResult CreateProjectSettlement(int? userid)
+        {
+            CreateProjectSettlementRequest createProjectSettlementRequest = new CreateProjectSettlementRequest { UserId = userid.HasValue? userid.Value:0, auditendtime = DateTime.Now, auditstarttime = DateTime.Now   };
+            ViewBag.UserId = userid.HasValue ? userid.Value : 0;
+            return View(createProjectSettlementRequest);
+        }
+
+        [HttpPost]
+        public ActionResult CreateProjectSettlement(CreateProjectSettlementRequest createProjectSettlementRequest)
+        {
+
+            ProjectSettlementDto projectSettlement = new ProjectSettlementDto
+            {
+                approvalstatues = 0,
+                auditendtime = createProjectSettlementRequest.auditendtime,
+                auditstarttime = createProjectSettlementRequest.auditstarttime,
+                contact = createProjectSettlementRequest.contact,
+                contact2 = createProjectSettlementRequest.contact2,
+                contact3 = createProjectSettlementRequest.contact3,
+                cprice = createProjectSettlementRequest.cprice,
+                createid = createProjectSettlementRequest.UserId == 0 ? UserInfo.LoginID: createProjectSettlementRequest.UserId,
+                createtime = DateTime.Now,
+                idcard = createProjectSettlementRequest.idcard,
+                idcard2 = createProjectSettlementRequest.idcard2,
+                idcard3 = createProjectSettlementRequest.idcard3,
+                unitlevel = createProjectSettlementRequest.level,
+                mobile = createProjectSettlementRequest.mobile,
+                mobile2 = createProjectSettlementRequest.mobile2,
+                mobile3 = createProjectSettlementRequest.mobile3,
+                orgcode = createProjectSettlementRequest.orgcode,
+                orgcode3 = createProjectSettlementRequest.orgcode3,
+                orgname2 = createProjectSettlementRequest.orgname2,
+                projectaddress = createProjectSettlementRequest.projectaddress,
+                projectfeature = createProjectSettlementRequest.projectfeature,
+                projectname = createProjectSettlementRequest.projectname,
+                projectsope = createProjectSettlementRequest.projectsope,
+                projecttype = createProjectSettlementRequest.projecttype,
+                sdprice = createProjectSettlementRequest.sdprice,
+                sprice = createProjectSettlementRequest.sprice,
+                timeoutreasion = createProjectSettlementRequest.timeoutreasion,
+                unitaddress = createProjectSettlementRequest.unitaddress,
+                unitaddress2 = createProjectSettlementRequest.unitaddress2,
+                unitaddress3 = createProjectSettlementRequest.unitaddress3,
+                unitname = createProjectSettlementRequest.unitname,
+                unitname2 = createProjectSettlementRequest.unitname2,
+                unitname3 = createProjectSettlementRequest.unitname3,
+                unitphone = createProjectSettlementRequest.unitphone,
+                unitphone2 = createProjectSettlementRequest.unitphone2,
+                unitphone3 = createProjectSettlementRequest.unitphone3,
+                unittype = createProjectSettlementRequest.unittype,
+                unitzip = createProjectSettlementRequest.unitzip,
+                unitzip3 = createProjectSettlementRequest.unitzip3,
+                updatetime = DateTime.Now,
+                zprice = createProjectSettlementRequest.zprice,
+                major = createProjectSettlementRequest.major,
+                sauser = createProjectSettlementRequest.sauser,
+                suser = createProjectSettlementRequest.suser,
+                unitprojectname = createProjectSettlementRequest.unitprojectname,
+                certificate = createProjectSettlementRequest.certificate,
+                reasion = createProjectSettlementRequest.reasion,
+                qualification = createProjectSettlementRequest.qualification,
+                qualification2 = createProjectSettlementRequest.qualification2,
+                certificate2 = createProjectSettlementRequest.certificate2,
+                applyfile = createProjectSettlementRequest.applyfile,
+                recordfile = createProjectSettlementRequest.recordfile,
+                reportfile = createProjectSettlementRequest.reportfile,
+                pricefile = createProjectSettlementRequest.pricefile,
+                otherfile = createProjectSettlementRequest.otherfile,
+
+            };
+
+            string path = Server.MapPath("~/upload");
+            if (!string.IsNullOrEmpty(Request.Files[0].FileName))
+            {
+                var id = Guid.NewGuid().ToString();
+                string ext = Request.Files[0].FileName.GetFileExt();
+                if (!string.IsNullOrEmpty(ext))
+                {
+                    Request.Files[0].SaveAs(path + "/" + id + "." + ext);
+                    projectSettlement.applyfile = id + "." + ext;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Request.Files[1].FileName))
+            {
+                var id = Guid.NewGuid().ToString();
+                string ext = Request.Files[1].FileName.GetFileExt();
+                if (!string.IsNullOrEmpty(ext))
+                {
+                    Request.Files[1].SaveAs(path + "/" + id + "." + ext);
+                    projectSettlement.recordfile = id + "." + ext;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Request.Files[2].FileName))
+            {
+                var id = Guid.NewGuid().ToString();
+                string ext = Request.Files[2].FileName.GetFileExt();
+                if (!string.IsNullOrEmpty(ext))
+                {
+                    Request.Files[2].SaveAs(path + "/" + id + "." + ext);
+                    projectSettlement.reportfile = id + "." + ext;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Request.Files[3].FileName))
+            {
+                var id = Guid.NewGuid().ToString();
+                string ext = Request.Files[3].FileName.GetFileExt();
+                if (!string.IsNullOrEmpty(ext))
+                {
+                    Request.Files[3].SaveAs(path + "/" + id + "." + ext);
+                    projectSettlement.pricefile = id + "." + ext;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Request.Files[4].FileName))
+            {
+                var id = Guid.NewGuid().ToString();
+                string ext = Request.Files[4].FileName.GetFileExt();
+                if (!string.IsNullOrEmpty(ext))
+                {
+                    Request.Files[4].SaveAs(path + "/" + id + "." + ext);
+                    projectSettlement.otherfile = id + "." + ext;
+                }
+            }
+
+
+            generateService.CreateProjectSettlement(projectSettlement);
+            if(createProjectSettlementRequest.UserId!=0)
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/GetProjectSettlement?loginid=" + createProjectSettlementRequest.UserId);
+            }
+            else
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/GetProjectSettlement");
+            }
+           
+
+        }
+
+
+        [HttpPost]
+        public ActionResult EditProjectSettlement(CreateProjectSettlementRequest createProjectSettlementRequest)
+        {
+            var orginmodel = generateService.GetProjectSettlement(createProjectSettlementRequest.id);
+            var model = createProjectSettlementRequest;
+            ProjectSettlementDto project = new ProjectSettlementDto
+            {
+                auditendtime = model.auditendtime,
+                auditstarttime = model.auditstarttime,
+                contact = model.contact,
+                contact2 = model.contact2,
+                contact3 = model.contact3,
+                cprice = model.cprice,
+                createid = model.UserId == 0? UserInfo.LoginID : model.UserId,
+                idcard = model.idcard,
+                idcard2 = model.idcard2,
+                idcard3 = model.idcard3,
+                unitlevel = model.level,
+                mobile = model.mobile,
+                mobile2 = model.mobile2,
+                mobile3 = model.mobile3,
+                orgcode = model.orgcode,
+                orgcode3 = model.orgcode3,
+                orgname2 = model.orgname2,
+                projectaddress = model.projectaddress,
+                projectfeature = model.projectfeature,
+                projectname = model.projectname,
+                projectsope = model.projectsope,
+                projecttype = model.projecttype,
+                sdprice = model.sdprice,
+                sprice = model.sprice,
+                timeoutreasion = model.timeoutreasion,
+                unitaddress = model.unitaddress,
+                unitaddress2 = model.unitaddress2,
+                unitaddress3 = model.unitaddress3,
+                unitname = model.unitname,
+                unitname2 = model.unitname2,
+                unitname3 = model.unitname3,
+                unitphone = model.unitphone,
+                unitphone2 = model.unitphone2,
+                unitphone3 = model.unitphone3,
+                unittype = model.unittype,
+                unitzip = model.unitzip,
+                unitzip3 = model.unitzip3,
+                zprice = model.zprice,
+                approvalstatues = model.approvalstatues,
+                createtime = model.createtime,
+                id = model.id,
+                major = model.major,
+                sauser = model.sauser,
+                suser = model.suser,
+                updatetime = DateTime.Now,
+                UserId = model.UserId,
+                unitprojectname = model.unitprojectname,
+                qualification = model.qualification,
+                reasion = model.reasion,
+                certificate = model.certificate,
+                certificate2 = model.certificate2,
+                qualification2 = model.qualification2,
+                applyfile = orginmodel.applyfile,
+                otherfile = orginmodel.otherfile,
+                pricefile = orginmodel.pricefile,
+                reportfile = orginmodel.reportfile,
+                recordfile = orginmodel.recordfile
+
+            };
+
+
+            string path = Server.MapPath("~/upload");
+            if (!string.IsNullOrEmpty(Request.Files[0].FileName))
+            {
+                var id = Guid.NewGuid().ToString();
+                string ext = Request.Files[0].FileName.GetFileExt();
+                if (!string.IsNullOrEmpty(ext))
+                {
+                    Request.Files[0].SaveAs(path + "/" + id + "." + ext);
+                    project.applyfile = id + "." + ext;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Request.Files[1].FileName))
+            {
+                var id = Guid.NewGuid().ToString();
+                string ext = Request.Files[1].FileName.GetFileExt();
+                if (!string.IsNullOrEmpty(ext))
+                {
+                    Request.Files[1].SaveAs(path + "/" + id + "." + ext);
+                    project.recordfile = id + "." + ext;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Request.Files[2].FileName))
+            {
+                var id = Guid.NewGuid().ToString();
+                string ext = Request.Files[2].FileName.GetFileExt();
+                if (!string.IsNullOrEmpty(ext))
+                {
+                    Request.Files[2].SaveAs(path + "/" + id + "." + ext);
+                    project.reportfile = id + "." + ext;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Request.Files[3].FileName))
+            {
+                var id = Guid.NewGuid().ToString();
+                string ext = Request.Files[3].FileName.GetFileExt();
+                if (!string.IsNullOrEmpty(ext))
+                {
+                    Request.Files[3].SaveAs(path + "/" + id + "." + ext);
+                    project.pricefile = id + "." + ext;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(Request.Files[4].FileName))
+            {
+                var id = Guid.NewGuid().ToString();
+                string ext = Request.Files[4].FileName.GetFileExt();
+                if (!string.IsNullOrEmpty(ext))
+                {
+                    Request.Files[4].SaveAs(path + "/" + id + "." + ext);
+                    project.otherfile = id + "." + ext;
+                }
+            }
+
+            generateService.UpdateProjectSettlement(project);
+            if(createProjectSettlementRequest.UserId!=0)
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/GetProjectSettlement?loginid=" + createProjectSettlementRequest.UserId);
+            }
+            else
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/GetProjectSettlement");
+            }
+          
+        }
+
+        [HttpPost]
+        public JsonResult AuditProjectSettlement(AuditProjectSettlementRequest auditProjectSettlementRequest)
+        {
+            //var orginmodel = generateService.GetProjectSettlement(createProjectSettlementRequest.id);
+            var model = generateService.GetProjectSettlement(auditProjectSettlementRequest.id);
+            model.approvalstatues = auditProjectSettlementRequest.approvalstatues;
+            model.reasion = auditProjectSettlementRequest.reasion??string.Empty;
+
+            generateService.UpdateProjectSettlement(model);
+            return Json(new { success = 1, message = string.Empty });
+        }
+
+        public ActionResult GetProjectSettlement(int? pageindex, int? loginid,int? approvalstatus, string unitname,string unitname2,string unitname3, string projectname, DateTime? starttime,string auditunitname)
+        {
+          
+            int pagecount = 0;
+            int? accountid = 0;
+            if (loginid.HasValue)
+            {
+                var user = generateService.GetUserById(loginid.Value);
+                if (user != null)
+                {
+
+                    FormsAuthenticationTicket authTicket =
+                        new FormsAuthenticationTicket(
+                 1,
+                 user.LoginName,
+                 DateTime.Now,
+                 DateTime.Now.AddDays(30),
+                 false, //pass here true, if you want to implement remember me functionality
+                 Newtonsoft.Json.JsonConvert.SerializeObject(user));
+
+                    string encTicket = FormsAuthentication.Encrypt(authTicket);
+                    HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
+                    Response.Cookies.Add(faCookie);
+
+
+                }
+
+                if (user != null && !string.IsNullOrEmpty(user.OrgName) && user.OrgName == "管理员")
+                {
+                    accountid = (int?)null;
+                }
+                else
+                {
+                    accountid = user.LoginID;
+                }
+
+                ViewBag.UserId = loginid.Value;
+
+            }
+            else
+            {
+                accountid = UserInfo.OrgName == "管理员" ? (int?)null : UserInfo.LoginID;
+            }
+
+            //int? loginid = loginid.HasValue : loginid.Value: ( UserInfo.UserType == "管理用户" ? (int?)null : UserInfo.LoginID );
+            var models = generateService.GetProjectSettlements(accountid, (pageindex.HasValue ? pageindex.Value : 1) - 1, approvalstatus, unitname, unitname2, unitname3, projectname, starttime, out pagecount);
+            string url = $"/Admin/GetProjectSettlement?loginid={loginid}&approvalstatus={approvalstatus}&unitname={unitname}&unitname2={unitname2}&unitname3={unitname3}&projectname={projectname}&starttime={starttime}";
+            ViewBag.PageInfo = new PageModel { PageCount = pagecount, PageIndex = pageindex.HasValue ? pageindex.Value : 1, Url = url };
+            return View(models);
+        }
+
+
+        public ActionResult AccessProjectSettlement(int? id ,int? userid)
+        {
+            var model = generateService.GetProjectSettlement(id.Value);
+            model.approvalstatues = 2;
+            generateService.UpdateProjectSettlement(model);
+
+            if(userid.HasValue && userid.Value !=0)
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/GetProjectSettlement?loginid=" + userid.Value);
+            }
+            else
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/GetProjectSettlement");
+            }
+        
+        }
+
+        public ActionResult DelProjectSettlement(int? id, int? userid)
+        {
+            generateService.DeleteProjectSettlement(id.Value);
+
+            if(userid.HasValue && userid.Value != 0)
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/GetProjectSettlement?loginid=" + userid.Value);
+            }
+            else
+            {
+                return Redirect("/sys/OperationResult?returnurl=/Admin/GetProjectSettlement");
+            }
         }
     }
 }

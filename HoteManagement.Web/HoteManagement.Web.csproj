@@ -241,9 +241,11 @@
     <Compile Include="Models\AjaxResponse.cs" />
     <Compile Include="Models\AjaxResponseOfTResult.cs" />
     <Compile Include="Models\Api\AuditBusinessRequest.cs" />
+    <Compile Include="Models\Api\AuditProjectSettlementRequest.cs" />
     <Compile Include="Models\Api\BatchCreateRoomNumberRequest.cs" />
     <Compile Include="Models\Api\Createcost_typeRequest.cs" />
     <Compile Include="Models\Api\CreateOrgBusinessRequest.cs" />
+    <Compile Include="Models\Api\CreateProjectSettlementRequest.cs" />
     <Compile Include="Models\Api\Editcost_typeRequest.cs" />
     <Compile Include="Models\Api\EditgoodsRequest.cs" />
     <Compile Include="Models\Api\CreategoodsRequest.cs" />
@@ -392,9 +394,13 @@
     <Content Include="Content\bootstrap\vendor\raphael\raphael.min.js" />
     <Content Include="Content\css.css" />
     <Content Include="Content\cssbf.css" />
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\custom.min.css" />
+    <Content Include="Content\form-elements.css" />
     <Content Include="Content\hDate.css" />
     <Content Include="Content\Images\010.gif" />
     <Content Include="Content\Images\037.gif" />
+    <Content Include="Content\Images\1.jpg" />
     <Content Include="Content\Images\1.png" />
     <Content Include="Content\Images\10.png" />
     <Content Include="Content\Images\11.png" />
@@ -694,6 +700,7 @@
     <Content Include="Content\Images\tubiao_02.gif" />
     <Content Include="Content\Images\type_icon.jpg" />
     <Content Include="Content\Images\type_icon.png" />
+    <Content Include="Content\Images\user.png" />
     <Content Include="Content\Images\user16.gif" />
     <Content Include="Content\Images\vote16.gif" />
     <Content Include="Content\Images\x16.gif" />
@@ -706,11 +713,15 @@
     <Content Include="Content\Images\zjsp16.gif" />
     <Content Include="Content\js\bootstrap-datetimepicker.min.js" />
     <Content Include="Content\js\moment-with-locales.min.js" />
+    <Content Include="Content\js\placeholder.js" />
+    <Content Include="Content\js\scripts.js" />
     <Content Include="Content\newhouseview.css" />
     <Content Include="Content\Opendiv.css" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\Sheet.css" />
     <Content Include="Content\shezhi.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\style2.css" />
     <Content Include="Content\toom.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -775,6 +786,8 @@
     <Content Include="Content\bootstrap\vendor\font-awesome\scss\_spinning.scss" />
     <Content Include="Content\bootstrap\vendor\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\bootstrap\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\js\jquery.backstretch.min.js" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -896,6 +909,11 @@
     <Content Include="Views\Admin\GetBusiness.cshtml" />
     <Content Include="Views\Admin\EditBusiness.cshtml" />
     <Content Include="Views\Admin\AuditBusiness.cshtml" />
+    <Content Include="Views\Admin\CreateProjectSettlement.cshtml" />
+    <Content Include="Views\Admin\EditProjectSettlement.cshtml" />
+    <Content Include="Views\Admin\AuditProjectSettlement.cshtml" />
+    <Content Include="Views\Admin\GetProjectSettlement.cshtml" />
+    <Content Include="Views\Shared\top_nav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
